@@ -8,11 +8,28 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        'accent': '#62E130',
+        'primary': '#3D6A6A',
+        'text': '#1E1E1E',
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "home-gradient": "radial-gradient(257.3% 141.42% at 0% 0%, #F9F3F1 0%, #F7EEDE 100%)"
       },
+      fontSize: {
+        'extra-large-title': '5rem',
+        'large-title': '3.812rem',
+        'title': '2.938rem',
+        'small-title': '2.25rem',
+        'heading': '1.688rem',
+        'small-heading': '1.312rem',
+        'body': '1rem',
+        'small': '0.75rem',
+        'extra-small': '0.562rem',
+      }
     },
   },
   plugins: [],
