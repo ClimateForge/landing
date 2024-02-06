@@ -1,7 +1,7 @@
 import Image from "next/image";
-import { display, sans } from "./fonts";
-import ServiceItem from "./components/service-item";
 import IndustryCard from "./components/industry-card";
+import ServiceItem from "./components/service-item";
+import { display } from "./fonts";
 
 export default function Home() {
 	return (
@@ -10,8 +10,8 @@ export default function Home() {
 			<div className="absolute top-0 left-0 right-0 min-h-1/2 -z-10 flex justify-center">
 				<Image
 					src="/bg.jpeg"
-					layout="fill"
-					objectFit="cover"
+					fill
+					style={{ objectFit: "cover" }}
 					alt="Background Image"
 					className="h-1/2"
 				/>
@@ -50,7 +50,6 @@ export default function Home() {
 					src="/hero-image.png"
 					alt="Hero Image"
 					className="w-full mx-auto"
-					layout="responsive"
 					width={1120}
 					height={646}
 				/>
