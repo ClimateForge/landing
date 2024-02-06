@@ -20,7 +20,7 @@ export default function footer() {
 						</p>
 					</div>
 					<p className="text-body">
-						Don't wait - contact us now to learn more about our services.
+						Don&lsquo;t wait - contact us now to learn more about our services.
 					</p>
 				</div>
 				<div className="space-y-4">
@@ -28,7 +28,9 @@ export default function footer() {
 						<p className="text-grey-600 font-bold text-body leading-none">
 							Address
 						</p>
-						<p className="text-body">123 Oak Street, Cityville, CA 90210,USA</p>
+						<p className="text-body">
+							123 Oak Street, Cityville, CA 90210, USA
+						</p>
 					</div>
 					<div className="space-y-1">
 						<p className="font-bold text-body leading-none">Contact</p>
