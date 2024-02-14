@@ -20,9 +20,9 @@ export default function header() {
 						</a>
 					</div>
 					<div className="flex flex-col sm:flex-row gap-2 sm:gap-6 items-center text-body">
-						<a href="/about">Services</a>
+						<a href="#services">Services</a>
 						<a
-							href="/about"
+							href="#calendar"
 							className="text-primary border-2 px-6 py-2 rounded-xl border-solid border-primary"
 						>
 							Contact Us

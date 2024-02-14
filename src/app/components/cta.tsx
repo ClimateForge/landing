@@ -9,7 +9,7 @@ export default function Cta() {
 				<h2
 					className={`text-light ${display.className} text-title leading-none text-center`}
 				>
-					Grow your business with Dog Leads&lsquo; Comprehensive Services!
+					Grow your business with Dog Leads&rsquo; Comprehensive Services!
 				</h2>
 				<p className="text-white text-body font-medium text-center max-w-lg">
 					Lorem ipsum dolor sit amet consectetur. Lectus odio et montes

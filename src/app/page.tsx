@@ -1,3 +1,4 @@
+import Calendar from "./components/Calendar";
 import Cta from "./components/cta";
 import Demo from "./components/demo";
 import Industries from "./components/industries";
@@ -11,20 +12,23 @@ export default function Home() {
 			{/* Background Image */}
 			<TitleBackground />
 
-			{/* 1st section - title card and CTA */}
+			{/* title card and CTA */}
 			<TitleCard />
 
-			{/* 2nd section - demo */}
+			{/* demo */}
 			<Demo />
 
-			{/* 3rd section - services */}
+			{/* services */}
 			<Services />
 
-			{/* 4th section - industries we serve */}
+			{/* industries we serve */}
 			<Industries />
 
-			{/* 5th section - CTA */}
+			{/* CTA */}
 			<Cta />
+
+			{/* Meet with founder */}
+			<Calendar />
 		</main>
 	);
 }
