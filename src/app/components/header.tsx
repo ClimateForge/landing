@@ -10,7 +10,7 @@ export default function header() {
 						<Image
 							src="/logo.svg"
 							alt="Vercel Logo"
-							className="dark:invert rounded-2xl"
+							className="rounded-2xl"
 							width={70}
 							height={60}
 							priority
