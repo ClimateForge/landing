@@ -1,13 +1,9 @@
-import Image from "next/image";
-import IndustryCard from "./components/industry-card";
-import ServiceItem from "./components/service-item";
-import { display } from "./fonts";
 import Cta from "./components/cta";
+import Demo from "./components/demo";
 import Industries from "./components/industries";
 import Services from "./components/services";
 import TitleCard from "./components/title-card";
 import TitleBackground from "./title-background";
-import Demo from "./components/demo";
 
 export default function Home() {
 	return (
