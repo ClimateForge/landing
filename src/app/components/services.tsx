@@ -4,7 +4,10 @@ import { display } from "../fonts";
 
 export default function Services() {
 	return (
-		<div className="px-5 md:px-10 flex flex-col max-w-5xl w-full gap-12">
+		<div
+			id="services"
+			className="px-5 md:px-10 flex flex-col max-w-5xl w-full gap-12"
+		>
 			<div className="gap-5">
 				<p className="text-primary uppercase">Services</p>
 				<h2

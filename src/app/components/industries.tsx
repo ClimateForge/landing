@@ -20,22 +20,22 @@ export default function Industries() {
 				<IndustryCard
 					title="Solar"
 					icon="/solar-panel.jpg"
-					iconAlt="Solar Panel"
+					iconAlt="Image of a field of solar panels"
 				/>
 				<IndustryCard
 					title="Roofing"
-					icon="/solar-panel.jpg"
-					iconAlt="Solar Panel"
+					icon="/roofing.jpeg"
+					iconAlt="Image of a person working on a roof"
 				/>
 				<IndustryCard
 					title="Landscaping"
-					icon="/solar-panel.jpg"
-					iconAlt="Solar Panel"
+					icon="/landscaping.jpeg"
+					iconAlt="Image of two people digging on a lawn"
 				/>
 				<IndustryCard
 					title="HVAC"
-					icon="/solar-panel.jpg"
-					iconAlt="Solar Panel"
+					icon="/hvac.jpeg"
+					iconAlt="Image of a person working on an outdoor AC unit"
 				/>
 			</div>
 		</div>
