@@ -13,10 +13,8 @@ export default function TitleCard() {
 				Services to help your business grow!
 			</h1>
 			<p className="text-dark-secondary text-body text-center max-w-md">
-				Lorem ipsum dolor sit amet consectetur. Lectus odio et montes
-				condimentum. Sit nulla pharetra odio diam etiam enim aliquam. Ultricies
-				urna diam porttitor mattis orci tortor ac in orci. Vitae ipsum convallis
-				pulvinar rhoncus urna.
+				Conversion-Optimized Prospecting. Maximize lead conversion rates with AI
+				Dog Leads' designed prospecting tools.
 			</p>
 			<a className="mx-auto px-12 py-3 bg-primary text-light rounded-full">
 				Get Started

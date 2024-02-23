@@ -9,14 +9,14 @@ export default function Footer() {
 					<div className="flex flex-row items-center">
 						<Image
 							src="/logo.svg"
-							alt="Dog Leads Logo"
+							alt="DogLeads Logo"
 							className="rounded-2xl"
 							width={70}
 							height={60}
 							priority
 						/>
 						<p className="text-dark font-bold text-small-heading leading-none">
-							Dog Leads
+							DogLeads
 						</p>
 					</div>
 					<p className="text-body">

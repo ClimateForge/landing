@@ -11,10 +11,10 @@ export default function Industries() {
 				>
 					Industries we serve
 				</h2>
-				<p className="text-dark-secondary text-body max-w-2xl">
+				{/* <p className="text-dark-secondary text-body max-w-2xl">
 					Lorem ipsum dolor sit amet consectetur. Nisl maecenas urna aliquam et
 					et enim. Id pellentesque a scelerisque ut nunc.
-				</p>
+				</p> */}
 			</div>
 			<div className="max-w-5xl mx-auto w-full">
 				<div className="pl-5 md:pl-10 pb-3 flex space-x-4 overflow-x-auto">

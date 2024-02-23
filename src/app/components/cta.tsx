@@ -9,11 +9,12 @@ export default function Cta() {
 				<h2
 					className={`text-light ${display.className} text-title leading-none text-center`}
 				>
-					Grow your business with Dog Leads&rsquo; Comprehensive Services!
+					Grow your business with DogLeads&rsquo; Comprehensive Services!
 				</h2>
 				<p className="text-white text-body font-medium text-center max-w-lg">
-					Lorem ipsum dolor sit amet consectetur. Lectus odio et montes
-					condimentum. Sit nulla pharetra odio diam etiam enim aliquam.
+					Empowering contractors to connect with qualified homeowners,
+					delivering tailored upgrades and cutting costs and carbon footprints
+					through smart lead generation.
 				</p>
 				<a className="mx-auto px-12 py-3 bg-white text-primary rounded-full">
 					Get Started

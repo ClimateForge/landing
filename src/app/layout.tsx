@@ -4,7 +4,7 @@ import Header from "./components/header";
 import "./globals.css";
 
 export const metadata: Metadata = {
-	title: "Dog Leads",
+	title: "DogLeads",
 	description: "AI generated leads for your business",
 };
 

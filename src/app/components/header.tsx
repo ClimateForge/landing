@@ -16,7 +16,7 @@ export default function Header() {
 							priority
 						/>
 						<a href="/" className="text-heading font-bold">
-							Dog Leads
+							DogLeads
 						</a>
 					</div>
 					<div className="flex flex-col sm:flex-row gap-2 sm:gap-6 items-center text-body">
