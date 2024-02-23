@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import footer from "./components/footer";
-import header from "./components/header";
+import Footer from "./components/footer";
+import Header from "./components/header";
 import "./globals.css";
-import { useEffect } from "react";
 
 export const metadata: Metadata = {
 	title: "Dog Leads",
@@ -17,9 +16,9 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className="bg-white text-dark text-body">
-				{header()}
+				<Header />
 				{children}
-				{footer()}
+				<Footer />
 			</body>
 		</html>
 	);
