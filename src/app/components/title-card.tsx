@@ -14,7 +14,7 @@ export default function TitleCard() {
 			</h1>
 			<p className="text-dark-secondary text-body text-center max-w-md">
 				Conversion-Optimized Prospecting. Maximize lead conversion rates with AI
-				Dog Leads' designed prospecting tools.
+				DogLeads&rsquo; designed prospecting tools.
 			</p>
 			<a className="mx-auto px-12 py-3 bg-primary text-light rounded-full">
 				Get Started

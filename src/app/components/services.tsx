@@ -13,7 +13,7 @@ export default function Services() {
 				<h2
 					className={`text-dark ${display.className} text-large-title leading-none max-w-full lg:max-w-9/10`}
 				>
-					Grow your business with DogLeads&lsquo; Comprehensive Services!
+					Grow your business with DogLeads&rsquo; Comprehensive Services!
 				</h2>
 				<p className="text-dark-secondary text-body max-w-4/5">
 					DogLeads is the most effective way for sales teams to get qualified
