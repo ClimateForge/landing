@@ -22,12 +22,24 @@ export default function Services() {
 			</div>
 			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
 				<ServiceItem
+					title="Conversion-Optimized Prospecting"
+					description="Maximize lead conversion rates with AI DogLeads' expertly designed prospecting tools."
+					icon="/browser-window.svg"
+					iconAlt="icon of a browser window"
+				/>
+				<ServiceItem
 					title="Customized Targeted Outreach"
 					description="Unlock your business potential with DogLeads' tailored outreach services."
 					icon="/people.svg"
 					iconAlt="icon of 3 people with stars over them"
 				/>
 				<ServiceItem
+					title="AI-Powered Predictive Analytics"
+					description="Harness the power of artificial intelligence with DogLeads' predictive analytics."
+					icon="/ai-bot.svg"
+					iconAlt="icon of robot with an antenna and a speech bubble"
+				/>
+				{/* <ServiceItem
 					title="Data-Driven Lead Scoring"
 					description="Experience precision in lead generation with DogLeads' advanced data analytics."
 					icon="/magnifying-glass.svg"
@@ -40,23 +52,11 @@ export default function Services() {
 					iconAlt="icon of a loud speaker"
 				/>
 				<ServiceItem
-					title="Conversion-Optimized Landing Pages"
-					description="Maximize lead conversion rates with DogLeads' expertly designed landing pages."
-					icon="/browser-window.svg"
-					iconAlt="icon of a browser window"
-				/>
-				<ServiceItem
 					title="Real-Time Lead Tracking and Reporting"
 					description="Stay in control and make informed decisions with DogLeads' real-time lead tracking and reporting services."
 					icon="/papers.svg"
 					iconAlt="icon of 2 overlapping papers"
-				/>
-				<ServiceItem
-					title="AI-Powered Predictive Analytics"
-					description="Harness the power of artificial intelligence with DogLeads' predictive analytics."
-					icon="/ai-bot.svg"
-					iconAlt="icon of robot with an antenna and a speech bubble"
-				/>
+				/> */}
 			</div>
 		</div>
 	);

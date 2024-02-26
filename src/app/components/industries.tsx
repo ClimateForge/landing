@@ -24,6 +24,16 @@ export default function Industries() {
 						iconAlt="Image of a field of solar panels"
 					/>
 					<IndustryCard
+						title="Energy Storage"
+						icon="/energy-storage.jpeg"
+						iconAlt="Image of an energy storage device mounted on a garage wall"
+					/>
+					<IndustryCard
+						title="EV Charging"
+						icon="/ev-charging.jpeg"
+						iconAlt="Image of an electric vehicle plugged into a home charging station"
+					/>
+					{/* <IndustryCard
 						title="Roofing"
 						icon="/roofing.jpeg"
 						iconAlt="Image of a person working on a roof"
@@ -32,7 +42,7 @@ export default function Industries() {
 						title="Landscaping"
 						icon="/landscaping.jpeg"
 						iconAlt="Image of two people digging on a lawn"
-					/>
+					/> */}
 					<IndustryCard
 						title="HVAC"
 						icon="/hvac.jpeg"
