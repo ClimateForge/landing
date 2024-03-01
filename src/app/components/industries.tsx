@@ -1,10 +1,10 @@
 import React from "react";
 import IndustryCard from "./industry-card";
-import { display } from "../fonts";
+import { display, sans } from "../fonts";
 
 export default function Industries() {
 	return (
-		<div className="flex flex-col w-full gap-12">
+		<div className={`${sans.className} flex flex-col w-full gap-12`}>
 			<div className="px-5 md:px-10 max-w-5xl w-full gap-5 mx-auto">
 				<h2
 					className={`text-dark ${display.className} text-large-title leading-none max-w-full lg:max-w-3xl`}

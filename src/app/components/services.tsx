@@ -1,12 +1,12 @@
 import React from "react";
 import ServiceItem from "./service-item";
-import { display } from "../fonts";
+import { display, sans } from "../fonts";
 
 export default function Services() {
 	return (
 		<div
 			id="services"
-			className="px-5 md:px-10 flex flex-col max-w-5xl w-full gap-12"
+			className={`${sans.className} px-5 md:px-10 flex flex-col max-w-5xl w-full gap-12`}
 		>
 			<div className="gap-5">
 				<p className="text-primary uppercase">Services</p>

@@ -19,7 +19,9 @@ export default function Home() {
 			<Demo />
 
 			{/* services */}
-			<Services />
+			<div className="-mt-20">
+				<Services />
+			</div>
 
 			{/* industries we serve */}
 			<Industries />

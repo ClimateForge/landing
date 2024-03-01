@@ -3,13 +3,13 @@ import React from "react";
 
 export default function Demo() {
 	return (
-		<div className="px-5 md:px-10 max-w-5xl w-full">
+		<div className="w-full 3xl:max-w-9/10 -z-10 -mt-20 overflow-hidden">
 			<Image
-				src="/hero-image.png"
+				src="/hero-image-2.png"
 				alt="Hero Image"
-				className="w-full mx-auto"
+				className="w-full min-w-[800pt] -ml-36 md:ml-0"
 				width={1120}
-				height={646}
+				height={1120}
 			/>
 		</div>
 	);
