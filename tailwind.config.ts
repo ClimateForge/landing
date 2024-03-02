@@ -56,6 +56,8 @@ const config: Config = {
       },
       screens: {
         '3xl': '1920px',
+        'not-touch': {'raw': '(hover: hover)'},
+        'touch': {'raw': '(hover: none)'},
       },
     },
   },

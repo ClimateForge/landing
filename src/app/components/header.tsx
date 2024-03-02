@@ -19,14 +19,14 @@ export default function Header() {
 
 	return (
 		<header
-			className={`${sans.className} text-dark sticky top-0 left-0 right-0 z-50 flex justify-center pt-2 sm:pt-5`}
+			className={`${sans.className} text-dark fixed top-0 left-0 right-0 z-50 flex justify-center pt-2 sm:pt-5`}
 		>
 			<div className="flex flex-0 sm:flex-1 mx-4 sm:max-w-4/5 bg-white backdrop-blur-lg bg-opacity-60 rounded-20 px-4 sm:px-7 py-1 border-white-50 border-4">
 				<nav className="flex flex-wrap flex-1 flex-col sm:flex-row sm:gap-4 items-center justify-between">
-					<div className="flex flex-row items-center gap-3 justify-between self-stretch">
+					<div className="flex flex-row items-center gap-3 justify-between self-stretch z-10">
 						<Menu as="div" className="relative">
 							<Menu.Button
-								className="flex flex-row items-center gap-7 pointer-events-auto sm:pointer-events-none"
+								className="flex flex-row items-center gap-7 pointer-events-auto sm:pointer-events-none bg-white bg-opacity-90 px-4 py-2 rounded-15"
 								onClick={menuAction}
 							>
 								<div className="flex flex-row items-center gap-3">
@@ -55,45 +55,6 @@ export default function Header() {
 									strokeWidth={4}
 								/>
 							</Menu.Button>
-							{/* <Transition
-								as={Fragment}
-								enter="transition ease-out duration-100"
-								enterFrom="transform opacity-0 scale-95"
-								enterTo="transform opacity-100 scale-100"
-								leave="transition ease-in duration-75"
-								leaveFrom="transform opacity-100 scale-100"
-								leaveTo="transform opacity-0 scale-95"
-							>
-								<Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-									<div className="py-1">
-										<Menu.Item>
-											{({ active }) => (
-												<a
-													href="#services"
-													className={classNames(
-														active
-															? "bg-gray-100 text-gray-900"
-															: "text-gray-700",
-														"tracking-wide text-button text-primary font-semibold block px-4 py-2 text-sm"
-													)}
-												>
-													Services
-												</a>
-											)}
-										</Menu.Item>
-										<Menu.Item>
-											{({ active }) => (
-												<a
-													href="#calendar"
-													className="tracking-wide text-button font-semibold text-primary px-6 py-2 rounded-15 bg-primary-10 border-4 border-solid border-primary"
-												>
-													Contact Us
-												</a>
-											)}
-										</Menu.Item>
-									</div>
-								</Menu.Items>
-							</Transition> */}
 						</Menu>
 					</div>
 					<div

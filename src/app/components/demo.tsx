@@ -70,16 +70,21 @@ export default function Demo() {
 			)}
 			ref={container}
 		>
+			<div className="hidden touch:flex items-center justify-center">
+				<div className="tracking-wide text-center text-button font-semibold text-primary px-6 py-2 rounded-15 bg-primary-10 border-4 border-solid border-primary">
+					Watch Demo
+				</div>
+			</div>
 			<Image
 				src="/hero-image-2.png"
 				alt="Hero Image"
-				className="w-full min-w-[800pt] -ml-36 md:ml-0 pointer-events-none"
+				className="w-full min-w-[800pt] ml-52 md:ml-0 overflow-hidden pointer-events-none"
 				width={1120}
 				height={1120}
 			/>
 			<div
 				ref={playButtonContainer}
-				className="absolute top-0 left-0 w-full h-full z-10"
+				className="visible touch:hidden absolute top-0 left-0 w-full h-full z-10"
 				onMouseEnter={imageMouseEnterAction}
 				onMouseLeave={imageMouseLeaveAction}
 				onMouseMove={imageMouseMoveAction}
@@ -89,19 +94,10 @@ export default function Demo() {
 					<PlayIcon className="h-14 w-14 text-dark text-opacity-80 ml-1" />
 				</div>
 			</div>
-			<Transition
-				enter="transition duration-100 ease-out"
-				enterFrom="transform scale-95 opacity-0"
-				enterTo="transform scale-100 opacity-100"
-				leave="transition duration-75 ease-out"
-				leaveFrom="transform scale-100 opacity-100"
-				leaveTo="transform scale-95 opacity-0"
-				show={isOpen}
-				as={Fragment}
-			>
+			<Transition show={isOpen} as={Fragment}>
 				<Dialog
 					as="div"
-					className="fixed inset-0 z-10 overflow-y-auto flex items-center justify-center"
+					className="fixed inset-4 z-10 overflow-y-auto flex items-center justify-center"
 					onClose={() => setIsOpen(false)}
 					onClick={() => setIsOpen(false)}
 				>
@@ -125,13 +121,13 @@ export default function Demo() {
 						leaveFrom="opacity-100 scale-100"
 						leaveTo="opacity-0 scale-90"
 					>
-						<div className="bg-white backdrop-blur-lg bg-opacity-60 shadow-lg w-full max-w-5xl aspect-video rounded-40 overflow-hidden p-8">
+						<div className="bg-white backdrop-blur-lg bg-opacity-60 shadow-lg w-full max-w-5xl aspect-video rounded-30 overflow-hidden sm:p-8">
 							<ReactPlayer
 								url="https://youtu.be/q72-0hOXyQ0"
 								width={"100%"}
 								height={"100%"}
 								style={{
-									borderRadius: 40,
+									borderRadius: 30,
 									overflow: "hidden",
 								}}
 								controls={true}
