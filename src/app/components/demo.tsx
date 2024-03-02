@@ -15,8 +15,8 @@ function classNames(...classes: string[]) {
 export default function Demo() {
 	const [isOpen, setIsOpen] = useState(false);
 
-	const container = useRef();
-	const playButtonContianer = useRef();
+	const container = useRef<HTMLDivElement | null>(null);
+	const playButtonContainer = useRef<HTMLDivElement | null>(null);
 
 	const { contextSafe } = useGSAP({ scope: container });
 
@@ -42,11 +42,14 @@ export default function Demo() {
 		});
 	});
 
-	const imageMouseMoveAction = contextSafe((e) => {
+	const imageMouseMoveAction = contextSafe((e: any) => {
 		let x = e.clientX;
 		let y = e.clientY;
 		// get the position of the element you applied the handler to
-		let pos = playButtonContianer.current?.getBoundingClientRect?.();
+		let pos = playButtonContainer.current?.getBoundingClientRect?.() ?? {
+			x: 0,
+			y: 0,
+		};
 		// subtract the position of the element (rounded up to the next
 		// integer) from the mouse position and return it.
 		x = (x - pos.x) | 1;
@@ -75,7 +78,7 @@ export default function Demo() {
 				height={1120}
 			/>
 			<div
-				ref={playButtonContianer}
+				ref={playButtonContainer}
 				className="absolute top-0 left-0 w-full h-full z-10"
 				onMouseEnter={imageMouseEnterAction}
 				onMouseLeave={imageMouseLeaveAction}
