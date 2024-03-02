@@ -5,7 +5,7 @@ import { display, sans } from "../fonts";
 export default function TitleCard() {
 	return (
 		<div
-			className={`px-5 md:px-10 max-w-5xl flex flex-col items-center space-y-20 ${sans.className}`}
+			className={`px-5 md:px-10 max-w-5xl flex flex-col items-center gap-20 ${sans.className}`}
 		>
 			<div className="min-w-full space-y-2">
 				<h1
@@ -20,9 +20,9 @@ export default function TitleCard() {
 					AI DogLeads&rsquo; designed prospecting tools.
 				</p>
 			</div>
-			<div>
+			<div className="mx-auto flex">
 				<a
-					className={`mx-auto px-12 py-3 bg-primary tracking-wide text-large-button font-semibold text-light rounded-20`}
+					className={`px-12 py-3 z-10 bg-primary tracking-wide text-large-button font-bold text-light rounded-15`}
 				>
 					Get Started
 					<Image

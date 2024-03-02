@@ -8,7 +8,7 @@ import TitleBackground from "./title-background";
 
 export default function Home() {
 	return (
-		<main className="flex min-h-screen flex-col items-center py-12 gap-20">
+		<main className="flex min-h-screen flex-col items-center py-12">
 			{/* Background Image */}
 			<TitleBackground />
 
@@ -19,7 +19,7 @@ export default function Home() {
 			<Demo />
 
 			{/* services */}
-			<div className="-mt-20">
+			<div className="">
 				<Services />
 			</div>
 

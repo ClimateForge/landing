@@ -59,6 +59,11 @@ const config: Config = {
       },
     },
   },
+  variants: {
+    extend: {
+      opacity: ['hover'],
+    },
+  },
   plugins: [],
 };
 export default config;
