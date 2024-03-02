@@ -8,7 +8,7 @@ import TitleBackground from "./title-background";
 
 export default function Home() {
 	return (
-		<main className="flex min-h-screen flex-col items-center py-12">
+		<main className="flex min-h-screen flex-col gap-20 items-center py-12">
 			{/* Background Image */}
 			<TitleBackground />
 
@@ -16,10 +16,12 @@ export default function Home() {
 			<TitleCard />
 
 			{/* demo */}
-			<Demo />
+			<div className="-mt-10">
+				<Demo />
+			</div>
 
 			{/* services */}
-			<div className="">
+			<div className="-mt-20">
 				<Services />
 			</div>
 

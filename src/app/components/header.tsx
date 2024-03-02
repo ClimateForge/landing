@@ -21,7 +21,7 @@ export default function Header() {
 		<header
 			className={`${sans.className} text-dark sticky top-0 left-0 right-0 z-50 flex justify-center pt-2 sm:pt-5`}
 		>
-			<div className="flex flex-0 sm:flex-1 mx-4 sm:max-w-4/5 bg-white backdrop-blur-lg bg-opacity-60 rounded-20 px-4 sm:px-7 py-3 border-white-50 border-4">
+			<div className="flex flex-0 sm:flex-1 mx-4 sm:max-w-4/5 bg-white backdrop-blur-lg bg-opacity-60 rounded-20 px-4 sm:px-7 py-1 border-white-50 border-4">
 				<nav className="flex flex-wrap flex-1 flex-col sm:flex-row sm:gap-4 items-center justify-between">
 					<div className="flex flex-row items-center gap-3 justify-between self-stretch">
 						<Menu as="div" className="relative">
