@@ -9,7 +9,7 @@ export default function Calendar() {
 			<h2
 				className={`text-dark ${display.className} text-large-title leading-none max-w-full lg:max-w-3xl`}
 			>
-				Meet with founder
+				Schedule a Demo
 			</h2>
 			<CalItem />
 		</div>
