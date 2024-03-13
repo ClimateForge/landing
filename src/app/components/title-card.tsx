@@ -7,6 +7,7 @@ import { z } from "zod";
 import { useGSAP } from "@gsap/react";
 import gsap, { Elastic } from "gsap";
 import Link from "next/link";
+import { CalendarDaysIcon } from "@heroicons/react/24/solid";
 
 function classNames(...classes: string[]) {
 	return classes.filter(Boolean).join(" ");
@@ -102,7 +103,6 @@ export default function TitleCard() {
 	});
 
 	useGSAP(() => {
-		console.log("useGSAP called");
 		gsap.to(".submit-button", {
 			duration: 0.9,
 			backgroundColor: "#5850EC",
@@ -194,20 +194,20 @@ export default function TitleCard() {
 						>
 							<div className="submit-button-child flex flex-row items-center tracking-wide text-small-button font-bold ">
 								<div>Register</div>
-								<Image
+								{/* <Image
 									className="inline-block ml-2 min-w-4 mt-1"
 									src="/hero-enter-icon.svg"
 									alt="Enter Symbol"
 									width={15}
 									height={15}
-								/>
+								/> */}
 							</div>
 						</button>
 					</div>
 				</form>
 				<div
 					ref={registeredTextRef}
-					className="invisible scale-50 opacity-0 confirm-registration text-center absolute top-0 border-2 border-primary px-8 py-4 rounded-15 bg-primary-10 shadow-md"
+					className="confirm-registration invisible scale-50 opacity-0 text-center absolute top-0 border-2 border-primary px-8 py-4 rounded-15 bg-primary-10 shadow-md"
 				>
 					<div className="text-heading font-extrabold">Congratulations! 🎉</div>
 					<div className="text-small-heading font-semibold">
@@ -216,11 +216,12 @@ export default function TitleCard() {
 				</div>
 				<Link
 					href="#calendar"
-					className={`px-12 py-3 bg-primary text-light rounded-15 cursor-default`}
+					className={`px-8 py-3 bg-primary flex flex-row items-center gap-2 text-light rounded-15 cursor-default`}
 				>
 					<div className="tracking-wide text-large-button font-bold">
 						Schedule a Demo
 					</div>
+					<CalendarDaysIcon className="h-6" />
 				</Link>
 			</div>
 		</div>
