@@ -123,7 +123,7 @@ export default function Demo() {
 					>
 						<div className="bg-white backdrop-blur-lg bg-opacity-60 shadow-lg w-full max-w-5xl aspect-video rounded-30 overflow-hidden sm:p-8">
 							<ReactPlayer
-								url="https://youtu.be/q72-0hOXyQ0"
+								url="https://youtu.be/vh2FQmT5Blg"
 								width={"100%"}
 								height={"100%"}
 								style={{
