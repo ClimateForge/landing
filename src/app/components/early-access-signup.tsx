@@ -48,7 +48,7 @@ export default function EarlyAccessSignup(props: Props) {
 		})
 			.then((response) => response.json())
 			.then((data) => {
-				console.log("Success:", data);
+				setLoading(false);
 				if (data.success === true) {
 					registrationSuccessfulAction();
 				} else {
@@ -56,6 +56,7 @@ export default function EarlyAccessSignup(props: Props) {
 				}
 			})
 			.catch((error) => {
+				setLoading(false);
 				registrationFailedAction();
 				setEmailValid(false);
 				emailInputRef.current!.value = "";
@@ -64,9 +65,6 @@ export default function EarlyAccessSignup(props: Props) {
 				);
 				emailInputRef.current?.reportValidity();
 				console.error("Error:", error);
-			})
-			.finally(() => {
-				setLoading(false);
 			});
 	};
 
