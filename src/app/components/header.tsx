@@ -66,16 +66,10 @@ export default function Header() {
 						)}
 					>
 						<div className="flex flex-col gap-3 sm:flex-row sm:gap-7 bg-white sm:bg-transparent rounded-15 py-3 px-4 items-center">
-							<Link
-								href="#services"
-								className="tracking-wide w-full sm:w-auto text-center text-button px-6 py-2 text-primary font-semibold"
-							>
+							<Link href="#services" className="btn-text">
 								Services
 							</Link>
-							<Link
-								href="#calendar"
-								className="tracking-wide w-full sm:w-auto text-center text-button font-semibold text-primary px-6 py-2 rounded-15 bg-primary-10 border-4 border-solid border-primary"
-							>
+							<Link href="#calendar" className="btn-outline">
 								Contact Us
 							</Link>
 						</div>

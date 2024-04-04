@@ -71,8 +71,9 @@ export default function Demo() {
 			ref={container}
 		>
 			<div className="hidden touch:flex items-center justify-center">
-				<div className="tracking-wide text-center text-button font-semibold text-primary px-6 py-2 rounded-15 bg-primary-10 border-4 border-solid border-primary">
+				<div className="btn-outline">
 					Watch Demo
+					<PlayIcon className="h-8 w-8 text-primary text-opacity-80 ml-1" />
 				</div>
 			</div>
 			<Image
@@ -90,8 +91,8 @@ export default function Demo() {
 				onMouseMove={imageMouseMoveAction}
 				onClick={() => setIsOpen(true)}
 			>
-				<div className="opacity-0 play-button absolute top-0 left-0 rounded-full aspect-square px-5 flex flex-col items-center justify-center bg-white backdrop-blur-lg bg-opacity-60 drop-shadow-2xl">
-					<PlayIcon className="h-14 w-14 text-dark text-opacity-80 ml-1" />
+				<div className="opacity-0 play-button absolute top-0 left-0 rounded-full aspect-square px-5 flex flex-col items-center justify-center bg-primary backdrop-blur-lg bg-opacity-60 drop-shadow-2xl">
+					<PlayIcon className="h-14 w-14 text-light text-opacity-80 ml-1" />
 				</div>
 			</div>
 			<Transition show={isOpen} as={Fragment}>

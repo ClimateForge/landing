@@ -20,9 +20,9 @@ import React from "react";
 
 export default function TitleBackground() {
 	return (
-		<div className="absolute top-0 left-0 right-0 min-h-1/2 -z-10">
-			<div className="absolute h-full aspect-square top-0 left-0 -translate-y-1/2 -translate-x-1/2 bg-accent bg-opacity-25 rounded-full blur-3xl" />
-			<div className="absolute h-full aspect-square top-0 right-0 translate-y-1/2 translate-x-1/2 bg-primary bg-opacity-25 rounded-full blur-3xl" />
+		<div className="absolute top-0 left-0 right-0 bottom-0 -z-10">
+			<div className="absolute h-1/2 aspect-square top-0 left-0 -translate-y-1/2 -translate-x-1/2 bg-accent bg-opacity-25 rounded-full blur-3xl" />
+			<div className="absolute h-1/2 aspect-square top-0 right-0 translate-y-1/2 translate-x-1/2 bg-primary bg-opacity-25 rounded-full blur-3xl" />
 		</div>
 	);
 }
