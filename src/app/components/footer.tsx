@@ -13,12 +13,12 @@ export default function Footer() {
 						<Image
 							src="/logo.png"
 							alt="DogLeads Logo"
-							width={60}
-							height={60}
+							width={50}
+							height={50}
 							priority
 						/>
-						<p className="text-dark font-bold text-small-heading leading-none">
-							DogLeads
+						<p className="text-dark font-bold text-small-heading leading-none pt-1 tracking-wide">
+							ClimateForge
 						</p>
 					</div>
 					<p className="text-body">

@@ -1,10 +1,10 @@
 "use client";
-import React, { Fragment, useState } from "react";
-import Image from "next/image";
-import { sans } from "../fonts";
+import { Menu } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
-import { Menu, Transition } from "@headlessui/react";
+import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
+import { sans } from "../fonts";
 
 function classNames(...classes: string[]) {
 	return classes.filter(Boolean).join(" ");
@@ -21,29 +21,29 @@ export default function Header() {
 		<header
 			className={`${sans.className} text-dark fixed top-0 left-0 right-0 z-50 flex justify-center pt-2 sm:pt-5`}
 		>
-			<div className="flex flex-0 sm:flex-1 mx-4 sm:max-w-4/5 bg-white backdrop-blur-lg bg-opacity-60 rounded-20 px-4 sm:px-7 py-1 border-white-50 border-4">
+			<div className="flex flex-0 sm:flex-1 mx-4 sm:max-w-4/5 bg-white/90 backdrop-blur-md rounded-20 px-4 sm:px-7 py-1 border-zinc-100 border-2 shadow-sm">
 				<nav className="flex flex-wrap flex-1 flex-col sm:flex-row sm:gap-4 items-center justify-between">
 					<div className="flex flex-row items-center gap-3 justify-between self-stretch z-10">
 						<Menu as="div" className="relative">
 							<Menu.Button
-								className="flex flex-row items-center gap-7 pointer-events-auto sm:pointer-events-none bg-white bg-opacity-90 px-4 py-2 rounded-15"
+								className="flex flex-row items-center gap-7 pointer-events-auto sm:pointer-events-none px-4 py-2 rounded-15"
 								onClick={menuAction}
 							>
 								<div className="flex flex-row items-center gap-3">
 									<Image
 										src="/logo.png"
 										alt="Vercel Logo"
-										width={50}
-										height={50}
+										width={40}
+										height={40}
 										priority
 									/>
 									<a
 										href="/"
 										className={classNames(
-											`pointer-events-none sm:pointer-events-auto text-heading font-black ${sans.className}`
+											`pointer-events-none sm:pointer-events-auto text-small-heading font-bold pt-1 ${sans.className} tracking-wide`
 										)}
 									>
-										DogLeads
+										ClimateForge
 									</a>
 								</div>
 								<ChevronDownIcon

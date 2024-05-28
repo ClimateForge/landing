@@ -4,8 +4,8 @@ import Header from "./components/header";
 import "./globals.css";
 
 export const metadata: Metadata = {
-	title: "DogLeads",
-	description: "AI generated leads for your business",
+	title: "ClimateForge",
+	description: "Qualified leads that turn into customers faster",
 };
 
 export default function RootLayout({

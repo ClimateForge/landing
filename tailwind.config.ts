@@ -9,8 +9,8 @@ const config: Config = {
 	theme: {
 		extend: {
 			colors: {
-				accent: "#00ADB4",
-				primary: "#00ADB4",
+				accent: "#5850EC",
+				primary: "#5850EC",
 				"white-50": "rgba(255, 255, 255, 0.5)",
 			},
 			textColor: {
@@ -21,10 +21,12 @@ const config: Config = {
 			backgroundColor: {
 				dark: "#1F2A37",
 				"dark-secondary": "#4B5563",
-				light: "#F9F3F1",
+				light: "#FFFDF0",
 			},
 			backgroundImage: {
-				"gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+				// "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+				"gradient-radial":
+					"radial-gradient(50% 50% at 50% 50%, #FFEF99 0%, #FFFDF0 100%)",
 				"gradient-conic":
 					"conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
 				"home-gradient":
