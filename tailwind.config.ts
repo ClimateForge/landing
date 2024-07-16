@@ -31,6 +31,8 @@ const config: Config = {
 					"conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
 				"home-gradient":
 					"radial-gradient(257.3% 141.42% at 0% 0%, #F9F3F1 0%, #F7EEDE 100%)",
+				"accent-gradient":
+					"linear-gradient(110.41deg, #4A89DB -2.4%, #39C77B 105.71%)",
 			},
 			fontSize: {
 				"extra-large-title": "5rem",
