@@ -46,5 +46,13 @@ body {
     hover:shadow-accent hover:shadow-sm shadow-none
     cursor-default;
 	}
+
+	h1, .h1{
+		@apply font-bold text-5xl sm:text-6xl ;
+    }
+    
+    h2, .h2 {
+		@apply font-bold text-[38px] sm:text-5xl;
+    }
 	
 }

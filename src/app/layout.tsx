@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Footer from "./components/footer";
 import Header from "./components/header";
-
+import { dmSans } from "./fonts";
 import "./globals.css";
+
 
 export const metadata: Metadata = {
 	title: "ClimateForge",
@@ -16,7 +17,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className="text-body">
+			<body className={`${dmSans.className} text-body`}>
 				<Header />
 					{children}
 				<Footer />

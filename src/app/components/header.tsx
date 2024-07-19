@@ -5,8 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from 'next/navigation'
 import { useState } from "react";
-import { dmSans } from "../fonts";
 import GradientButton from "./ui/gradient-button";
+
 function classNames(...classes: string[]) {
 	return classes.filter(Boolean).join(" ");
 }
@@ -22,7 +22,7 @@ export default function Header() {
 	};
 
 	return (
-		<header className={`${dmSans.className} fixed top-0 left-0 right-0 z-50 flex justify-center sm:shadow-sm`}>
+		<header className="fixed top-0 left-0 right-0 z-50 flex justify-center sm:shadow-sm">
 			<div className="flex flex-0 sm:flex-1 sm:max-w-full px-4 sm:px-6 sm:bg-[#f9f9fff6]">
 				<nav className="flex flex-wrap flex-1 flex-col sm:flex-row sm:gap-4 items-center justify-between">
 					<div className="flex flex-row items-center gap-3 justify-between self-stretch z-10">
