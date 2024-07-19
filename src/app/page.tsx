@@ -4,13 +4,11 @@ import Demo from "./components/demo";
 import Industries from "./components/industries";
 import Services from "./components/services";
 import TitleCard from "./components/title-card";
-import TitleBackground from "./title-background";
+//import TitleBackground from "./title-background";
 
 export default function Home() {
 	return (
 		<main className="flex min-h-screen flex-col gap-20 items-center py-12 overflow-hidden pt-32 sm:pt-40">
-			{/* Background Image */}
-			<TitleBackground />
 
 			{/* title card and CTA */}
 			<TitleCard />
