@@ -21,10 +21,8 @@ export default function Home() {
 			/>
 
 			{/* demo */}
-			<div className="-mt-10">
-				<Demo />
-			</div>
-
+			<Demo />
+			
 			{/* services */}
 			<div className="-mt-20">
 				<Services />
