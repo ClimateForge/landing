@@ -3,7 +3,7 @@ import Cta from "./components/cta";
 import Demo from "./components/demo";
 import Industries from "./components/industries";
 import Services from "./components/services";
-import TitleCard from "./components/title-card";
+import Title from "./components/title";
 //import TitleBackground from "./title-background";
 
 export default function Home() {
@@ -11,7 +11,11 @@ export default function Home() {
 		<main className="flex min-h-screen flex-col gap-20 items-center py-12 overflow-hidden pt-32 sm:pt-40">
 
 			{/* title card and CTA */}
-			<TitleCard />
+			<Title title={["Energy", "Efficiency", "in a wink!"]} 
+				description="Discover, Qualify and Deploy Energy Upgrades faster than ever before!" 
+				gradientIndex={1}
+				buttonText="Book a Demo"
+			/>
 
 			{/* demo */}
 			<div className="-mt-10">
