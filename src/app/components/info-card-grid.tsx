@@ -1,19 +1,19 @@
 import Image from "next/image";
 
-interface CardsData {
-    cardsData?: CardData[];
+interface InfoCardsData {
+    infoCardsData?: InfoCardData[];
 }
 
-type CardData = {
+type InfoCardData = {
     title?: string;
     description?: string;
     icon?: string;
 }
 
-export default function CardInfoGrid({cardsData}: CardsData) {
+export default function InfoCardGrid({infoCardsData}: InfoCardsData) {
     
     return (
-        cardsData ?
+        infoCardsData ?
             <section className="flex flex-col justify-center items-center">
                 <Image className="relative -z-10 top-[55px] left-[3px] w-[340px] h-auto sm:w-[380px]"
                     width={0}
@@ -29,7 +29,7 @@ export default function CardInfoGrid({cardsData}: CardsData) {
                     md:grid-cols-3
                     gap gap-y-12 sm:gap-y-16 gap-x-4">
                 
-                {cardsData.map((card : CardData, index: number) => (
+                {infoCardsData.map((card : InfoCardData, index: number) => (
                     <div key={index} className="relative pt-[75px] w-[340px] sm:w-[300px] md:w-[340px] lg:w-[380px] px-[26px] h-[250px] 
                         rounded-3xl bg-white shadow-md
                         group transition-all hover:z-10 duration-700 hover:scale-105 hover:shadow-lg">

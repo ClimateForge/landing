@@ -1,5 +1,5 @@
 import Calendar from "./components/Calendar";
-import CardInfoGrid from "./components/card-info-grid";
+import InfoCardGrid from "./components/info-card-grid";
 import Cta from "./components/cta";
 import Demo from "./components/demo";
 import Industries from "./components/industries";
@@ -10,7 +10,7 @@ import TitleBackground from "./title-background";
 
 export default function Home() {
 
-	const cardsData = [
+	const infoCardsData = [
         {
             title: "Discover Infinite Deals",
             description: "Choose your area and uncover untapped opportunities with our lead qualification tool. Target serious buyers and boost your sales efficiency.",
@@ -58,7 +58,7 @@ export default function Home() {
 			{/* demo */}
 			<Demo />
 			
-			<CardInfoGrid cardsData={cardsData}/>
+			<InfoCardGrid infoCardsData={infoCardsData}/>
 
 			{/* services */}
 			<div className="-mt-20">
