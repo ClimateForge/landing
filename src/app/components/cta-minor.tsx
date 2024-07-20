@@ -69,6 +69,7 @@ export default function CtaMinor() {
                             sizes="100vw"
                             width={500}
                             height={300}
+                            style={{ width: '100%' }}
                         />
                         <div className="absolute z-30 top-96 sm:top-[408px] w-[500px] sm:w-[628px]">
                             <Image className=""
