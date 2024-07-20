@@ -8,7 +8,7 @@ export default function CtaMinor() {
     const router = useRouter()
     
     return (
-        <section className="flex flex-col justify-center items-center w-full">
+        <section className="relative pb-[525px] sm:pb-[650px] flex flex-col justify-center items-center w-full">
             
             {/** Info Card */}
             <div className="relative max-w-4xl mt-12 sm:mt-24 p-[1px] text-gray-900 rounded-3xl bg-accent-gradient">
@@ -45,7 +45,7 @@ export default function CtaMinor() {
             </div>
 
             {/* Image Container */}
-            <div className="relative -z-10 -top-[240px] w-full rounded-[90px]">
+            <div className="absolute -z-10 top-[350px] w-full rounded-[90px]">
                 <Image className="absolute -top-[92px] z-20 right-32"
                     src={"/cta-minor/dots1.svg"}
                     alt="Dot SVG 1"
@@ -66,7 +66,7 @@ export default function CtaMinor() {
                             transform scale-[1.25] translate-x-16 -translate-y-20"
                             src={"/cta-minor/houses.png"}
                             alt="Houses"
-                            sizes="100vw"
+                            sizes="100vh"
                             width={500}
                             height={300}
                             style={{ width: '100%' }}
