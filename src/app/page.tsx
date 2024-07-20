@@ -7,7 +7,6 @@ import Services from "./components/services";
 import Title from "./components/title";
 import TitleBackground from "./title-background";
 import CtaMinor from "./components/cta-minor";
-import UspList from "./components/usp-list";
 //import TitleBackground from "./title-background";
 
 export default function Home() {
@@ -64,8 +63,6 @@ export default function Home() {
 
 			<CtaMinor />
 			
-            <UspList />
-
 			{/* services */}
 			<div className="-mt-20">
 				<Services />
