@@ -21,7 +21,7 @@ export default function Title({title, description, gradientIndex, buttonText}: t
 		>
 		
 		{title ? 
-			<h1 className="font-bold text-5xl sm:text-6xl mb-4">
+			<h1 className="mb-4">
 				{title.length === 1 ? <GradientText> {title[0]} </GradientText> : title[0]}
 				{title[gradientIndex] ? <GradientText> {title[gradientIndex]} </GradientText> : null}
 				{title[2] ? title[2] : null}
