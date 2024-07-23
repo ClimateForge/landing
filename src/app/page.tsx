@@ -8,7 +8,6 @@ import Title from "./components/title";
 import TitleBackground from "./title-background";
 import CtaMinor from "./components/cta-minor";
 import UspList from "./components/usp-list";
-//import TitleBackground from "./title-background";
 
 export default function Home() {
 
@@ -46,7 +45,7 @@ export default function Home() {
     ]
 
 	return (
-		<main className="flex min-h-screen flex-col gap-20 items-center py-12 overflow-hidden pt-32 sm:pt-40">
+		<main className="flex min-h-screen flex-col gap-20 items-center py-12 overflow-hidden pt-20 sm:pt-24 md:pt-32 lg:pt-40">
 			{/* Background Image */}
 			<TitleBackground />
 
