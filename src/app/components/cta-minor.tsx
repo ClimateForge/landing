@@ -16,14 +16,18 @@ export default function CtaMinor() {
                 <div className="flex relative flex-col justify-center items-center text-center 
                     bg-white rounded-3xl px-4 sm:px-12 max-h-[488px] py-8 min-h-[500px] ">
                     
-                    <h2 className="mb-10 relative inline-block leading-snug">
-                        Empowering{' '} 
-                        <span className="bg-clip-text text-transparent group bg-gradient-to-r from-blue-800 from-40% to-red-800 to-45% relative"> 
-                            American 
-                            <div className="absolute grid grid-cols-4 gap-x-[9px] sm:gap-x-3 left-[6px] top-2 sm:top-3 text-[12px] sm:text-[16px]">
-                                {Array.from({ length: 8 }).map((_, index) => (
-                                    <p key={index} className="text-white">★</p>
-                                ))}
+                    <h2 className="mb-10 relative leading-snug">
+                        Empowering{' '}
+                        <span className="relative bg-clip-text text-transparent 
+                            bg-gradient-to-r from-blue-800 from-40% to-red-800 to-45%"> 
+                            American
+                            <div className="absolute 
+                                tracking-[1px] sm:tracking-[1px] md:tracking-[2px] lg:tracking-[4px]
+                                left-[1px] sm:left-[1px] lg:left-[4px]
+                                top-[5px] sm:top-[6px] lg:top-[10px]">
+                                
+                                <p className="text-white leading-4 sm:leading-tight md:leading-snug lg:leading-normal">★ ★ ★ ★</p>
+                                <p className="text-white leading-4 sm:leading-tight md:leading-snug lg:leading-normal">★ ★ ★ ★</p>
                             </div>
                         </span>
                         {' '}Businesses to Sell More{' '}
@@ -110,7 +114,6 @@ export default function CtaMinor() {
                             <Image className="absolute top-[48px] opacity-25 transform scale-[1.21] sm:scale-[1.41]"
                                 src="/cta-minor/decoration.png"
                                 alt="CTA Decoration"
-                                sizes="100vh"
                                 width={900}
                                 height={516}
                             />

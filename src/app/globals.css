@@ -62,4 +62,12 @@ img {
 	h3, .h3 {
 		@apply font-semibold text-3xl sm:text-4xl md:text-5xl;
 	}
+	
+	h4, .h4 {
+		@apply font-bold text-lg sm:text-xl md:text-2xl;
+	}
+
+	p, .p {
+		@apply text-sm sm:text-base
+	}
 }

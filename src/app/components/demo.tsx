@@ -3,9 +3,9 @@
 export default function Demo() {
     
     return (
-		<section className="w-full min-w-[360px] max-w-[1200px]">
+		<section className="w-full min-w-[250px] max-w-[1200px]">
 			<div className="bg-neutral-900 rounded-3xl 
-				mx-[20px]"
+				mx-0 sm:mx-[20px]"
 			>
 				<div className="relative overflow-hidden pt-[56.25%] ">
 					

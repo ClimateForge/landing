@@ -11,11 +11,11 @@ export default function GradientButton({variant, onClick, additionalStyles, chil
         variant === "outline" ?
 
         <button onClick={onClick} 
-            className="h-11 rounded-lg px-[1px] whitespace-nowrap text-sm font-semibold
+            className="h-11 rounded-lg px-[0.5%] whitespace-nowrap text-sm font-semibold
                 bg-accent-gradient
                 group group-hover:[#4a89dbbf] group-hover:to-[#39c77bc9] hover:text-white" 
         >
-            <span className="relative py-[11px] w-full 
+            <span className="relative h-[96%] w-full 
                 flex justify-center items-center 
                 transition-all ease-in duration-75 
                 bg-[#F9F9FF] rounded-md group-hover:bg-opacity-0"
@@ -30,9 +30,9 @@ export default function GradientButton({variant, onClick, additionalStyles, chil
             className={`${additionalStyles ? additionalStyles : null} text-white
             bg-accent-gradient
             inline-flex h-11 px-6 items-center justify-center whitespace-nowrap rounded-lg text-sm font-medium
-            bg-[length:150%_100%] transition-all hover:transition-all  hover:bg-[90%_0]`}
+            bg-[length:150%_100%] transition-all hover:transition-all hover:bg-[90%_0]`}
         >
-                {children}
+            {children}
         </button>
     );
 }

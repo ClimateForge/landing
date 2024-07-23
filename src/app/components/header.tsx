@@ -84,7 +84,7 @@ export default function Header() {
 									Book a Demo
 								</GradientButton>
 
-								<GradientButton onClick={() => console.log("logging in")} variant="outline" additionalStyles={""}>
+								<GradientButton onClick={() => console.log("logging in")} variant="outline">
 									Log In
 								</GradientButton>
 							</div>

@@ -16,7 +16,7 @@ export default function UspList() {
             </h2>
             
             
-            <svg className="mt-6 sm:mt:10 md:mt-12 mb-8 sm:mb-14" width="324" height="2" viewBox="0 0 324 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg className="mt-6 sm:mt:10 md:mt-12 mb-8 sm:mb-14 w-[220px] h-[2px] sm:w-[324px] sm:h-[2px]" width="324" height="2" viewBox="0 0 324 2" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path opacity="0.4" d="M0.5 1H323.5" stroke="#01060F"/>
             </svg>
             
@@ -41,7 +41,7 @@ export default function UspList() {
                             />
                         </span>
                     </h3>
-                    <h4 className="my-5 sm:my-10 text-2xl font-bold">Faster time to market for renewable energy products</h4>
+                    <h4 className="my-5 sm:my-10">Faster time to market for renewable energy products</h4>
                     <p className="font-semibold">Companies using ClimateForge&apos;s solutions experience a 
                         <GradientText> 55% </GradientText>
                         faster time to deploy energy upgrades.
@@ -54,7 +54,7 @@ export default function UspList() {
                     src="/usp-list/conversion-optimized.png"
                     alt="Conversion Optimized PNG"
                     sizes="100vh"
-                    width={543}
+                    width={0}
                     height={0}
                 />
                 </div>
@@ -69,7 +69,7 @@ export default function UspList() {
                         src="/usp-list/real-energy-modeling.png"
                         alt="Energy Modeling PNG"
                         sizes="100vh"
-                        width={543}
+                        width={0}
                         height={0}
                     />
                 
@@ -90,7 +90,7 @@ export default function UspList() {
                             />
                         </span>
                     </h3>
-                    <h4 className="my-5 sm:my-10 text-2xl font-bold">Increase in renewable energy adoption</h4>
+                    <h4 className="my-5 sm:my-10">Increase in renewable energy adoption</h4>
                     <p className="font-semibold">ClimateForge&apos;s technology has led to a significant 
                         <GradientText> 75% </GradientText>
                         increase in renewable energy adoption.
@@ -118,7 +118,7 @@ export default function UspList() {
                         />
                     </span>
                 </h3>
-                <h4 className="my-5 sm:my-10 text-2xl font-bold">Reduction In Carbon Emissions</h4>
+                <h4 className="my-5 sm:my-10">Reduction In Carbon Emissions</h4>
                 <p className="font-semibold">Businesses using ClimateForge help to reduce carbon emissions by more than
                     <GradientText> 30%</GradientText>.
                 </p>
@@ -128,8 +128,8 @@ export default function UspList() {
                     src="/usp-list/impact-assessments.png"
                     alt="Impact Assessments PNG"
                     sizes="100vh"
-                    width={543}
-                    height={457}
+                    width={0}
+                    height={0}
                 />
             </div>
         </section>
