@@ -6,6 +6,7 @@ import Industries from "./components/industries";
 import Services from "./components/services";
 import Title from "./components/title";
 import TitleBackground from "./title-background";
+import CtaMinor from "./components/cta-minor";
 //import TitleBackground from "./title-background";
 
 export default function Home() {
@@ -60,6 +61,8 @@ export default function Home() {
 			
 			<InfoCardGrid infoCardsData={infoCardsData}/>
 
+			<CtaMinor />
+			
 			{/* services */}
 			<div className="-mt-20">
 				<Services />

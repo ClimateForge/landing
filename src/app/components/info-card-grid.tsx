@@ -35,7 +35,7 @@ export default function InfoCardGrid({infoCardsData}: InfoCardsData) {
                         group transition-all hover:z-10 duration-700 hover:scale-105 hover:shadow-lg">
                         
                         <div className="absolute -top-10 right-10 w-20 h-20 rounded-full
-                        bg-gradient-to-br from-[#4A89DB] via-[#028F79] to-[#39C77B]
+                        bg-accent-gradient
                         shadow-[0px_16px_24px_rgba(38,176,117,0.22)]
                         transition-all duration-700 
                         group-hover:transition-all group-hover:delay-100 group-hover:duration-700 

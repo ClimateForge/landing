@@ -13,11 +13,15 @@ body {
 	@apply bg-[--background] text-[--foreground];
 }
 
+img {
+	width: auto;
+	height: auto;
+}
+
 @layer utilities {
 	.text-balance {
 		text-wrap: balance;
 	}
-	
 }
 
 @layer components {
