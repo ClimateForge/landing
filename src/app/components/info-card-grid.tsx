@@ -31,7 +31,7 @@ export default function InfoCardGrid({infoCardsData}: InfoCardsData) {
                 </h2>
                 
                 <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3
-                    gap-y-12 sm:gap-y-12 gap-x-1 sm:gap-x-4">
+                    gap-y-12 sm:gap-y-12 lg:gap-y-16 gap-x-1 sm:gap-x-4">
                 
                 {infoCardsData.map((card : InfoCardData, index: number) => (
                     
