@@ -15,9 +15,9 @@ export default function CalItem() {
 		})();
 	}, []);
 	return (
-		<Cal
+		<Cal className="max-h-[550px] scroll"
 			calLink="dog-leads-test/15min"
-			style={{ width: "100%", height: "100%", overflow: "scroll" }}
+			style={{ width: "100%", height: "100%", overflowY: "scroll",  }}
 			config={{ layout: "month_view" }}
 		/>
 	);

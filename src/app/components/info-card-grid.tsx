@@ -38,7 +38,7 @@ export default function InfoCardGrid({infoCardsData}: InfoCardsData) {
                     <div key={index} className="relative rounded-3xl bg-white shadow-md
                         pt-[45px] sm:pt-[50px] md:pt-[60px] lg:pt-[70px] px-[16px] sm:px-[26px] pb-2 
                         min-w-[180px] sm:w-[300px] md:w-[320px] lg:w-[380px] 
-                        max-h-[280px] sm:h-[200px] md:h-[250px]
+                        min-h-[200px] max-h-[280px] sm:h-[200px] md:h-[250px]
                         group transition-all hover:z-10 duration-500 hover:scale-105 hover:shadow-lg">
                         
                         <div className="absolute -top-8 right-8 sm:-top-10 sm:right-10
