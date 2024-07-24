@@ -11,7 +11,7 @@ export default function TitleBackground() {
                 src={"/title-background/triangle-dots.svg"}
                 alt="triangle-dots-svg-decoration"
             />
-			<Image className="absolute top-24 right-4"
+			<Image className="absolute top-24 right-4 opacity-50"
                 width={0}
                 height={0} 
                 style={{ width: '150px', height: 'auto' }}

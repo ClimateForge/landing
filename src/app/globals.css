@@ -56,7 +56,18 @@ img {
     }
     
     h2, .h2 {
-		@apply font-bold text-[38px] sm:text-5xl;
+		@apply font-bold text-[32px] sm:text-[36px] md:text-[40px] lg:text-[48px];
     }
 	
+	h3, .h3 {
+		@apply font-semibold text-3xl sm:text-4xl md:text-5xl;
+	}
+	
+	h4, .h4 {
+		@apply font-bold text-lg sm:text-xl md:text-2xl;
+	}
+
+	p, .p {
+		@apply text-sm sm:text-base
+	}
 }
