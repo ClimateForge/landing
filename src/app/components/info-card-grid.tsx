@@ -47,13 +47,11 @@ export default function InfoCardGrid({infoCardsData}: InfoCardsData) {
                             shadow-[0px_16px_24px_rgba(38,176,117,0.22)]
                             transition-all duration-700
                             group-hover:transition-all group-hover:delay-100 group-hover:duration-700
-                            group-hover:bg-[length:150%_100%] group-hover:bg-[90%_0] group-hover:scale-110">
+                            bg-[length:100%_100%] group-hover:bg-[length:150%_100%] group-hover:scale-110">
                                 
                                 <Image className="absolute z-10 transition-all duration-700
-                                    top-[16px] left-[16px]
-                                    sm:top-[18px] sm:left-[18px]
-                                    md:top-[22px] md:left-[22px]
-                                    w-8 h-8 sm:w-9 sm:h-[34px] md:w-[34px] md:h-9"
+                                    top-[25%] left-[25%]
+                                    w-8 h-8 sm:w-[35px] sm:h-[35px] md:w-[40px] md:h-[40px]"
                                     src={`/card-icons/${card.icon}.svg`}
                                     alt="triangle-dots-svg-decoration"
                                     width={36}

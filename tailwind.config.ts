@@ -33,6 +33,10 @@ const config: Config = {
 					"radial-gradient(257.3% 141.42% at 0% 0%, #F9F3F1 0%, #F7EEDE 100%)",
 				"accent-gradient":
 					"linear-gradient(110.41deg, #4A89DB -2.4%, #39C77B 105.71%)",
+				"white-gradient": 
+					"linear-gradient(103.51deg, #EEF2F6 41%, #FFFFFF 45%, #EEF2F6 51%, #FFFFFF 61%, #EEF2F6 74.5%)",
+				"gradient-repeating": 
+					'repeating-linear-gradient(180deg, white 0%, #F9F9FF 25%, white 50%, #F9F9FF 75%, white 100%)',
 			},
 			fontSize: {
 				"extra-large-title": "5rem",

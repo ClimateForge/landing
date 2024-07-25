@@ -8,6 +8,7 @@ import Title from "./components/title";
 import TitleBackground from "./title-background";
 import CtaMinor from "./components/cta-minor";
 import UspList from "./components/usp-list";
+import PricingTiers from "./components/pricing-tiers";
 
 export default function Home() {
 
@@ -65,10 +66,7 @@ export default function Home() {
 
             <UspList />
 			
-			{/* services */}
-			<div className="-mt-20">
-				<Services />
-			</div>
+			<PricingTiers/>
 
 			{/* industries we serve */}
 			<Industries />
