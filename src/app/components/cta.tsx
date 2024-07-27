@@ -1,35 +1,66 @@
 "use client";
 
 import Image from "next/image";
-import React, { useRef, useState } from "react";
-import { display, sans } from "../fonts";
 import { useGSAP } from "@gsap/react";
 import { z } from "zod";
 import gsap from "gsap";
 import EarlyAccessSignup from "./early-access-signup";
+import GradientText from "./ui/gradient-text";
+import GradientButton from "./ui/gradient-button";
 
 function classNames(...classes: string[]) {
 	return classes.filter(Boolean).join(" ");
 }
 
 export default function Cta() {
+	
 	return (
-		<div className={`px-5 md:px-10 max-w-5xl w-full ${sans.className}`}>
-			<div className="px-12 py-20 rounded-30 flex flex-col items-center space-y-20 bg-gradient-to-b from-[#00ADB4] to-[#00CC77]">
-				<div className="space-y-2">
-					<h2
-						className={`text-light ${display.className} text-title leading-none text-center`}
-					>
-						Grow your business with DogLeads&rsquo; Comprehensive Services!
-					</h2>
-					<p className="mx-auto text-white text-body font-medium text-center max-w-lg">
-						Empowering contractors to connect with qualified homeowners,
-						delivering tailored upgrades and cutting costs and carbon footprints
-						through smart lead generation.
-					</p>
-				</div>
-				<EarlyAccessSignup lightBg />
+		<div className="flex justify-evenly flex-wrap items-center gap-y-8 w-full py-16 bg-gradient-radial">
+			
+			{/* Gif Container */}
+			<div className="hidden md:flex justify-center items-center 
+				h-[300px] lg:h-[400px] max-w-[300px] lg:max-w-[400px]  bg-[#D9D9D9] rounded-20">
+				
+				
+				
+				<Image className="h-full overflow-hidden w-[400px] object-cover rounded-15"
+					src={"/ready.gif"}
+					alt="Gif Here"
+					width={300}
+					height={0}
+				/>
+
+				
+					
 			</div>
+
+			{/* CTA Container */}
+			<div className="flex flex-col justify-start items-center text-center sm:text-left sm:items-start gap-y-12 max-w-[300px] sm:max-w-[400px] lg:max-w-[543px]">
+				
+				<div className="leading-none">
+					<h2 className={"text-light font-bold"}>
+						Ready To
+					</h2>
+					<h2 className="font-bold">
+						<GradientText>
+							Get Started?
+						</GradientText>
+					</h2>
+				</div>
+
+				<p className="mx-auto text-light font-light">
+					Your Mom is going to be proud of you making more money and saving the planet!
+				</p>
+
+				<div className="flex gap-x-4">
+					<GradientButton width={154}>
+						Start For Free
+					</GradientButton>
+					
+					<GradientButton variant="outline" width={154}>Contact Us</GradientButton>
+				</div>
+			</div>
+			
 		</div>
 	);
 }

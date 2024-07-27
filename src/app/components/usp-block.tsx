@@ -6,7 +6,7 @@ export default function UspBlock({heading, description, imageSrc, imageAlt, imag
     
     return (
         <div className="flex justify-between text-center sm:text-left 
-        mx-0 sm:mx-10 md:mx-20 mb-10 md:mb-16 md:gap-12">
+        mx-0 sm:mx-10 md:mx-20 md:gap-12">
 
         {imageLeft ? 
             <Image className="hidden sm:block h-auto w-[543px] min-w-[320px]"

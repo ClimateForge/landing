@@ -43,7 +43,7 @@ export default function CtaMinor() {
                     <p className="text-base sm:text-xl max-w-[604px] pb-10 text-[#64607D]">
                         Deploy Solar, HVAC, and energy storage systems and make real money faster.
                     </p>
-                    <GradientButton onClick={() => router.push('#calendar')}>
+                    <GradientButton onClick={() => router.push('#calendar')} width={154}>
                         Book a Demo
                     </GradientButton>
                 </div>

@@ -22,7 +22,7 @@ export default function UspList() {
             <svg className="mt-6 sm:mt:10 md:mt-12 mb-8 sm:mb-14 w-[220px] h-[2px] sm:w-[324px] sm:h-[2px]" width="324" height="2" viewBox="0 0 324 2" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path opacity="0.4" d="M0.5 1H323.5" stroke="#01060F"/>
             </svg>
-
+            <div className="flex flex-col gap-y-4 justify-center items-center">
             {/* Block 1 - Conversion Optimized */}
             <UspBlock 
                 heading="Faster time to market for renewable energy products"
@@ -91,6 +91,7 @@ export default function UspList() {
                     </span>
                 </h3>
             </UspBlock>
+            </div>
         </section>
     );
 }

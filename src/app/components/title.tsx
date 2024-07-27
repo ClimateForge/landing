@@ -32,7 +32,7 @@ export default function Title({title, description, gradientIndex, buttonText}: t
 			{description}
 		</p>
 
-		<GradientButton onClick={() => router.push('#calendar')}>
+		<GradientButton onClick={() => router.push('#calendar')} width={154}>
 			{buttonText}
 		</GradientButton>
 	</section>

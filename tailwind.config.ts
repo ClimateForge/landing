@@ -26,7 +26,7 @@ const config: Config = {
 			backgroundImage: {
 				// "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
 				"gradient-radial":
-					"radial-gradient(50% 50% at 50% 50%, #FFEF99 0%, #FFFDF0 100%)",
+					"radial-gradient(50% 50% at 50% 50%, #011F29 0%, #000711 100%)",
 				"gradient-conic":
 					"conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
 				"home-gradient":
