@@ -16,11 +16,12 @@ const ClientCard = ({imageSrc, imageWidth, imageHeight, children}: ClientCardPro
             fgStyle={"flex flex-col justify-center items-center px-6"}
             bgStyle={"mx-5"}>
             {!imageSrc ? children :
-                <Image 
+                <Image className="h-auto"
                     src={imageSrc}
                     alt="Block 2 title accent SVG"
                     width={imageWidth}
                     height={imageHeight} 
+                    sizes="100vh"
                 />
             }
         </GradientBorderCard>
@@ -46,16 +47,19 @@ const ClientCards = () => {
             {/* LG Energy Solutions */}
             <ClientCard>
                 <div className="flex flex-col justify-center items-center">
-                    <Image 
+                    <Image className="h-[64px]"
                         src={"/client-list/LG-logo.png"}
                         alt="Block 2 title accent SVG"
                         width={64}
-                        height={70}/>
-                    <Image
+                        height={0}
+                        
+                        />
+                    <Image className="h-auto"
                         src={"/client-list/LG-text.png"}
                         alt="Block 2 title accent SVG"
                         width={180}
-                        height={27}/>
+                        height={27}
+                        sizes="100vh"/>
                 </div>
             </ClientCard>
 
@@ -105,7 +109,8 @@ export default function ClientList() {
             </h2>
             
             {/* Client Card Carousel */}
-            <div className="overflow-hidden whitespace-nowrap ">
+            <div className="flex whitespace-nowrap ">
+                <ClientCards/>
                 <ClientCards/>
                 <ClientCards/>
             </div>

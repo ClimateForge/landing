@@ -72,19 +72,19 @@ export default function Header() {
 							
 							<div className="flex gap-6 sm:gap-4 md:gap-6">
 								<Link href="/about" className="">
-									<p className="font-semibold text-nowrap">About Us</p>
+									<p className="font-semibold text-sm md:text-base text-nowrap">About Us</p>
 								</Link>
 								<Link href="/career">
-									<p className="font-semibold">Career</p>
+									<p className="font-semibold text-sm md:text-base">Career</p>
 								</Link>
 							</div>
 
 							<div className="flex gap-6 sm:gap-4 md:gap-6">
-								<GradientButton onClick={() => router.push('#calendar')}>
+								<GradientButton onClick={() => router.push('#calendar')} width={154}>
 									Book a Demo
 								</GradientButton>
 
-								<GradientButton onClick={() => console.log("logging in")} variant="outline">
+								<GradientButton onClick={() => console.log("logging in")} variant="outline" width={90}>
 									Log In
 								</GradientButton>
 							</div>

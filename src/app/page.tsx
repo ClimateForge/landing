@@ -47,7 +47,7 @@ export default function Home() {
     ]
 
 	return (
-		<main className="flex min-h-screen flex-col gap-20 items-center py-12 overflow-hidden pt-20 sm:pt-24 md:pt-32 lg:pt-40">
+		<main className="flex min-h-screen flex-col gap-20 items-center overflow-hidden pt-20 sm:pt-24 md:pt-32 lg:pt-36">
 			{/* Background Image */}
 			<TitleBackground />
 
@@ -71,7 +71,7 @@ export default function Home() {
 
 			<ClientList/>
 
-		
+            <Cta/>
 
 			{/* Meet with founder */}
 			<Calendar />
