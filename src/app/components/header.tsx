@@ -23,13 +23,13 @@ export default function Header() {
 
 	return (
 		<header className="fixed top-0 left-0 right-0 z-50 flex">
-			<div className="flex flex-0 sm:flex-1 sm:max-w-full sm:px-4 md:px-6 sm:bg-[#f9f9ffe8]">
+			<div className="flex flex-0 sm:flex-1 w-full sm:px-4 md:px-6 bg-[#ffffff] ">
 				<nav className="flex flex-wrap flex-1 flex-col items-center justify-between sm:flex-row sm:gap-4">
 					
 					<Menu as="div" className="relative">
 						<Menu.Button
-							className={classNames(isMenuExpanded ? "shadow-none" : "shadow-sm sm:shadow-none", 
-								"flex flex-row items-center gap-7 pointer-events-auto sm:pointer-events-none bg-[#F9F9FF] sm:bg-transparent rounded-b-lg px-8 py-3 sm:py-0 sm:px-0"
+							className={classNames( 
+								"flex flex-row items-center gap-7 pointer-events-auto sm:pointer-events-none  sm:bg-transparent rounded-b-lg px-8 py-3 sm:py-0 sm:px-0"
 							)}
 							onClick={menuAction}
 						>
@@ -67,7 +67,7 @@ export default function Header() {
 						)}
 					>
 						<div className="flex flex-col gap-8 sm:gap-4 md:gap-6 sm:flex-row 
-							bg-[--background] shadow-md sm:shadow-none 
+							bg-[#ffffff] shadow-md sm:shadow-none 
 							sm:bg-transparent rounded-lg pt-20 pb-8 sm:py-4 md:py-5 items-center">
 							
 							<div className="flex gap-6 sm:gap-4 md:gap-6">
