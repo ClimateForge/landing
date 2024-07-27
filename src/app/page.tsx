@@ -9,6 +9,7 @@ import TitleBackground from "./title-background";
 import CtaMinor from "./components/cta-minor";
 import UspList from "./components/usp-list";
 import PricingTiers from "./components/pricing-tiers";
+import ClientList from "./components/client-list";
 
 export default function Home() {
 
@@ -68,11 +69,9 @@ export default function Home() {
 			
 			<PricingTiers/>
 
-			{/* industries we serve */}
-			<Industries />
+			<ClientList/>
 
-			{/* CTA */}
-			<Cta />
+		
 
 			{/* Meet with founder */}
 			<Calendar />

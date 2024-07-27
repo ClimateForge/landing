@@ -18,6 +18,15 @@ img {
 	height: auto;
 }
 
+@keyframes slide {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-100%);
+	}
+}
+
 @layer utilities {
 	.text-balance {
 		text-wrap: balance;
@@ -49,6 +58,10 @@ img {
     bg-primary hover:bg-opacity-80 bg-opacity-100
     hover:shadow-accent hover:shadow-sm shadow-none
     cursor-default;
+	}
+
+	.slide {
+		@apply animate-[slide_30s_infinite_linear]
 	}
 
 	h1, .h1{
