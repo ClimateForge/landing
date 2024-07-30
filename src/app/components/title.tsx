@@ -2,14 +2,17 @@
 import { useRouter } from 'next/navigation'
 import GradientButton from "./ui/gradient-button";
 import GradientText from './ui/gradient-text';
+import { ReactNode } from 'react';
 export interface titleProps {
-	title?: string[]
-	description?: string
-	gradientIndex: number
-	buttonText?: string
+	title?: string[];
+	description?: string;
+	gradientIndex: number;
+	buttonText?: string;
+	route?: string;
+	children?: ReactNode;
 }
 
-export default function Title({title, description, gradientIndex, buttonText}: titleProps) {
+export default function Title({title, description, gradientIndex, buttonText, route, children}: titleProps) {
 
 	const router = useRouter()
 	
@@ -17,7 +20,7 @@ export default function Title({title, description, gradientIndex, buttonText}: t
 		<section className="flex flex-col 
 			justify-center items-center 
 			text-center relative
-			max-w-[628px] h-80"
+			max-w-[720px] h-80"
 		>
 		
 		{title ? 
@@ -31,10 +34,10 @@ export default function Title({title, description, gradientIndex, buttonText}: t
 		<p className="text-gray-500 mb-6 text-md font-semibold">
 			{description}
 		</p>
-
-		<GradientButton onClick={() => router.push('#calendar')} width={154}>
+		<GradientButton onClick={() => router.push(route ? route : '/')} width={154}>
 			{buttonText}
 		</GradientButton>
+		{children ? children : null}
 	</section>
 	);
 }

@@ -13,10 +13,12 @@ const ClientCard = ({imageSrc, imageWidth, imageHeight, children}: ClientCardPro
     
     return (
         <GradientBorderCard height={262} width={262} borderRadius={20} 
-            fgStyle={"flex flex-col justify-center items-center px-6"}
-            bgStyle={"mx-5"}>
+            fgStyle="flex flex-col justify-center items-center px-6"
+            bgStyle="mx-5 group/card hover:scale-110 hover:shadow-lg
+                transition-all duration-300 ease-in-out">
             {!imageSrc ? children :
-                <Image className="h-auto"
+                <Image className="h-auto grayscale group-hover/card:grayscale-0
+                    transition-all duration-300 ease-in-out"
                     src={imageSrc}
                     alt="Block 2 title accent SVG"
                     width={imageWidth}
@@ -31,28 +33,29 @@ const ClientCard = ({imageSrc, imageWidth, imageHeight, children}: ClientCardPro
 const ClientCards = () => {
     
     return (
-        <div className="inline-flex slide">
+        <div className="inline-flex slide group-hover:pause">
             {/* Sunpower */}
             <ClientCard 
-                imageSrc={"/client-list/sunpower.png"} 
+                imageSrc={"/client-list/sunpower_logo.svg"} 
                 imageWidth={200} 
-                imageHeight={27}/>
+                imageHeight={0}/>
 
             {/* Palmetto */}
             <ClientCard 
-                imageSrc={"/client-list/palmetto.png"} 
+                imageSrc={"/client-list/palmetto-logo.png"} 
                 imageWidth={200} 
                 imageHeight={27}/>
 
             {/* LG Energy Solutions */}
             <ClientCard>
                 <div className="flex flex-col justify-center items-center">
-                    <Image className="h-[64px]"
-                        src={"/client-list/LG-logo.png"}
+                    <Image className="h-[64px] grayscale group-hover/card:grayscale-0 
+                        transition-all duration-300 ease-in-out"
+                        src={"/client-list/lg.png"}
                         alt="Block 2 title accent SVG"
                         width={64}
                         height={0}
-                        
+                        sizes="100vh"
                         />
                     <Image className="h-auto"
                         src={"/client-list/LG-text.png"}
@@ -65,14 +68,14 @@ const ClientCards = () => {
 
             {/* Goodman */}
             <ClientCard 
-                imageSrc={"/client-list/goodman.png"} 
+                imageSrc={"/client-list/goodman-logo.png"} 
                 imageWidth={200} 
                 imageHeight={27}
             />
 
             {/* Sunrun */}
             <ClientCard 
-                imageSrc={"/client-list/sunrun.png"} 
+                imageSrc={"/client-list/sunrun-logo.png"} 
                 imageWidth={200} 
                 imageHeight={27}
             />
@@ -82,12 +85,12 @@ const ClientCards = () => {
 
 export default function ClientList() {
     return (
-        <section className="text-center w-full">
+        <section className="text-center w-full relative">
             
             {/* Client List Title */}
             <h2 className="mb-8">Our 
             
-                <div className="inline-flex  justify-center"> 
+                <div className="inline-flex justify-center "> 
                     <span className=" relative ">&nbsp;clients&nbsp;
                         <Image className="absolute -z-10 transform scale-110
                             top-[3px] right-[0px]"
@@ -107,12 +110,17 @@ export default function ClientList() {
                 </div>
                 work for
             </h2>
-            
+            <div className="relative after:z-10 after:bg-gradient-to-r from-transparent to-[#F9F9FF] 
+                after:absolute after:top-0 after:right-0 after:w-[100px] after:h-full">
             {/* Client Card Carousel */}
-            <div className="flex whitespace-nowrap ">
+            <div className="flex whitespace-nowrap group hover:pause
+                before:z-10 before:bg-gradient-to-r from-[#F9F9FF] to-transparent 
+                before:absolute before:top-0 before:left-0 before:w-[100px] before:h-full 
+                ">
                 <ClientCards/>
                 <ClientCards/>
                 <ClientCards/>
+            </div>
             </div>
             
         </section>
