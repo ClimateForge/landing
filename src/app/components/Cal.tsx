@@ -8,7 +8,7 @@ export default function CalItem() {
 			const cal = await getCalApi();
 			cal("ui", {
 				theme: "light",
-				styles: { branding: { brandColor: "#5850EC" } },
+				"styles": { branding: { brandColor: "#5850EC" } },
 				hideEventTypeDetails: false,
 				layout: "month_view",
 			});

@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import GradientText from './ui/gradient-text';
 import GradientButton from './ui/gradient-button';
+import GradientBorderBox from './ui/gradient-border-box';
 
 interface PricingCardProps {
     name: string;
@@ -15,9 +16,9 @@ function PricingCard (props: PricingCardProps) {
     const {name, price, perks, buttonVariant, disabled} = {...props}
 
     return (
-        <div className="relative rounded-3xl bg-white shadow-lg gap-y-4 py-14
+        <div className="relative rounded-3xl bg-white shadow-lg gap-4 py-12
             transition-all hover:z-10 duration-500 hover:scale-105 hover:shadow-xl
-            w-[300px] h-[400px] flex flex-col justify-between items-center">
+            w-[300px] h-[400px] flex flex-col justify-evenly items-center">
             
             <div className="absolute -top-8 right-8 w-16 h-16
                 bg-accent-gradient rounded-full
@@ -53,16 +54,21 @@ function PricingCard (props: PricingCardProps) {
                 }
             </div>
             
+            <h4 className=''>
+                <GradientText>{name}</GradientText>
                 
+                </h4>
             
 
             {price ? 
+                
                 <h3 className='font-bold text-4xl'>
                     {`$${price}/mo`}
                     
                 </h3> : 
                 
-                <h3 className='font-bold text-4xl'>TBD</h3>}
+                <h3 className='font-bold text-4xl'>TBD</h3>
+            }
 
             {perks && perks?.length > 1 ?
                 <ul>
@@ -80,7 +86,7 @@ function PricingCard (props: PricingCardProps) {
             }
             
             <GradientButton variant={buttonVariant} disabled={disabled} width={154}>
-                {name ? name : ""}
+                Order Now
             </GradientButton>
             </div>
     )
@@ -90,10 +96,10 @@ export default function PricingTiers() {
     
     return (
         <section className="relative flex flex-col justify-center items-center w-full gap-y-4 mb-0 sm:mb-10">
-    
-            <h2 className='font-bold mb-8 sm:mb-12'>
+            <GradientBorderBox className=" pt-20 pb-40">
+            <h2 className='font-bold mb-8 sm:mb-20 leading-none z-10'>
                 
-                    Tiers
+                Tiers
                 
             </h2>
 
@@ -127,6 +133,7 @@ export default function PricingTiers() {
                     disabled={true}
                 />
             </div>
+            </GradientBorderBox>
         </section>
     );
 }

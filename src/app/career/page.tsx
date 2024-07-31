@@ -1,3 +1,4 @@
+import Cta from "../components/cta";
 import Title from "../components/title";
 import TitleBackground from '../title-background';
 
@@ -12,8 +13,13 @@ export default function Career() {
 			<Title title={["Fix the planet and make an", "impact in the world!"]} 
                 description={"We are here to solve the biggest climate challenges of our time"} 
                 gradientIndex={1}
-                buttonText={"Learn More"}/>
+                buttonText={"Learn More"}
+                route="about"/>
 
+            <Cta title={["Apply To", "Get Started?"]} gifSrc="/career.gif"
+                description="Didn't find a position that matches your qualifications? Drop us a line!"
+                primaryButton={{text: "Contact Us!", route: "/"}}
+            />
 		</main>
     );
 }

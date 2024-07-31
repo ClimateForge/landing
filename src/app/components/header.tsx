@@ -80,7 +80,7 @@ export default function Header() {
 							</div>
 
 							<div className="flex gap-6 sm:gap-4 md:gap-6">
-								<GradientButton onClick={() => router.push('#calendar')} width={154}>
+								<GradientButton onClick={() => router.push('/#calendar')} width={154}>
 									Book a Demo
 								</GradientButton>
 

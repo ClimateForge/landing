@@ -41,6 +41,7 @@ export default function UspBlock({heading, description, imageSrc, imageAlt, imag
                         sizes="100vh"
                         width={0}
                         height={0}
+                        loading="lazy"
                     />
                 </div> : null
             }

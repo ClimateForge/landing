@@ -4,7 +4,7 @@ import React from "react";
 export default function TitleBackground() {
 	return (
 		<div className="absolute top-0 left-0 right-0 bottom-0 -z-10">
-			<Image className="absolute top-80 left-4"
+			<Image className="absolute top-96 left-4"
                 width={0}
                 height={0} 
                 style={{ width: '200px', height: 'auto' }}

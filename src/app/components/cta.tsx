@@ -7,57 +7,80 @@ import gsap from "gsap";
 import EarlyAccessSignup from "./early-access-signup";
 import GradientText from "./ui/gradient-text";
 import GradientButton from "./ui/gradient-button";
+import { useRouter } from 'next/navigation'
 
 function classNames(...classes: string[]) {
 	return classes.filter(Boolean).join(" ");
 }
 
-export default function Cta() {
+type CTAProps = {
+	gifSrc: string;
+	title: string[];
+	description: string;
+	primaryButton: GradientButtonProps
+	secondaryButton?: GradientButtonProps
+}
+type GradientButtonProps = { text: string, route: string; }
+export default function Cta({
+	gifSrc, title, description, primaryButton, secondaryButton
+}: CTAProps) {
 	
+	const router = useRouter()
+
 	return (
 		<div className="flex justify-evenly flex-wrap items-center gap-y-8 w-full py-16 bg-gradient-radial">
 			
-			{/* Gif Container */}
+			{/* CTA Gif Container */}
 			<div className="hidden md:flex justify-center items-center 
 				h-[300px] lg:h-[400px] max-w-[300px] lg:max-w-[400px]  bg-[#D9D9D9] rounded-20">
-				
-				
-				
+
 				<Image className="h-full overflow-hidden w-[400px] object-cover rounded-15"
-					src={"/ready.gif"}
+					src={gifSrc}
 					alt="Gif Here"
 					width={300}
 					height={0}
-				/>
-
-				
-					
+					loading="lazy"
+				/>	
 			</div>
 
-			{/* CTA Container */}
+			{/* CTA Title/Description/Buttons Container */}
 			<div className="flex flex-col justify-start items-center text-center sm:text-left sm:items-start gap-y-12 max-w-[300px] sm:max-w-[400px] lg:max-w-[543px]">
 				
+				{/* Title */}
 				<div className="leading-none">
-					<h2 className={"text-light font-bold"}>
-						Ready To
-					</h2>
-					<h2 className="font-bold">
-						<GradientText>
-							Get Started?
-						</GradientText>
-					</h2>
+					
+					{title.map((line, index) => 
+						index === 0 ? 
+						<h2 key={0} className={"text-light font-bold"}>
+							{line}
+						</h2>
+						:
+						<h2 key={index} className="font-bold">
+							<GradientText>
+								{line}
+							</GradientText>
+						</h2>
+					)}
+					
 				</div>
-
+				
+				{/* Description */}
 				<p className="mx-auto text-light font-light">
-					Your Mom is going to be proud of you making more money and saving the planet!
+					{description}
 				</p>
 
+				{/* Buttons Container */}
 				<div className="flex gap-x-4">
-					<GradientButton width={154}>
-						Start For Free
+					<GradientButton width={154} onClick={() => router.push(primaryButton.route)}>
+						{primaryButton.text}
 					</GradientButton>
 					
-					<GradientButton variant="outline" width={154}>Contact Us</GradientButton>
+					{secondaryButton ? 
+						<GradientButton variant="outline" width={154} onClick={() => router.push(secondaryButton.route)}>
+							{secondaryButton.text}
+						</GradientButton>
+					: null
+					}
 				</div>
 			</div>
 			

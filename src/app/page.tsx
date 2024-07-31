@@ -56,6 +56,7 @@ export default function Home() {
 				description="Discover, Qualify and Deploy Energy Upgrades faster than ever before!" 
 				gradientIndex={1}
 				buttonText="Book a Demo"
+                route="#calendar"
 			/>
 
 			{/* demo */}
@@ -71,7 +72,11 @@ export default function Home() {
 
 			<ClientList/>
 
-            <Cta/>
+            <Cta title={["Ready To", "Get Started?"]} gifSrc="/solar.gif"
+                description="Your Mom is going to be proud of you making more money and saving the planet!"
+                primaryButton={{text: "Start For Free", route: "/#calendar"}}
+                secondaryButton={{text: "Contact Us", route: "/"}}
+            />
 
 			{/* Meet with founder */}
 			<Calendar />
