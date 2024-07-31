@@ -62,7 +62,7 @@ export default function Home() {
 			{/* demo */}
 			<Demo />
 			
-			<InfoCardGrid infoCardsData={infoCardsData}/>
+			<InfoCardGrid title={["Why", "ClimateForge"]} accent="underline" accentIndex={1} infoCardsData={infoCardsData}/>
 
 			<CtaMinor />
 
