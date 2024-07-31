@@ -48,7 +48,7 @@ export default function BarGraphCard({barGraphData}: Props) {
                 {/* Graph */}
                 <div className='flex justify-center items-center relative pt-6 mb-8 '>
                     
-                    <div className='w-[473px] z-10 h-[120px] sm:h-[155px] '>
+                    <div className='w-[473px] z-10 h-[155px] '>
                         <div className='flex flex-col justify-between w-full h-full'>
                             {barData.map((bar, index) => (
                                 <div key={index}>

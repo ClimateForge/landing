@@ -1,8 +1,9 @@
+"use client";
 import Image from 'next/image';
 import GradientText from './ui/gradient-text';
 import GradientButton from './ui/gradient-button';
 import GradientBorderBox from './ui/gradient-border-box';
-
+import { useRouter } from 'next/navigation';
 interface PricingCardProps {
     name: string;
     price?: number;
@@ -14,9 +15,9 @@ interface PricingCardProps {
 function PricingCard (props: PricingCardProps) {
     
     const {name, price, perks, buttonVariant, disabled} = {...props}
-
+    const router = useRouter();
     return (
-        <div className="relative rounded-3xl bg-white shadow-lg gap-4 py-12
+        <div className="relative rounded-3xl bg-white shadow-md gap-4 py-12
             transition-all hover:z-10 duration-500 hover:scale-105 hover:shadow-xl
             w-[300px] h-[400px] flex flex-col justify-evenly items-center">
             
@@ -54,24 +55,18 @@ function PricingCard (props: PricingCardProps) {
                 }
             </div>
             
-            <h4 className=''>
+            <h4 className='text-2xl'>
                 <GradientText>{name}</GradientText>
                 
                 </h4>
             
 
-            {price ? 
-                
-                <h3 className='font-bold text-4xl'>
-                    {`$${price}/mo`}
-                    
-                </h3> : 
-                
-                <h3 className='font-bold text-4xl'>TBD</h3>
+            {price ? <h3 className='font-bold text-4xl'>{`$${price}/mo`}</h3> 
+                : <h3 className='font-bold text-4xl'>TBD</h3>
             }
 
             {perks && perks?.length > 1 ?
-                <ul>
+                <ul className='h-full mx-6'>
                     {perks?.map((perk, i) =>(
                         <li key={i}>
                             <GradientText className='font-bold text-[#39C77B]'>&#x2713;</GradientText> {perk}
@@ -79,15 +74,15 @@ function PricingCard (props: PricingCardProps) {
                     ))}
                 </ul>
             : perks ?
-                <p className='text-center px-6'>
+                <ul className='text-center mx-6 h-full' >
                     {perks[0]}
-                </p>
+                </ul>
             : null
             }
             
-            <GradientButton variant={buttonVariant} disabled={disabled} width={154}>
-                Order Now
-            </GradientButton>
+                <GradientButton onClick={() => router.push('/#calendar')} variant={buttonVariant} disabled={disabled} width={154}>
+                    Order Now
+                </GradientButton>
             </div>
     )
 }
