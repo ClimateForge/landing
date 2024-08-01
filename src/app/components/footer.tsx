@@ -16,11 +16,11 @@ export default function Footer() {
 					<div>
 						<Link href="/" className="flex">
 						
-							<Image className="min-w-[64px] h-auto"
+							<Image className="max-w-[49px] h-auto"
 								src="/logo.png"
 								alt="DogLeads Logo"
-								width={50}
-								height={50}
+								width={49}
+								height={49}
 								priority
 							/>
 							<p className="hidden md:block pointer-events-none sm:pointer-events-auto text-lg sm:text-xl md:text-2xl self-end">

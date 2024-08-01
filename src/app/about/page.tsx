@@ -1,9 +1,16 @@
 import Cta from "../components/cta";
+import Deploy from "../components/deploy";
 import InfoCardGrid from "../components/info-card-grid";
 import MarketInsights from "../components/market-insights";
 import Title from "../components/title";
 import UseCases from "../components/use-cases";
 import TitleBackground from "../title-background";
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: "About Us - ClimateForge",
+    description: "We help contractors make tons of money and slash CO2 emissions in seconds.",
+};
 
 export default function About() {
     const infoCardsData = [
@@ -25,23 +32,27 @@ export default function About() {
     ]
     return (
         <main className="flex min-h-screen flex-col gap-20 items-center py-12 overflow-hidden pt-32 sm:pt-40">
+            
             {/* Background Image */}
-			<TitleBackground />
+			<TitleBackground gradient/>
 
 			{/* title card and CTA */}
 			<Title title={["Empower", "Sustainable", "Transformation"]} 
-            description="We help contractors make tons of money and slashing CO2 emissions in seconds (seriously)."
+            description="We help contractors make tons of money and slash CO2 emissions in seconds (seriously)."
             gradientIndex={1}
             buttonText="Join Us"
             route="career"/>
 
             <MarketInsights/>
 
-            <InfoCardGrid title={["Our core", "values"]} accent="circle" accentIndex={1} infoCardsData={infoCardsData}/>
+            <InfoCardGrid title={["Our core", "values"]} accentVariant="circle" accentIndex={1} infoCardsData={infoCardsData}/>
 
             <UseCases/>
+
+            <Deploy />
             
-            <Cta title={["Ready To", "Do Something", "That Matters?"]} gifSrc="/about.gif"
+            <Cta title={["Ready To", "Do Something", "That Matters?"]} 
+                gifSrc="/about.gif" gifRounded
                 description="At ClimateForge we're building the best tools to help American contractors and installers to decarbonize the country and expand globally!"
                 primaryButton={{text: "Join Us", route: "/career"}}
             />

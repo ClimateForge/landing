@@ -1,3 +1,4 @@
+"use client";
 interface GradientTextProps {
     className?: string;
     children?: string | number | string[];

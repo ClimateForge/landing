@@ -18,7 +18,7 @@ const ClientCard = ({imageSrc, imageWidth, imageHeight, children}: ClientCardPro
                 transition-all duration-300 ease-in-out">
             {!imageSrc ? children :
                 <Image className="h-auto grayscale group-hover/card:grayscale-0
-                    transition-all duration-300 ease-in-out"
+                    transition-all duration-300 ease-in-out" draggable="false"
                     src={imageSrc}
                     alt="Block 2 title accent SVG"
                     width={imageWidth}
@@ -42,7 +42,7 @@ const ClientCards = () => {
 
             {/* Palmetto */}
             <ClientCard 
-                imageSrc={"/client-list/palmetto-logo.png"} 
+                imageSrc={"/client-list/palmetto-logo.webp"} 
                 imageWidth={200} 
                 imageHeight={27}/>
 
@@ -50,15 +50,15 @@ const ClientCards = () => {
             <ClientCard>
                 <div className="flex flex-col justify-center items-center">
                     <Image className="h-[64px] grayscale group-hover/card:grayscale-0 
-                        transition-all duration-300 ease-in-out"
-                        src={"/client-list/lg.png"}
+                        transition-all duration-300 ease-in-out" draggable="false"
+                        src={"/client-list/lg.webp"}
                         alt="Block 2 title accent SVG"
                         width={64}
                         height={0}
                         sizes="100vh"
                         />
-                    <Image className="h-auto"
-                        src={"/client-list/LG-text.png"}
+                    <Image className="h-auto" draggable="false"
+                        src={"/client-list/LG-text.webp"}
                         alt="Block 2 title accent SVG"
                         width={180}
                         height={27}
@@ -68,14 +68,14 @@ const ClientCards = () => {
 
             {/* Goodman */}
             <ClientCard 
-                imageSrc={"/client-list/goodman-logo.png"} 
+                imageSrc={"/client-list/goodman-logo.webp"} 
                 imageWidth={200} 
                 imageHeight={27}
             />
 
             {/* Sunrun */}
             <ClientCard 
-                imageSrc={"/client-list/sunrun-logo.png"} 
+                imageSrc={"/client-list/sunrun-logo.webp"} 
                 imageWidth={200} 
                 imageHeight={27}
             />

@@ -22,8 +22,9 @@ export default function Header() {
 	};
 
 	return (
-		<header className="fixed top-0 left-0 right-0 z-50 flex">
-			<div className="flex flex-0 sm:flex-1 w-full sm:px-4 md:px-6 bg-[#ffffff] ">
+		<header className="fixed top-0 left-0 right-0 z-50 flex gradient-border">
+			<div className="flex flex-0 sm:flex-1 w-full sm:px-4 md:px-6 
+				bg-[#ffffffc8] backdrop-blur-sm shadow-md">
 				<nav className="flex flex-wrap flex-1 flex-col items-center justify-between sm:flex-row sm:gap-4">
 					
 					<Menu as="div" className="relative">
@@ -35,14 +36,15 @@ export default function Header() {
 						>
 							
 							<Link href="/" className="flex flex-row items-center">
-								<Image className="w-[40px] sm:w-[48px] md:w-[64px] h-auto"
+								<Image className="w-[25%] h-auto pointer-events-none sm:pointer-events-auto"
 									src="/logo.png"
 									alt="ClimateForge Logo"
 									width={55}
 									height={55}
 									priority
 								/>
-								<p className="pointer-events-none sm:pointer-events-auto text-lg sm:text-xl md:text-2xl self-end">
+								<p className="pointer-events-none sm:pointer-events-auto 
+									text-lg sm:text-lg md:text-xl lg:text-2xl self-end">
 									ClimateForge
 								</p>
 							</Link>
@@ -63,12 +65,12 @@ export default function Header() {
 							isMenuExpanded
 								? "opacity-100 visible h-40"
 								: "opacity-0 invisible h-0",
-							"justify-end self-stretch sm:visible sm:opacity-100 sm:h-auto flex-col flex sm:flex-row gap-7 sm:gap-7 sm:items-center text-body"
+								"justify-end self-stretch sm:visible sm:opacity-100 sm:h-auto flex-col flex sm:flex-row gap-7 sm:gap-7 sm:items-center text-body"
 						)}
 					>
 						<div className="flex flex-col gap-8 sm:gap-4 md:gap-6 sm:flex-row 
-							bg-[#ffffff] shadow-md sm:shadow-none 
-							sm:bg-transparent rounded-lg pt-20 pb-8 sm:py-4 md:py-5 items-center">
+							shadow-md sm:shadow-none 
+							sm:bg-transparent rounded-lg pt-24 pb-8 sm:py-3 md:py-4 lg:py-5 items-center">
 							
 							<div className="flex gap-6 sm:gap-4 md:gap-6">
 								<Link href="/about" className="">
@@ -80,7 +82,7 @@ export default function Header() {
 							</div>
 
 							<div className="flex gap-6 sm:gap-4 md:gap-6">
-								<GradientButton onClick={() => router.push('/#calendar')} width={154}>
+								<GradientButton onClick={() => window.open('https://calendly.com/giovanni-climateforge-qttf', '_blank', 'noopener,noreferrer')} width={154}>
 									Book a Demo
 								</GradientButton>
 

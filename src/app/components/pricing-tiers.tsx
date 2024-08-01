@@ -91,7 +91,10 @@ export default function PricingTiers() {
     
     return (
         <section className="relative flex flex-col justify-center items-center w-full gap-y-4 mb-0 sm:mb-10">
-            <GradientBorderBox className=" pt-20 pb-40">
+            <GradientBorderBox className=" pt-20 pb-40" 
+                decorationsInside={[
+                    {src: "decorations/dots.svg", className: "-top-[128px] left-24"}
+                ]}>
             <h2 className='font-bold mb-8 sm:mb-20 leading-none z-10'>
                 
                 Tiers

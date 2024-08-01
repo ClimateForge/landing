@@ -13,6 +13,21 @@ body {
 	@apply bg-gradient-repeating text-[--foreground];
 }
 
+.gradient-border {
+	border-bottom: 5px solid transparent; /* Create space for gradient border */
+}
+
+.gradient-border::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 1px; /* Height of the gradient border */
+	background: linear-gradient(110.41deg, #4A89DB -2.4%, #39C77B 105.71%); /* Gradient colors */
+	z-index: 1; /* Ensure it appears above the background but below content */
+}
+
 img {
 	width: auto;
 	height: auto;

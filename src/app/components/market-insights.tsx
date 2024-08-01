@@ -2,6 +2,8 @@ import Image from 'next/image';
 import { Inter } from 'next/font/google';
 import BarGraphCard from './ui/bar-graph-card';
 import LineGraphCard from './ui/line-graph-card';
+import AccentTitle from './ui/accent-title';
+import GradientBorderBox from './ui/gradient-border-box';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -79,43 +81,27 @@ export default function MarketInsights() {
     return (
         <section className="relative flex flex-col justify-center items-center w-full max-w-[1440px] ">
             
-        {/* Gradient border container */}
-        <div className="p-[2px] rounded-[90px] relative overflow-clip bg-accent-gradient w-full">
+            <GradientBorderBox 
+                decorationsInside={[
+                    {src: "/decorations/dots.svg", className: "-bottom-[120px] -right-[158px] w-[363px]"}
+                ]}>
+                <AccentTitle 
+                    title={["Market", "Insights"]} 
+                    variant='underline' 
+                    accent={'/accents/accent2.svg'} 
+                    accentIndex={1} 
+                    className='mt-16 mb-8 text-center'
+                />
 
-        {/* Opaque container */}
-        <div className="relative flex flex-col items-center
-            bg-white-gradient rounded-[88px] overflow-clip pb-20 px-6">
-            <h2 className='mt-16 mb-8'>
-                Market
-                <span className="relative "> Insights
-                    <Image className="absolute z-10 top-[80%] left-[5%]"
-                        src={"/accents/accent2.svg"}
-                        alt="Block 2 title accent SVG"
-                        width={0}
-                        height={26}
-                        style={{ width: '380px', height: 'auto'}}
-                    />
-                </span>
-            </h2>
-
-            {/* Bar Graph Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-6 z-10">
-                {barGraphsData.map((graph, index) => 
-                    <BarGraphCard key={index} barGraphData={graph}/>
-                )}
-                <LineGraphCard lineGraphData={lineGraphData}/>
-            </div>
-            
-
-            {/* Container Decoration - SVG */}
-            <Image className="absolute z-0 bottom-0 -right-12"
-                src={"/cta-minor/dots3.svg"}
-                alt="Dot SVG 3"
-                width={363}
-                height={0} 
-            />
-        </div>
-        </div>
+                {/* Bar Graph Cards */}
+                <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 gap-6 z-10 mb-20">
+                    {barGraphsData.map((graph, index) => 
+                        <BarGraphCard key={index} barGraphData={graph}/>
+                    )}
+                    <LineGraphCard lineGraphData={lineGraphData}/>
+                </div>
+                
+            </GradientBorderBox>
         </section>
     );
 }
