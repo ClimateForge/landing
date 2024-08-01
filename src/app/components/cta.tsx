@@ -15,14 +15,16 @@ function classNames(...classes: string[]) {
 
 type CTAProps = {
 	gifSrc: string;
+	gifRounded?: boolean;
 	title: string[];
 	description: string;
 	primaryButton: GradientButtonProps
 	secondaryButton?: GradientButtonProps
 }
-type GradientButtonProps = { text: string, route: string; }
+type GradientButtonProps = { text: string, route: string, newTab?: boolean }
+
 export default function Cta({
-	gifSrc, title, description, primaryButton, secondaryButton
+	title, gifSrc, gifRounded, description, primaryButton, secondaryButton
 }: CTAProps) {
 	
 	const router = useRouter()
@@ -32,15 +34,18 @@ export default function Cta({
 			
 			{/* CTA Gif Container */}
 			<div className="hidden md:flex justify-center items-center 
-				h-[300px] lg:h-[400px] max-w-[300px] lg:max-w-[400px]  bg-[#D9D9D9] rounded-20">
+				h-[300px] lg:h-[400px] max-w-[300px] lg:max-w-[400px]"
+				style={{borderRadius: gifRounded ? '50%' : '20px'}}>
 
-				<Image className="h-full overflow-hidden w-[400px] object-cover rounded-15"
+				<Image className="h-full overflow-hidden object-cover "
+					style={{borderRadius: gifRounded ? '50%' : '20px'}}
 					src={gifSrc}
-					alt="Gif Here"
+					alt="GIF"
 					width={300}
 					height={0}
 					loading="lazy"
 				/>	
+				
 			</div>
 
 			{/* CTA Title/Description/Buttons Container */}
@@ -71,12 +76,17 @@ export default function Cta({
 
 				{/* Buttons Container */}
 				<div className="flex gap-x-4">
-					<GradientButton width={154} onClick={() => router.push(primaryButton.route)}>
+					<GradientButton width={154} onClick={primaryButton.newTab ? 
+						() => window.open(primaryButton.route, '_blank', 'noopener,noreferrer') : 
+						() => router.push(primaryButton.route ? primaryButton.route : '/')}>
 						{primaryButton.text}
 					</GradientButton>
 					
 					{secondaryButton ? 
-						<GradientButton variant="outline" width={154} onClick={() => router.push(secondaryButton.route)}>
+						<GradientButton variant="outline" width={154} 
+							onClick={secondaryButton.newTab ? 
+								() => window.open(secondaryButton.route, '_blank', 'noopener,noreferrer') : 
+								() => router.push(secondaryButton.route ? secondaryButton.route : '/')}>
 							{secondaryButton.text}
 						</GradientButton>
 					: null

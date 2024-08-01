@@ -1,3 +1,4 @@
+"use client";
 interface GradientButtonProps {
     variant?: string;
     width: number;
@@ -11,12 +12,16 @@ interface GradientButtonProps {
 
 }
 
-export default function GradientButton({variant, width, height, radius, bgColor, onClick, disabled, className, children}: GradientButtonProps) {
+export default function GradientButton(props: GradientButtonProps) {
+    
+    const {variant, width, height, radius, bgColor, onClick, disabled, className, children} = {...props}
+
     const buttonWidth = width ? width : 154;
     const outlineButtonWidth = width ? width : 90;
-    const buttonHeight = height ? height : 50;
+    const buttonHeight = height ? height : 49;
     const buttonRadius = radius ? radius : 9.5
     const bg = bgColor ? bgColor : 'transparent';
+    
     return (
         variant === "outline" ?
 

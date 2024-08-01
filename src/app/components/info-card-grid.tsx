@@ -4,8 +4,10 @@ import AccentTitle from "./ui/accent-title";
 
 interface InfoCardsData {
     title: string[];
-    accent?: string;
-    accentIndex: number;
+    accentVariant?: string;
+    accentSrc?: string;
+    accentY?: number;
+    accentIndex?: number;
     infoCardsData?: InfoCardData[];
 }
 
@@ -15,16 +17,23 @@ type InfoCardData = {
     icon?: string;
 }
 
-export default function InfoCardGrid({title, accent, accentIndex, infoCardsData}: InfoCardsData) {
+export default function InfoCardGrid({title, accentVariant, accentSrc, accentY, accentIndex, infoCardsData}: InfoCardsData) {
     
     return (
         infoCardsData ?
-            <section className="flex flex-col  items-center">
+            <section className="flex flex-col items-center">
                 
-                <AccentTitle title={title} accent={accent} accentIndex={accentIndex}/>
+                <AccentTitle 
+                    title={title} 
+                    variant={accentVariant} 
+                    accent={accentSrc}
+                    accentY={accentY}
+                    accentIndex={accentIndex} 
+                    className="text-center mb-16 sm:mb-32"
+                />
                 
-                <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3
-                    gap-y-12 sm:gap-y-12 lg:gap-y-16 gap-x-1 sm:gap-x-4">
+                <div className="flex flex-wrap justify-evenly items-stretch max-w-[1172px]
+                    gap-y-6 sm:gap-y-12 md:gap-y-14 lg:gap-y-16">
                 
                 {infoCardsData.map((card : InfoCardData, index: number) => (
                     

@@ -1,9 +1,6 @@
-import Calendar from "./components/Calendar";
 import InfoCardGrid from "./components/info-card-grid";
 import Cta from "./components/cta";
 import Demo from "./components/demo";
-import Industries from "./components/industries";
-import Services from "./components/services";
 import Title from "./components/title";
 import TitleBackground from "./title-background";
 import CtaMinor from "./components/cta-minor";
@@ -56,13 +53,14 @@ export default function Home() {
 				description="Discover, Qualify and Deploy Energy Upgrades faster than ever before!" 
 				gradientIndex={1}
 				buttonText="Book a Demo"
-                route="#calendar"
+                route='https://calendly.com/giovanni-climateforge-qttf'
+                newTab={true}
 			/>
 
 			{/* demo */}
 			<Demo />
 			
-			<InfoCardGrid title={["Why", "ClimateForge"]} accent="underline" accentIndex={1} infoCardsData={infoCardsData}/>
+			<InfoCardGrid title={["Why ClimateForge"]} accentVariant="underline" accentY={60} accentIndex={0} infoCardsData={infoCardsData}/>
 
 			<CtaMinor />
 
@@ -74,12 +72,9 @@ export default function Home() {
 
             <Cta title={["Ready To", "Get Started?"]} gifSrc="/solar.gif"
                 description="Your Mom is going to be proud of you making more money and saving the planet!"
-                primaryButton={{text: "Start For Free", route: "/#calendar"}}
+                primaryButton={{text: "Start For Free", route: "https://calendly.com/giovanni-climateforge-qttf", newTab: true }}
                 secondaryButton={{text: "Contact Us", route: "/"}}
             />
-
-			{/* Meet with founder */}
-			<Calendar />
 		</main>
 	);
 }

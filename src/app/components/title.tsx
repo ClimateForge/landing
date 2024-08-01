@@ -3,16 +3,30 @@ import { useRouter } from 'next/navigation'
 import GradientButton from "./ui/gradient-button";
 import GradientText from './ui/gradient-text';
 import { ReactNode } from 'react';
-export interface titleProps {
+interface BaseProps {
 	title?: string[];
 	description?: string;
 	gradientIndex: number;
 	buttonText?: string;
-	route?: string;
 	children?: ReactNode;
 }
 
-export default function Title({title, description, gradientIndex, buttonText, route, children}: titleProps) {
+// When newTab is true, route is required
+type TitlePropsWithNewTab = BaseProps & {
+	newTab: true;
+	route: string;
+};
+
+// When newTab is false or undefined, route is optional
+type TitlePropsWithoutNewTab = BaseProps & {
+	newTab?: false;
+	route?: string;
+};
+
+// Combine the two types using a union
+export type TitleProps = TitlePropsWithNewTab | TitlePropsWithoutNewTab;
+
+export default function Title({title, description, gradientIndex, buttonText, route, newTab = false, children}: TitleProps) {
 
 	const router = useRouter()
 	
@@ -34,7 +48,9 @@ export default function Title({title, description, gradientIndex, buttonText, ro
 		<p className="text-gray-500 mb-6 text-md font-semibold">
 			{description}
 		</p>
-		<GradientButton onClick={() => router.push(route ? route : '/')} width={154}>
+		<GradientButton width={154} onClick={newTab ? 
+			() => window.open(route, '_blank', 'noopener,noreferrer') : 
+			() => router.push(route ? route : '/')}>
 			{buttonText}
 		</GradientButton>
 		{children ? children : null}

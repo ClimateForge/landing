@@ -2,32 +2,45 @@ import Image from 'next/image';
 
 type titleProps = {
     title: string[];
+    variant?: string;
     accent?: string;
-    accentIndex: number;
+    accentY?: number;
+    accentIndex?: number;
+    className?: string;
 }
 
-export default function AccentTitle({title, accent}: titleProps) {
+export default function AccentTitle({title, variant, accent, accentY, accentIndex, className}: titleProps) {
+    
+    const overlap = accentY ? accentY < 60 : true;
+    
     return (
-        accent === "underline" ?
-            <h2 className="mb-12 sm:mb-14 md:mb-16 lg:mb-24 text-center">{title[0] + ' '}
+        variant === "underline" ?
+            <h2 className={`${className}`}>{accentIndex === 0 ? null : title[0] + ' '}
             <span className="relative">
-                {title[1]}
-                <Image className="relative -z-10 
-                    -top-[20px] sm:-top-[25px] md:-top-[25px] lg:-top-[30px]
-                    left-[14px] sm:left-[16px] md:left-[18px] lg:left-[20px]
-                    w-[260px] sm:w-[292px] md:w-[325px] lg:w-[390px] h-auto"
-                    src={"/accents/accent1.svg"}
+                {accentIndex === 0 ? title[0] : title[1]}
+                <Image className="absolute 
+                    left-0"
+                    src={accent ? accent : "/accents/accent1.svg"}
                     alt="Title Accent SVG"
                     width={0}
-                    height={0}
+                    height={26}
+                    style={{ 
+                        width: '100%', 
+                        height: 'auto', 
+                        top: accentY ? `${accentY}%` : '80%',
+                        zIndex: overlap === true ? 1 : -1
+                    }}
             />
             </span>
+                {title[2] ? title[2] : null}
             </h2>
-            : accent === "circle" ? 
-            <h2 className="mb-12 sm:mb-14 md:mb-16 lg:mb-24 text-center">{title[0]}
+            
+            : variant === "circle" ? 
+            <h2 className={`${className}`}>
+                {accentIndex === 0 ? null : title[0]}
     
                 <div className="inline-flex justify-center"> 
-                    <span className=" relative ">&nbsp;{title[1]}&nbsp;
+                    <span className=" relative ">&nbsp;{accentIndex === 0 ? title[0] : title[1]}&nbsp;
                         <Image className="absolute -z-10 transform scale-110
                             top-[3px] right-[0px]"
                             src={"/accents/ellipse1.svg"}
@@ -43,10 +56,11 @@ export default function AccentTitle({title, accent}: titleProps) {
                             height={73} 
                             style={{ width: '200px', height: 'auto'}}/>
                     </span>
+                    {title[2] ? title[2] : null}
                 </div>
             </h2>
             : 
-            <h2 className="mb-12 sm:mb-14 md:mb-16 lg:mb-24 text-center">
+            <h2 className={`${className}`}>
             {title.map((line, index) =>
                 <span key={index}>
                     {line + ' '}
