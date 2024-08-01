@@ -14,7 +14,7 @@ export default function Deploy() {
     ]
 
     return (
-        <section className="w-full m-4 sm:mt-16 max-w-[1440px]">
+        <section id="deploy" className="w-full m-x-4 sm:mt-16 max-w-[1440px]">
             <GradientBorderBox 
                 decorationsOutside={[
                     {src: "/decorations/dots-3x4.svg" , className: "-top-14 left-40"},

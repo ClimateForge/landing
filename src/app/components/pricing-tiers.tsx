@@ -101,7 +101,7 @@ export default function PricingTiers() {
                 
             </h2>
 
-            <div className='flex flex-wrap justify-center items-center gap-x-8 gap-y-14'>
+            <div className='flex flex-wrap justify-center items-center z-10 gap-x-8 gap-y-14'>
 
                 <PricingCard name="Launch" price={359} 
                     perks={[

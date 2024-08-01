@@ -32,7 +32,8 @@ export default function InfoCardGrid({title, accentVariant, accentSrc, accentY, 
                     className="text-center mb-16 sm:mb-32"
                 />
                 
-                <div className="flex flex-wrap justify-evenly items-stretch max-w-[1172px]
+                <div className="flex flex-wrap justify-center items-stretch max-w-[1250px]
+                    gap-x-1 sm:gap-x-2 md:gap-x-4
                     gap-y-6 sm:gap-y-12 md:gap-y-14 lg:gap-y-16">
                 
                 {infoCardsData.map((card : InfoCardData, index: number) => (

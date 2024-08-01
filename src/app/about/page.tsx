@@ -1,5 +1,6 @@
 import Cta from "../components/cta";
 import Deploy from "../components/deploy";
+import Faq from "../components/faq";
 import InfoCardGrid from "../components/info-card-grid";
 import MarketInsights from "../components/market-insights";
 import Title from "../components/title";
@@ -50,6 +51,8 @@ export default function About() {
             <UseCases/>
 
             <Deploy />
+
+            <Faq />
             
             <Cta title={["Ready To", "Do Something", "That Matters?"]} 
                 gifSrc="/about.gif" gifRounded

@@ -44,7 +44,7 @@ export default function Footer() {
 							About Us
 						</Link>
 
-						<Link href={""}>
+						<Link href={"/about/#faq"}>
 							FAQ
 						</Link>
 
