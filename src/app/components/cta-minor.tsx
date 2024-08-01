@@ -1,12 +1,9 @@
 "use client";
 import Image from "next/image";
-import { useRouter } from 'next/navigation'
 import GradientButton from "./ui/gradient-button";
 import GradientBorderBox from './ui/gradient-border-box';
 
 export default function CtaMinor() {
-    
-    const router = useRouter()
     
     return (
         <section className="relative mt-72 flex flex-col justify-center items-center w-full max-w-[1440px]">

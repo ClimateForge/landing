@@ -9,11 +9,11 @@ type InfoCardData = {
 export default function InfoCard({ title, description, icon }:InfoCardData) {
 
     return (
-        <div className="relative rounded-3xl bg-white shadow-md box-border
+        <div className="relative 
+            rounded-3xl bg-white shadow-md
             pt-[45px] sm:pt-[50px] md:pt-[55px] lg:pt-[70px] 
-            px-[16px] sm:px-[18px] md:px-[20px] lg:px-[26px] 
-            pb-2 
-            flex-col flex-[-1_1_200px] max-w-[33%] min-w-[170px]
+            px-[16px] sm:px-[18px] md:px-[20px] lg:px-[26px] pb-4
+            flex-col flex-[-1_1_200px] max-w-[30%] min-w-[170px]
             group transition-all hover:z-10 duration-500 hover:scale-105 hover:shadow-lg">
             
             <div className="absolute -top-8 right-[10%]

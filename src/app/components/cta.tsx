@@ -1,17 +1,8 @@
 "use client";
-
 import Image from "next/image";
-import { useGSAP } from "@gsap/react";
-import { z } from "zod";
-import gsap from "gsap";
-import EarlyAccessSignup from "./early-access-signup";
 import GradientText from "./ui/gradient-text";
 import GradientButton from "./ui/gradient-button";
 import { useRouter } from 'next/navigation'
-
-function classNames(...classes: string[]) {
-	return classes.filter(Boolean).join(" ");
-}
 
 type CTAProps = {
 	gifSrc: string;
@@ -21,12 +12,11 @@ type CTAProps = {
 	primaryButton: GradientButtonProps
 	secondaryButton?: GradientButtonProps
 }
+
 type GradientButtonProps = { text: string, route: string, newTab?: boolean }
 
-export default function Cta({
-	title, gifSrc, gifRounded, description, primaryButton, secondaryButton
-}: CTAProps) {
-	
+export default function Cta(props: CTAProps) {
+	const { title, gifSrc, gifRounded, description, primaryButton, secondaryButton } = {...props}
 	const router = useRouter()
 
 	return (
