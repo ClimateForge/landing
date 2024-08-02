@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image"
+
 import GradientButton from "./ui/gradient-button";
 
 export default function UseCases() {
@@ -15,6 +16,8 @@ export default function UseCases() {
 
     return (
         <section className="bg-gradient-radial max-w-[1180px] flex w-full rounded-[45px] overflow-hidden mt-0 sm:mt-12">
+            
+            {/* Image Container */}
             <div className="relative hidden sm:flex max-h-[436px] max-w-[492px] flex-shrink flex-grow-1 basis-[50%]">
                 <Image
                 className="w-auto object-cover object-left z-10 
@@ -43,7 +46,8 @@ export default function UseCases() {
                 />
             </div>
 
-            <div className="flex flex-col justify-center items-center w-full p-8 mb-4 flex-grow basis-[70%]">
+            {/* Use Cases */}
+            <div className="flex flex-col justify-center items-center w-full p-4 sm:p-8  mb-4 flex-grow basis-[70%]">
                 <h2 className="text-white font-semibold mb-6">Use cases</h2>
 
                 <div className="grid grid-cols-2 gap-4 flex-wrap z-20">

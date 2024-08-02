@@ -1,7 +1,9 @@
 "use client";
 import { useRouter } from 'next/navigation'
+
 import GradientButton from "./ui/gradient-button";
 import GradientText from './ui/gradient-text';
+
 import { ReactNode } from 'react';
 interface BaseProps {
 	title?: string[];

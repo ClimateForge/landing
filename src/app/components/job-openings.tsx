@@ -1,8 +1,8 @@
 "use client";
 import { useState, useEffect } from 'react';
-import AccentTitle from "./ui/accent-title";
 import Image from 'next/image';
-import Link from 'next/link';
+
+import AccentTitle from "./ui/accent-title";
 import GradientText from './ui/gradient-text';
 import EmailForm from "./ui/email-form";
 import Modal from "./ui/modal";

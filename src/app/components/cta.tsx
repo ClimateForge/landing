@@ -1,18 +1,20 @@
 "use client";
-import Image from "next/image";
-import GradientText from "./ui/gradient-text";
-import GradientButton from "./ui/gradient-button";
 import { useRouter } from 'next/navigation'
 import { useState } from "react";
+import Image from "next/image";
+
+import GradientText from "./ui/gradient-text";
+import GradientButton from "./ui/gradient-button";
 import EmailForm from "./ui/email-form";
 import Modal from "./ui/modal";
+
 type GradientButtonProps = {
 	text: string;
 	route: string;
 	newTab?: boolean;
 };
 
-  // Conditional type: If secondaryButton is provided, primaryButton is required
+// Conditional type: If secondaryButton is provided, primaryButton is required
 type CTAProps = {
 	gifSrc: string;
 	gifRounded?: boolean;

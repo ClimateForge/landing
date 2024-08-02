@@ -28,6 +28,14 @@ body {
 	z-index: 1; /* Ensure it appears above the background but below content */
 }
 
+.star {
+	transition: background-color 0.4s ease-in-out, color 0s;
+}
+
+.group:hover .star {
+	transition: background-color 0.4s ease-in-out, color 0.4s linear;
+}
+
 img {
 	width: auto;
 	height: auto;
