@@ -3,6 +3,7 @@ import Title from "../components/title";
 import TitleBackground from '../title-background';
 import { Metadata } from 'next';
 import JobOpenings from "../components/job-openings";
+import OurTeam from "../components/our-team";
 
 export const metadata: Metadata = {
     title: "Career - ClimateForge",
@@ -25,7 +26,9 @@ export default function Career() {
 
             <JobOpenings />
             
-            <Cta title={["Apply To", "Get Started?"]} 
+            <OurTeam/>
+
+            <Cta title={["Apply To", "Get Started!"]} 
                 gifSrc="/career.gif" gifRounded
                 description="Didn't find a position that matches your qualifications? Drop us a line!"
             />

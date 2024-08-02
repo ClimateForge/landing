@@ -47,14 +47,14 @@ export default function AccentTitle({title, variant, accent, accentY, accentInde
                             alt="Block 2 title accent SVG"
                             width={0}
                             height={73} 
-                            style={{ width: '200px', height: 'auto'}}/>
+                            style={{ width: '200px', height: 'auto', top: accentY ? `${accentY + 3}px` : '3px'}}/>
                         <Image className="absolute -z-10 transform scale-110
                             top-[5px] right-[0px]"
                             src={"/accents/ellipse2.svg"}
                             alt="Block 2 title accent SVG"
                             width={0}
                             height={73} 
-                            style={{ width: '200px', height: 'auto'}}/>
+                            style={{ width: '200px', height: 'auto', top: accentY ? `${accentY + 5}px` : '5px'}}/>
                     </span>
                     {title[2] ? title[2] : null}
                 </div>
