@@ -3,24 +3,41 @@ import Image from "next/image";
 import GradientText from "./ui/gradient-text";
 import GradientButton from "./ui/gradient-button";
 import { useRouter } from 'next/navigation'
+import { useState } from "react";
+import EmailForm from "./ui/email-form";
+import Modal from "./ui/modal";
+type GradientButtonProps = {
+	text: string;
+	route: string;
+	newTab?: boolean;
+};
 
+  // Conditional type: If secondaryButton is provided, primaryButton is required
 type CTAProps = {
 	gifSrc: string;
 	gifRounded?: boolean;
 	title: string[];
 	description: string;
-	primaryButton: GradientButtonProps
-	secondaryButton?: GradientButtonProps
-}
+	primaryButton?: GradientButtonProps;
+} & (SecondaryButtonPropsRequired | { contactButton?: never });
 
-type GradientButtonProps = { text: string, route: string, newTab?: boolean }
+type SecondaryButtonPropsRequired = {
+	primaryButton: GradientButtonProps;
+	contactButton: boolean;
+};
 
 export default function Cta(props: CTAProps) {
-	const { title, gifSrc, gifRounded, description, primaryButton, secondaryButton } = {...props}
+	
+	const { title, gifSrc, gifRounded, description, primaryButton, contactButton } = {...props}
+
 	const router = useRouter()
 
+	const [isModalOpen, setIsModalOpen] = useState(false);
+	const openModal = () => setIsModalOpen(true);
+	const closeModal = () => setIsModalOpen(false);
+	
 	return (
-		<div className="flex justify-evenly flex-wrap items-center gap-y-8 w-full py-16 bg-gradient-radial">
+		<section className="flex justify-evenly flex-wrap items-center gap-y-8 w-full py-16 bg-gradient-radial">
 			
 			{/* CTA Gif Container */}
 			<div className="hidden md:flex justify-center items-center 
@@ -66,24 +83,30 @@ export default function Cta(props: CTAProps) {
 
 				{/* Buttons Container */}
 				<div className="flex gap-x-4">
-					<GradientButton width={154} onClick={primaryButton.newTab ? 
-						() => window.open(primaryButton.route, '_blank', 'noopener,noreferrer') : 
-						() => router.push(primaryButton.route ? primaryButton.route : '/')}>
-						{primaryButton.text}
+					{primaryButton ? 
+						<GradientButton width={154} 
+							onClick={primaryButton.newTab ? 
+								() => window.open(primaryButton.route, '_blank', 'noopener,noreferrer') : 
+								() => router.push(primaryButton.route ? primaryButton.route : '/')}>
+							{primaryButton.text}
+						</GradientButton>
+					: 
+					<GradientButton width={154} onClick={openModal}>
+						Contact Us
 					</GradientButton>
-					
-					{secondaryButton ? 
-						<GradientButton variant="outline" width={154} 
-							onClick={secondaryButton.newTab ? 
-								() => window.open(secondaryButton.route, '_blank', 'noopener,noreferrer') : 
-								() => router.push(secondaryButton.route ? secondaryButton.route : '/')}>
-							{secondaryButton.text}
+					}
+					{contactButton ?
+						<GradientButton variant="outline" width={154} onClick={openModal}>
+							Contact Us
 						</GradientButton>
 					: null
 					}
+					
 				</div>
 			</div>
-			
-		</div>
+			<Modal isOpen={isModalOpen} onClose={closeModal}>
+				<EmailForm />
+			</Modal>
+		</section>
 	);
 }

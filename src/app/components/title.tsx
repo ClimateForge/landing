@@ -34,7 +34,7 @@ export default function Title({title, description, gradientIndex, buttonText, ro
 		<section className="flex flex-col 
 			justify-center items-center 
 			text-center relative
-			max-w-[720px] h-80"
+			max-w-[720px] h-64 sm:h-72"
 		>
 		
 		{title ? 

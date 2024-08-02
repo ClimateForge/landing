@@ -1,8 +1,8 @@
 import Cta from "../components/cta";
 import Title from "../components/title";
 import TitleBackground from '../title-background';
-import Head from 'next/head';
 import { Metadata } from 'next';
+import JobOpenings from "../components/job-openings";
 
 export const metadata: Metadata = {
     title: "Career - ClimateForge",
@@ -23,10 +23,11 @@ export default function Career() {
                 buttonText={"Learn More"}
                 route="about"/>
 
+            <JobOpenings />
+            
             <Cta title={["Apply To", "Get Started?"]} 
                 gifSrc="/career.gif" gifRounded
                 description="Didn't find a position that matches your qualifications? Drop us a line!"
-                primaryButton={{text: "Contact Us!", route: "/"}}
             />
 		</main>
     );

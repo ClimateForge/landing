@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { Inter } from 'next/font/google';
 import BarGraphCard from './ui/bar-graph-card';
 import LineGraphCard from './ui/line-graph-card';

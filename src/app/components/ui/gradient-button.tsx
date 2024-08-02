@@ -1,7 +1,8 @@
 "use client";
 interface GradientButtonProps {
+    type?: "submit" | "reset" | "button" | undefined;
     variant?: string;
-    width: number;
+    width: number | "100%";
     height?: number;
     radius?: number;
     bgColor?: string;
@@ -14,7 +15,7 @@ interface GradientButtonProps {
 
 export default function GradientButton(props: GradientButtonProps) {
     
-    const {variant, width, height, radius, bgColor, onClick, disabled, className, children} = {...props}
+    const {type, variant, width, height, radius, bgColor, onClick, disabled, className, children} = {...props}
 
     const buttonWidth = width ? width : 154;
     const outlineButtonWidth = width ? width : 90;
@@ -25,7 +26,7 @@ export default function GradientButton(props: GradientButtonProps) {
     return (
         variant === "outline" ?
 
-        <button onClick={onClick} 
+        <button onClick={onClick} type={type}
             disabled={disabled} 
             className={`${disabled ? 'cursor-not-allowed opacity-50' : null} 
             ${className} relative rounded-xl group hover:bg-accent-gradient`
@@ -54,7 +55,7 @@ export default function GradientButton(props: GradientButtonProps) {
             </svg>
         </button>
         :
-        <button onClick={onClick} disabled={disabled}
+        <button onClick={onClick} disabled={disabled} type={type}
             className={`${disabled ? 'cursor-not-allowed opacity-50' : null} 
                 relative rounded-xl group bg-accent-gradient hover:bg-none`}
                 style={{ 
