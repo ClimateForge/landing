@@ -6,6 +6,8 @@ type Props = {
     decorationsInside?: Decoration[];
     decorationsOutside?: Decoration[];
     children?: ReactNode;
+    borderRadius?: number;
+    borderWidth?: number;
 }
 
 type Decoration = {
@@ -13,14 +15,15 @@ type Decoration = {
     className?: string
 }
 
-export default function GradientBorderBox({className, decorationsInside, decorationsOutside, children}: Props) {
+export default function GradientBorderBox({className, decorationsInside, decorationsOutside, borderWidth, borderRadius, children}: Props) {
     
     return (
-        <div className="p-[2px] rounded-[90px] relative  bg-accent-gradient w-full max-w-[1440px]">
+        <div className="p-[2px] rounded-[90px] relative bg-accent-gradient w-full max-w-[1440px]"
+        style={{padding: borderWidth, borderRadius: borderRadius ? borderRadius : '90px'}}>
             
             {/* Opaque houses container */}
-            <div className={`relative
-                bg-white-gradient rounded-[88px] overflow-hidden`}>
+            <div className="relative bg-white-gradient overflow-hidden"
+                style={{borderRadius: borderRadius ? borderRadius - 2 : '88px'}}>
                 <div className={`flex flex-col items-center ${className} z-10`}>
                     {children}
                 </div>
