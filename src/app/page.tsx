@@ -73,7 +73,7 @@ export default function Home() {
             <Cta title={["Ready To", "Get Started?"]} gifSrc="/solar.gif"
                 description="Your Mom is going to be proud of you making more money and saving the planet!"
                 primaryButton={{text: "Start For Free", route: "https://calendly.com/giovanni-climateforge-qttf", newTab: true }}
-                secondaryButton={{text: "Contact Us", route: "/"}}
+                contactButton
             />
 		</main>
 	);

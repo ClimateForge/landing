@@ -3,7 +3,6 @@ import { Menu } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from 'next/navigation'
 import { useState } from "react";
 import GradientButton from "./ui/gradient-button";
 
@@ -12,8 +11,6 @@ function classNames(...classes: string[]) {
 }
 
 export default function Header() {
-
-	const router = useRouter()
 
 	const [isMenuExpanded, setIsMenuExpanded] = useState(false);
 

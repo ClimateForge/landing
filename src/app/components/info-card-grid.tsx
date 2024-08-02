@@ -1,4 +1,3 @@
-import Image from "next/image";
 import InfoCard from "./ui/info-card";
 import AccentTitle from "./ui/accent-title";
 

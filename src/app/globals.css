@@ -61,31 +61,6 @@ img {
 }
 
 @layer components {
-	.btn-outline {
-		@apply w-full sm:w-auto flex flex-row items-center gap-2  px-6 py-2 rounded-10
-    tracking-wide text-center text-button font-bold
-    text-primary 
-    bg-primary bg-opacity-10 hover:bg-opacity-20 
-    border-2 border-solid border-primary 
-    hover:shadow-accent hover:shadow-sm shadow-none
-    cursor-default;
-	}
-
-	.btn-text {
-		@apply w-full sm:w-auto flex flex-row items-center gap-2 px-6 py-2
-    tracking-wide text-center text-button font-bold
-    text-primary
-    cursor-default;
-	}
-
-	.btn-primary {
-		@apply w-full sm:w-auto flex flex-row items-center gap-2 px-8 py-3 rounded-15
-    tracking-wide text-light
-    border-white border-4 border-opacity-10
-    bg-primary hover:bg-opacity-80 bg-opacity-100
-    hover:shadow-accent hover:shadow-sm shadow-none
-    cursor-default;
-	}
 
 	.slide {
 		@apply animate-[slide_30s_infinite_linear]
