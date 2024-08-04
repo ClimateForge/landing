@@ -1,5 +1,7 @@
 import Image from "next/image";
+
 import GradientText from "./ui/gradient-text";
+
 import { ReactNode } from "react";
 
 type USPBlockProps = {

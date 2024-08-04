@@ -1,9 +1,10 @@
-import AccentTitle from "./ui/accent-title";
-import GradientBorderBox from "./ui/gradient-border-box";
 import Image from "next/image";
 
+import AccentTitle from "./ui/accent-title";
+import GradientBorderBox from "./ui/gradient-border-box";
+
 export default function OurTeam() {
-    
+
     const teamMembers = [
         {
             name: "Giovanni Amenta",
@@ -97,9 +98,9 @@ export default function OurTeam() {
                             
                         </GradientBorderBox>
 
-                        <div className="absolute -top-[111px] left-[64px] z-0 rounded-[200px] w-[222px] h-[222px]">
+                        <div className="absolute -top-[111px] left-[64px] z-0 rounded-full w-[222px] h-[222px]">
                             <Image src={teamMember.image} alt={teamMember.name} width={222} height={0} sizes="100vh"
-                                className="rounded-[200px] w-full h-full object-cover"
+                                className="rounded-full w-full h-full object-cover"
                             />
                         </div>
 

@@ -1,9 +1,11 @@
 "use client";
+import { useRouter } from 'next/navigation';
 import Image from 'next/image';
+
 import GradientText from './ui/gradient-text';
 import GradientButton from './ui/gradient-button';
 import GradientBorderBox from './ui/gradient-border-box';
-import { useRouter } from 'next/navigation';
+
 interface PricingCardProps {
     name: string;
     price?: number;

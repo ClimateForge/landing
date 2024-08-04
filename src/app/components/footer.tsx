@@ -1,12 +1,14 @@
 "use client";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+
 import GradientText from "./ui/gradient-text";
-import { urbanist } from "../fonts";
-import { useState } from "react";
 import EmailForm from "./ui/email-form";
 import Modal from "./ui/modal";
+
+import { urbanist } from "../fonts";
+
 export default function Footer() {
 	const [isModalOpen, setIsModalOpen] = useState(false);
 

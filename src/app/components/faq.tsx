@@ -1,7 +1,8 @@
 "use client";
 import { useState } from "react";
-import GradientText from "./ui/gradient-text";
 import Image from "next/image";
+
+import GradientText from "./ui/gradient-text";
 
 type FAQItemProps = {
     question: string;
@@ -76,8 +77,8 @@ export default function Faq() {
     ];
 
     return (
-        <section id="faq" className="flex flex-col sm:flex-row justify-evenly w-full h-[502px] pt-12 lg:pt-16">
-            <div className="text-center sm:text-left p-x-4 pb-8">
+        <section id="faq" className="flex flex-col sm:flex-row justify-evenly w-full h-[502px] pt-12 lg:pt-16 px-8">
+            <div className="text-center sm:text-left pb-8 px-2">
                 <h2>Frequently Asked</h2>
                 <h2><GradientText>Questions</GradientText></h2>
             </div>

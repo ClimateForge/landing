@@ -14,9 +14,10 @@ export default function AccentTitle({title, variant, accent, accentY, accentInde
     const overlap = accentY ? accentY < 60 : true;
     
     return (
-        variant === "underline" ?
+        variant === "underline" ? // can be used for more than one word, but should be kept short
+
             <h2 className={`${className}`}>{accentIndex === 0 ? null : title[0] + ' '}
-            <span className="relative">
+            <span className="relative whitespace-nowrap">
                 {accentIndex === 0 ? title[0] : title[1]}
                 <Image className="absolute 
                     left-0"
@@ -35,7 +36,8 @@ export default function AccentTitle({title, variant, accent, accentY, accentInde
                 {title[2] ? title[2] : null}
             </h2>
             
-            : variant === "circle" ? 
+        : variant === "circle" ? // meant to be used for only a single word
+
             <h2 className={`${className}`}>
                 {accentIndex === 0 ? null : title[0]}
     

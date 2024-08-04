@@ -1,9 +1,11 @@
 "use client";
-import { Menu } from "@headlessui/react";
-import { ChevronDownIcon } from "@heroicons/react/24/outline";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+
+import { Menu } from "@headlessui/react";
+import { ChevronDownIcon } from "@heroicons/react/24/outline";
+
 import GradientButton from "./ui/gradient-button";
 
 function classNames(...classes: string[]) {

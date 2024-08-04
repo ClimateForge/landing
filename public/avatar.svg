@@ -1,0 +1,17 @@
+<svg
+  width="64"
+  height="64"
+  viewBox="0 0 24 24"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <!-- Head -->
+  <circle cx="12" cy="7" r="4" fill="#D1D5DB" />
+  <!-- Body -->
+  <path
+    fill-rule="evenodd"
+    clip-rule="evenodd"
+    d="M12 13c-5 0-9 4-9 9v1h18v-1c0-5-4-9-9-9z"
+    fill="#D1D5DB"
+  />
+</svg>

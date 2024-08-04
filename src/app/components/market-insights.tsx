@@ -1,10 +1,7 @@
-import { Inter } from 'next/font/google';
-import BarGraphCard from './ui/bar-graph-card';
-import LineGraphCard from './ui/line-graph-card';
 import AccentTitle from './ui/accent-title';
 import GradientBorderBox from './ui/gradient-border-box';
-
-const inter = Inter({ subsets: ['latin'] })
+import BarGraphCard from './ui/bar-graph-card';
+import LineGraphCard from './ui/line-graph-card';
 
 export default function MarketInsights() {
 

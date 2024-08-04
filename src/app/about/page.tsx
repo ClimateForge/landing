@@ -1,11 +1,13 @@
-import Cta from "../components/cta";
+import TitleBackground from "../title-background";
+import Title from "../components/title";
+import MarketInsights from "../components/market-insights";
+import InfoCardGrid from "../components/info-card-grid";
+import Testimonials from '../components/testimonials';
+import UseCases from "../components/use-cases";
 import Deploy from "../components/deploy";
 import Faq from "../components/faq";
-import InfoCardGrid from "../components/info-card-grid";
-import MarketInsights from "../components/market-insights";
-import Title from "../components/title";
-import UseCases from "../components/use-cases";
-import TitleBackground from "../title-background";
+import Cta from "../components/cta";
+
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -47,6 +49,8 @@ export default function About() {
             <MarketInsights/>
 
             <InfoCardGrid title={["Our core", "values"]} accentVariant="circle" accentIndex={1} infoCardsData={infoCardsData}/>
+
+            <Testimonials />
 
             <UseCases/>
 

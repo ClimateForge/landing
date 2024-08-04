@@ -1,9 +1,10 @@
-import Cta from "../components/cta";
-import Title from "../components/title";
 import TitleBackground from '../title-background';
-import { Metadata } from 'next';
+import Title from "../components/title";
 import JobOpenings from "../components/job-openings";
 import OurTeam from "../components/our-team";
+import Cta from "../components/cta";
+
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
     title: "Career - ClimateForge",
