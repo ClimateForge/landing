@@ -82,7 +82,8 @@ function PricingCard (props: PricingCardProps) {
             : null
             }
             
-                <GradientButton onClick={() => router.push('/#calendar')} variant={buttonVariant} disabled={disabled} width={154}>
+                <GradientButton variant={buttonVariant} disabled={disabled} width={154}
+                    onClick={() => window.open('https://calendly.com/giovanni-climateforge-qttf', '_blank', 'noopener,noreferrer')}>
                     Order Now
                 </GradientButton>
             </div>

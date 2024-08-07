@@ -44,7 +44,7 @@ export default function Home() {
     ]
 
 	return (
-		<main className="flex min-h-screen flex-col gap-20 items-center overflow-hidden pt-20 sm:pt-24 md:pt-32 lg:pt-36">
+		<main className="flex min-h-screen flex-col gap-20 items-center overflow-hidden pt-32 lg:pt-36">
 			{/* Background Image */}
 			<TitleBackground />
 
@@ -70,7 +70,7 @@ export default function Home() {
 
 			<ClientList/>
 
-            <Cta title={["Ready To", "Get Started?"]} gifSrc="/solar.gif"
+            <Cta title={["Ready To", "Get Started?"]} gifSrc="/cta/solar.gif"
                 description="Your Mom is going to be proud of you making more money and saving the planet!"
                 primaryButton={{text: "Start For Free", route: "https://calendly.com/giovanni-climateforge-qttf", newTab: true }}
                 contactButton

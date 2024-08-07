@@ -15,7 +15,12 @@ type Decoration = {
     className?: string
 }
 
-export default function GradientBorderBox({className, decorationsInside, decorationsOutside, borderWidth, borderRadius, children}: Props) {
+export default function GradientBorderBox({
+    className, 
+    decorationsInside, decorationsOutside, 
+    borderWidth, borderRadius, 
+    children
+}: Props) {
     
     return (
         <div className="p-[2px] rounded-[90px] relative bg-accent-gradient w-full max-w-[1440px]"

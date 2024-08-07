@@ -75,7 +75,7 @@ img {
 	}
 
 	h1, .h1{
-		@apply font-bold text-5xl sm:text-6xl ;
+		@apply font-bold text-4xl sm:text-5xl md:text-6xl ;
     }
     
     h2, .h2 {

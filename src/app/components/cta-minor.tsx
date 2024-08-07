@@ -2,6 +2,70 @@
 import Image from "next/image";
 import GradientButton from "./ui/gradient-button";
 import GradientBorderBox from './ui/gradient-border-box';
+import { motion, Variants } from "framer-motion";
+
+const leftVariants: Variants = {
+    offscreen: {
+        x: '-30%',
+        opacity: 0
+    },
+    onscreen: {
+    x: 0,
+    opacity: 1,
+    
+    transition: {
+        type: "spring",
+        bounce: 0.4,
+        duration: 0.6
+    }
+    }
+};
+
+const rightVariants: Variants = {
+    offscreen: {
+        x: '30%',
+        opacity: 0
+    },
+    onscreen: {
+    x: 0,
+    opacity: 1,
+    
+    transition: {
+        type: { type: "inertia", velocity: 50 },
+        
+        duration: 0.9
+    }
+    }
+};
+
+const middleVariants: Variants = {
+    offscreen: {
+        
+        opacity: 0
+    },
+    onscreen: {
+        opacity: 1,
+        rotate: 360,
+    transition: {
+        type: "spring",
+        bounce: 0.4,
+        duration: 0.6
+    }
+    }
+};
+
+const ctaVariants: Variants = {
+    offscreen: {
+        scale: .5,
+    },
+    onscreen: {
+        opacity: 1,
+        scale: 1,
+    transition: {
+        type: "spring", damping: 30, stiffness: 200
+    }
+    }
+};
 
 export default function CtaMinor() {
     
@@ -9,7 +73,9 @@ export default function CtaMinor() {
         <section className="relative mt-72 flex flex-col justify-center items-center w-full max-w-[1440px]">
             
             {/** CTA container - gradient border, absolute position*/}
-            <div className="absolute z-20 -top-[340px] max-w-[822px] mt-12 sm:mt-24 p-[1px] text-gray-900 rounded-3xl bg-accent-gradient">
+            <motion.div initial="offscreen"
+        whileInView="onscreen" variants={ctaVariants}
+        viewport={{ once: true, amount: 0.8 }} className="absolute z-20 -top-[340px] max-w-[822px] mt-12 sm:mt-24 p-[1px] text-gray-900 rounded-3xl bg-accent-gradient">
                 
                 <div className="flex relative flex-col justify-center items-center text-center 
                     bg-white rounded-3xl px-4 sm:px-12 max-h-[488px] py-8 min-h-[500px] ">
@@ -45,7 +111,7 @@ export default function CtaMinor() {
                         Book a Demo
                     </GradientButton>
                 </div>
-            </div>
+            </motion.div>
 
             {/* Image Container */}
             <GradientBorderBox 
@@ -68,37 +134,48 @@ export default function CtaMinor() {
                     style={{ width: '100%' }}
                 />
                 {/* House + Logo container */}
-                <div className="absolute z-30 top-80 sm:top-[408px] w-[500px] sm:w-[628px]">
-                    
-                    <Image
-                        src={"/cta-minor/house.png"}
-                        alt="House"
+                <motion.div initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: false, amount: 0.8 }} className="absolute z-30 top-[42.2%] sm:top-[42.4%] w-[355px] sm:w-[410px]">
+                    <motion.div variants={middleVariants}> 
+                    <Image className="rounded-full aspect-square w-full object-cover opacity-75"
+                        src={"/cta-minor/cta-minor.gif"}
+                        alt="analyze-area-for-upgrades-gif"
                         sizes="100vh"
-                        width={500}
+                        width={300}
                         height={300}
                     />
-                    <Image className="absolute z-30 -top-[50px] left-[60px] backdrop-blur-sm"
-                        src={"/cta-minor/polygon1.svg"}
-                        alt="Polygon SVG 1"
-                        width={136}
-                        height={141}
-                    />
-                    <Image className="absolute z-30 -top-[12px] left-[80px] w-[95px]"
-                        src={"/logo.png"}
-                        alt="ClimateForge Logo"
-                        width={84}
-                        height={76}
-                    />
-                    <Image className="absolute z-30 -top-[55px] right-[65px]"
-                        src={"/cta-minor/polygon2.svg"}
-                        alt="Polygon SVG 2"
-                        width={180}
-                        height={164}
-                    />   
-                </div>
+                    </motion.div>
+                
+                    <motion.div variants={leftVariants} className="absolute z-30 -top-[76px] left-[0px] backdrop-blur-sm">
+                        <Image 
+                            src={"/cta-minor/polygon1.svg"}
+                            alt="Polygon SVG 1"
+                            width={136}
+                            height={141}
+                        />
+                    </motion.div>
+                    
+                    <motion.div variants={leftVariants} className="absolute z-30 -top-[44px] left-[20px] w-[95px]">
+                        <Image
+                            src={"/logo.png"}
+                            alt="ClimateForge Logo"
+                            width={84}
+                            height={76}
+                        />
+                    </motion.div>
+                    <motion.div variants={rightVariants} className="absolute z-30 -top-[55px] -right-[20%]">
+                        <Image
+                            src={"/cta-minor/polygon2.svg"}
+                            alt="Polygon SVG 2"
+                            width={180}
+                            height={164}
+                        /> 
+                    </motion.div>
+                </motion.div>
                 
                 {/* Background circle decoration */}
-                <div className="absolute z-20 top-[190px] sm:top-[310px] w-[770px] h-[516px]  overflow-clip ">
+                <div className="absolute z-20 top-[240px] sm:top-[310px] w-[770px] h-[516px]  overflow-clip ">
                     <Image className="absolute top-[48px] opacity-25 transform scale-[1.21] sm:scale-[1.41]"
                         src="/cta-minor/decoration.png"
                         alt="CTA Decoration"

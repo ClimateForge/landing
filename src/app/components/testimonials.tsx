@@ -51,6 +51,7 @@ export default function Testimonials() {
     };
     
     return (
+        <section id="testimonials" className="w-full flex justify-center">
         <GradientBorderBox borderWidth={1}
             decorationsInside={[
                 {src: "decorations/dots.svg", className: "-top-[98px] left-24 w-[197px]"}
@@ -103,6 +104,6 @@ export default function Testimonials() {
                     </div>
                 ))}
             </div>
-        </GradientBorderBox>
+        </GradientBorderBox></section>
     );
 }

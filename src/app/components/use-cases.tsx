@@ -24,7 +24,7 @@ export default function UseCases() {
                     sm:[clip-path:polygon(80%_0,95%_28%,97%_42%,100%_58%,100%_68%,69%_100%,0_100%,0%_43%,0_0)]
                     md:[clip-path:polygon(85%_0,95%_28%,97%_42%,100%_58%,100%_68%,77%_100%,0_100%,0%_43%,0_0)]
                     lg:[clip-path:polygon(85%_0,95%_28%,97%_42%,100%_58%,100%_68%,80%_100%,0_100%,0%_43%,0_0)]"
-                src={"/use-cases/image.png"}
+                src={"/use-cases/use-cases.gif"}
                 width={0}
                 height={436}
                 sizes="100vh"

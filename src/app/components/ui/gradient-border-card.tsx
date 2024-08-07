@@ -2,8 +2,8 @@
 import { ReactNode } from "react";
 
 type Props = { 
-    width: number;
-    height: number;
+    width?: number;
+    height?: number;
     borderRadius?: number;
     borderWidth?: number;
     bgStyle?: string;
@@ -17,14 +17,14 @@ export default function GradientBorderCard({width, height, borderRadius, borderW
         <div className={`${bgStyle} p-[${borderWidth ? borderWidth : 1}px] overflow-clip bg-accent-gradient`}
             style={{
                 borderRadius: `${borderRadius}px`,
-                width: `${width}px`
+                width: width ? `${width}px` : '100%',
             }}
         >
             <div className={`${fgStyle} w-full bg-[white] overflow-clip`}
                 
                 style={{
                     borderRadius: `${borderRadius && borderRadius > 2 ? borderRadius - 2 : 0}px`,
-                    height: `${height}px`,
+                    height: height ? `${height}px` : '100%',
                 }}
             >
                 {children}
