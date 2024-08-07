@@ -18,14 +18,14 @@ function FAQItem({ question, answer }: FAQItemProps) {
     };
 
     return (
-        <div className="w-full mb-4">
+        <div className="w-full py-4 md::py-5">
             <button
-            className="flex justify-between items-center w-full px-4 py-3 text-left focus:outline-none"
+            className="flex justify-between items-center w-full px-4  text-left focus:outline-none"
             onClick={toggleAnswer}
             >
             
             {isOpen ?
-                <GradientText className="font-bold text-xl transition-all duration-300">{question}</GradientText>
+                <GradientText className="font-bold lg:text-xl transition-all duration-300">{question}</GradientText>
                 :
                 <p className="font-bold lg:text-xl transition-all duration-300">
                     {question}
@@ -36,7 +36,7 @@ function FAQItem({ question, answer }: FAQItemProps) {
                 alt={isOpen ? 'Collapse' : 'Expand'}
                 width={24} // specify the width
                 height={24} // specify the height
-                className={`w-[24px] h-[24px]`}
+                className={`w-[24px] h-[24px] ml-4 sm:ml-[35.8px]`}
             />
             </button>
             {isOpen && (
@@ -77,17 +77,21 @@ export default function Faq() {
     ];
 
     return (
-        <section id="faq" className="flex flex-col sm:flex-row justify-evenly w-full h-[502px] pt-12 lg:pt-16 px-8">
+        <section id="faq" className="flex flex-col sm:flex-row justify-evenly items-center sm:items-start 
+            w-full h-[502px] pt-12 lg:pt-16 px-2 sm:px-8">
             <div className="text-center sm:text-left pb-8 px-2">
                 <h2>Frequently Asked</h2>
                 <h2><GradientText>Questions</GradientText></h2>
             </div>
-
-            <div className="pt-8 w-full h-full max-w-[651px] shadow-[0px_31px_36px_0px_#4655A912] p-6 bg-white rounded-[25px] overflow-y-scroll no-scrollbar">
+            
+            <div className="py-8 w-full max-w-[651px] max-h-[350px] sm:max-h-[400px] 
+                shadow-[0px_31px_36px_0px_#4655A912] px-3 sm:px-6 bg-white 
+                rounded-[25px] overflow-y-scroll no-scrollbar">
                 {faqData.map((item, index) => (
                     <FAQItem key={index} question={item.question} answer={item.answer} />
                 ))}
             </div>
+            
         </section>
     );
 }

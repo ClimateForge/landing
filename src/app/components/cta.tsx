@@ -1,12 +1,10 @@
 "use client";
 import { useRouter } from 'next/navigation'
-import { useState } from "react";
 import Image from "next/image";
 
 import GradientText from "./ui/gradient-text";
 import GradientButton from "./ui/gradient-button";
-import EmailForm from "./ui/email-form";
-import Modal from "./ui/modal";
+import EmailButton from './ui/email-button';
 
 type GradientButtonProps = {
 	text: string;
@@ -20,6 +18,7 @@ type CTAProps = {
 	gifRounded?: boolean;
 	title: string[];
 	description: string;
+	badges?: boolean;
 	primaryButton?: GradientButtonProps;
 } & (SecondaryButtonPropsRequired | { contactButton?: never });
 
@@ -30,42 +29,39 @@ type SecondaryButtonPropsRequired = {
 
 export default function Cta(props: CTAProps) {
 	
-	const { title, gifSrc, gifRounded, description, primaryButton, contactButton } = {...props}
+	const { title, gifSrc, gifRounded, description, badges, primaryButton, contactButton } = {...props}
 
 	const router = useRouter()
-
-	const [isModalOpen, setIsModalOpen] = useState(false);
-	const openModal = () => setIsModalOpen(true);
-	const closeModal = () => setIsModalOpen(false);
 	
 	return (
-		<section className="flex justify-evenly flex-wrap items-center gap-y-8 w-full py-16 bg-gradient-radial">
+		<section className="relative flex justify-evenly items-center w-full bg-gradient-radial">
 			
 			{/* CTA Gif Container */}
-			<div className="hidden md:flex justify-center items-center 
-				h-[300px] lg:h-[400px] max-w-[300px] lg:max-w-[400px]"
+			<div className="flex justify-center items-center opacity-40 sm:opacity-100 absolute sm:relative 
+				h-auto max-w-[400px] sm:max-w-[400px] mx-8"
 				style={{borderRadius: gifRounded ? '50%' : '20px'}}>
 
-				<Image className="h-full overflow-hidden object-cover "
+				<Image className="h-auto overflow-hidden object-cover aspect-square"
 					style={{borderRadius: gifRounded ? '50%' : '20px'}}
 					src={gifSrc}
 					alt="GIF"
-					width={300}
-					height={0}
+					width={400}
+					height={400}
 					loading="lazy"
 				/>	
 				
 			</div>
 
 			{/* CTA Title/Description/Buttons Container */}
-			<div className="flex flex-col justify-start items-center text-center sm:text-left sm:items-start gap-y-12 max-w-[300px] sm:max-w-[400px] lg:max-w-[543px]">
+			<div className="relative flex flex-col justify-center items-center text-center sm:text-left sm:items-start 
+				gap-y-12 max-w-[400px] sm:max-w-[543px]  min-h-[531px] h-full mx-8">
 				
 				{/* Title */}
 				<div className="leading-none">
 					
 					{title.map((line, index) => 
 						index === 0 ? 
-						<h2 key={0} className={"text-light font-bold"}>
+						<h2 key={0} className="text-light font-bold ">
 							{line}
 						</h2>
 						:
@@ -79,12 +75,12 @@ export default function Cta(props: CTAProps) {
 				</div>
 				
 				{/* Description */}
-				<p className="mx-auto text-light font-light">
+				<p className="mx-auto text-light font-light min-h-8 text-shadow">
 					{description}
 				</p>
 
 				{/* Buttons Container */}
-				<div className="flex gap-x-4">
+				<div className="flex justify-center flex-wrap sm:flex-nowrap gap-4">
 					{primaryButton ? 
 						<GradientButton width={154} 
 							onClick={primaryButton.newTab ? 
@@ -93,22 +89,27 @@ export default function Cta(props: CTAProps) {
 							{primaryButton.text}
 						</GradientButton>
 					: 
-					<GradientButton width={154} onClick={openModal}>
-						Contact Us
-					</GradientButton>
+						<EmailButton>
+							Contact Us
+						</EmailButton>
 					}
 					{contactButton ?
-						<GradientButton variant="outline" width={154} onClick={openModal}>
+						<EmailButton variant='outline'>
 							Contact Us
-						</GradientButton>
+						</EmailButton>
 					: null
 					}
 					
 				</div>
+				{badges ? 
+					<Image className='absolute bottom-9 h-auto ' 
+						src={"/cta/badges.webp"} 
+						alt="badges" 
+						width={448} height={61}/> 
+					: null
+				}
 			</div>
-			<Modal isOpen={isModalOpen} onClose={closeModal}>
-				<EmailForm />
-			</Modal>
+			
 		</section>
 	);
 }

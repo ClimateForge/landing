@@ -1,7 +1,8 @@
 "use client";
+import { ReactNode } from "react";
 interface GradientTextProps {
     className?: string;
-    children?: string | number | string[];
+    children?: ReactNode;
 }
 
 export default function GradientText({className, children}: GradientTextProps) {

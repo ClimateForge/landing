@@ -1,5 +1,5 @@
 import type { Config } from "tailwindcss";
-
+const plugin = require('tailwindcss/plugin')
 const config: Config = {
 	content: [
 		"./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -17,6 +17,11 @@ const config: Config = {
 				dark: "#1F2A37",
 				"dark-secondary": "#4B5563",
 				light: "#ffffff",
+			},
+			textShadow: {
+				DEFAULT: '0 2px 4px #000',
+				sm: '0 2px 2px #000',
+				lg: '0 4px 10px #000',
 			},
 			backgroundColor: {
 				dark: "#1F2A37",
@@ -78,6 +83,17 @@ const config: Config = {
 			opacity: ["hover"],
 		},
 	},
-	plugins: [],
+	plugins: [
+		plugin(function ({ matchUtilities, theme }: any) {
+			matchUtilities(
+			{
+				'text-shadow': (value: any) => ({
+				textShadow: value,
+				}),
+			},
+			{ values: theme('textShadow') }
+			);
+		}),
+	],
 };
 export default config;

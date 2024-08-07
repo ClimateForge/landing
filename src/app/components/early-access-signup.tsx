@@ -2,6 +2,8 @@ import { useGSAP } from "@gsap/react";
 import React, { useRef, useState } from "react";
 import { z } from "zod";
 import gsap, { Elastic } from "gsap";
+import GradientButton from "./ui/gradient-button";
+import GradientText from "./ui/gradient-text";
 
 function classNames(...classes: (string | boolean | undefined)[]) {
 	return classes.filter(Boolean).join(" ");
@@ -113,34 +115,38 @@ export default function EarlyAccessSignup(props: Props) {
 	return (
 		<div
 			ref={container}
-			className="relative mx-auto space-y-4 flex flex-col items-center"
+			className="relative mx-auto space-y-8 flex flex-col items-center"
 		>
 			<form
 				ref={formRef}
 				className={classNames(
-					"form-registration visible space-y-4 text-dark border-2 border-accent border-opacity-50 rounded-15 cursor-auto py-4 px-4 shadow-sm",
+					"form-registration visible space-y-8 cursor-auto p-4",
 					props.lightBg ? "bg-light" : "bg-transparent"
 				)}
 				onSubmit={handleRegisterClick}
 				noValidate
 			>
-				<div className="pl-1 font-bold text-body">
-					Sign up to get early access!
-				</div>
-				<div className="flex flex-wrap gap-2">
+				<h4 className="pl-1 text-center text-xl">
+					<GradientText>
+					Sign up{' '}
+					</GradientText>
+					to get early access!
+				</h4>
+				
+				<div className="flex flex-wrap justify-center items-center gap-2">
 					<input
 						disabled={loading}
 						autoComplete="email"
 						ref={emailInputRef}
 						type="email"
 						className={classNames(
-							"flex-1 rounded-10 px-4 py-2 bg-accent bg-opacity-10 text-dark placeholder:text-dark-secondary placeholder:text-opacity-50 border-2 focus:border-accent w-full focus:outline-none focus:bg-opacity-30 transition-all duration-300 ease-in-out font-bold text-body font-mono tracking-wide",
+							"flex-1 rounded-10 px-4 py-2 min-w-[154px] h-[49px] bg-opacity-10 text-dark placeholder:text-dark-secondary placeholder:text-opacity-50 border-2 focus:border-black w-full focus:outline-none focus:bg-opacity-30 transition-all duration-300 ease-in-out ",
 							emailValid === null || emailValid
-								? "border-accent border-opacity-30"
+								? "border-gray-400 border-opacity-30"
 								: "border-red-400"
 						)}
 						onError={() => setEmailValid(false)}
-						placeholder="Enter your Email ID"
+						placeholder="Enter your E-mail"
 						onChange={(_) => {
 							emailInputRef.current?.setCustomValidity("");
 							if (emailValid !== null) {
@@ -149,25 +155,27 @@ export default function EarlyAccessSignup(props: Props) {
 						}}
 						required
 					/>
-					<button
-						type="submit"
-						className="submit-button btn-outline px-4"
-						disabled={loading}
-					>
-						<div className="submit-button-child flex flex-row items-center tracking-wide text-small-button font-bold">
-							<div>Register 🎉</div>
-						</div>
-					</button>
+					<div className="flex justify-center items-center submit-button">
+
+					
+						<GradientButton width={154}
+							type="submit"
+							disabled={loading}
+							
+						>
+							Register
+						</GradientButton>
+					</div>
 				</div>
 			</form>
 			<div
 				ref={registeredTextRef}
 				className={classNames(
-					"confirm-registration invisible scale-50 opacity-0 text-center absolute top-0 px-8 py-4 rounded-15 shadow-sm",
-					props.lightBg ? "bg-light bg-opacity-100" : "bg-primary bg-opacity-10"
+					"confirm-registration invisible scale-50 text-center absolute top-0 px-8",
+					props.lightBg ? "bg-light bg-opacity-100" : " bg-opacity-10"
 				)}
 			>
-				<div className="text-heading font-extrabold">Congratulations! 🎉</div>
+				<GradientText className="text-heading font-extrabold">Congratulations!</GradientText>
 				<div className="text-small-heading font-semibold">
 					You&rsquo;re on the waitlist
 				</div>

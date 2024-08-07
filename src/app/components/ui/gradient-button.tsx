@@ -1,15 +1,17 @@
 "use client";
+import { ReactNode } from "react";
+
 interface GradientButtonProps {
     type?: "submit" | "reset" | "button" | undefined;
     variant?: string;
-    width: number | "100%";
+    width?: number | "100%";
     height?: number;
     radius?: number;
     bgColor?: string;
     onClick?: (event: React.MouseEvent<HTMLElement>) => void;
     disabled?: boolean;
     className?: string;
-    children?: string | number;
+    children?: ReactNode;
 
 }
 
@@ -18,7 +20,7 @@ export default function GradientButton(props: GradientButtonProps) {
     const {type, variant, width, height, radius, bgColor, onClick, disabled, className, children} = {...props}
 
     const buttonWidth = width ? width : 154;
-    const outlineButtonWidth = width ? width : 90;
+    const outlineButtonWidth = width ? width : 154;
     const buttonHeight = height ? height : 49;
     const buttonRadius = radius ? radius : 9.5
     const bg = bgColor ? bgColor : 'transparent';
