@@ -45,11 +45,11 @@ const middleVariants: Variants = {
     },
     onscreen: {
         opacity: 1,
-        rotate: 360,
+        
     transition: {
         type: "spring",
         bounce: 0.4,
-        duration: 0.6
+        duration: 1
     }
     }
 };
@@ -136,18 +136,18 @@ export default function CtaMinor() {
                 {/* House + Logo container */}
                 <motion.div initial="offscreen"
         whileInView="onscreen"
-        viewport={{ once: false, amount: 0.8 }} className="absolute z-30 top-[42.2%] sm:top-[42.4%] w-[355px] sm:w-[410px]">
-                    <motion.div variants={middleVariants}> 
-                    <Image className="rounded-full aspect-square w-full object-cover opacity-75"
-                        src={"/cta-minor/cta-minor.gif"}
-                        alt="analyze-area-for-upgrades-gif"
-                        sizes="100vh"
-                        width={300}
-                        height={300}
-                    />
+        viewport={{ once: false, amount: 0.8 }} className="absolute z-30 top-96 sm:top-[408px] w-[500px] sm:w-[628px]">
+                    <motion.div variants={middleVariants} className="absolute z-30 w-[500px] sm:w-[628px]"> 
+                    <Image className=""
+                                src={"/cta-minor/house.png"}
+                                alt="House"
+                                sizes="100vh"
+                                width={500}
+                                height={300}
+                            />
                     </motion.div>
                 
-                    <motion.div variants={leftVariants} className="absolute z-30 -top-[76px] left-[0px] backdrop-blur-sm">
+                    <motion.div variants={leftVariants} className="absolute z-30 -top-[50px] left-[60px] backdrop-blur-sm">
                         <Image 
                             src={"/cta-minor/polygon1.svg"}
                             alt="Polygon SVG 1"
@@ -156,7 +156,7 @@ export default function CtaMinor() {
                         />
                     </motion.div>
                     
-                    <motion.div variants={leftVariants} className="absolute z-30 -top-[44px] left-[20px] w-[95px]">
+                    <motion.div variants={leftVariants} className="absolute z-30 -top-[20px] left-[80px] w-[95px]">
                         <Image
                             src={"/logo.png"}
                             alt="ClimateForge Logo"
@@ -164,7 +164,7 @@ export default function CtaMinor() {
                             height={76}
                         />
                     </motion.div>
-                    <motion.div variants={rightVariants} className="absolute z-30 -top-[55px] -right-[20%]">
+                    <motion.div variants={rightVariants} className="absolute z-30 -top-[55px] right-[10%]">
                         <Image
                             src={"/cta-minor/polygon2.svg"}
                             alt="Polygon SVG 2"

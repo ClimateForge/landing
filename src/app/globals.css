@@ -83,7 +83,7 @@ img {
     }
 	
 	h3, .h3 {
-		@apply font-semibold text-3xl sm:text-4xl md:text-5xl;
+		@apply font-semibold text-2xl sm:text-3xl md:text-4xl lg:text-5xl;
 	}
 	
 	h4, .h4 {

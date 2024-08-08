@@ -37,8 +37,8 @@ export default function Cta(props: CTAProps) {
 		<section className="relative flex justify-evenly items-center w-full bg-gradient-radial">
 			
 			{/* CTA Gif Container */}
-			<div className="flex justify-center items-center opacity-40 sm:opacity-100 absolute sm:relative 
-				h-auto max-w-[400px] sm:max-w-[400px] mx-8"
+			<div className="flex flex-0 justify-center items-center opacity-40 sm:opacity-100 absolute sm:relative 
+				h-auto max-w-[400px] px-4"
 				style={{borderRadius: gifRounded ? '50%' : '20px'}}>
 
 				<Image className="h-auto overflow-hidden object-cover aspect-square"
@@ -53,8 +53,8 @@ export default function Cta(props: CTAProps) {
 			</div>
 
 			{/* CTA Title/Description/Buttons Container */}
-			<div className="relative flex flex-col justify-center items-center text-center sm:text-left sm:items-start 
-				gap-y-12 max-w-[400px] sm:max-w-[543px]  min-h-[531px] h-full mx-8">
+			<div className="relative flex flex-1 flex-col justify-center items-center text-center sm:text-left sm:items-start 
+				gap-y-8 md:gap-y-12 max-w-[380px] sm:max-w-[543px]  min-h-[531px] h-full pr-4">
 				
 				{/* Title */}
 				<div className="leading-none">
@@ -80,7 +80,7 @@ export default function Cta(props: CTAProps) {
 				</p>
 
 				{/* Buttons Container */}
-				<div className="flex justify-center flex-wrap sm:flex-nowrap gap-4">
+				<div className="flex flex-wrap gap-4">
 					{primaryButton ? 
 						<GradientButton width={154} 
 							onClick={primaryButton.newTab ? 
@@ -101,13 +101,7 @@ export default function Cta(props: CTAProps) {
 					}
 					
 				</div>
-				{badges ? 
-					<Image className='absolute bottom-9 h-auto ' 
-						src={"/cta/badges.webp"} 
-						alt="badges" 
-						width={448} height={61}/> 
-					: null
-				}
+				
 			</div>
 			
 		</section>
