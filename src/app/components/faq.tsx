@@ -3,13 +3,16 @@ import { useState } from "react";
 import Image from "next/image";
 
 import GradientText from "./ui/gradient-text";
+import Link from "next/link";
 
 type FAQItemProps = {
     question: string;
-    answer: string;
+    answers: string[];
+    link?: string;
+    contact?: boolean;
 }
 
-function FAQItem({ question, answer }: FAQItemProps) {
+function FAQItem({ question, answers, link, contact}: FAQItemProps) {
     
     const [isOpen, setIsOpen] = useState(false);
 
@@ -39,40 +42,80 @@ function FAQItem({ question, answer }: FAQItemProps) {
                 className={`w-[24px] h-[24px] ml-4 sm:ml-[35.8px]`}
             />
             </button>
-            {isOpen && (
-            <p className="text-[#64607D] px-4">
-                {answer}
-            </p>
-            )}
+            <div className="px-4">
+            {isOpen ?
+            answers.map((ans, index) => 
+                <span className="p text-[#64607D]">
+                    {ans} 
+                    {link && index === 0 ?
+                        <Link href={link} className="text-[#4A89DB] font-semibold hover:opacity-85">
+                            <GradientText>pricing section</GradientText>
+                        </Link> 
+                        : null
+                    }
+                    {contact && index === answers.length-1 ? 
+                        <span>Contact: {' '}
+                        <button className="font-semibold hover:opacity-85 text-[#4A89DB]" 
+                        onClick={(e) => {
+                            window.location.href = "mailto:team@climateforge.ai";
+                            e.preventDefault();
+                        }}>
+                        
+                        team@climateforge.ai
+                        
+                    </button>
+                    {' '} to learn more.
+                    </span>
+                        : null
+                    }
+                </span>
+                
+            )
+            
+            : null}
+            </div>
         </div>
     );
 }
 
 export default function Faq() {
 
-    // placeholder description
-    const loremIpsum = "Lorem ipsum dolor sit amet consectetur. Mus pulvinar condimentum massa enim. In eget netus sollicitudin pellentesque. Varius eu libero commodo integer aliquet elit. Accumsan velit enim ullamcorper consectetur sed eget varius lacus."
-    
-    const faqData = [
+    const faqData: FAQItemProps[] = [
         {
             question: 'What is the pricing?',
-            answer: loremIpsum,
+            answers: [
+                "ClimateForge offers reasonably priced services, catering to both individuals and enterprises. You can find detailed pricing information in the ",
+                " on this website. The options are designed to be affordable and accessible, whether you're looking for individual solutions or enterprise-level services. "
+            ],
+            link: "/#pricing", // in green
         },
         {
             question: 'How can I purchase your services?',
-            answer: loremIpsum,
+            answers: [
+                "To purchase services from ClimateForge, you have two convenient options: either explore and select the service that fits your needs in the ",
+                ", or reach out to us for a tailored demo solution. We provide comprehensive support to help you choose the right service, ensuring you can start maximizing your returns while contributing to sustainability goals. "
+            ],
+            link: "/#pricing", // in green
+            
+            contact: true
         },
         {
             question: 'What services do you offer?',
-            answer: loremIpsum,
+            answers: [
+                "ClimateForge provides a range of services focused on lead generation, management, carbon reduction, energy modeling, and sustainability assessment for contractors, sales reps in the energy industry, cities, governments and much more. Our solutions are tailored for industrial sectors, offering tools to monitor, report, and reduce emissions by deploying physical equipment in the perfect locations, which can help organizations meet their carbon reduction goals."
+            ],
         },
         {
             question: 'Where do you operate?',
-            answer: loremIpsum,
+            answers: [
+                "ClimateForge typically operates globally or in regions with strong energy driven economies or industrial sectors. Our services are available wherever there is a demand for advanced environmental management, energy upgrade deployment, emissions monitoring and where we find friendly environmental policies for renewable energy. Our current focus is the US and the EU."
+            ],
         },
         {
             question: 'How can I be sure about the compliance and safety?',
-            answer: loremIpsum,
+            answers: [
+                "ClimateForge ensures compliance and safety through rigorous energy monitoring and reporting tools, which help organizations adhere to environmental regulations. Our solutions include real-time data analytics and visualization to provide a clear picture of emissions and energy potential, ensuring that companies can proactively manage and reduce their teams and environmental impact while making profits."
+            ],
         },
     ];
 
@@ -88,7 +131,7 @@ export default function Faq() {
                 shadow-[0px_31px_36px_0px_#4655A912] px-3 sm:px-6 bg-white 
                 rounded-[25px] overflow-y-scroll no-scrollbar">
                 {faqData.map((item, index) => (
-                    <FAQItem key={index} question={item.question} answer={item.answer} />
+                    <FAQItem key={index} question={item.question} answers={item.answers} link={item.link} contact={item.contact} />
                 ))}
             </div>
             

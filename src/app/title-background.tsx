@@ -5,7 +5,7 @@ export default function TitleBackground({gradient = false}) {
 	return (
 		<div className="absolute top-0 left-0 right-0 bottom-0 -z-10">
 			<Image className="absolute 
-                top-96 left-0
+                top-64 md:top-[320px] lg:top-[350px] left-10
                 "
                 width={0}
                 height={0} 
@@ -14,9 +14,8 @@ export default function TitleBackground({gradient = false}) {
                 alt="triangle-dots-svg-decoration"
             />
 			<Image className="absolute 
-                top-[75px] right-4
-                md:top-[100px] md:right-4 lg:top-[150px]"
-                
+                right-[5%]
+                top-[75px] md:top-[100px] lg:top-[150px]"
                 width={0}
                 height={0} 
                 style={{ width: '150px', height: 'auto' }}

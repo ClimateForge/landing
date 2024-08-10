@@ -5,12 +5,12 @@ import GradientBorderBox from "./ui/gradient-border-box";
 export default function Deploy() {
 
     const images = [
-        { src: '/deploy/deploy1.webp', caption: 'Solar Panels Systems' },
-        { src: '/deploy/deploy2.webp', caption: 'EV Charging Systems' },
-        { src: '/deploy/deploy3.webp', caption: 'Energy Storage & Batteries' },
-        { src: '/deploy/deploy4.webp', caption: 'HVAC Systems' },
-        { src: '/deploy/deploy5.webp', caption: 'Solar Heaters' },
-        { src: '/deploy/deploy6.webp', caption: 'Smart Energy Devices' },
+        { src: '/deploy/solar-panel-systems.mp4', caption: 'Solar Panels Systems' },
+        { src: '/deploy/ev-charging-systems.mp4', caption: 'EV Charging Systems' },
+        { src: '/deploy/energy-storage-batteries.mp4', caption: 'Energy Storage & Batteries' },
+        { src: '/deploy/hvac-systems.mp4', caption: 'HVAC Systems' },
+        { src: '/deploy/solar-heaters.mp4', caption: 'Solar Heaters' },
+        { src: '/deploy/smart-energy-devices.mp4', caption: 'Smart Energy Devices' },
     ]
 
     return (
@@ -32,12 +32,18 @@ export default function Deploy() {
                             <div
                                 key={index}
                                 className="relative flex justify-center items-end w-full max-w-[380px] h-[250px] sm:h-[300px] md:h-[350px] rounded-[20px]"
-                                style={{
-                                    background: `linear-gradient(180deg, rgba(14, 24, 32, 0.000025) 0%, rgba(21, 37, 50, 0.25) 100%), url(${image.src})`,
-                                    backgroundSize: 'cover',
-                                    backgroundPosition: 'center',
-                                }}>
-
+                                >
+                                <video className="absolute full aspect-square object-cover  rounded-[20px]"
+                                    src={image.src}
+                                    autoPlay
+                                    loop
+                                    playsInline
+                                    muted 
+                                    width={0}
+                                    height={0}
+                                >
+                                    
+                                </video>
                                 <div className="flex justify-center items-center h-[70px] w-full max-w-[338px] m-6
                                     rounded-2xl backdrop-blur-[4px] bg-[#01081352]"
                                     style={{ boxShadow: '0px 35.9px 36.56px 0px #1BA6774D' }}>

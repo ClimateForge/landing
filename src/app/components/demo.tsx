@@ -3,8 +3,8 @@
 export default function Demo() {
     
     return (
-		<section id="demo" className="w-full min-w-[250px] max-w-[1200px]">
-			<div className="bg-neutral-900 rounded-3xl 
+		<section id="demo" className="w-full min-w-[250px] max-w-[1200px] ">
+			<div className="bg-neutral-900 rounded-3xl shadow-2xl
 				mx-0 sm:mx-[20px]"
 			>
 				<div className="relative overflow-hidden pt-[56.25%] ">

@@ -93,7 +93,7 @@ function PricingCard (props: PricingCardProps) {
 export default function PricingTiers() {
     
     return (
-        <section className="relative flex flex-col justify-center items-center w-full gap-y-4 mb-0 sm:mb-10">
+        <section id="pricing" className="relative flex flex-col justify-center items-center w-full gap-y-4 mb-0 sm:mb-10">
             <GradientBorderBox className=" pt-20 pb-40" 
                 decorationsInside={[
                     {src: "decorations/dots.svg", className: "-top-[128px] left-24"}
