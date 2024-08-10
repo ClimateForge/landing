@@ -69,7 +69,12 @@ img {
 }
 
 @layer components {
-
+	.flex-center {
+		@apply flex justify-center items-center
+	}
+	.full {
+		@apply w-full h-full
+	}
 	.slide {
 		@apply animate-[slide_30s_infinite_linear]
 	}

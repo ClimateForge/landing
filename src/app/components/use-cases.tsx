@@ -19,16 +19,17 @@ export default function UseCases() {
             
             {/* Image Container */}
             <div className="relative hidden sm:flex max-h-[436px] max-w-[492px] flex-shrink flex-grow-1 basis-[50%]">
-                <Image
-                className="w-auto object-cover object-left z-10 
+                <video className="w-auto object-left z-10 
                     sm:[clip-path:polygon(80%_0,95%_28%,97%_42%,100%_58%,100%_68%,69%_100%,0_100%,0%_43%,0_0)]
                     md:[clip-path:polygon(85%_0,95%_28%,97%_42%,100%_58%,100%_68%,77%_100%,0_100%,0%_43%,0_0)]
-                    lg:[clip-path:polygon(85%_0,95%_28%,97%_42%,100%_58%,100%_68%,80%_100%,0_100%,0%_43%,0_0)]"
-                src={"/use-cases/use-cases.gif"}
-                width={0}
-                height={436}
-                sizes="100vh"
-                alt={""}
+                    lg:[clip-path:polygon(85%_0,95%_28%,97%_42%,100%_58%,100%_68%,80%_100%,0_100%,0%_43%,0_0)] aspect-square object-cover  rounded-[20px]"
+                    src={"/use-cases/use-cases.mp4"}
+                    autoPlay
+                    loop
+                    playsInline
+                    muted 
+                    width={0}
+                    height={0}
                 />
                 <Image
                 className="absolute top-0 sm:-right-[1%] md:-right-[3%] h-[120%] z-20"

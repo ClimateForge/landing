@@ -1,7 +1,8 @@
+"use client";
 import Image from "next/image";
 import GradientBorderCard from "./ui/gradient-border-card";
 import { ReactNode } from "react";
-
+import { motion, useDragControls } from "framer-motion"
 type ClientCardProps = {
     imageSrc?: string
     imageWidth?: number
@@ -10,8 +11,15 @@ type ClientCardProps = {
 }
 
 const ClientCard = ({imageSrc, imageWidth, imageHeight, children}: ClientCardProps) => {
-    
+    const controls = useDragControls()
     return (
+        <motion.div whileDrag={{ zIndex: 20, filter: "grayscale" }} drag dragSnapToOrigin dragControls={controls} dragElastic={0.2} 
+        dragConstraints={{
+            left: 0,
+            right: 0,
+            top: 0,
+            bottom: 0,
+        }}>
         <GradientBorderCard height={262} width={262} borderRadius={20} 
             fgStyle="flex flex-col justify-center items-center px-6"
             bgStyle="mx-5 group/card hover:scale-110 hover:shadow-lg
@@ -26,7 +34,7 @@ const ClientCard = ({imageSrc, imageWidth, imageHeight, children}: ClientCardPro
                     sizes="100vh"
                 />
             }
-        </GradientBorderCard>
+        </GradientBorderCard></motion.div>
     )
 }
 
@@ -84,6 +92,7 @@ const ClientCards = () => {
 }
 
 export default function ClientList() {
+    
     return (
         <section className="text-center w-full relative">
             
@@ -117,6 +126,9 @@ export default function ClientList() {
                 before:z-10 before:bg-gradient-to-r from-[#F9F9FF] to-transparent 
                 before:absolute before:top-0 before:left-0 before:w-[100px] before:h-full 
                 ">
+                   
+
+                    
                 <ClientCards/>
                 <ClientCards/>
                 <ClientCards/>

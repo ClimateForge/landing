@@ -3,7 +3,7 @@ import Footer from "./components/footer";
 import Header from "./components/header";
 import { dmSans } from "./fonts";
 import "./globals.css";
-
+import Template from "./template";
 
 export const metadata: Metadata = {
 	title: "ClimateForge",
@@ -32,7 +32,7 @@ export default function RootLayout({
 		<html lang="en">
 			<body className={`${dmSans.className} text-body`}>
 				<Header />
-					{children}
+					<Template>{children}</Template>
 				<Footer />
 			</body>
 		</html>

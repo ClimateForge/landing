@@ -8,8 +8,7 @@ type USPBlockProps = {
     title: string[];
     heading: string;
     description: string[];
-    imageSrc: string;
-    imageAlt: string;
+    videoSrc: string;
     iconSrc: string;
     imageLeft?: boolean;
     children: ReactNode;
@@ -17,7 +16,6 @@ type USPBlockProps = {
 
 type USPImageProps = {
     src: string;
-    alt: string;
     iconSrc: string;
     left?: boolean;
     children: ReactNode;
@@ -28,7 +26,7 @@ type USPDecorationProps = {
     caption: string;
     iconSrc: string;
 }
-const rightVariants: Variants = {
+const fromRight: Variants = {
     offscreen: {
         x: '30%',
         opacity: 0
@@ -43,9 +41,26 @@ const rightVariants: Variants = {
         }
     }
 };
-const leftVariants: Variants = {
+
+const fromRightLong: Variants = {
     offscreen: {
-        x: '-30%',
+        x: '30%',
+        opacity: 0
+    },
+    onscreen: {
+        x: 0,
+        opacity: 1,
+        transition: {
+            type: "spring",
+            bounce: 0.6,
+            duration: 2
+        }
+    }
+};
+
+const fromLeft: Variants = {
+    offscreen: {
+        x: '-40%',
         opacity: 0
     },
     onscreen: {
@@ -59,13 +74,29 @@ const leftVariants: Variants = {
     }
 };
 
-const middleVariants: Variants = {
+const fromLeftLong: Variants = {
     offscreen: {
-        
-        scale: .9,
+        x: '-40%',
+        opacity: 0
     },
     onscreen: {
-    
+        x: 0,
+        opacity: 1,
+        transition: {
+            type: "spring",
+            bounce: 0.4,
+            duration: 2
+        }
+    }
+};
+
+const fromMiddle: Variants = {
+    offscreen: {
+        opacity: 0,
+        scale: .75,
+    },
+    onscreen: {
+        opacity: 1,
         scale: 1,
         transition: {
             type: "spring",
@@ -79,14 +110,18 @@ const inter = Inter({ subsets: ['latin'] })
 
 function UspDecoration({title, caption, iconSrc}: USPDecorationProps) {
     return (
-        <motion.div variants={middleVariants}
-            className="absolute top-0 sm:top-20 -right-10 sm:-right-6 
+        <motion.div variants={fromMiddle}
+            whileHover={{
+                scale: 1.1,
+                transition: { duration: 0.8 },
+            }}
+            className="absolute top-[10%] sm:top-[20%] -right-[10%]
             flex justify-between items-center 
             h-[55px] px-4 
             rounded-[10px] bg-white shadow-md">
             
-            <div className={`${inter.className} h-[34px] flex flex-col justify-center`}>
-                <p className="text-[12px] text-[#A9A7B6]">{caption}</p>
+            <div className={`${inter.className}  flex flex-col justify-center cursor-default`}>
+                <p className="text-[12px] text-[#A9A7B6] leading-5">{caption}</p>
                 <p className="text-[14px] font-medium leading-none">{title}</p>
             </div>
             
@@ -102,51 +137,53 @@ function UspDecoration({title, caption, iconSrc}: USPDecorationProps) {
     )
 }
 
-function UspImage({src, alt, iconSrc, left = false, children}: USPImageProps) {
+function UspImage({src, iconSrc, left = false, children}: USPImageProps) {
     
     return (
         <motion.div 
             initial="offscreen"
             whileInView="onscreen" 
-            viewport={{ once: false, amount: 0.8 }}  
-            className="h-full absolute sm:relative flex items-center w-full"
-            style={{ justifyContent: left ? "flex-start" : "flex-end"}}>
+            viewport={{ once: false, amount: 0.6 }}  
+            className="relative flex-center w-full max-w-[415px] h-auto mx-8"
+            >
 
             {/* Circular image container */}
             <div 
-                className="absolute sm:relative flex justify-center items-center p-4 md:p-6 
-                rounded-b-full rounded-tr-full shadow-xl bg-white mx-16 z-10"
+                className="relative flex justify-center items-center p-4 lg:p-6 min-w-[250px] 
+                rounded-b-full rounded-tr-full shadow-xl bg-white z-10 max-w-[415px] max-h-[415px] w-full h-auto"
                 style={{
                     borderRadius: left ? "50% 0% 50% 50%" : "0% 50% 50% 50%",
                     zIndex: 0
                 }}>
                     
-                <div className="min-w-[220px] max-w-[370px] max-h-[370px] 
-                    rounded-full overflow-hidden opacity-45 sm:opacity-100">
-                    <Image className="object-cover aspect-square"
+                <div className="full min-w-[220px] max-w-[370px] max-h-[370px] 
+                    overflow-hidden opacity-45 sm:opacity-100 rounded-full">
+                    <video className="full aspect-square object-cover"
                         src={src}
-                        alt={alt}
-                        sizes="100vh"
+                        autoPlay
+                        loop
+                        playsInline
+                        muted 
                         width={370}
                         height={370}
-                        loading="lazy"
-                    />
+                    >
+                        
+                    </video>
                 </div>
-
-                {/* Unique decorations passed as children */}
-                {children}
                 
             </div>
 
+            {/* Unique decorations passed as */ children}
+
             {/* Gradient dot with icon */}
-            <motion.div variants={left ? leftVariants : rightVariants}  
-                className="absolute bottom-0 z-0
+            <motion.div variants={left ? fromLeftLong : fromRightLong}  
+                className="absolute bottom-0 z-0 
                     w-16 h-16 flex justify-center items-center
                     bg-accent-gradient rounded-full
                     shadow-[0px_4px_40px_rgba(0,198,198,0.45)]"
                 style={{
-                    right: !left ? '8%' : undefined,
-                    left: left ? '8%' : undefined 
+                    right: !left ? '-7%' : undefined,
+                    left: left ? '-7%' : undefined 
                 }}>
                     
                     <Image
@@ -158,32 +195,32 @@ function UspImage({src, alt, iconSrc, left = false, children}: USPImageProps) {
             </motion.div>
 
             {/* Small neon green dot */}
-            <motion.img variants={left ? leftVariants : rightVariants} 
+            <motion.img variants={left ? fromLeft : fromRight} 
                 src={'/usp-list/dot-small.svg'} alt={''} width={21} height={21} 
                 className="absolute -z-10 -top-5 right-20" 
                 style={{
-                    right: !left ? '20%' : undefined,
-                    left: left ? '20%' : undefined 
+                    right: !left ? '12%' : undefined,
+                    left: left ? '12%' : undefined 
                 }}
             />
 
             {/* Large green dot */}
-            <motion.img variants={left ? leftVariants : rightVariants}
+            <motion.img variants={left ? fromRight : fromLeft}
                 src={'/usp-list/dot-large.svg'} alt={''} width={65} height={66}
-                className="absolute -z-10 bottom-6" 
+                className="absolute -z-10 -bottom-6" 
                 style={{
-                    right: left ? '9%' : undefined,
-                    left: !left ? '9%' : undefined 
+                    right: left ? '-5%' : undefined,
+                    left: !left ? '-5%' : undefined 
                 }}
             />
 
             {/* Very small dots pattern */}
-            <motion.img variants={left ? leftVariants : rightVariants}
+            <motion.img variants={left ? fromLeft : fromRight}
                 src={'/usp-list/dots.svg'} alt={''} width={148} height={148} 
                 className="absolute -z-10 -bottom-[15px]" 
                 style={{
-                    right: !left ? '15%' : undefined,
-                    left: left ? '15%' : undefined 
+                    right: !left ? '0%' : undefined,
+                    left: left ? '0%' : undefined 
                 }}
             />
             
@@ -191,22 +228,20 @@ function UspImage({src, alt, iconSrc, left = false, children}: USPImageProps) {
     )
 }
 
-function UspBlock({title, heading, description, imageSrc, imageAlt, iconSrc, imageLeft, children}: USPBlockProps) {
+function UspBlock({title, heading, description, videoSrc, iconSrc, imageLeft, children}: USPBlockProps) {
     
     return (
         <div className="relative flex justify-center sm:justify-between items-center text-center sm:text-left 
-            w-full min-h-[415px]">
+            w-full min-h-[415px] ">
             
-            
-
             { imageLeft ? 
-                <UspImage src={imageSrc} alt={imageAlt} iconSrc={iconSrc} left={imageLeft}>
+                <UspImage src={videoSrc} iconSrc={iconSrc} left={imageLeft}>
                     {children}
                 </UspImage> 
                 : null 
             }
             
-            <div className="flex flex-col justify-center w-full z-10"
+            <div className="absolute sm:static sm:flex flex-col justify-center w-full z-10 "
             style={{paddingLeft: '24px'}}>
                 <h3>
                     {title[0]}
@@ -233,7 +268,7 @@ function UspBlock({title, heading, description, imageSrc, imageAlt, iconSrc, ima
             </div>
 
             { !imageLeft ? 
-                <UspImage src={imageSrc} alt={imageAlt} iconSrc={iconSrc} >
+                <UspImage src={videoSrc} iconSrc={iconSrc} >
                     {children}
                 </UspImage>
                 : null 
@@ -253,34 +288,40 @@ export default function UspList() {
             <h2 className="text-center">
                 The Unique Power Of
             </h2>
-            <h2>
+            <motion.h2 variants={fromMiddle} initial="offscreen"
+            whileInView="onscreen" 
+            viewport={{ once: false, amount: 0.6 }}  >
                 <GradientText>
                     ClimateForge
                 </GradientText>
-            </h2>
+            </motion.h2>
             
             {/* Divider */}
-            <svg className="w-[220px] h-[2px] sm:w-[324px] sm:h-[2px] mt-6 sm:mt:10 md:mt-10 mb-8 sm:mb-14" 
+            <svg className="w-[220px] h-[2px] sm:w-[324px] sm:h-[2px] mt-6 sm:mt:10 md:mt-10 mb-14" 
                 width="324" height="2" viewBox="0 0 324 2" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path opacity="0.4" d="M0.5 1H323.5" stroke="#01060F"/>
             </svg>
             
             {/* USP List Container */}
-            <div className="flex flex-col gap-y-16 lg:gap-y-24 justify-center items-center w-full">
+            <div className="flex flex-col gap-y-8 sm:gap-y-16 md:gap-y-24 lg:gap-y-32 justify-center items-center w-full">
 
                 {/* USP Block 1 - Conversion Optimized */}
                 <UspBlock 
                     title={["Conversion-", "Optimized"]}
                     heading="Faster time to market for renewable energy products"
                     description={["Companies using ClimateForge's solutions experience a ", "55%", " faster time to deploy energy upgrades."]}
-                    imageSrc="/usp-list/conversion-optimized.gif"
-                    imageAlt="Conversion Optimized PNG"
+                    videoSrc="/usp-list/conversion-optimized.mp4"
                     iconSrc="/usp-list/icon-react.svg"> 
                     
                     <UspDecoration title="$245.00" caption="Total Income" iconSrc="/usp-list/icon-bar-graph.svg"/>
                     
-                    <motion.div variants={middleVariants} className="absolute -top-7 sm:top-10 -left-10 sm:-left-20 
-                        flex justify-evenly items-center
+                    <motion.div variants={fromMiddle} 
+                        whileHover={{
+                            scale: 1.1,
+                            transition: { duration: 0.6 },
+                        }}
+                        className="absolute top-[5%] sm:top-[10%] -left-[10%] sm:-left-[15%] 
+                        flex justify-evenly items-center cursor-default
                         w-[206px] h-[55px] px-3
                         rounded-[10px] bg-white shadow-md">
                         <Image className="w-[35px] h-[35px] object-cover rounded-full"
@@ -310,8 +351,7 @@ export default function UspList() {
                     title={["Real ", "Energy Modeling"]}
                     heading="Increase in renewable energy adoption"
                     description={["ClimateForge's technology has led to a significant ", "75%", " increase in renewable energy adoption."]}
-                    imageSrc="/usp-list/real-energy-modeling.gif"
-                    imageAlt="Real Energy Modeling PNG"
+                    videoSrc="/usp-list/real-energy-modeling.mp4"
                     iconSrc="/usp-list/icon-ai.svg"
                     imageLeft> 
                     <UspDecoration title="Efficiency" caption="Savings" iconSrc="/usp-list/icon-robot.svg"/>
@@ -323,8 +363,7 @@ export default function UspList() {
                     title={["Impact ", "Assessments"]}
                     heading="Reduction In Carbon Emissions"
                     description={["Businesses using ClimateForge help to reduce carbon emissions by more than ", "30%", "."]}
-                    imageSrc="/usp-list/impact-assessments.gif"
-                    imageAlt="Impact Assessments PNG"
+                    videoSrc="/usp-list/impact-assessments.mp4"
                     iconSrc="/usp-list/icon-sustainable.svg"> 
                     <UspDecoration caption="Save Earth" title="Make $" iconSrc="/usp-list/icon-sun.svg"/>
                     

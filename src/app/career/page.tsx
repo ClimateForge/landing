@@ -30,7 +30,7 @@ export default function Career() {
             <OurTeam/>
 
             <Cta title={["Apply To", "Get Started!"]} 
-                gifSrc="/cta/career.gif" gifRounded
+                gifSrc="/cta/career2.webp" gifRounded
                 description="Didn't find a position that matches your qualifications? Drop us a line!"
                 badges
             />
