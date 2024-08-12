@@ -44,7 +44,7 @@ export default function About() {
             description="We help contractors make tons of money and slash CO2 emissions in seconds (seriously)."
             gradientIndex={1}
             buttonText="Join Us"
-            route="career"/>
+            route="careers"/>
 
             <MarketInsights/>
 
@@ -61,7 +61,7 @@ export default function About() {
             <Cta title={["Ready To", "Do Something", "That Matters?"]} 
                 gifSrc="/cta/about.webp" gifRounded
                 description="At ClimateForge we're building the best tools to help American contractors and installers to decarbonize the country and expand globally!"
-                primaryButton={{text: "Join Us", route: "/career"}}
+                primaryButton={{text: "Join Us", route: "/careers"}}
             />
 		</main>
     );
