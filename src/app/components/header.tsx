@@ -29,13 +29,13 @@ export default function Header() {
 					<Menu as="div" className="relative">
 						<Menu.Button
 							className={classNames( 
-								"flex flex-row items-center gap-7 pointer-events-auto sm:pointer-events-none  sm:bg-transparent rounded-b-lg px-8 py-3 sm:py-0 sm:px-0"
+								"flex flex-row items-center gap-7 pointer-events-auto sm:pointer-events-none sm:bg-transparent rounded-b-lg px-8 py-3 sm:py-0 sm:px-0"
 							)}
 							onClick={menuAction}
 						>
 							
-							<Link href="/" className="flex flex-row items-center">
-								<Image className="w-[25%] h-auto pointer-events-none sm:pointer-events-auto"
+							<Link href="/" className="flex flex-row items-center ">
+								<Image className="w-[40px] sm:w-[45px] md:w-[50px] lg:w-[55px] h-auto pointer-events-none sm:pointer-events-auto"
 									src="/logo.png"
 									alt="ClimateForge Logo"
 									width={55}
@@ -69,14 +69,14 @@ export default function Header() {
 					>
 						<div className="flex flex-col gap-8 sm:gap-4 md:gap-6 sm:flex-row 
 							shadow-md sm:shadow-none 
-							sm:bg-transparent rounded-lg pt-24 pb-8 sm:py-3 md:py-4 lg:py-5 items-center">
+							sm:bg-transparent rounded-lg pt-24 pb-8 sm:py-3 md:py-3 lg:py-5 items-center">
 							
 							<div className="flex gap-6 sm:gap-4 md:gap-6">
-								<Link href="/about" className="">
+								<Link href="/about" className="" onClick={menuAction}>
 									<p className="font-semibold text-sm md:text-base text-nowrap">About Us</p>
 								</Link>
-								<Link href="/career">
-									<p className="font-semibold text-sm md:text-base">Career</p>
+								<Link href="/careers" onClick={menuAction}>
+									<p className="font-semibold text-sm md:text-base">Careers</p>
 								</Link>
 							</div>
 

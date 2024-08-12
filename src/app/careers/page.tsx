@@ -7,11 +7,11 @@ import Cta from "../components/cta";
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: "Career - ClimateForge",
+    title: "Careers - ClimateForge",
     description: "Fix the planet and make an impact in the world!",
 };
 
-export default function Career() {
+export default function Careers() {
 	
     return (
         <main className="flex min-h-screen flex-col gap-20 items-center py-12 overflow-hidden pt-32 sm:pt-40">

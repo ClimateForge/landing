@@ -2,7 +2,7 @@
 import Image from "next/image";
 import GradientText from "./ui/gradient-text";
 import { motion, Variants } from "framer-motion";
-import { ReactNode } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import { Inter } from 'next/font/google';
 type USPBlockProps = {
     title: string[];
@@ -229,7 +229,37 @@ function UspImage({src, iconSrc, left = false, children}: USPImageProps) {
 }
 
 function UspBlock({title, heading, description, videoSrc, iconSrc, imageLeft, children}: USPBlockProps) {
-    
+    const [currentValue, setCurrentValue] = useState("0");
+
+    // This function handles the number animation logic
+    const animateNumber = () => {
+        // Extract numeric part from the target value
+        const numericPart = parseFloat(description[1]);
+        const duration = 1200; // 1.2 seconds for the animation
+        const stepTime = Math.abs(Math.floor(duration / numericPart));
+
+        const hasPercent = description[1].includes("%");
+        const hasPlus = description[1].includes("+");
+        const suffix = hasPercent ? "%" : "";
+        const prefix = hasPlus ? "+" : "";
+
+        let currentNumber = 0;
+
+        const incrementNumber = () => {
+        setCurrentValue(() => {
+            if (currentNumber < numericPart) {
+            currentNumber++;
+            return `${prefix}${currentNumber}${suffix}`;
+            }
+            return `${prefix}${numericPart}${suffix}`; // Ensure it does not go beyond the target
+        });
+        };
+
+        const intervalId = setInterval(incrementNumber, stepTime);
+
+        return () => clearInterval(intervalId);
+    };
+
     return (
         <div className="relative flex justify-center sm:justify-between items-center text-center sm:text-left 
             w-full min-h-[415px] ">
@@ -260,9 +290,14 @@ function UspBlock({title, heading, description, videoSrc, iconSrc, imageLeft, ch
 
                 <p className="font-semibold">
                     {description[0]} 
-                    <GradientText>
-                        {description[1]}
-                    </GradientText>
+                    <motion.span initial="offscreen"
+                        whileInView="onscreen"
+                        viewport={{ once: true }} // Only animate once
+                        onAnimationStart={animateNumber}>
+                        <GradientText>
+                            {currentValue}
+                        </GradientText>
+                    </motion.span>
                     {description[2]}
                 </p>
             </div>

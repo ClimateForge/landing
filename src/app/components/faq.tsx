@@ -23,7 +23,7 @@ function FAQItem({ question, answers, link, contact}: FAQItemProps) {
     return (
         <div className="w-full py-4 md::py-5">
             <button
-            className="flex justify-between items-center w-full px-4  text-left focus:outline-none"
+            className="flex justify-between items-center w-full px-4 text-left focus:outline-none"
             onClick={toggleAnswer}
             >
             
@@ -102,7 +102,7 @@ export default function Faq() {
         {
             question: 'What services do you offer?',
             answers: [
-                "ClimateForge provides a range of services focused on lead generation, management, carbon reduction, energy modeling, and sustainability assessment for contractors, sales reps in the energy industry, cities, governments and much more. Our solutions are tailored for industrial sectors, offering tools to monitor, report, and reduce emissions by deploying physical equipment in the perfect locations, which can help organizations meet their carbon reduction goals."
+                "Our solutions are tailored for the residential and commercial sectors, offering tools to monitor, report, and reduce emissions by deploying physical equipment in the perfect locations, which can help organizations meet their carbon reduction goals."
             ],
         },
         {

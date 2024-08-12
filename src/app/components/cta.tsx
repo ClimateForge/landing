@@ -55,7 +55,7 @@ export default function Cta(props: CTAProps) {
 
 			{/* CTA Title/Description/Buttons Container */}
 			<div className="relative flex flex-1 flex-col justify-center items-center text-center sm:text-left sm:items-start 
-				gap-y-8 md:gap-y-12 max-w-[380px] sm:max-w-[543px]  min-h-[531px] h-full mx-4 md:mx-6 lg:mx-10">
+				gap-y-8 md:gap-y-10 max-w-[380px] sm:max-w-[543px]  min-h-[531px] h-full mx-4 md:mx-6 lg:mx-10">
 				
 				{/* Title */}
 				<div className="leading-none">
@@ -76,7 +76,7 @@ export default function Cta(props: CTAProps) {
 				</div>
 				
 				{/* Description */}
-				<p className="mx-auto text-light font-light min-h-8 text-shadow">
+				<p className="text-light font-light min-h-8 text-shadow">
 					{description}
 				</p>
 

@@ -47,7 +47,7 @@ export default function Footer() {
 					{/* Links */}
 					<div className="flex flex-wrap justify-center items-center gap-x-6 sm:gap-x-8 
 						font-medium text-sm gap-y-4 mx-6 text-gray-700">
-						<Link href={""} className="hover:text-gray-500">
+						<Link href={"/about/#deploy"} className="hover:text-gray-500">
 							Features
 						</Link>
 
@@ -63,8 +63,8 @@ export default function Footer() {
 							FAQ
 						</Link>
 
-						<Link href={"/career"} className="hover:text-gray-500">
-							Career
+						<Link href={"/careers"} className="hover:text-gray-500">
+							Careers
 						</Link>
 
 						<EmailButton link>
