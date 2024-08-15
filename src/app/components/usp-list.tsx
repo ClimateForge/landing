@@ -2,8 +2,9 @@
 import Image from "next/image";
 import GradientText from "./ui/gradient-text";
 import { motion, Variants } from "framer-motion";
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode, useState } from "react";
 import { Inter } from 'next/font/google';
+
 type USPBlockProps = {
     title: string[];
     heading: string;
@@ -26,69 +27,6 @@ type USPDecorationProps = {
     caption: string;
     iconSrc: string;
 }
-const fromRight: Variants = {
-    offscreen: {
-        x: '30%',
-        opacity: 0
-    },
-    onscreen: {
-        x: 0,
-        opacity: 1,
-        transition: {
-            type: "spring",
-            bounce: 0.4,
-            duration: 0.8
-        }
-    }
-};
-
-const fromRightLong: Variants = {
-    offscreen: {
-        x: '30%',
-        opacity: 0
-    },
-    onscreen: {
-        x: 0,
-        opacity: 1,
-        transition: {
-            type: "spring",
-            bounce: 0.6,
-            duration: 2
-        }
-    }
-};
-
-const fromLeft: Variants = {
-    offscreen: {
-        x: '-40%',
-        opacity: 0
-    },
-    onscreen: {
-        x: 0,
-        opacity: 1,
-        transition: {
-            type: "spring",
-            bounce: 0.4,
-            duration: 0.8
-        }
-    }
-};
-
-const fromLeftLong: Variants = {
-    offscreen: {
-        x: '-40%',
-        opacity: 0
-    },
-    onscreen: {
-        x: 0,
-        opacity: 1,
-        transition: {
-            type: "spring",
-            bounce: 0.4,
-            duration: 2
-        }
-    }
-};
 
 const fromMiddle: Variants = {
     offscreen: {
@@ -138,14 +76,64 @@ function UspDecoration({title, caption, iconSrc}: USPDecorationProps) {
 }
 
 function UspImage({src, iconSrc, left = false, children}: USPImageProps) {
+    const fromRight: Variants = {
+        offscreen: { x: '30%', opacity: 0 },
+        onscreen: {
+            x: 0,
+            opacity: 1,
+            transition: {
+                type: "spring",
+                bounce: 0.4,
+                duration: 0.8
+            }
+        }
+    };
     
+    const fromRightLong: Variants = {
+        offscreen: { x: '30%', opacity: 0 },
+        onscreen: {
+            x: 0,
+            opacity: 1,
+            transition: {
+                type: "spring",
+                bounce: 0.6,
+                duration: 2
+            }
+        }
+    };
+    
+    const fromLeft: Variants = {
+        offscreen: { x: '-40%', opacity: 0 },
+        onscreen: {
+            x: 0,
+            opacity: 1,
+            transition: {
+                type: "spring",
+                bounce: 0.4,
+                duration: 0.8
+            }
+        }
+    };
+    
+    const fromLeftLong: Variants = {
+        offscreen: { x: '-40%', opacity: 0 },
+        onscreen: {
+            x: 0,
+            opacity: 1,
+            transition: {
+                type: "spring",
+                bounce: 0.4,
+                duration: 2
+            }
+        }
+    };
     return (
         <motion.div 
             initial="offscreen"
             whileInView="onscreen" 
             viewport={{ once: false, amount: 0.6 }}  
             className="relative flex-center w-full max-w-[415px] h-auto mx-8"
-            >
+        >
 
             {/* Circular image container */}
             <div 
