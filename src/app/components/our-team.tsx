@@ -13,7 +13,7 @@ export default function OurTeam() {
         {
             name: "Giovanni Amenta",
             title: "Chief Executive Officer",
-            image: "/our-team/team-member1.png",
+            image: "/our-team/ceo.webp",
             socials: {
                 instagram: "",
                 linkedIn: "",
@@ -37,7 +37,7 @@ export default function OurTeam() {
         {
             name: "Bella",
             title: "Supreme COO",
-            image: "/our-team/team-member3.png",
+            image: "/our-team/coo.webp",
             socials: {
                 instagram: "",
                 linkedIn: "",

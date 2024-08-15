@@ -1,9 +1,31 @@
+"use client";
 import { Inter } from 'next/font/google';
+import { motion, Variants } from "framer-motion";
+
+const barVariants: Variants = {
+    offscreen: {
+        width: 0,
+    },
+    onscreen: (barPercent: number) => ({
+        
+        width: `${barPercent}%`,
+        transition: {
+            duration: 1.2,
+        }
+    }),
+};
+
+const container: Variants = {
+    onscreen: {
+        transition: {
+            staggerChildren: 0.5
+        }
+    }
+}
 
 const inter = Inter({ subsets: ['latin'] })
-type Props = {
-    barGraphData: BarGraphData
-}
+
+type Props = { barGraphData: BarGraphData }
 
 type BarGraphData = {
     title: string;
@@ -49,7 +71,12 @@ export default function BarGraphCard({barGraphData}: Props) {
                 <div className='flex justify-center items-center relative pt-6 mb-8 '>
                     
                     <div className='w-[473px] z-10 h-[155px] '>
-                        <div className='flex flex-col justify-between w-full h-full'>
+                        <motion.div 
+                            initial="offscreen"
+                            whileInView="onscreen"  
+                            viewport={{ once: true, amount: 0.6 }}  
+                            variants={container} 
+                            className='flex flex-col justify-between w-full h-full'>
                             {barData.map((bar, index) => (
                                 <div key={index}>
                                 
@@ -70,13 +97,18 @@ export default function BarGraphCard({barGraphData}: Props) {
                                     <div className='h-[32px] sm:h-[40px] max-w-[473px] 
                                         rounded-[4px] bg-[#F8F8FF]'>
                                         {/* Bar */}
-                                        <div className={`h-[33px] sm:h-[41px] bg-[#7842E8] rounded-[4px]`}
-                                            style={{width: `${bar.barPercent}%`, backgroundColor: bar.barColor}}/>
+                                        <motion.div
+                                            custom={bar.barPercent}
+                                            variants={barVariants}
+                                            
+                                            className={`h-[33px] sm:h-[41px] rounded-[4px]`}
+                                            style={{ backgroundColor: bar.barColor }}
+                                        />
                                     </div>
                                 </div>
                             ))}
                             
-                        </div>
+                        </motion.div>
                         
                     </div>
 
