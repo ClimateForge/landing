@@ -1,0 +1,20 @@
+{
+    "rewrites": [
+        {
+            "source": "/v1/",
+            "destination": "https://climateforge.vercel.app/"
+        },
+        {
+            "source": "/v1/:match*",
+            "destination": "https://climateforge.vercel.com/:match*"
+        },
+        {
+            "source": "/",
+            "destination": "https://climateforge.ai/"
+        },
+        {
+            "source": "/:match*",
+            "destination": "https://climateforge.ai/:match*"
+        }
+    ]
+}
