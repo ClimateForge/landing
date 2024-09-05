@@ -1,44 +1,20 @@
 {
     "rewrites": [
         {
-            "source": "/",
-            "destination": "https://climateforge.vercel.app/",
-            "has": [
-                {
-                    "type": "host",
-                    "value": "climateforge.vercel.app"
-                }
-            ]
+            "source": "/v1/",
+            "destination": "https://climateforge.vercel.app/"
         },
         {
-            "source": "/:match*",
-            "destination": "https://climateforge.vercel.app/:match*",
-            "has": [
-                {
-                    "type": "host",
-                    "value": "climateforge.vercel.app"
-                }
-            ]
+            "source": "/v1/:match*",
+            "destination": "https://climateforge.vercel.app/:match*"
         },
         {
             "source": "/",
-            "destination": "https://climateforge.ai/",
-            "has": [
-                {
-                    "type": "host",
-                    "value": "climateforge.ai"
-                }
-            ]
+            "destination": "https://climateforge.ai/"
         },
         {
             "source": "/:match*",
-            "destination": "https://climateforge.ai/:match*",
-            "has": [
-                {
-                    "type": "host",
-                    "value": "climateforge.ai"
-                }
-            ]
+            "destination": "https://climateforge.ai/:match*"
         }
     ]
 }
