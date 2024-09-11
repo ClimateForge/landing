@@ -42,6 +42,7 @@ export default function About() {
 			{/* title card and CTA */}
 			<Title title={["Empower", "Sustainable", "Transformation"]} 
             description="We help contractors make tons of money and slash CO2 emissions in seconds (seriously)."
+            descriptionAnimated={["We help contractors make tons of ", "money", "sales", " and slash CO2 emissions in seconds (seriously)."]}
             gradientIndex={1}
             buttonText="Join Us"
             route="careers"/>

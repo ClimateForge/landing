@@ -3,11 +3,12 @@ import { useRouter } from 'next/navigation'
 
 import GradientButton from "./ui/gradient-button";
 import GradientText from './ui/gradient-text';
-
+import Typewriter from 'typewriter-effect';
 import { ReactNode } from 'react';
 interface BaseProps {
 	title?: string[];
 	description?: string;
+	descriptionAnimated?: string[];
 	gradientIndex: number;
 	buttonText?: string;
 	children?: ReactNode;
@@ -28,7 +29,7 @@ type TitlePropsWithoutNewTab = BaseProps & {
 // Combine the two types using a union
 export type TitleProps = TitlePropsWithNewTab | TitlePropsWithoutNewTab;
 
-export default function Title({title, description, gradientIndex, buttonText, route, newTab = false, children}: TitleProps) {
+export default function Title({title, description, descriptionAnimated, gradientIndex, buttonText, route, newTab = false, children}: TitleProps) {
 
 	const router = useRouter()
 	
@@ -46,10 +47,28 @@ export default function Title({title, description, gradientIndex, buttonText, ro
 				{title[2] ? title[2] : null}
 			</h1>
 		: null}
-
-		<p className="text-gray-500 mb-6 text-md font-semibold">
+		{
+			descriptionAnimated ? 
+			<div className="text-gray-500 mb-6 text-md font-semibold inline-flex whitespace-pre-wrap">
+				<p>{descriptionAnimated[0]}</p>
+				
+				<Typewriter
+					options={{
+						strings: descriptionAnimated.slice(1, -1),
+						autoStart: true,
+						loop: true,
+						wrapperClassName: 'font-bold text-transparent bg-clip-text bg-gradient-to-br from-[#4A89DB] via-[#028F79] via-30% to-[#39C77B] to-100%',
+					}}
+					
+					/>
+				<p>{descriptionAnimated[descriptionAnimated.length-1]}</p>
+			</div>
+			:
+			<p className="text-gray-500 mb-6 text-md font-semibold">
 			{description}
-		</p>
+			</p>
+		}
+		
 		<GradientButton width={154} onClick={newTab ? 
 			() => window.open(route, '_blank', 'noopener,noreferrer') : 
 			() => router.push(route ? route : '/')}>

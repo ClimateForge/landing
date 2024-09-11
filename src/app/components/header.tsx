@@ -73,10 +73,14 @@ export default function Header() {
 							
 							<div className="flex gap-6 sm:gap-4 md:gap-6">
 								<Link href="/about" className="" onClick={menuAction}>
-									<p className="font-semibold text-sm md:text-base text-nowrap">About Us</p>
+									<p className="font-semibold text-sm md:text-base text-nowrap hover:text-gray-600">
+										About Us
+									</p>
 								</Link>
 								<Link href="/careers" onClick={menuAction}>
-									<p className="font-semibold text-sm md:text-base">Careers</p>
+									<p className="font-semibold text-sm md:text-base hover:text-gray-600">
+										Careers
+									</p>
 								</Link>
 							</div>
 
