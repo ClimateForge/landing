@@ -21,6 +21,7 @@ export default function Careers() {
             {/* title card and CTA */}
 			<Title title={["Fix the planet and make an", "impact in the world!"]} 
                 description={"We are here to solve the biggest climate challenges of our time"} 
+                descriptionAnimated={["We are here to solve the biggest ", "climate", "energy", " challenges of our time"]}
                 gradientIndex={1}
                 buttonText={"Learn More"}
                 route="about"/>

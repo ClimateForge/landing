@@ -51,6 +51,8 @@ export default function Home() {
 			{/* title card and CTA */}
 			<Title title={["Energy", "Efficiency", "in a wink!"]} 
 				description="Discover, Qualify and Deploy Energy Upgrades faster than ever before!" 
+                descriptionAnimated={["Discover, Qualify and Deploy ", "solar", "HVAC", "batteries", " faster than ever before!"]}
+
 				gradientIndex={1}
 				buttonText="Book a Demo"
                 route='https://calendly.com/giovanni-climateforge-qttf'

@@ -127,7 +127,7 @@ export default function Faq() {
                 <h2><GradientText>Questions</GradientText></h2>
             </div>
             
-            <div className="py-8 w-full max-w-[651px] max-h-[350px] sm:max-h-[400px] 
+            <div className="py-8 w-full max-w-[651px] h-full max-h-[350px] sm:max-h-[400px] 
                 shadow-[0px_31px_36px_0px_#4655A912] px-3 sm:px-6 bg-white 
                 rounded-[25px] overflow-y-scroll no-scrollbar">
                 {faqData.map((item, index) => (

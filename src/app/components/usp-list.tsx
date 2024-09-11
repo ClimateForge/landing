@@ -161,7 +161,7 @@ function UspImage({src, iconSrc, left = false, children}: USPImageProps) {
                 
             </div>
 
-            {/* Unique decorations passed as */ children}
+            {/* Unique decorations (Cards, etc.) passed as */ children}
 
             {/* Gradient dot with icon */}
             <motion.div variants={left ? fromLeftLong : fromRightLong}  
@@ -282,7 +282,7 @@ function UspBlock({title, heading, description, videoSrc, iconSrc, imageLeft, ch
                         whileInView="onscreen"
                         viewport={{ once: true }} // Only animate once
                         onAnimationStart={animateNumber}>
-                        <GradientText>
+                        <GradientText className="text-lg font-bold">
                             {currentValue}
                         </GradientText>
                     </motion.span>

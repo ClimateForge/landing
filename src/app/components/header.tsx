@@ -78,19 +78,11 @@ export default function Header() {
 							sm:bg-transparent rounded-lg pt-24 pb-8 sm:py-3 md:py-3 lg:py-5 items-center"
 						>
 							<div className="flex gap-6 sm:gap-4 md:gap-6">
-								<Link
-									href="/about"
-									className=""
-									onClick={menuAction}
-								>
-									<p className="font-semibold text-sm md:text-base text-nowrap">
-										About Us
-									</p>
+								<Link href="/about" className="" onClick={menuAction}>
+									<p className="font-semibold text-sm md:text-base text-nowrap">About Us</p>
 								</Link>
 								<Link href="/careers" onClick={menuAction}>
-									<p className="font-semibold text-sm md:text-base">
-										Careers
-									</p>
+									<p className="font-semibold text-sm md:text-base">Careers</p>
 								</Link>
 							</div>
 
