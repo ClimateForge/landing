@@ -31,25 +31,28 @@ function PricingCard (props: PricingCardProps) {
                 bg-[length:100%_100%] group-hover:bg-[length:150%_100%] group-hover:scale-110">
                     
                 {name === "Launch" ?
-                    <Image className="absolute top-[25%] left-[25%]"
+                    <Image title="Launch Icon"
+                        className="absolute top-[25%] left-[25%]"
                         src={`/pricing-tiers/launch.svg`}
-                        alt="triangle-dots-svg-decoration"
+                        alt="Launch Icon"
                         width={32}
                         height={32} 
                     />
 
                     : name === "Scale" ?
-                    <Image className="absolute top-[25%] left-[25%]"
+                    <Image title="Scale Icon"
+                        className="absolute top-[25%] left-[25%]"
                         src={`/pricing-tiers/scale.svg`}
-                        alt="triangle-dots-svg-decoration"
+                        alt="Scale SVG"
                         width={32}
                         height={32} 
                     />
 
                     : name === "Enterprise" ?
-                    <Image className="absolute top-[25%] left-[25%]"
+                    <Image title="Enterprise Icon"
+                        className="absolute top-[25%] left-[25%]"
                         src={`/pricing-tiers/enterprise.svg`}
-                        alt="triangle-dots-svg-decoration"
+                        alt="Enterprise SVG"
                         width={32}
                         height={32} 
                     />

@@ -12,7 +12,8 @@ export default function JobOpenings() {
             overflow-hidden min-h-[600px] max-h-[1176px] rounded-[90px] bg-white-gradient">
             
             {/* Background image */}
-            <Image className="absolute w-full h-full  mix-blend-soft-light object-cover"
+            <Image title='Background Image'
+                className="absolute w-full h-full  mix-blend-soft-light object-cover"
                 src={"/job-openings/solar-panels.webp"}
                 alt="Houses"
                 sizes="100vh"
@@ -75,9 +76,10 @@ export default function JobOpenings() {
                     </GradientBorderCard>
                 </div>
             </div>
-            <Image className={`absolute z-0 -bottom-[105px] -right-[105px] w-[363px]`}
+            <Image title='Dots Box Decoration'
+                className={`absolute z-0 -bottom-[105px] -right-[105px] w-[363px]`}
                 src={'decorations/dots.svg'}
-                alt=""
+                alt="Dots SVG"
                 width={0}
                 height={0} 
                 style={{height: 'auto'}}

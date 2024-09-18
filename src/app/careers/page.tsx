@@ -9,6 +9,23 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
     title: "Careers - ClimateForge",
     description: "Fix the planet and make an impact in the world!",
+    keywords: [
+        "Careers at ClimateForge", 
+        "AI lead generation jobs", 
+        "solar energy jobs", 
+        "HVAC careers", 
+        "green tech careers", 
+        "AI and green technology jobs", 
+        "work in renewable energy", 
+        "jobs in sustainable tech"
+    ],
+    // Open Graph for the Careers page
+    openGraph: {
+        title: "Careers at ClimateForge | Join the Future of AI-Driven Lead Generation",
+        description: "Discover exciting career opportunities at ClimateForge, where we innovate the way contractors find leads for solar, HVAC, and green industries.",
+        url: "https://www.climateforge.ai/careers", // Page URL
+        type: "website",
+    }
 };
 
 export default function Careers() {

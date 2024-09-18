@@ -1,7 +1,6 @@
-"use client";
 
 export default function Demo() {
-    
+    // TODO: optimize iframe
     return (
 		<section id="demo" className="w-full min-w-[250px] max-w-[1200px] ">
 			<div className="bg-neutral-900 rounded-3xl shadow-2xl

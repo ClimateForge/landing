@@ -64,9 +64,10 @@ function UspDecoration({title, caption, iconSrc}: USPDecorationProps) {
             </div>
             
 
-            <Image className="w-[23px] h-[23px] mt-5"
+            <Image title="Decoration Card Icon"
+                className="w-[23px] h-[23px] mt-5"
                 src={iconSrc}
-                alt=""
+                alt="Card Icon"
                 width={36}
                 height={0} 
             />
@@ -174,9 +175,9 @@ function UspImage({src, iconSrc, left = false, children}: USPImageProps) {
                     left: left ? '-7%' : undefined 
                 }}>
                     
-                    <Image
+                    <Image title="Icon Decoration"
                         src={iconSrc}
-                        alt=""
+                        alt="SVG Icon"
                         width={36}
                         height={0} 
                     />
@@ -184,7 +185,8 @@ function UspImage({src, iconSrc, left = false, children}: USPImageProps) {
 
             {/* Small neon green dot */}
             <motion.img variants={left ? fromLeft : fromRight} 
-                src={'/usp-list/dot-small.svg'} alt={''} width={21} height={21} 
+                title="Small Green Dot" alt="Small Green Dot SVG"
+                src={'/usp-list/dot-small.svg'} width={21} height={21} 
                 className="absolute -z-10 -top-5 right-20" 
                 style={{
                     right: !left ? '12%' : undefined,
@@ -194,7 +196,8 @@ function UspImage({src, iconSrc, left = false, children}: USPImageProps) {
 
             {/* Large green dot */}
             <motion.img variants={left ? fromRight : fromLeft}
-                src={'/usp-list/dot-large.svg'} alt={''} width={65} height={66}
+                title="Large Green Dot" alt="Large Green Dot SVG"
+                src={'/usp-list/dot-large.svg'} width={65} height={66}
                 className="absolute -z-10 -bottom-6" 
                 style={{
                     right: left ? '-5%' : undefined,
@@ -204,14 +207,14 @@ function UspImage({src, iconSrc, left = false, children}: USPImageProps) {
 
             {/* Very small dots pattern */}
             <motion.img variants={left ? fromLeft : fromRight}
-                src={'/usp-list/dots.svg'} alt={''} width={148} height={148} 
+                title="Dots" alt="Dots SVG"
+                src={'/usp-list/dots.svg'} width={148} height={148} 
                 className="absolute -z-10 -bottom-[15px]" 
                 style={{
                     right: !left ? '0%' : undefined,
                     left: left ? '0%' : undefined 
                 }}
             />
-            
         </motion.div>
     )
 }
@@ -265,9 +268,10 @@ function UspBlock({title, heading, description, videoSrc, iconSrc, imageLeft, ch
                     {title[0]}
                     <span className="relative whitespace-nowrap">
                     {title[1]}
-                        <Image className="absolute z-10 top-[85%] left-[0px] w-full"
+                        <Image title="USP Title Accent"
+                            className="absolute z-10 top-[85%] left-[0px] w-full"
                             src={imageLeft ? "/accents/accent2.svg" : "/accents/accent1.svg"}
-                            alt="Block 1 title accent SVG"
+                            alt="Title Accent SVG"
                             width={381} height={18}/>
                     </span>
                 </h3>
@@ -347,10 +351,11 @@ export default function UspList() {
                         flex justify-evenly items-center cursor-default
                         w-[206px] h-[55px] px-3
                         rounded-[10px] bg-white shadow-md">
-                        <Image className="w-[35px] h-[35px] object-cover rounded-full"
+                        <Image title="Avatar"
+                            className="w-[35px] h-[35px] object-cover rounded-full"
                             src={"/usp-list/avatar.webp"}
                             sizes="100vh"
-                            alt=""
+                            alt="Avatar"
                             width={0}
                             height={0} 
                         />
@@ -360,9 +365,10 @@ export default function UspList() {
                         </div>
                         
 
-                        <Image className="w-[28px] h-[28px]"
+                        <Image title="Line Graph Icon"
+                            className="w-[28px] h-[28px]"
                             src={"/usp-list/icon-line-graph.svg"}
-                            alt=""
+                            alt="Line Graph SVG"
                             width={0}
                             height={0} 
                         />

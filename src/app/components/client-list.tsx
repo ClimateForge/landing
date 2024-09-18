@@ -25,10 +25,11 @@ const ClientCard = ({imageSrc, imageWidth, imageHeight, children}: ClientCardPro
             bgStyle="mx-5 group/card hover:scale-110 hover:shadow-lg
                 transition-all duration-300 ease-in-out">
             {!imageSrc ? children :
-                <Image className="h-auto grayscale group-hover/card:grayscale-0
+                <Image title="Client Logo"
+                    className="h-auto grayscale group-hover/card:grayscale-0
                     transition-all duration-300 ease-in-out" draggable="false"
                     src={imageSrc}
-                    alt="Block 2 title accent SVG"
+                    alt="Client Logo"
                     width={imageWidth}
                     height={imageHeight} 
                     sizes="100vh"
@@ -57,17 +58,19 @@ const ClientCards = () => {
             {/* LG Energy Solutions */}
             <ClientCard>
                 <div className="flex flex-col justify-center items-center">
-                    <Image className="h-[64px] grayscale group-hover/card:grayscale-0 
+                    <Image title="LG Logo"
+                        className="h-[64px] grayscale group-hover/card:grayscale-0 
                         transition-all duration-300 ease-in-out" draggable="false"
                         src={"/client-list/lg.webp"}
-                        alt="Block 2 title accent SVG"
+                        alt="LG Logo"
                         width={64}
                         height={0}
                         sizes="100vh"
                         />
-                    <Image className="h-auto" draggable="false"
+                    <Image title="LG Text"
+                        className="h-auto" draggable="false"
                         src={"/client-list/LG-text.webp"}
-                        alt="Block 2 title accent SVG"
+                        alt="LG Text"
                         width={180}
                         height={27}
                         sizes="100vh"/>
@@ -101,17 +104,17 @@ export default function ClientList() {
             
                 <div className="inline-flex justify-center "> 
                     <span className=" relative ">&nbsp;clients&nbsp;
-                        <Image className="absolute -z-10 transform scale-110
-                            top-[3px] right-[0px]"
+                        <Image title="Gray Circle Accent SVG"
+                            className="absolute -z-10 transform scale-110 top-[3px] right-[0px]"
                             src={"/accents/ellipse1.svg"}
-                            alt="Block 2 title accent SVG"
+                            alt="Gray Circle SVG"
                             width={0}
                             height={73} 
                             style={{ width: '200px', height: 'auto'}}/>
-                        <Image className="absolute -z-10 transform scale-110
-                            top-[5px] right-[0px]"
+                        <Image title="Green Circle Accent SVG"
+                            className="absolute -z-10 transform scale-110 top-[5px] right-[0px]"
                             src={"/accents/ellipse2.svg"}
-                            alt="Block 2 title accent SVG"
+                            alt="Green Circle SVG"
                             width={0}
                             height={73} 
                             style={{ width: '200px', height: 'auto'}}/>
@@ -124,11 +127,7 @@ export default function ClientList() {
             {/* Client Card Carousel */}
             <div className="flex whitespace-nowrap group hover:pause
                 before:z-10 before:bg-gradient-to-r from-[#F9F9FF] to-transparent 
-                before:absolute before:top-0 before:left-0 before:w-[100px] before:h-full 
-                ">
-                   
-
-                    
+                before:absolute before:top-0 before:left-0 before:w-[100px] before:h-full">
                 <ClientCards/>
                 <ClientCards/>
                 <ClientCards/>

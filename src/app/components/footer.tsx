@@ -29,11 +29,12 @@ export default function Footer() {
 					
 					{/* Logo */}
 					<div>
-						<Link href="/" className="flex">
+						<Link title="Home" href="/" className="flex">
 						
-							<Image className="max-w-[49px] h-auto"
+							<Image title="ClimateForge Logo"
+								className="max-w-[49px] h-auto"
 								src="/logo.png"
-								alt="DogLeads Logo"
+								alt="ClimateForge Logo"
 								width={49}
 								height={49}
 								priority
@@ -47,23 +48,28 @@ export default function Footer() {
 					{/* Links */}
 					<div className="flex flex-wrap justify-center items-center gap-x-6 sm:gap-x-8 
 						font-medium text-sm gap-y-4 mx-6 text-gray-700">
-						<Link href={"/about/#deploy"} className="hover:text-gray-500">
+						<Link title="Features" 
+							href={"/about/#deploy"} className="hover:text-gray-500">
 							Features
 						</Link>
 
-						<Link href={"/about/#testimonials"} className="hover:text-gray-500">
+						<Link title="Testimonials" 
+							href={"/about/#testimonials"} className="hover:text-gray-500">
 							Testimonials
 						</Link>
 
-						<Link href={"/about"}  className="hover:text-gray-500">
+						<Link title="About" 
+							href={"/about"}  className="hover:text-gray-500">
 							About Us
 						</Link>
 
-						<Link href={"/about/#faq"} className="hover:text-gray-500">
+						<Link title="Frequently Asked Questions" 
+							href={"/about/#faq"} className="hover:text-gray-500">
 							FAQ
 						</Link>
 
-						<Link href={"/careers"} className="hover:text-gray-500">
+						<Link title="Careers" 
+							href={"/careers"} className="hover:text-gray-500">
 							Careers
 						</Link>
 
@@ -74,30 +80,28 @@ export default function Footer() {
 
 					{/* Socials */}
 					<div className="flex flex-wrap gap-4 justify-center items-center text-[#374151]">
-						{/* Facebook */}
-						<Link className="hidden" href={""} rel="noopener noreferrer" target="_blank">
-							<FacebookIcon className="hover:text-[#242b36]"/>
-						</Link>
 
 						{/* LinkedIn */}
-						<Link href={"https://www.linkedin.com/company/climateforge/?viewAsMember=true"} rel="noopener noreferrer" target="_blank">
+						<Link title="LinkedIn"
+							href={"https://www.linkedin.com/company/climateforge/?viewAsMember=true"} 
+							rel="noopener noreferrer" target="_blank">
 							<LinkedInIcon className="hover:text-[#242b36]"/>
 						</Link>
 
 						{/* X */}
-						<Link href={""} rel="noopener noreferrer" target="_blank">
+						<Link title="X"
+							href="https://x.com/" 
+							rel="noopener noreferrer" target="_blank">
 							<XIcon className="hover:text-[#242b36]"/>
 						</Link>
 
 						{/* Instagram */}
-						<Link href={""} rel="noopener noreferrer" target="_blank">
+						<Link title="Instagram"
+							href="https://www.instagram.com/" 
+							rel="noopener noreferrer" target="_blank">
 							<InstagramIcon className="hover:text-[#242b36]"/>
 						</Link>
 
-						{/* YouTube */}
-						<Link className="hidden" href={""} rel="noopener noreferrer" target="_blank">
-							<YoutubeIcon className="hover:text-[#242b36]"/>
-						</Link>
 					</div>
 					
 				</div>
@@ -115,13 +119,16 @@ export default function Footer() {
 					</p>
 
 					<div className="flex gap-x-6 gap-y-2 flex-wrap">
-					<Link href={""} className="hover:text-gray-500">
+					<Link title="Privacy Policy"
+						href="/" className="hover:text-gray-500">
 						Privacy Policy
 					</Link>
-					<Link href={""} className="hover:text-gray-500">
+					<Link title="Terms of Service"
+						href="/" className="hover:text-gray-500">
 						Terms of Service
 					</Link>
-					<Link href={""} className="hover:text-gray-500">
+					<Link title="Cookies Settings"
+						href="/" className="hover:text-gray-500">
 						Cookies Settings
 					</Link>
 					</div>

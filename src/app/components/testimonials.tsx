@@ -83,8 +83,9 @@ export default function Testimonials() {
                         <div className="flex mt-6 items-center">
                             
                             <div className="w-16 h-16 min-w-16 rounded-full mr-4 overflow-hidden bg-[#F9F9FF]">
-                                <Image src={testimonial.imageSrc ? testimonial.imageSrc : "/avatar.svg"}
-                                alt="testimonial-pic"
+                                <Image title="Testimonial Avatar"
+                                src={testimonial.imageSrc ? testimonial.imageSrc : "/avatar.svg"}
+                                alt="testimonial-avatar"
                                 width={64}
                                 height={64} 
                                 sizes="100vh"

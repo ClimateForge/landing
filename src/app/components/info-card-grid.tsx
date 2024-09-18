@@ -34,11 +34,12 @@ function InfoCard({ title, description, icon }: InfoCardData) {
                 group-hover:transition-all group-hover:delay-200 group-hover:duration-700
                 bg-[length:100%_100%] group-hover:bg-[length:150%_100%] group-hover:scale-110">
                     
-                    <Image className="absolute z-10 transition-all duration-700
+                    <Image title="Card Icon"
+                        className="absolute z-10 transition-all duration-700
                         top-[25%] left-[25%]
                         w-[50%] h-[50%]"
                         src={`/card-icons/${icon}.svg`}
-                        alt="triangle-dots-svg-decoration"
+                        alt="card icon"
                         width={36}
                         height={0} 
                 />

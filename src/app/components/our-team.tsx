@@ -16,7 +16,7 @@ export default function OurTeam() {
             image: "/our-team/ceo.webp",
             socials: {
                 instagram: "",
-                linkedIn: "",
+                linkedIn: "https://www.linkedin.com/in/giovanniamenta/",
                 facebook: "",
                 x: "",
             }
@@ -28,7 +28,7 @@ export default function OurTeam() {
             image: "/our-team/team-member2.png",
             socials: {
                 instagram: "",
-                linkedIn: "",
+                linkedIn: "https://www.linkedin.com/in/anselmj/",
                 facebook: "",
                 x: "",
             }
@@ -72,30 +72,49 @@ export default function OurTeam() {
                             {/* Socials */}
                             <div className="flex flex-wrap gap-4 justify-center items-center mt-4 mb-16 text-[#374151]">
                                 {/* Instagram */}
-                                <a href={teamMember.socials.instagram} rel="noopener noreferrer" target="_blank">
-                                    <InstagramIcon />
-                                </a>
+                                {teamMember.socials.instagram ?
+                                    <a title={teamMember.name + " @ Instagram"}
+                                        href={teamMember.socials.instagram} 
+                                        rel="noopener noreferrer" target="_blank">
+                                        <InstagramIcon />
+                                    </a> : null
+                                }
 
                                 {/* LinkedIn */}
-                                <a href={teamMember.socials.linkedIn} rel="noopener noreferrer" target="_blank">
-                                    <LinkedInIcon />
-                                </a>
+                                {teamMember.socials.linkedIn ?
+                                    <a title={teamMember.name + " @ LinkedIn"}
+                                        href={teamMember.socials.linkedIn} 
+                                        rel="noopener noreferrer" target="_blank">
+                                        <LinkedInIcon />
+                                    </a> : null 
+                                }
 
                                 {/* Facebook */}
-                                <a href={teamMember.socials.facebook} rel="noopener noreferrer" target="_blank">
-                                    <FacebookIcon/>
-                                </a>
+                                {teamMember.socials.facebook ?
+                                    <a title={teamMember.name + " @ Facebook"}
+                                        href={teamMember.socials.facebook} 
+                                        rel="noopener noreferrer" target="_blank">
+                                        <FacebookIcon/>
+                                    </a> : null 
+                                }
 
                                 {/* X */}
-                                <a href={teamMember.socials.x} rel="noopener noreferrer" target="_blank">
-                                    <XIcon />
-                                </a>
+                                {teamMember.socials.instagram ?
+                                    <a title={teamMember.name + " @ X"}
+                                        href={teamMember.socials.x} 
+                                        rel="noopener noreferrer" target="_blank">
+                                        <XIcon />
+                                    </a> : null 
+                                }
                             </div>
                             
                         </GradientBorderBox>
 
                         <div className="absolute -top-[111px] left-[64px] z-0 rounded-full w-[222px] h-[222px]">
-                            <Image src={teamMember.image} alt={teamMember.name} width={0} height={0} sizes="100vh"
+                            <Image title="Team Member Avatar"
+                                src={teamMember.image} 
+                                alt={teamMember.name} 
+                                width={0} height={0} sizes="100vh"
                                 className="rounded-full w-full h-full object-cover"
                             />
                         </div>
