@@ -32,7 +32,7 @@ export type TitleProps = TitlePropsWithNewTab | TitlePropsWithoutNewTab;
 export default function Title({title, description, descriptionAnimated, gradientIndex, buttonText, route, newTab = false, children}: TitleProps) {
 
 	const router = useRouter()
-	
+	// TODO: p tags before and after typewriter causing render delay
 	return (
 		<section className="flex flex-col 
 			justify-center items-center 

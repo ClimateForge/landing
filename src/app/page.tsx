@@ -8,6 +8,30 @@ import UspList from "./components/usp-list";
 import PricingTiers from "./components/pricing-tiers";
 import ClientList from "./components/client-list";
 
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+    title: "Careers - ClimateForge",
+    description: "Fix the planet and make an impact in the world!",
+    keywords: [
+        "AI lead generation", 
+        "solar leads", 
+        "HVAC leads", 
+        "contractor tools", 
+        "eco-friendly solutions", 
+        "CO2 reduction", 
+        "renewable energy leads", 
+        "green technology leads"
+    ],
+   // Open Graph for social sharing
+    openGraph: {
+        title: "ClimateForge | AI-Powered Lead Generation for Solar, HVAC, and More",
+        description: "AI-driven platform helping contractors boost revenue by finding leads for solar, HVAC, and eco-friendly solutions.",
+        url: "https://www.climateforge.ai/", // Page URL
+        type: "website",
+    },
+};
+
 export default function Home() {
 
 	const infoCardsData = [
@@ -73,7 +97,7 @@ export default function Home() {
 			<ClientList/>
 
             <Cta title={["Ready To", "Get Started?"]} gifSrc="/cta/solar.webp"
-                description="Your Mom is going to be proud of you making more money and saving the planet!"
+                description="Your peers are going to be proud of you for making more money and saving the planet!"
                 primaryButton={{text: "Start For Free", route: "https://calendly.com/giovanni-climateforge-qttf", newTab: true }}
                 contactButton
             />

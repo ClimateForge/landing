@@ -31,19 +31,19 @@ export default function UseCases() {
                     width={0}
                     height={0}
                 />
-                <Image
+                <Image title="Image Accent Green"
                 className="absolute top-0 sm:-right-[1%] md:-right-[3%] h-[120%] z-20"
                 src={"/use-cases/vector1.svg"}
                 width={0}
                 height={0}
-                alt={""}
+                alt={"Green Accent SVG"}
                 />
-                <Image
+                <Image title="Image Accent White"
                 className="absolute top-0 -right-[7.5%] h-[120%] z-10"
                 src={"/use-cases/vector2.svg"}
                 width={0}
                 height={0}
-                alt={""}
+                alt={"White Accent SVG"}
                 />
             </div>
 

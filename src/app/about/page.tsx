@@ -13,6 +13,23 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
     title: "About Us - ClimateForge",
     description: "We help contractors make tons of money and slash CO2 emissions in seconds.",
+    keywords: [
+        "About ClimateForge", 
+        "AI lead generation company", 
+        "green technology company", 
+        "solar lead generation", 
+        "HVAC lead generation", 
+        "eco-friendly contractor tools", 
+        "mission-driven AI", 
+        "sustainable solutions"
+    ],
+    // Open Graph for the About page
+    openGraph: {
+        title: "About ClimateForge | Revolutionizing Lead Generation for Green Industries",
+        description: "Learn more about ClimateForge's mission to empower contractors with AI-driven solutions for solar, HVAC, and sustainable technologies.",
+        url: "https://www.climateforge.ai/about", // Page URL
+        type: "website",
+    },
 };
 
 export default function About() {

@@ -35,9 +35,11 @@ export default function GradientBorderBox({
                 
                 {decorationsInside ?
                     decorationsInside.map((decoration, index) => 
-                        <Image key={index} className={`absolute z-0 ${decoration.className ? decoration.className : 'top-0 left-0'}`}
+                        <Image title="Inside Box Decoration"
+                            key={index} 
+                            className={`absolute z-0 ${decoration.className ? decoration.className : 'top-0 left-0'}`}
                             src={decoration.src}
-                            alt=""
+                            alt="decoration"
                             width={0}
                             height={0} 
                             style={{height: 'auto',}}
@@ -48,9 +50,11 @@ export default function GradientBorderBox({
             </div>
             {decorationsOutside ? 
                 decorationsOutside.map((decoration, index) => 
-                    <Image key={index} className={`absolute z-10 ${decoration.className ? decoration.className : 'bottom-0 right-0'}`}
+                    <Image title="Outside Box Decoration"
+                    key={index} 
+                    className={`absolute z-10 ${decoration.className ? decoration.className : 'bottom-0 right-0'}`}
                     src={decoration.src}
-                    alt=""
+                    alt="decoration"
                     width={0}
                     height={0} 
                     style={{height: 'auto', }}

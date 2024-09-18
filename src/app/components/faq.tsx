@@ -34,7 +34,7 @@ function FAQItem({ question, answers, link, contact}: FAQItemProps) {
                     {question}
                 </p>
             }
-            <Image
+            <Image title={isOpen ? 'Arrow Up' : 'Arrow Down'}
                 src={isOpen ? '/faq/arrow-up.svg' : '/faq/arrow-down.svg'}
                 alt={isOpen ? 'Collapse' : 'Expand'}
                 width={24} // specify the width

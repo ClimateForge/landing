@@ -34,6 +34,7 @@ export default function Header() {
 							onClick={menuAction}
 						>
 							<Link
+								title="Home"
 								href="/"
 								className="flex flex-row items-center "
 							>
@@ -41,6 +42,7 @@ export default function Header() {
 									className="w-[40px] sm:w-[45px] md:w-[50px] lg:w-[55px] h-auto pointer-events-none sm:pointer-events-auto"
 									src="/logo.png"
 									alt="ClimateForge Logo"
+									title="ClimateForge Logo"
 									width={55}
 									height={55}
 									priority
@@ -78,10 +80,10 @@ export default function Header() {
 							sm:bg-transparent rounded-lg pt-24 pb-8 sm:py-3 md:py-3 lg:py-5 items-center"
 						>
 							<div className="flex gap-6 sm:gap-4 md:gap-6">
-								<Link href="/about" className="" onClick={menuAction}>
+								<Link title="About" href="/about" className="" onClick={menuAction}>
 									<p className="font-semibold text-sm md:text-base text-nowrap">About Us</p>
 								</Link>
-								<Link href="/careers" onClick={menuAction}>
+								<Link title="Careers" href="/careers" onClick={menuAction}>
 									<p className="font-semibold text-sm md:text-base">Careers</p>
 								</Link>
 							</div>

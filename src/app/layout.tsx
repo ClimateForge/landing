@@ -6,8 +6,6 @@ import "./globals.css";
 import Template from "./template";
 
 export const metadata: Metadata = {
-	title: "ClimateForge",
-	description: "Qualified leads that turn into customers faster",
 	icons: [
 		{
 			rel: 'icon',
@@ -21,6 +19,17 @@ export const metadata: Metadata = {
 			url: '/favicon/favicon-32x32.png',
 		},
 	],
+	
+	metadataBase: new URL('https://www.climateforge.ai/'),
+	alternates: {
+		canonical: 'https://www.climateforge.ai/',
+		languages: {
+		'en-US': '/en-US',
+		},
+	},
+	
+	// Additional SEO metadata
+    robots: "index, follow", // Ensures the page is indexed and followed by search engines
 };
 
 export default function RootLayout({

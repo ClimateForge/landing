@@ -41,11 +41,12 @@ export default function Cta(props: CTAProps) {
 				h-auto max-w-[400px] shadow-xl mx-4 md:mx-6 lg:mx-10"
 				style={{borderRadius: gifRounded ? '50%' : '20px'}}>
 
-				<Image className="h-full w-full overflow-hidden object-cover aspect-square shadow-sm"
+				<Image title="CTA GIF"
+					className="h-full w-full overflow-hidden object-cover aspect-square shadow-sm"
 					style={{borderRadius: gifRounded ? '50%' : '20px'}}
 					src={gifSrc}
 					alt="GIF"
-					sizes='100vh'
+					sizes="100vh"
 					width={400}
 					height={400}
 					loading="lazy"

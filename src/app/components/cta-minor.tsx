@@ -74,8 +74,11 @@ export default function CtaMinor() {
             
             {/** CTA container - gradient border, absolute position*/}
             <motion.div initial="offscreen"
-        whileInView="onscreen" variants={ctaVariants}
-        viewport={{ once: true, amount: 0.8 }} className="absolute z-20 -top-[340px] max-w-[822px] mt-12 sm:mt-24 p-[1px] text-gray-900 rounded-3xl bg-accent-gradient">
+                whileInView="onscreen" variants={ctaVariants}
+                viewport={{ once: true, amount: 0.8 }} 
+                className="absolute z-20 -top-[340px] 
+                max-w-[822px] mt-12 sm:mt-24 p-[1px] 
+                text-gray-900 rounded-3xl bg-accent-gradient">
                 
                 <div className="flex relative flex-col justify-center items-center text-center 
                     bg-white rounded-3xl px-4 sm:px-12 max-h-[488px] py-8 min-h-[500px] ">
@@ -96,7 +99,8 @@ export default function CtaMinor() {
                         </span>
                         {' '}Businesses to Sell More{' '}
                         <span className="relative inline-block text-nowrap text-gray-800">Energy Upgrades
-                            <Image className="absolute z-10 top-[32px] sm:top-[36px] md:top-[48px] sm:left-0 w-[400px]"
+                            <Image title="Energy Upgrades Accent"
+                                className="absolute z-10 top-[32px] sm:top-[36px] md:top-[48px] sm:left-0 w-[400px]"
                                 src={"/accents/accent2.svg"}
                                 alt="Title Accent SVG"
                                 width={400}
@@ -124,7 +128,8 @@ export default function CtaMinor() {
                     {src: "/decorations/dots-3x6.svg", className: "-top-[90px] right-[120px]"}
                 ]}
             >
-                <Image className="h-[800px] sm:h-[900px] rounded-[90px] mix-blend-overlay
+                <Image title="Houses Background Image"
+                    className="h-[800px] sm:h-[900px] rounded-[90px] mix-blend-overlay
                     transform scale-[1.25] translate-x-16 -translate-y-20"
                     src={"/cta-minor/houses.png"}
                     alt="Houses"
@@ -135,20 +140,21 @@ export default function CtaMinor() {
                 />
                 {/* House + Logo container */}
                 <motion.div initial="offscreen"
-        whileInView="onscreen"
-        viewport={{ once: false, amount: 0.8 }} className="absolute z-30 top-96 sm:top-[408px] w-[500px] sm:w-[628px]">
+                    whileInView="onscreen"
+                    viewport={{ once: false, amount: 0.8 }} 
+                    className="absolute z-30 top-96 sm:top-[408px] w-[500px] sm:w-[628px]">
                     <motion.div variants={middleVariants} className="absolute z-30 w-[500px] sm:w-[628px]"> 
-                    <Image className=""
-                                src={"/cta-minor/house.png"}
-                                alt="House"
-                                sizes="100vh"
-                                width={500}
-                                height={300}
-                            />
+                    <Image title="House Image"
+                        src={"/cta-minor/house.png"}
+                        alt="House"
+                        sizes="100vh"
+                        width={500}
+                        height={300}
+                        />
                     </motion.div>
                 
                     <motion.div variants={leftVariants} className="absolute z-30 -top-[50px] left-[60px] backdrop-blur-sm">
-                        <Image 
+                        <Image  title="Gradient Logo Border"
                             src={"/cta-minor/polygon1.svg"}
                             alt="Polygon SVG 1"
                             width={136}
@@ -157,7 +163,7 @@ export default function CtaMinor() {
                     </motion.div>
                     
                     <motion.div variants={leftVariants} className="absolute z-30 -top-[20px] left-[80px] w-[95px]">
-                        <Image
+                        <Image title="ClimateForge Logo"
                             src={"/logo.png"}
                             alt="ClimateForge Logo"
                             width={84}
@@ -165,7 +171,7 @@ export default function CtaMinor() {
                         />
                     </motion.div>
                     <motion.div variants={rightVariants} className="absolute z-30 -top-[55px] right-[10%]">
-                        <Image
+                        <Image title="Person Polygon"
                             src={"/cta-minor/polygon2.svg"}
                             alt="Polygon SVG 2"
                             width={180}
@@ -176,9 +182,10 @@ export default function CtaMinor() {
                 
                 {/* Background circle decoration */}
                 <div className="absolute z-20 top-[240px] sm:top-[310px] w-[770px] h-[516px]  overflow-clip ">
-                    <Image className="absolute top-[48px] opacity-25 transform scale-[1.21] sm:scale-[1.41]"
+                    <Image title="Circle Background Decoration"
+                        className="absolute top-[48px] opacity-25 transform scale-[1.21] sm:scale-[1.41]"
                         src="/cta-minor/decoration.png"
-                        alt="CTA Decoration"
+                        alt="CTA Background Decoration"
                         width={900}
                         height={516}
                     />
