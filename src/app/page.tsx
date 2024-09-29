@@ -11,7 +11,7 @@ import ClientList from "./components/client-list";
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: "Careers - ClimateForge",
+    title: "ClimateForge",
     description: "Fix the planet and make an impact in the world!",
     keywords: [
         "AI lead generation", 
