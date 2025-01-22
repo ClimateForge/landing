@@ -23,7 +23,7 @@ export default function GradientBorderBox({
 }: Props) {
     
     return (
-        <div className="p-[2px] rounded-[90px] relative bg-accent-gradient w-full max-w-[1440px]"
+        <div className="p-[1px] relative bg-accent-gradient"
         style={{padding: borderWidth, borderRadius: borderRadius ? borderRadius : '90px'}}>
             
             {/* Opaque houses container */}

@@ -5,6 +5,7 @@ import GradientButton from "./ui/gradient-button";
 import GradientText from './ui/gradient-text';
 import Typewriter from 'typewriter-effect';
 import { ReactNode } from 'react';
+import ButtonCustom from './ui/button-custom';
 interface BaseProps {
 	title?: string[];
 	description?: string;
@@ -37,19 +38,19 @@ export default function Title({title, description, descriptionAnimated, gradient
 		<section className="flex flex-col 
 			justify-center items-center 
 			text-center relative h-full
-			max-w-[720px]"
+			max-w-[931px]"
 		>
 		
 		{title ? 
 			<h1 className="mb-4">
-				{title.length === 1 ? <GradientText> {title[0]} </GradientText> : title[0]}
-				{title[gradientIndex] ? <GradientText> {title[gradientIndex]} </GradientText> : null}
+				{title.length === 1 ? <GradientText variant='purple'> {title[0]} </GradientText> : title[0]}
+				{title[gradientIndex] ? <GradientText variant='purple'> {title[gradientIndex]} </GradientText> : null}
 				{title[2] ? title[2] : null}
 			</h1>
 		: null}
 		{
 			descriptionAnimated ? 
-			<div className="text-gray-500 mb-6 text-md font-semibold inline-flex whitespace-pre-wrap">
+			<div className="text-black mb-6 text-md font-semibold inline-flex flex-col sm:flex-row whitespace-pre-wrap">
 				<p>{descriptionAnimated[0]}</p>
 				
 				<Typewriter
@@ -68,12 +69,20 @@ export default function Title({title, description, descriptionAnimated, gradient
 			{description}
 			</p>
 		}
+		<div className='flex gap-4'>
+			<ButtonCustom variant='outline' onClick={newTab ? 
+				() => window.open(route, '_blank', 'noopener,noreferrer') : 
+				() => router.push(route ? route : '/')}>
+				Watch a Demo
+			</ButtonCustom>
+
+			<ButtonCustom width={154} onClick={newTab ? 
+				() => window.open(route, '_blank', 'noopener,noreferrer') : 
+				() => router.push(route ? route : '/')}>
+				{buttonText}
+			</ButtonCustom>
+		</div>
 		
-		<GradientButton width={154} onClick={newTab ? 
-			() => window.open(route, '_blank', 'noopener,noreferrer') : 
-			() => router.push(route ? route : '/')}>
-			{buttonText}
-		</GradientButton>
 		{children ? children : null}
 	</section>
 	);

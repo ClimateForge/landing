@@ -3,6 +3,8 @@ import Image from "next/image";
 import GradientButton from "./ui/gradient-button";
 import GradientBorderBox from './ui/gradient-border-box';
 import { motion, Variants } from "framer-motion";
+import GradientText from "./ui/gradient-text";
+import ButtonCustom from "./ui/button-custom";
 
 const leftVariants: Variants = {
     offscreen: {
@@ -67,37 +69,57 @@ const ctaVariants: Variants = {
     }
 };
 
+const infoBoxData = [
+    {
+        svgSrc: "/cta-minor/precision.svg",
+        title: "Precision",
+        text: "ClimateForge is a digital spot knocker with precise energy and owner information."
+    },
+    {
+        svgSrc: "/cta-minor/time-saving.svg",
+        title: "Time-Saving",
+        text: "With ClimateForge, you can spend less time soliciting buyers and executing contracts."
+    },
+    {
+        svgSrc: "/cta-minor/innovation.svg",
+        title: "Innovation",
+        text: "ClimateForge's AI technology help you easily track statuses and enhance team collaboration."
+    },
+    {
+        svgSrc: "/cta-minor/empowerment.svg",
+        title: "Empowerment",
+        text: "Utilities, energy service companies and homeowners can equip for efficiency, savings and grid impact."
+    },
+]
+
+type InfoBoxProps = {
+    svgSrc: string,
+    title: string,
+    text: string,
+}
+function InfoBox({svgSrc, title, text}: InfoBoxProps) {
+    return (
+        <div className="flex flex-col justify-evenly max-w-[305px] rounded-15 p-4 lg:p-8 
+            border-solid border border-[#E0DFE2]">
+            <Image className="w-6 h-6 lg:w-9 lg:h-9" src={svgSrc} alt="" width={36} height={36}/>
+            <h4 className="text-[#858585] text-xl lg:text-2xl">{title}</h4>
+            <p className="text-sm lg:text-base">{text}</p>
+        </div>
+    )
+}
+
+
 export default function CtaMinor() {
     
     return (
-        <section className="relative mt-72 flex flex-col justify-center items-center w-full max-w-[1440px]">
+        <section className="relative flex flex-col justify-center items-center w-full max-w-[1440px] p-4">
             
             {/** CTA container - gradient border, absolute position*/}
-            <motion.div initial="offscreen"
-                whileInView="onscreen" variants={ctaVariants}
-                viewport={{ once: true, amount: 0.8 }} 
-                className="absolute z-20 -top-[340px] 
-                max-w-[822px] mt-12 sm:mt-24 p-[1px] 
-                text-gray-900 rounded-3xl bg-accent-gradient">
-                
                 <div className="flex relative flex-col justify-center items-center text-center 
-                    bg-white rounded-3xl px-4 sm:px-12 max-h-[488px] py-8 min-h-[500px] ">
+                    px-4 sm:px-12 max-h-[488px] py-8 min-h-[500px] ">
                     
                     <h2 className="mb-10 relative leading-snug">
-                        Empowering{' '}
-                        <span className="relative bg-clip-text text-transparent 
-                            bg-gradient-to-r from-blue-800 from-40% to-red-800 to-45%"> 
-                            American
-                            <div className="absolute 
-                                tracking-[1px] sm:tracking-[1px] md:tracking-[2px] lg:tracking-[4px]
-                                left-[1px] sm:left-[1px] lg:left-[4px]
-                                top-[5px] sm:top-[6px] lg:top-[10px]">
-                                
-                                <p className="text-white leading-4 sm:leading-tight md:leading-snug lg:leading-normal">★ ★ ★ ★</p>
-                                <p className="text-white leading-4 sm:leading-tight md:leading-snug lg:leading-normal">★ ★ ★ ★</p>
-                            </div>
-                        </span>
-                        {' '}Businesses to Sell More{' '}
+                        Empowering <GradientText>American Businesses</GradientText> to Sell More{' '}
                         <span className="relative inline-block text-nowrap text-gray-800">Energy Upgrades
                             <Image title="Energy Upgrades Accent"
                                 className="absolute z-10 top-[32px] sm:top-[36px] md:top-[48px] sm:left-0 w-[400px]"
@@ -108,28 +130,27 @@ export default function CtaMinor() {
                             />
                         </span>
                     </h2>
-                    <p className="text-base sm:text-xl max-w-[604px] pb-10 text-[#64607D]">
-                        Deploy Solar, HVAC, and energy storage systems and make real money faster.
+                    <p className="text-base sm:text-lg max-w-[666px] pb-10 font-medium">
+                        Identify the optimal residential heating and cooling for efficiency, deploy Solar, HVAC, and energy storage systems and make real money faster.
                     </p>
-                    <GradientButton onClick={() => window.open('https://calendly.com/giovanni-climateforge-qttf', '_blank', 'noopener,noreferrer')} width={154}>
-                        Book a Demo
-                    </GradientButton>
+                    <div className="flex gap-[18px]">
+                        <ButtonCustom onClick={() => window.open('https://calendly.com/giovanni-climateforge-qttf', '_blank', 'noopener,noreferrer')} width={154}>
+                            Contact Us
+                        </ButtonCustom>
+                        <ButtonCustom variant="outline" onClick={() => window.open('https://calendly.com/giovanni-climateforge-qttf', '_blank', 'noopener,noreferrer')} width={154}>
+                            Join Now
+                        </ButtonCustom>
+                    </div>
+                    
                 </div>
-            </motion.div>
-
+            
+            <div className="flex flex-col md:flex-row w-full justify-center gap-4 lg:gap-8">
             {/* Image Container */}
-            <GradientBorderBox 
-                className="bg-[#f4fafd]"
-                decorationsInside={[
-                    {src: "/decorations/dots.svg", className: "-bottom-20 -right-[105px] w-[363px]"}
-                ]}
-                decorationsOutside={[
-                    {src: "/decorations/dots.svg", className: "-top-32 -left-[60px]"},
-                    {src: "/decorations/dots-3x6.svg", className: "-top-[90px] right-[120px]"}
-                ]}
+            <GradientBorderBox borderRadius={16}
+                className="bg-[#f4fafd] rounded-15 max-w-[630px] h-[450px] lg:h-[559px]"
             >
                 <Image title="Houses Background Image"
-                    className="h-[800px] sm:h-[900px] rounded-[90px] mix-blend-overlay
+                    className=" w-[609px] rounded-[90px] mix-blend-overlay
                     transform scale-[1.25] translate-x-16 -translate-y-20"
                     src={"/cta-minor/houses.png"}
                     alt="Houses"
@@ -142,14 +163,14 @@ export default function CtaMinor() {
                 <motion.div initial="offscreen"
                     whileInView="onscreen"
                     viewport={{ once: false, amount: 0.8 }} 
-                    className="absolute z-30 top-96 sm:top-[408px] w-[500px] sm:w-[628px]">
-                    <motion.div variants={middleVariants} className="absolute z-30 w-[500px] sm:w-[628px]"> 
-                    <Image title="House Image"
+                    className="absolute z-30 top-[100px] md:top-[150px] w-[500px]">
+                    <motion.div variants={middleVariants} className="absolute z-30"> 
+                    <Image title="House Image" className="w-auto h-auto"
                         src={"/cta-minor/house.png"}
                         alt="House"
-                        sizes="100vh"
-                        width={500}
-                        height={300}
+                        
+                        width={472}
+                        height={269}
                         />
                     </motion.div>
                 
@@ -181,9 +202,9 @@ export default function CtaMinor() {
                 </motion.div>
                 
                 {/* Background circle decoration */}
-                <div className="absolute z-20 top-[240px] sm:top-[310px] w-[770px] h-[516px]  overflow-clip ">
+                <div className="absolute z-20 top-[0px] md:top-[45px] w-[800px] h-[427px] overflow-clip">
                     <Image title="Circle Background Decoration"
-                        className="absolute top-[48px] opacity-25 transform scale-[1.21] sm:scale-[1.41]"
+                        className="absolute opacity-25 transform scale-110"
                         src="/cta-minor/decoration.png"
                         alt="CTA Background Decoration"
                         width={900}
@@ -191,6 +212,14 @@ export default function CtaMinor() {
                     />
                 </div>
             </GradientBorderBox>
+
+            {/** INFO GRID */}
+            <div className="grid grid-cols-2 gap-5">
+                {infoBoxData.map((infoBox, index) => (
+                    <InfoBox key={index} svgSrc={infoBox.svgSrc} title={infoBox.title} text={infoBox.text}/>
+                ))}
+            </div>
+            </div>
         </section>
     );
 }

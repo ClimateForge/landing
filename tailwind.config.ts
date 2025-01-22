@@ -10,7 +10,7 @@ const config: Config = {
 		extend: {
 			colors: {
 				accent: "#5850EC",
-				primary: "#5850EC",
+				primary: "#21606A",
 				"white-50": "rgba(255, 255, 255, 0.5)",
 			},
 			textColor: {

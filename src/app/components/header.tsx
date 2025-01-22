@@ -2,124 +2,152 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import ButtonCustom from "./ui/button-custom";
 
-import { Menu } from "@headlessui/react";
-import { ChevronDownIcon } from "@heroicons/react/24/outline";
+const Header = () => {
+    const [menuOpen, setMenuOpen] = useState(false);
 
-import GradientButton from "./ui/gradient-button";
+    return (
+        <header className="flex items-center justify-center h-[102px] bg-[#F9F9FF]">
+            <nav
+                style={{
+                    background: "rgba(255, 255, 255, 0.8)",
+                    boxShadow: "1px 1px 8px rgba(0, 0, 0, 0.2)",
+                    backdropFilter: "blur(16px)",
+                }}
+                className="fixed z-50 flex w-[100%] items-center justify-between max-w-[1160px] h-[102px] md:h-[69px] rounded-none md:rounded-full pl-[32px] pr-[16px] mx-4"
+            >
+                {/* Logo */}
+                <Link
+                    title="Home"
+                    href="/"
+                    className="flex flex-row items-center"
+                >
+                    <Image
+                        className="w-[32px] sm:w-[36px] md:w-[42px] lg:w-[48px] h-auto pointer-events-none sm:pointer-events-auto"
+                        src="/logo.png"
+                        alt="ClimateForge Logo"
+                        title="ClimateForge Logo"
+                        width={55}
+                        height={55}
+                        priority
+                    />
+                    <p className="pointer-events-none sm:pointer-events-auto text-lg sm:text-lg md:text-xl lg:text-2xl pl-1">
+                        ClimateForge
+                    </p>
+                </Link>
 
-function classNames(...classes: string[]) {
-	return classes.filter(Boolean).join(" ");
-}
+                {/* Hamburger Button */}
+                <button
+                    className="block md:hidden p-2"
+                    onClick={() => setMenuOpen((prev) => !prev)}
+                    aria-label="Toggle Menu"
+                >
+                    <svg
+                        className="w-6 h-6"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                    >
+                        <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M4 6h16M4 12h16m-7 6h7"
+                        />
+                    </svg>
+                </button>
 
-export default function Header() {
-	const [isMenuExpanded, setIsMenuExpanded] = useState(false);
+                {/* Desktop Menu */}
+                <div className="hidden md:flex md:gap-4 lg:gap-6">
+                    <Link title="About" href="/" className="">
+                        <p className="font-semibold text-sm lg:text-base text-nowrap">Product</p>
+                    </Link>
+                    <Link title="Careers" href="/about">
+                        <p className="font-semibold text-sm lg:text-base">Why Join</p>
+                    </Link>
+                    <Link title="About" href="/#pricing" className="">
+                        <p className="font-semibold text-sm lg:text-base text-nowrap">Pricing</p>
+                    </Link>
+                    <Link title="About" href="/careers" className="">
+                        <p className="font-semibold text-sm lg:text-base text-nowrap">Company</p>
+                    </Link>
+                </div>
 
-	const menuAction = () => {
-		setIsMenuExpanded(!isMenuExpanded);
-	};
+                <div className="hidden md:flex md:gap-4 lg:gap-6">
+                    <ButtonCustom
+                        variant="outline"
+                        onClick={() =>
+                            window.open(
+                                "https://climateforge.vercel.app/",
+                                "_blank",
+                                "noopener,noreferrer"
+                            )
+                        }
+                    >
+                        Sign In
+                    </ButtonCustom>
+                    <ButtonCustom
+                        onClick={() =>
+                            window.open(
+                                "https://calendly.com/giovanni-climateforge-qttf",
+                                "_blank",
+                                "noopener,noreferrer"
+                            )
+                        }
+                    >
+                        Book a Demo
+                    </ButtonCustom>
+                </div>
 
-	return (
-		<header className="fixed top-0 left-0 right-0 z-50 flex gradient-border">
-			<div
-				className="flex flex-0 sm:flex-1 w-full sm:px-4 md:px-6 
-				bg-[#ffffffc8] backdrop-blur-sm shadow-md"
-			>
-				<nav className="flex flex-wrap flex-1 flex-col items-center justify-between sm:flex-row sm:gap-4">
-					<Menu as="div" className="relative">
-						<Menu.Button
-							className={classNames(
-								"flex flex-row items-center gap-7 pointer-events-auto sm:pointer-events-none sm:bg-transparent rounded-b-lg px-8 py-3 sm:py-0 sm:px-0"
-							)}
-							onClick={menuAction}
-						>
-							<Link
-								title="Home"
-								href="/"
-								className="flex flex-row items-center "
-							>
-								<Image
-									className="w-[40px] sm:w-[45px] md:w-[50px] lg:w-[55px] h-auto pointer-events-none sm:pointer-events-auto"
-									src="/logo.png"
-									alt="ClimateForge Logo"
-									title="ClimateForge Logo"
-									width={55}
-									height={55}
-									priority
-								/>
-								<p
-									className="pointer-events-none sm:pointer-events-auto 
-									text-lg sm:text-lg md:text-xl lg:text-2xl self-end"
-								>
-									ClimateForge
-								</p>
-							</Link>
+                {/* Mobile Menu */}
+                {menuOpen && (
+                    <div className="absolute top-[69px] left-0 w-full bg-white shadow-lg p-4 rounded-b-lg md:hidden">
+                        <div className="flex flex-col gap-4">
+                            <Link title="About" href="/about" onClick={() => setMenuOpen(false)}>
+                                <p className="font-semibold text-sm text-nowrap">Product</p>
+                            </Link>
+                            <Link title="Careers" href="/careers" onClick={() => setMenuOpen(false)}>
+                                <p className="font-semibold text-sm">Why Join</p>
+                            </Link>
+                            <Link title="About" href="/about" onClick={() => setMenuOpen(false)}>
+                                <p className="font-semibold text-sm text-nowrap">Pricing</p>
+                            </Link>
+                            <Link title="About" href="/about" onClick={() => setMenuOpen(false)}>
+                                <p className="font-semibold text-sm text-nowrap">Company</p>
+                            </Link>
+                            <ButtonCustom
+                                variant="outline"
+                                onClick={() => {
+                                    setMenuOpen(false);
+                                    window.open(
+                                        "https://climateforge.vercel.app/",
+                                        "_blank",
+                                        "noopener,noreferrer"
+                                    );
+                                }}
+                            >
+                                Sign In
+                            </ButtonCustom>
+                            <ButtonCustom
+                                onClick={() => {
+                                    setMenuOpen(false);
+                                    window.open(
+                                        "https://calendly.com/giovanni-climateforge-qttf",
+                                        "_blank",
+                                        "noopener,noreferrer"
+                                    );
+                                }}
+                            >
+                                Book a Demo
+                            </ButtonCustom>
+                        </div>
+                    </div>
+                )}
+            </nav>
+        </header>
+    );
+};
 
-							<ChevronDownIcon
-								className={classNames(
-									isMenuExpanded ? "rotate-180" : "rotate-0",
-									"h-5 w-5 text-[#028F79] mt-1 sm:hidden transition-all"
-								)}
-								aria-hidden="true"
-								strokeWidth={4}
-							/>
-						</Menu.Button>
-					</Menu>
-
-					<div
-						className={classNames(
-							isMenuExpanded
-								? "opacity-100 visible h-40"
-								: "opacity-0 invisible h-0",
-							"justify-end self-stretch sm:visible sm:opacity-100 sm:h-auto flex-col flex sm:flex-row gap-7 sm:gap-7 sm:items-center text-body"
-						)}
-					>
-						<div
-							className="flex flex-col gap-8 sm:gap-4 md:gap-6 sm:flex-row 
-							shadow-md sm:shadow-none 
-							sm:bg-transparent rounded-lg pt-24 pb-8 sm:py-3 md:py-3 lg:py-5 items-center"
-						>
-							<div className="flex gap-6 sm:gap-4 md:gap-6">
-								<Link title="About" href="/about" className="" onClick={menuAction}>
-									<p className="font-semibold text-sm md:text-base text-nowrap">About Us</p>
-								</Link>
-								<Link title="Careers" href="/careers" onClick={menuAction}>
-									<p className="font-semibold text-sm md:text-base">Careers</p>
-								</Link>
-							</div>
-
-							<div className="flex gap-6 sm:gap-4 md:gap-6">
-								<GradientButton
-									onClick={() =>
-										window.open(
-											"https://calendly.com/giovanni-climateforge-qttf",
-											"_blank",
-											"noopener,noreferrer"
-										)
-									}
-									width={154}
-								>
-									Book a Demo
-								</GradientButton>
-
-								<GradientButton
-									onClick={() =>
-										window.open(
-											"https://climateforge.vercel.app/",
-											"_blank",
-											"noopener,noreferrer"
-										)
-									}
-									variant="outline"
-									width={90}
-								>
-									Log In
-								</GradientButton>
-							</div>
-						</div>
-					</div>
-				</nav>
-			</div>
-		</header>
-	);
-}
+export default Header;

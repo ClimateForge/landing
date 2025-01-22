@@ -5,6 +5,7 @@ import Image from "next/image";
 import GradientText from "./ui/gradient-text";
 import GradientButton from "./ui/gradient-button";
 import EmailButton from './ui/email-button';
+import ButtonCustom from './ui/button-custom';
 
 type GradientButtonProps = {
 	text: string;
@@ -84,12 +85,12 @@ export default function Cta(props: CTAProps) {
 				{/* Buttons Container */}
 				<div className="flex flex-wrap gap-4 justify-center sm:justify-start">
 					{primaryButton ? 
-						<GradientButton width={154} 
+						<ButtonCustom width={154} 
 							onClick={primaryButton.newTab ? 
 								() => window.open(primaryButton.route, '_blank', 'noopener,noreferrer') : 
 								() => router.push(primaryButton.route ? primaryButton.route : '/')}>
 							{primaryButton.text}
-						</GradientButton>
+						</ButtonCustom>
 					: 
 						<EmailButton>
 							Contact Us

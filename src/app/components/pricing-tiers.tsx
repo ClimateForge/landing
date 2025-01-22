@@ -1,143 +1,145 @@
 "use client";
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
-
+import { useState } from 'react';
 import GradientText from './ui/gradient-text';
 import GradientButton from './ui/gradient-button';
 import GradientBorderBox from './ui/gradient-border-box';
-
+import ButtonCustom from './ui/button-custom';
+import { motion } from 'framer-motion';
 interface PricingCardProps {
-    name: string;
+    tier: string;
     price?: number;
+    description: string;
     perks?: string[];
     buttonVariant?: string;
     disabled?: boolean;
+    isYearly?: boolean;  // Added this prop to toggle between monthly and yearly
 }
 
-function PricingCard (props: PricingCardProps) {
-    
-    const {name, price, perks, buttonVariant, disabled} = {...props}
+function PricingCard(props: PricingCardProps) {
+    const { tier, price, description, perks, buttonVariant, disabled, isYearly } = props;
     const router = useRouter();
+
     return (
-        <div className="relative rounded-3xl bg-white shadow-md gap-4 py-12
+        <div className="relative rounded-15 bg-[#EEF2F6] shadow-md py-8 px-[43px]
             transition-all hover:z-10 duration-500 hover:scale-105 hover:shadow-xl
-            w-[300px] h-[400px] flex flex-col justify-evenly items-center">
-            
-            <div className="absolute -top-8 right-8 w-16 h-16
-                bg-accent-gradient rounded-full
-                shadow-[0px_16px_24px_rgba(38,176,117,0.22)]
-                transition-all duration-700
-                group-hover:transition-all group-hover:delay-100 group-hover:duration-700
-                bg-[length:100%_100%] group-hover:bg-[length:150%_100%] group-hover:scale-110">
-                    
-                {name === "Launch" ?
-                    <Image title="Launch Icon"
-                        className="absolute top-[25%] left-[25%]"
-                        src={`/pricing-tiers/launch.svg`}
-                        alt="Launch Icon"
-                        width={32}
-                        height={32} 
-                    />
-
-                    : name === "Scale" ?
-                    <Image title="Scale Icon"
-                        className="absolute top-[25%] left-[25%]"
-                        src={`/pricing-tiers/scale.svg`}
-                        alt="Scale SVG"
-                        width={32}
-                        height={32} 
-                    />
-
-                    : name === "Enterprise" ?
-                    <Image title="Enterprise Icon"
-                        className="absolute top-[25%] left-[25%]"
-                        src={`/pricing-tiers/enterprise.svg`}
-                        alt="Enterprise SVG"
-                        width={32}
-                        height={32} 
-                    />
-                    : null
-                }
+            w-[410px] h-[617px] flex flex-col justify-between">
+            <div>
+                <h4 className="text-primary pb-10">{tier}</h4>
+                {price ? (
+                    <h3 className="flex items-end font-bold text-4xl">
+                        {`$${price}`} 
+                        <p className="text-gray-500">{isYearly ? '/ year' : '/ month'}</p>
+                    </h3>
+                ) : (
+                    <h3 className="font-bold text-4xl">Let's Talk</h3>
+                )}
+                <p className="text-lg font-medium pt-6 pb-14">{description}</p>
+                {perks && perks.length > 1 ? (
+                    <ul className="gap-4 flex flex-col">
+                        {perks.map((perk, i) => (
+                            <li key={i}>
+                                <span className="font-bold text-primary">&#x2713;</span> {perk}
+                            </li>
+                        ))}
+                    </ul>
+                ) : perks ? (
+                    <ul>{perks[0]}</ul>
+                ) : null}
             </div>
-            
-            <h4 className='text-2xl'>
-                <GradientText>{name}</GradientText>
-                
-                </h4>
-            
-
-            {price ? <h3 className='font-bold text-4xl'>{`$${price}/mo`}</h3> 
-                : <h3 className='font-bold text-4xl'>TBD</h3>
-            }
-
-            {perks && perks?.length > 1 ?
-                <ul className='h-full mx-6'>
-                    {perks?.map((perk, i) =>(
-                        <li key={i}>
-                            <GradientText className='font-bold text-[#39C77B]'>&#x2713;</GradientText> {perk}
-                        </li>
-                    ))}
-                </ul>
-            : perks ?
-                <ul className='text-center mx-6 h-full' >
-                    {perks[0]}
-                </ul>
-            : null
-            }
-            
-                <GradientButton variant={buttonVariant} disabled={disabled} width={154}
-                    onClick={() => window.open('https://calendly.com/giovanni-climateforge-qttf', '_blank', 'noopener,noreferrer')}>
-                    Order Now
-                </GradientButton>
-            </div>
-    )
+            <ButtonCustom
+                variant={buttonVariant}
+                disabled={disabled}
+                onClick={() => window.open('https://calendly.com/giovanni-climateforge-qttf', '_blank', 'noopener,noreferrer')}
+            >
+                Get Started
+            </ButtonCustom>
+        </div>
+    );
 }
-
 export default function PricingTiers() {
-    
+    // State to toggle between monthly and yearly pricing
+    const [isYearly, setIsYearly] = useState(false);
+
+    // Pricing data for both monthly and yearly plans
+    const pricingData = {
+        Launch: { monthly: 359, yearly: Math.round(359 * 12) },
+        Scale: { monthly: 559, yearly: Math.round(559 * 12) }, 
+        Enterprise: { monthly: 0, yearly: 0 }, // Pricing TBD
+    };
+
     return (
         <section id="pricing" className="relative flex flex-col justify-center items-center w-full gap-y-4 mb-0 sm:mb-10">
-            <GradientBorderBox className=" pt-20 pb-40" 
-                decorationsInside={[
-                    {src: "decorations/dots.svg", className: "-top-[128px] left-24"}
-                ]}>
-            <h2 className='font-bold mb-8 sm:mb-20 leading-none z-10'>
-                
-                Tiers
-                
-            </h2>
+            <h2 className="font-bold leading-none z-10">Pricing</h2>
+            <p className="text-lg font-medium pb-[40px] text-center">
+                Reach out to our sales team to try ClimateForge today.
+            </p>
 
-            <div className='flex flex-wrap justify-center items-center z-10 gap-x-8 gap-y-14'>
+            <div className="relative flex items-center w-[282px] h-[71px] p-2 mb-[39px]
+                border border-primary rounded-full overflow-hidden">
+                {['Monthly', 'Yearly'].map((option, index) => {
+                    const isActive = (index === 1) === isYearly; // Maps true for "Yearly" when isYearly is true
+                    return (
+                    <div key={option} className="relative flex-1">
+                        {isActive && (
+                        <motion.div
+                            layoutId="highlight"
+                            className="absolute inset-0 bg-primary rounded-full z-0"
+                            transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+                        />
+                        )}
+                        <button onClick={() => setIsYearly(index === 1)}
+                            className={`flex w-full h-[55px] text-lg justify-center  items-center rounded-full font-bold relative z-10 transition-colors ${
+                                isActive ? 'text-white' : 'text-primary'
+                            }`}
+                        >
+                        {option}
+                        </button>
+                    </div>
+                    );
+                })}
+            </div>
 
-                <PricingCard name="Launch" price={359} 
+            <div className="flex flex-wrap justify-center items-center z-10 gap-x-8 gap-y-14">
+                <PricingCard
+                    tier="Launch"
+                    price={isYearly ? pricingData.Launch.yearly : pricingData.Launch.monthly}
+                    description="Get started with our basic plan, perfect for small businesses."
                     perks={[
-                        "1 Week free limited plan",
-                        "Starts with 500 leads",
-                        "Free CRM",
-                        "1 Location included",
-                        "Basic scheduling with Zapier"
+                        'Starts with 500 leads',
+                        'CRM',
+                        '1 Location included',
+                        'Basic scheduling with Zapier',
                     ]}
+                    isYearly={isYearly}
                 />
 
-                <PricingCard name="Scale" price={559} 
+                <PricingCard
+                    tier="Scale"
+                    price={isYearly ? pricingData.Scale.yearly : pricingData.Scale.monthly}
+                    description="For growing teams, and mid-size companies."
                     perks={[
-                        "Starts with 1000 leads",
-                        "Unlimited Locations",
-                        "Pro Housing Information",
-                        "Pro Scheduling Integrations"
+                        'Starts with 1000 leads',
+                        'CRM',
+                        'Unlimited Locations',
+                        'Pro Housing Information',
+                        'Pro Scheduling Integrations',
                     ]}
-                    buttonVariant='outline'
+                    buttonVariant="outline"
+                    isYearly={isYearly}
                 />
 
-                
-                <PricingCard name="Enterprise"
+                <PricingCard
+                    tier="Enterprise"
+                    description="For large companies with custom needs."
                     perks={[
-                        "This plan is offered to big companies with lots of seats. It will be licensed based, and the price is yet to be determined.",
+                        'This plan is offered to big companies with lots of seats. It will be licensed based, and the price is yet to be determined.',
                     ]}
                     disabled={true}
+                    isYearly={isYearly}
                 />
             </div>
-            </GradientBorderBox>
         </section>
     );
 }
