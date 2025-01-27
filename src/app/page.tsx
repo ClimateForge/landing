@@ -8,6 +8,7 @@ import ClientList from "./components/client-list";
 import WhyChooseUs from "./components/why-choose-us";
 import Image from "next/image";
 import { Metadata } from 'next';
+import Featured from "./components/featured";
 
 
 export const metadata: Metadata = {
@@ -35,7 +36,7 @@ export const metadata: Metadata = {
 export default function Home() {
 
 	return (
-		<main className="flex min-h-screen flex-col gap-20 items-center  pt-24 ">
+		<main className="flex min-h-screen flex-col gap-20 items-center pt-24 ">
 			{/* Background Image */}
 			
 
@@ -67,6 +68,8 @@ export default function Home() {
             <UspList />
 
             <CtaMinor />
+
+            <Featured/>
             
 			<PricingTiers/>
 

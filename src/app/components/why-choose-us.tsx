@@ -99,9 +99,9 @@ export default function WhyChooseUs() {
                     <motion.div
                         id={block.caption}
                         key={index}
-                        className={`flex flex-col max-w-[490px] 
+                        className={`flex flex-col max-w-[490px] justify-center 
                             ${infoBlocks.length-1 === index ? 
-                            'sm:min-h-[100%]' : 'sm:min-h-[100vh]'}`
+                            'sm:min-h-[100vh]' : 'sm:min-h-[100vh]'}`
                         }
                         whileInView={{
                         transition: { duration: 0.2 },

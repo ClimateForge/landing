@@ -6,6 +6,7 @@ import InstagramIcon from "./ui/icons/instagram-icon";
 import LinkedInIcon from "./ui/icons/linkedin-icon";
 import FacebookIcon from "./ui/icons/facebook-icon";
 import XIcon from "./ui/icons/x-icon";
+import GradientBorderCard from "./ui/gradient-border-card";
 
 export default function OurTeam() {
 
@@ -50,27 +51,31 @@ export default function OurTeam() {
 
 
     return (
-        <section className="flex flex-col justify-center items-center my-8 sm:my-16">
-            <AccentTitle 
-                title={['Our expert', 'team']} 
-                variant={'circle'} 
-                accentY={6}
-                accentIndex={1} 
-                className="mb-40"
-            /> 
-            <div className="flex flex-wrap justify-center gap-y-24 gap-x-14">
+        <section className="flex flex-col justify-center items-center pb-20">
+            <h2 className="pb-10">Our Expert Team</h2>
+            <div className="flex flex-wrap justify-center gap-y-16 gap-x-14">
                 {teamMembers.map((teamMember, index) => (
                     
-                    <div key={index} className="relative shadow-[0px_48px_78px_0px_#44A3CF2E] rounded-[65px]
-                        transition-all hover:z-10 duration-500 hover:scale-105 hover:shadow-[0px_48px_78px_0px_#44A3CF2E]">
+                    <div key={index} className="flex shadow-[0px_36px_56px_0px_#44A3CF2E] rounded-[65px]
+                        transition-all hover:z-10 duration-500 hover:scale-105 hover:shadow-[0px_32px_48px_0px_#44A3CF2E]">
 
-                        <GradientBorderBox borderRadius={65} borderWidth={1} 
-                            className="w-[354px] h-[343px] justify-end gap-y-3">
+                        <GradientBorderCard borderRadius={15} borderWidth={1} 
+                            >
+                            <div className="relative flex h-full w-full items-center justify-center gap-5 p-5 min-w-[413px] min-h-[200px]">
+                            <Image title="Team Member Avatar"
+                                src={teamMember.image} 
+                                alt={teamMember.name} 
+                                width={0} height={0} sizes="100vh"
+                                className="rounded-full object-cover w-[125px] h-[125px]"
+                            />
+                            
+                            
+                            <div className="flex  flex-col ">
                             <h4>{teamMember.name}</h4>
-                            <p>{teamMember.title}</p>
+                            <p className="text-lg">{teamMember.title}</p>
 
                             {/* Socials */}
-                            <div className="flex flex-wrap gap-4 justify-center items-center mt-4 mb-16 text-[#374151]">
+                            <div className="absolute bottom-10 flex flex-wrap gap-4  items-center  text-primary min-h-6">
                                 {/* Instagram */}
                                 {teamMember.socials.instagram ?
                                     <a title={teamMember.name + " @ Instagram"}
@@ -107,17 +112,8 @@ export default function OurTeam() {
                                     </a> : null 
                                 }
                             </div>
-                            
-                        </GradientBorderBox>
-
-                        <div className="absolute -top-[111px] left-[64px] z-0 rounded-full w-[222px] h-[222px]">
-                            <Image title="Team Member Avatar"
-                                src={teamMember.image} 
-                                alt={teamMember.name} 
-                                width={0} height={0} sizes="100vh"
-                                className="rounded-full w-full h-full object-cover"
-                            />
-                        </div>
+                            </div></div>
+                        </GradientBorderCard>
 
                     </div>
                     

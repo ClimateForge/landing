@@ -51,10 +51,8 @@ export default function About() {
         },
     ]
     return (
-        <main className="flex min-h-screen flex-col gap-20 items-center py-12 overflow-hidden pt-32 sm:pt-40">
-            
-            {/* Background Image */}
-			<TitleBackground gradient/>
+        <main className="flex min-h-screen flex-col gap-20 items-center py-12 pt-24">
+
 
 			{/* title card and CTA */}
 			<Title title={["Empower", "Sustainable", "Transformation"]} 
@@ -66,14 +64,17 @@ export default function About() {
 
             <MarketInsights/>
 
-            <InfoCardGrid title={["Our core", "values"]} accentVariant="circle" accentIndex={1} infoCardsData={infoCardsData}/>
-
-            <Testimonials />
+            <InfoCardGrid 
+                title={["Our Core", "Values"]} 
+                description="At ClimateForge, we are dedicated to creating solutions for one of the most critical challenges of our time:  the climate crisis."
+                infoCardsData={infoCardsData}/>
 
             <UseCases/>
 
             <Deploy />
 
+            <Testimonials />
+            
             <Faq />
             
             <Cta title={["Ready To", "Do Something", "That Matters?"]} 

@@ -1,72 +1,73 @@
 "use client";
-import Image from "next/image"
 
-import GradientButton from "./ui/gradient-button";
+import Image from "next/image";
 
 export default function UseCases() {
 
     const useCases = [
-        "Energy Benchmarking",
-        "Energy Retrofit Analysis",
-        "District Energy",
-        "Energy Upgrades Potential",
-        "Heat Resilience Modeling",
-        "Energy Control And VPP"
+        {
+            title: "Energy Benchmarking",
+            svgSrc: "/use-cases/energy-benchmarking.svg"
+        },
+        {
+            title: "Energy Retrofit Analysis",
+            svgSrc: "/use-cases/energy-retrofit-analysis.svg"
+        },
+        {
+            title: "District Energy",
+            svgSrc: "/use-cases/district-energy.svg"
+        },
+        {
+            title: "Energy Upgrades Potential",
+            svgSrc: "/use-cases/energy-upgrades-potential.svg"
+        },
+        {
+            title: "Heat Resilience Modeling",
+            svgSrc: "/use-cases/heat-resilience-modeling.svg"
+        },
+        {
+            title: "Energy Control And VPP",
+            svgSrc: "/use-cases/energy-control-and-vpp.svg"
+        }
     ]
 
     return (
-        <section className="bg-gradient-radial max-w-[1180px] flex w-full rounded-[45px] overflow-hidden mt-0 sm:mt-12">
-            
+        <section className="flex flex-col justify-center items-center w-full bg-[#EEF2F6] py-20">
+            <h2 className="text-5xl font-bold">Use Cases</h2>
+            <p className="text-lg text-[#5C5C5C] py-10 text-center">Empowering American Businesses to Sell Energy Upgrades with AI-Driven Lead Gen</p>
             {/* Image Container */}
-            <div className="relative hidden sm:flex max-h-[436px] max-w-[492px] flex-shrink flex-grow-1 basis-[50%]">
-                <video className="w-auto object-left z-10 
-                    sm:[clip-path:polygon(80%_0,95%_28%,97%_42%,100%_58%,100%_68%,69%_100%,0_100%,0%_43%,0_0)]
-                    md:[clip-path:polygon(85%_0,95%_28%,97%_42%,100%_58%,100%_68%,77%_100%,0_100%,0%_43%,0_0)]
-                    lg:[clip-path:polygon(85%_0,95%_28%,97%_42%,100%_58%,100%_68%,80%_100%,0_100%,0%_43%,0_0)] aspect-square object-cover  rounded-[20px]"
+            <div className="flex flex-col lg:flex-row justify-center w-full gap-5 py-10 items-center lg:items-stretch">
+                <video className="flex max-w-[630px] max-h-[592px]  object-left z-10  w-full h-auto
+                    object-cover  rounded-[20px]"
                     src={"/use-cases/use-cases.mp4"}
                     autoPlay
                     loop
                     playsInline
                     muted 
-                    width={0}
-                    height={0}
+                    width={630}
+                    height={592}
                 />
-                <Image title="Image Accent Green"
-                className="absolute top-0 sm:-right-[1%] md:-right-[3%] h-[120%] z-20"
-                src={"/use-cases/vector1.svg"}
-                width={0}
-                height={0}
-                alt={"Green Accent SVG"}
-                />
-                <Image title="Image Accent White"
-                className="absolute top-0 -right-[7.5%] h-[120%] z-10"
-                src={"/use-cases/vector2.svg"}
-                width={0}
-                height={0}
-                alt={"White Accent SVG"}
-                />
-            </div>
 
-            {/* Use Cases */}
-            <div className="flex flex-col justify-center items-center w-full p-4 sm:p-8  mb-4 flex-grow basis-[70%]">
-                <h2 className="text-white font-semibold mb-6">Use cases</h2>
-
-                <div className="grid grid-cols-2 gap-4 flex-wrap z-20">
+                {/* Use Cases */}
+                <div className="grid grid-cols-2 gap-5 flex-wrap z-20 max-h-[592px] ">
                 {useCases.map((useCase, index) => (
-                    <GradientButton
-                    key={index}
-                    variant="outline"
-                    width={266}
-                    height={64}
-                    radius={33}
-                    bgColor={'#5FB4871A'}
-                    className="text-xs sm:text-sm md:text-base"
-                    >
-                    {useCase}
-                    </GradientButton>
+                    <div className="flex flex-col justify-center p-8 gap-4 border border-[#E0DFE2]
+                    text-xs sm:text-sm md:text-base bg-white rounded-15 w-full max-w-[305px]"
+                        key={index}
+                    >   <Image className="w-9 h-9"
+                            src={useCase.svgSrc} 
+                            alt="" 
+                            width={36} height={36}
+                            
+                        />
+                        <h4 className="text-lg md::text-xl lg:text-2xl font-bold text-[#858585]">{useCase.title}</h4>
+                    </div>
                 ))}
                 </div>
             </div>
+
+            
+            
         </section>
     );
 }
