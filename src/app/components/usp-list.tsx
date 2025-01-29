@@ -11,14 +11,15 @@ type USPBlockProps = {
     description: string[];
     videoSrc: string;
     iconSrc: string;
-    imageLeft?: boolean;
+    accentVariant?: boolean;
+    color?: string;
     children: ReactNode;
 }
 
 type USPImageProps = {
     src: string;
     iconSrc: string;
-    left?: boolean;
+    accentVariant?: boolean;
     children: ReactNode;
 }
 
@@ -26,6 +27,7 @@ type USPDecorationProps = {
     title: string;
     caption: string;
     iconSrc: string;
+    isFirst: boolean;
 }
 
 const fromMiddle: Variants = {
@@ -46,8 +48,9 @@ const fromMiddle: Variants = {
 
 const inter = Inter({ subsets: ['latin'] })
 
-function UspDecoration({title, caption, iconSrc}: USPDecorationProps) {
+function UspDecoration({title, caption, iconSrc, isFirst}: USPDecorationProps) {
     return (
+    <>
         <motion.div variants={fromMiddle}
             whileHover={{
                 scale: 1.1,
@@ -73,10 +76,44 @@ function UspDecoration({title, caption, iconSrc}: USPDecorationProps) {
             />
 
         </motion.div>
+        {isFirst ? 
+        <motion.div variants={fromMiddle} 
+            whileHover={{
+                scale: 1.1,
+                transition: { duration: 0.6 },
+            }}
+            className="absolute top-[5%] sm:top-[10%] -left-[10%] sm:-left-[15%] 
+            flex justify-evenly items-center cursor-default
+            w-[206px] h-[55px] px-3
+            rounded-[10px] bg-white shadow-md">
+            <Image title="Avatar"
+                className="w-[35px] h-[35px] object-cover rounded-full"
+                src={"/usp-list/avatar.webp"}
+                sizes="100vh"
+                alt="Avatar"
+                width={0}
+                height={0} 
+            />
+            <div className={`${inter.className} flex flex-col justify-center h-[32px] px-[9px]`}>
+            <p className="text-[14px] font-bold">+7.25%</p>
+            <p className="text-[11px] font-medium leading-none text-[#A9A7B6]">Increase in Clients</p>
+            </div>
+            
+
+            <Image title="Line Graph Icon"
+                className="w-[28px] h-[28px]"
+                src={"/usp-list/icon-line-graph.svg"}
+                alt="Line Graph SVG"
+                width={0}
+                height={0} 
+            />
+        </motion.div>
+        : null}
+    </>
     )
 }
 
-function UspImage({src, iconSrc, left = false, children}: USPImageProps) {
+function UspImage({src, iconSrc, accentVariant, children}: USPImageProps) {
     const fromRight: Variants = {
         offscreen: { x: '30%', opacity: 0 },
         onscreen: {
@@ -133,7 +170,7 @@ function UspImage({src, iconSrc, left = false, children}: USPImageProps) {
             initial="offscreen"
             whileInView="onscreen" 
             viewport={{ once: false, amount: 0.6 }}  
-            className="relative flex-center w-full max-w-[415px] h-auto mx-8"
+            className="relative w-full max-w-[415px] h-auto mx-8 z-10"
         >
 
             {/* Circular image container */}
@@ -141,7 +178,7 @@ function UspImage({src, iconSrc, left = false, children}: USPImageProps) {
                 className="relative flex justify-center items-center p-4 lg:p-6 min-w-[250px] 
                 rounded-b-full rounded-tr-full shadow-xl bg-white z-10 max-w-[415px] max-h-[415px] w-full h-auto"
                 style={{
-                    borderRadius: left ? "50% 0% 50% 50%" : "0% 50% 50% 50%",
+                    borderRadius: accentVariant ? "50% 0% 50% 50%" : "0% 50% 50% 50%",
                     zIndex: 0
                 }}>
                     
@@ -165,14 +202,14 @@ function UspImage({src, iconSrc, left = false, children}: USPImageProps) {
             {/* Unique decorations (Cards, etc.) passed as */ children}
 
             {/* Gradient dot with icon */}
-            <motion.div variants={left ? fromLeftLong : fromRightLong}  
+            <motion.div variants={fromRightLong}  
                 className="absolute bottom-0 z-0 
                     w-16 h-16 flex justify-center items-center
                     bg-accent-gradient rounded-full
                     shadow-[0px_4px_40px_rgba(0,198,198,0.45)]"
                 style={{
-                    right: !left ? '-7%' : undefined,
-                    left: left ? '-7%' : undefined 
+                    right: '-7%',
+                    
                 }}>
                     
                     <Image title="Icon Decoration"
@@ -184,42 +221,41 @@ function UspImage({src, iconSrc, left = false, children}: USPImageProps) {
             </motion.div>
 
             {/* Small neon green dot */}
-            <motion.img variants={left ? fromLeft : fromRight} 
+            <motion.img variants={fromRight} 
                 title="Small Green Dot" alt="Small Green Dot SVG"
                 src={'/usp-list/dot-small.svg'} width={21} height={21} 
                 className="absolute -z-10 -top-5 right-20" 
                 style={{
-                    right: !left ? '12%' : undefined,
-                    left: left ? '12%' : undefined 
+                    right: '12%',
+                    
                 }}
             />
 
             {/* Large green dot */}
-            <motion.img variants={left ? fromRight : fromLeft}
+            <motion.img variants={fromLeft}
                 title="Large Green Dot" alt="Large Green Dot SVG"
                 src={'/usp-list/dot-large.svg'} width={65} height={66}
-                className="absolute -z-10 -bottom-6" 
+                className="absolute z-10 -bottom-6" 
                 style={{
-                    right: left ? '-5%' : undefined,
-                    left: !left ? '-5%' : undefined 
+                    
+                    left: '-5%'
                 }}
             />
 
             {/* Very small dots pattern */}
-            <motion.img variants={left ? fromLeft : fromRight}
+            <motion.img variants={fromRight}
                 title="Dots" alt="Dots SVG"
                 src={'/usp-list/dots.svg'} width={148} height={148} 
                 className="absolute -z-10 -bottom-[15px]" 
                 style={{
-                    right: !left ? '0%' : undefined,
-                    left: left ? '0%' : undefined 
+                    right: '0%',
                 }}
             />
         </motion.div>
     )
 }
 
-function UspBlock({title, heading, description, videoSrc, iconSrc, imageLeft, children}: USPBlockProps) {
+function UspBlock({title, heading, description, videoSrc, iconSrc, accentVariant, color, children}: USPBlockProps) {
     const [currentValue, setCurrentValue] = useState("0");
 
     // This function handles the number animation logic
@@ -252,41 +288,38 @@ function UspBlock({title, heading, description, videoSrc, iconSrc, imageLeft, ch
     };
 
     return (
-        <div className="relative flex justify-center sm:justify-between items-center text-center sm:text-left 
-            w-full min-h-[415px] ">
+        <div className="relative flex flex-col sm:flex-row items-center justify-between rounded-15 px-[50px] py-[58px]"
+            style={{backgroundColor: color}}>
             
-            { imageLeft ? 
-                <UspImage src={videoSrc} iconSrc={iconSrc} left={imageLeft}>
-                    {children}
-                </UspImage> 
-                : null 
-            }
-            
-            <div className="absolute sm:static sm:flex flex-col justify-center w-full z-10 "
-            style={{paddingLeft: '24px'}}>
+            <div className="flex flex-col z-10 pr-[52px] pb-4 sm:pb-0"
+                style={{paddingLeft: '24px'}}
+            >
+                {/** TITLE */}
                 <h3>
                     {title[0]}
                     <span className="relative whitespace-nowrap">
                     {title[1]}
                         <Image title="USP Title Accent"
                             className="absolute z-10 top-[85%] left-[0px] w-full"
-                            src={imageLeft ? "/accents/accent2.svg" : "/accents/accent1.svg"}
+                            src={accentVariant ? "/accents/accent2.svg" : "/accents/accent1.svg"}
                             alt="Title Accent SVG"
                             width={381} height={18}/>
                     </span>
                 </h3>
 
+                {/** HEADING */}
                 <h4 className="my-5 sm:my-10">
                     {heading}
                 </h4>
 
-                <p className="font-semibold">
+                {/** DESCRIPTION */}
+                <p>
                     {description[0]} 
                     <motion.span initial="offscreen"
                         whileInView="onscreen"
                         viewport={{ once: true }} // Only animate once
                         onAnimationStart={animateNumber}>
-                        <GradientText className="text-lg font-bold">
+                        <GradientText className="text-lg font-bold ">
                             {currentValue}
                         </GradientText>
                     </motion.span>
@@ -294,109 +327,72 @@ function UspBlock({title, heading, description, videoSrc, iconSrc, imageLeft, ch
                 </p>
             </div>
 
-            { !imageLeft ? 
-                <UspImage src={videoSrc} iconSrc={iconSrc} >
-                    {children}
-                </UspImage>
-                : null 
-            }
+            {/** IMAGE */}
+            <UspImage src={videoSrc} iconSrc={iconSrc} accentVariant={accentVariant}>
+                {children}
+            </UspImage>
 
         </div>
     );
 }
 
-// A USP List consists of a title, divider and USP Blocks (usp-block)
+const uspData = [
+    {
+        title: ["Conversion-", "Optimized"],
+        heading: "Faster time to market for renewable energy products",
+        description: ["Companies using ClimateForge's solutions experience a ", "55%", " faster time to deploy energy upgrades."],
+        videoSrc: "/usp-list/conversion-optimized.mp4",
+        iconSrc: "/usp-list/icon-react.svg",
+        uspDecoration: ["$245.00", "Total Income", "/usp-list/icon-bar-graph.svg"],
+        color: "#CFDDDC"
+    },
+    {
+        title: ["Real ", "Energy Modeling"],
+        heading: "Increase in renewable energy adoption",
+        description: ["ClimateForge's technology has led to a significant ", "32%", " increase in renewable energy adoption."],
+        videoSrc: "/usp-list/real-energy-modeling.mp4",
+        iconSrc: "/usp-list/icon-ai.svg",
+        accentVariant: true,
+        uspDecoration: ["Efficiency", "Savings", "/usp-list/icon-robot.svg"],
+        color: "#C1CDE2"
+    },
+    {
+        title: ["Impact ", "Assessments"],
+        heading: "Reduction In Carbon Emissions",
+        description: ["Businesses using ClimateForge help to reduce carbon emissions by more than ", "30%", "."],
+        videoSrc: "/usp-list/impact-assessments.mp4",
+        iconSrc: "/usp-list/icon-sustainable.svg",
+        uspDecoration: ["Save Earth", "Make $", "/usp-list/icon-sun.svg"],
+        color: "#EDEDED"
+    },
+];
 export default function UspList() {
-
     return (
-        <section className="flex flex-col justify-center items-center max-w-[1180px] w-full">
-            
-            {/* Title */}
-            <h2 className="text-center">
-                The Unique Power Of
+        <section className="flex flex-col max-w-[1280px] w-full">
+            <h2 className="text-center pb-[80px]">
+                The <GradientText>Unique</GradientText> Power Of ClimateForge
             </h2>
-            <motion.h2 variants={fromMiddle} initial="offscreen"
-            whileInView="onscreen" 
-            viewport={{ once: false, amount: 0.6 }}  >
-                <GradientText>
-                    ClimateForge
-                </GradientText>
-            </motion.h2>
-            
-            {/* Divider */}
-            <svg className="w-[220px] h-[2px] sm:w-[324px] sm:h-[2px] mt-6 sm:mt:10 md:mt-10 mb-14" 
-                width="324" height="2" viewBox="0 0 324 2" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path opacity="0.4" d="M0.5 1H323.5" stroke="#01060F"/>
-            </svg>
-            
-            {/* USP List Container */}
-            <div className="flex flex-col gap-y-8 sm:gap-y-16 md:gap-y-24 lg:gap-y-32 justify-center items-center w-full">
-
-                {/* USP Block 1 - Conversion Optimized */}
-                <UspBlock 
-                    title={["Conversion-", "Optimized"]}
-                    heading="Faster time to market for renewable energy products"
-                    description={["Companies using ClimateForge's solutions experience a ", "55%", " faster time to deploy energy upgrades."]}
-                    videoSrc="/usp-list/conversion-optimized.mp4"
-                    iconSrc="/usp-list/icon-react.svg"> 
-                    
-                    <UspDecoration title="$245.00" caption="Total Income" iconSrc="/usp-list/icon-bar-graph.svg"/>
-                    
-                    <motion.div variants={fromMiddle} 
-                        whileHover={{
-                            scale: 1.1,
-                            transition: { duration: 0.6 },
-                        }}
-                        className="absolute top-[5%] sm:top-[10%] -left-[10%] sm:-left-[15%] 
-                        flex justify-evenly items-center cursor-default
-                        w-[206px] h-[55px] px-3
-                        rounded-[10px] bg-white shadow-md">
-                        <Image title="Avatar"
-                            className="w-[35px] h-[35px] object-cover rounded-full"
-                            src={"/usp-list/avatar.webp"}
-                            sizes="100vh"
-                            alt="Avatar"
-                            width={0}
-                            height={0} 
-                        />
-                        <div className={`${inter.className} flex flex-col justify-center h-[32px] px-[9px]`}>
-                        <p className="text-[14px] font-bold">+7.25%</p>
-                        <p className="text-[11px] font-medium leading-none text-[#A9A7B6]">Increase in Clients</p>
-                        </div>
+            <div className="relative flex flex-col justify-center items-center w-full min-h-screen">
+                {uspData.map((usp, index) => (
+                    <motion.div
+                        key={index}
+                        className={`sticky top-[15%] w-full ${index === uspData.length - 1 ? 'z-20' : 'z-10'}`}
+                        initial={{ y: 50 }}
+                        whileInView={{ opacity: 1,  y: 20 }} // Adjust the offset to make the top visible
+                        transition={{ duration: 0.6, }}
+                        viewport={{ margin: "-10%" }}
                         
-
-                        <Image title="Line Graph Icon"
-                            className="w-[28px] h-[28px]"
-                            src={"/usp-list/icon-line-graph.svg"}
-                            alt="Line Graph SVG"
-                            width={0}
-                            height={0} 
-                        />
+                    >
+                        <UspBlock {...usp}>
+                            <UspDecoration
+                                title={usp.uspDecoration[0]}
+                                caption={usp.uspDecoration[1]}
+                                iconSrc={usp.uspDecoration[2]}
+                                isFirst={index === 0}
+                            />
+                        </UspBlock>
                     </motion.div>
-                </UspBlock>
-
-                {/* USP Block 2 - Real Energy Modeling */}
-                <UspBlock 
-                    title={["Real ", "Energy Modeling"]}
-                    heading="Increase in renewable energy adoption"
-                    description={["ClimateForge's technology has led to a significant ", "75%", " increase in renewable energy adoption."]}
-                    videoSrc="/usp-list/real-energy-modeling.mp4"
-                    iconSrc="/usp-list/icon-ai.svg"
-                    imageLeft> 
-                    <UspDecoration title="Efficiency" caption="Savings" iconSrc="/usp-list/icon-robot.svg"/>
-
-                </UspBlock>
-
-                {/* USP Block 3 - Impact Assessments */}
-                <UspBlock 
-                    title={["Impact ", "Assessments"]}
-                    heading="Reduction In Carbon Emissions"
-                    description={["Businesses using ClimateForge help to reduce carbon emissions by more than ", "30%", "."]}
-                    videoSrc="/usp-list/impact-assessments.mp4"
-                    iconSrc="/usp-list/icon-sustainable.svg"> 
-                    <UspDecoration caption="Save Earth" title="Make $" iconSrc="/usp-list/icon-sun.svg"/>
-                    
-                </UspBlock>
+                ))}
             </div>
         </section>
     );

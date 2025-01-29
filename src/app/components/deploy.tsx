@@ -1,87 +1,102 @@
 "use client";
 import React, { useRef } from "react";
-import AccentTitle from "./ui/accent-title";
-import GradientBorderBox from "./ui/gradient-border-box";
+import GradientText from "./ui/gradient-text";
+import Image from "next/image";
 
 export default function Deploy() {
-
     const images = [
-        { src: '/deploy/solar-panel-systems.mp4', caption: 'Solar Panels Systems' },
-        { src: '/deploy/ev-charging-systems.mp4', caption: 'EV Charging Systems' },
-        { src: '/deploy/energy-storage-batteries.mp4', caption: 'Energy Storage & Batteries' },
-        { src: '/deploy/hvac-systems.mp4', caption: 'HVAC Systems' },
-        { src: '/deploy/solar-heaters.mp4', caption: 'Solar Heaters' },
-        { src: '/deploy/smart-energy-devices.mp4', caption: 'Smart Energy Devices' },
-    ]
+        { src: "solar-panel-systems", caption: "Solar Panels Systems" },
+        { src: "ev-charging-systems", caption: "EV Charging Systems" },
+        { src: "energy-storage-batteries", caption: "Energy Storage & Batteries" },
+        { src: "hvac-systems", caption: "HVAC Systems" },
+        { src: "solar-heaters", caption: "Solar Heaters" },
+        { src: "smart-energy-devices", caption: "Smart Energy Devices" },
+    ];
 
     return (
-        <section id="deploy" className="w-full m-x-4 sm:mt-16 max-w-[1440px]">
-            <GradientBorderBox
-                decorationsOutside={[
-                { src: "/decorations/dots-3x4.svg", className: "-top-14 left-40" },
-                { src: "/decorations/dots.svg", className: "-bottom-[75px] -right-20" },
-                ]}
-            >
-                <AccentTitle
-                title={["We Help you", "Deploy"]}
-                variant="underline"
-                accentIndex={1}
-                className="mt-16 mb-8"
-                />
+        <section
+        id="deploy"
+        className="flex flex-col justify-center items-center w-full max-w-[1280px]"
+        >
+        <h2>
+            What We Help you <GradientText>Deploy</GradientText>
+        </h2>
 
-                <div className="flex justify-center items-center w-full max-w-[1179px] h-[716px] mb-24 z-20">
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 w-full">
-                    {images.map((image, index) => {
-                    const videoRef = useRef<HTMLVideoElement>(null);
+        <div className="flex justify-center items-center w-full max-w-[1179px] z-20 mt-10">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 w-full">
+            {images.map((image, index) => {
+                const videoRef = useRef<HTMLVideoElement>(null);
 
-                    const handleMouseOver = () => {
-                        if (videoRef.current) {
-                        videoRef.current.play();
-                        }
-                    };
+                const handleMouseOver = () => {
+                if (videoRef.current) {
+                    videoRef.current.play();
+                }
+                };
 
-                    const handleMouseOut = () => {
-                        if (videoRef.current) {
-                        videoRef.current.pause();
-                        }
-                    };
+                const handleMouseOut = () => {
+                if (videoRef.current) {
+                    videoRef.current.pause();
+                }
+                };
 
-                    return (
-                        <div key={index}
-                            className="relative flex justify-center items-end 
-                                w-full max-w-[380px] 
-                                h-[250px] sm:h-[300px] md:h-[350px] 
-                                rounded-[20px]"
+                return (
+                <div
+                    key={index}
+                    className="relative flex justify-center items-start 
+                    w-full group
+                    h-[250px] sm:h-[300px] md:h-[350px] 
+                    rounded-[20px] overflow-hidden"
+                    style={
+                    index === 0
+                        ? { maxWidth: "630px" }
+                        : { maxWidth: "380px" }
+                    }
+                >
+                    <video
+                    ref={videoRef}
+                    className="absolute w-full h-full aspect-square object-cover rounded-[20px]"
+                    src={`/deploy/${image.src}.mp4`}
+                    onMouseOver={handleMouseOver}
+                    onMouseOut={handleMouseOut}
+                    loop
+                    muted
+                    width={0}
+                    height={0}
+                    />
+                    {/* Backdrop with Icon and Text */}
+                    <div
+                    className="absolute inset-0 flex flex-col justify-center items-center 
+                    bg-[#c3cdd6ba] backdrop-blur-[4px] 
+                    transition-all duration-600 rounded-[20px] 
+                    group-hover:top-6 group-hover:left-6 group-hover:right-6 group-hover:bottom-auto 
+                    group-hover:rounded-[15px] group-hover:h-[70px] group-hover:w-[calc(100%-48px)]"
+                    onMouseOver={handleMouseOver}
+                    onMouseOut={handleMouseOut}
+                    >
+                    <div
+                        className="flex justify-center items-center gap-4 transition-all duration-600 group-hover:gap-2"
+                    >
+                        <Image
+                        title="Deploy Icon"
+                        className="w-16 h-16 z-10 transition-all duration-300 group-hover:w-10 group-hover:h-10"
+                        src={`/deploy/${image.src}.svg`}
+                        alt="deploy icon"
+                        width={64}
+                        height={64}
+                        />
+                        <span
+                        className="text-primary text-center font-semibold tracking-wide 
+                            text-lg md:text-xl z-10 transition-all duration-600"
                         >
-                        <video
-                            ref={videoRef}
-                            className="absolute w-full h-full aspect-square object-cover rounded-[20px]"
-                            src={image.src}
-                            onMouseOver={handleMouseOver}
-                            onMouseOut={handleMouseOut}
-                            loop
-                            muted
-                            width={0}
-                            height={0}
-                        ></video>
-                        <div
-                            className="flex justify-center items-center h-[70px] w-full max-w-[338px] m-6 rounded-2xl backdrop-blur-[4px] bg-[#01081352]"
-                            style={{ boxShadow: "0px 35.9px 36.56px 0px #1BA6774D" }}
-                            onMouseOver={handleMouseOver}
-                            onMouseOut={handleMouseOut}
-                        >
-                            <span
-                            className="text-white text-center font-semibold tracking-wide m-4 text-sm sm:text-md md:text-lg lg:text-xl"
-                            >
-                            {image.caption}
-                            </span>
-                        </div>
-                        </div>
-                    );
-                    })}
+                        {image.caption}
+                        </span>
+                    </div>
+                    </div>
                 </div>
-                </div>
-            </GradientBorderBox>
+                );
+            })}
+            </div>
+        </div>
         </section>
     );
 }

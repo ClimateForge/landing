@@ -97,76 +97,66 @@ const LineSVG = () => {
 
 export default function LineGraphCard({lineGraphData}: Props) {
 
-    const {title, subtitle, description} = {...lineGraphData}
+    const {title, subtitle} = {...lineGraphData}
 
     return (
-        <div className="w-full max-w-[568px] rounded-[20px] p-2 sm:p-[12px] shadow-lg bg-white">
+        <div className={`${inter.className} flex flex-col bg-white w-full max-w-[568px] max-h-[396px] 
+            border-[1px] border-solid rounded-[20px] p-[24px] sm:p-[36px]`}>
+            {/* Graph Title */}
+            <div className='flex flex-col w-full'>
+                <p className="text-[12px] sm:text-[14px] md:text-[16px] lg:text-[18px] 
+                    leading-none sm:leading-5 text-[#9291A5]">
+                    {subtitle}
+                </p>
+                <h4 className="text-[16px] sm:text-[18px] md:text-[20px] lg:text-[22px] leading-7">
+                    {title}
+                </h4>
+            </div>
             
-            {/* Graph Container */}
-            <div className={`${inter.className} flex flex-col 
-                border-[1px] border-solid rounded-[20px] p-[24px] sm:p-[36px]`}>
-                {/* Graph Title */}
-                <div className='flex flex-col w-full'>
-                    <p className="text-[12px] sm:text-[14px] md:text-[16px] lg:text-[18px] 
-                        leading-none sm:leading-5 text-[#9291A5]">
-                        {subtitle}
-                    </p>
-                    <h4 className="text-[16px] sm:text-[18px] md:text-[20px] lg:text-[22px] leading-7">
-                        {title}
-                    </h4>
-                </div>
+            {/* Graph Divider */}
+            <svg className='mt-2 sm:mt-4' width="100%" height="2" viewBox="0 0 474 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <line x1="0.796875" y1="1.36304" x2="473.917" y2="1.36304" stroke="#DEE1E6"/>
+            </svg>
+            
+            {/* Graph */}
+            <div className='flex'>
                 
-                {/* Graph Divider */}
-                <svg className='mt-2 sm:mt-4' width="100%" height="2" viewBox="0 0 474 2" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <line x1="0.796875" y1="1.36304" x2="473.917" y2="1.36304" stroke="#DEE1E6"/>
-                </svg>
-                
-               {/* Graph */}
-                <div className='flex'>
-                    
-                    <div className='w-[473px] z-10 flex items-center mt-8 '>
-                        {/* Y-Axis */}
-                        <div className='relative flex flex-col justify-between items-end 
-                            h-full mr-[4%] text-[14px] text-[#615E83]'>
-                            <p>90</p>
-                            <p>60</p>
-                            <p>30</p>
-                            <p>0</p>
-                        </div>
+                <div className='w-[473px] z-10 flex items-center mt-[27.5px] '>
+                    {/* Y-Axis */}
+                    <div className='relative flex flex-col justify-between items-end 
+                        h-full mr-[4%] text-[14px] text-[#615E83]'>
+                        <p>90</p>
+                        <p>60</p>
+                        <p>30</p>
+                        <p>0</p>
+                    </div>
 
-                        {/* Line Graph */}
-                        <div className='w-full h-full relative py-[2%]'>
-                            {/* Dividers */}
-                            <div className='absolute top-[4%] left-[0%] -z-10
-                                w-full max-w-[430px] border-b-[2px] border-dashed border-[#DEE1E6]'/>
-                            <div className='absolute top-[35%] left-[0%] -z-10
-                                w-full max-w-[430px] border-b-[2px] border-dashed border-[#DEE1E6]'/>
-                            <div className='absolute top-[64%] left-[0%] -z-10
-                                w-full max-w-[430px] border-b-[2px] border-dashed border-[#DEE1E6]'/>
-                            <div className='absolute bottom-[3%] left-[0%] -z-10
-                                w-full max-w-[430px] border-b-[2px] border-solid border-[#DEE1E6]'/>
-                                
-                            {/* Line */}
-                            <LineSVG />
-                        </div>
+                    {/* Line Graph */}
+                    <div className='w-full h-full relative py-[2%]'>
+                        {/* Dividers */}
+                        <div className='absolute top-[4%] left-[0%] -z-10
+                            w-full max-w-[430px] border-b-[2px] border-dashed border-[#DEE1E6]'/>
+                        <div className='absolute top-[35%] left-[0%] -z-10
+                            w-full max-w-[430px] border-b-[2px] border-dashed border-[#DEE1E6]'/>
+                        <div className='absolute top-[64%] left-[0%] -z-10
+                            w-full max-w-[430px] border-b-[2px] border-dashed border-[#DEE1E6]'/>
+                        <div className='absolute bottom-[3%] left-[0%] -z-10
+                            w-full max-w-[430px] border-b-[2px] border-solid border-[#DEE1E6]'/>
+                            
+                        {/* Line */}
+                        <LineSVG />
                     </div>
                 </div>
-                {/* X-Axis */}
-                <div className='flex justify-between text-[10px] sm:text-small ml-[8%] mt-2 text-[#615E83]'>
-                    <span>2025</span>
-                    <span>2030</span>
-                    <span>2035</span>
-                    <span>2040</span>
-                    <span>2045</span>
-                    <span>2050</span>
-                </div>
             </div>
-                
-            {/* Graph Description */}
-            <p className='text-center mt-6 text-[#212529] mb-6'>
-                {description}
-            </p>
-            
+            {/* X-Axis */}
+            <div className='flex justify-between text-[10px] sm:text-small ml-[8%] mt-2 text-[#615E83]'>
+                <span>2025</span>
+                <span>2030</span>
+                <span>2035</span>
+                <span>2040</span>
+                <span>2045</span>
+                <span>2050</span>
+            </div>
         </div>
     );
 

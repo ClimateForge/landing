@@ -1,13 +1,12 @@
 import Image from "next/image";
 import AccentTitle from "./ui/accent-title";
+import GradientText from "./ui/gradient-text";
 
 interface InfoCardsData {
     title: string[];
-    accentVariant?: string;
-    accentSrc?: string;
-    accentY?: number;
-    accentIndex?: number;
+    description?: string;
     infoCardsData?: InfoCardData[];
+    className?: string;
 }
 
 type InfoCardData = {
@@ -19,64 +18,43 @@ type InfoCardData = {
 function InfoCard({ title, description, icon }: InfoCardData) {
 
     return (
-        <div className="relative 
-            rounded-3xl bg-white shadow-md
-            pt-[45px] sm:pt-[50px] md:pt-[55px] lg:pt-[70px] 
-            px-[16px] sm:px-[18px] md:px-[20px] lg:px-[26px] pb-4
-            flex-col flex-[-1_1_200px] max-w-[30%] min-w-[170px]
-            group transition-all hover:z-10 duration-500 hover:scale-105 hover:shadow-lg">
+        <div className="flex flex-col justify-between gap-5 p-8
+            rounded-3xl bg-white border border-[#E0DFE2]
+            max-w-[410px] max-h-[317px]">
             
-            <div className="absolute -top-8 right-[10%]
-                w-16 h-16 sm:w-[70px] sm:h-[70px] md:w-[75px] md:h-[75px] lg:w-20 lg:h-20
-                bg-accent-gradient rounded-full
-                shadow-[0px_16px_24px_rgba(38,176,117,0.22)]
-                transition-all duration-700
-                group-hover:transition-all group-hover:delay-200 group-hover:duration-700
-                bg-[length:100%_100%] group-hover:bg-[length:150%_100%] group-hover:scale-110">
-                    
-                    <Image title="Card Icon"
-                        className="absolute z-10 transition-all duration-700
-                        top-[25%] left-[25%]
-                        w-[50%] h-[50%]"
-                        src={`/card-icons/${icon}.svg`}
-                        alt="card icon"
-                        width={36}
-                        height={0} 
+            <Image title="Card Icon"
+                    className="w-10 h-10 z-10 transition-all duration-700"
+                    src={`/card-icons/${icon}.svg`}
+                    alt="card icon"
+                    width={40}
+                    height={40} 
                 />
-            </div>
 
-            <p className="font-semibold pb-[6px]
-                text-[13px] sm:text-[15px] md:text-[16px] lg:text-[18px]">
+            <h5 className="font-bold pb-[6px]
+                text-[18px] sm:text-[20px] md:text-[22px] lg:text-[25px]">
                 {title}
-            </p>
+            </h5>
 
             <p className="text-gray-600 font-normal pb-2
-                text-[12px] sm:text-[13px] md:text-[14px] lg:text-[16px]
-                leading-[15px] sm:leading-[18px] md:leading-5 lg:leading-6">
+                text-[11px] md:text-[12px] lg:text-[14px]
+                leading-tight">
                 {description}
             </p>
 
         </div>
     );
 }
-export default function InfoCardGrid({title, accentVariant, accentSrc, accentY, accentIndex, infoCardsData}: InfoCardsData) {
+export default function InfoCardGrid({title, description, infoCardsData, className}: InfoCardsData) {
     
     return (
         infoCardsData ?
-            <section className="flex flex-col items-center">
-                
-                <AccentTitle 
-                    title={title} 
-                    variant={accentVariant} 
-                    accent={accentSrc}
-                    accentY={accentY}
-                    accentIndex={accentIndex} 
-                    className="text-center"
-                />
-                
-                <div className="flex flex-wrap justify-center items-stretch max-w-[1250px]
-                    max-h-[760px] h-full overflow-y-auto 
-                    pt-24 lg:pt-32 pb-8
+            <section className={`relative flex flex-col items-center w-full gap-10 -z-10 pb-20 ${className}`}>
+                {className ?  <div className="bg-[#ECF5FF] opacity-[0.93] w-full h-full absolute -z-10"></div> : null}
+                <h2 className="text-center pt-20">{title[0]} <GradientText>{title[1]}</GradientText></h2>
+                <p className="text-[18px] text-center font-medium max-w-[588px]">{description}</p>
+                <div className="flex flex-wrap justify-center items-stretch
+                    h-full overflow-y-auto w-full
+                    
                     gap-x-1 sm:gap-x-2 md:gap-x-4
                     gap-y-6 sm:gap-y-12 md:gap-y-14 lg:gap-y-16">
                 

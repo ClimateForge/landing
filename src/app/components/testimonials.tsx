@@ -38,25 +38,11 @@ export default function Testimonials() {
         },
     ]
 
-    // Helper function to render stars
-    const renderStars = (rating: number) => {
-        return Array.from({ length: rating }, (_, index) => (
-        <span key={index} 
-            className="star text-[35px] text-yellow-500
-                group-hover:text-transparent group-hover:bg-accent-gradient 
-                group-hover:bg-clip-text group-hover:scale-120">
-            ★
-        </span>
-        ));
-    };
+
     
     return (
-        <section id="testimonials" className="w-full flex justify-center">
-        <GradientBorderBox borderWidth={1}
-            decorationsInside={[
-                {src: "decorations/dots.svg", className: "-top-[98px] left-24 w-[197px]"}
-            ]}
-        >
+        <section id="testimonials" className="w-full flex flex-col justify-center">
+
             <AccentTitle title={['Why Our Clients', 'Are Satisfied?']}
                 variant='underline' 
                 accent={'/accents/accent2.svg'} 
@@ -70,11 +56,14 @@ export default function Testimonials() {
 
                     <div key={index}
                         className="flex-1 min-w-[250px] max-w-[380px] min-h-[250px] sm:min-h-[250px] 
-                        rounded-[20px] py-8 px-6 border-[1px] border-solid border-gray-300 bg-white
+                        rounded-[20px] py-8 px-6  bg-[#EEF2F6]
                         group transition-all hover:z-10 duration-500 hover:scale-105 hover:shadow-lg">
 
                         {/* Rating */}
-                        <div className="mb-2">{renderStars(testimonial.rating)}</div>
+                        <div className="flex gap-1">
+                            <Image src={"/testimonials/quotation.svg"} alt="quotation SVG" width={17} height={34}/>
+                            <Image src={"/testimonials/quotation.svg"} alt="quotation SVG" width={17} height={34}/>
+                        </div>
 
                         {/* Description */}
                         <p>{testimonial.description}</p>
@@ -105,6 +94,6 @@ export default function Testimonials() {
                     </div>
                 ))}
             </div>
-        </GradientBorderBox></section>
+        </section>
     );
 }

@@ -21,7 +21,7 @@ function FAQItem({ question, answers, link, contact}: FAQItemProps) {
     };
 
     return (
-        <div className="w-full py-4 md::py-5">
+        <div className="w-full py-4 md:py-5">
             <button
             className="flex justify-between items-center w-full px-4 text-left focus:outline-none"
             onClick={toggleAnswer}
@@ -45,7 +45,7 @@ function FAQItem({ question, answers, link, contact}: FAQItemProps) {
             <div className="px-4">
             {isOpen ?
             answers.map((ans, index) => 
-                <span className="p text-[#64607D]">
+                <span key={index} className="p text-[#64607D]">
                     {ans} 
                     {link && index === 0 ?
                         <Link href={link} className="text-[#4A89DB] font-semibold hover:opacity-85">
@@ -121,7 +121,7 @@ export default function Faq() {
 
     return (
         <section id="faq" className="flex flex-col sm:flex-row justify-evenly items-center sm:items-start 
-            w-full h-[502px] pt-12 lg:pt-16 px-2 sm:px-8">
+            w-full h-[502px] px-2 sm:px-8">
             <div className="text-center sm:text-left pb-8 px-2">
                 <h2>Frequently Asked</h2>
                 <h2><GradientText>Questions</GradientText></h2>

@@ -79,27 +79,27 @@ export default function Footer() {
 					</div>
 
 					{/* Socials */}
-					<div className="flex flex-wrap gap-4 justify-center items-center text-[#374151]">
+					<div className="flex flex-wrap gap-4 justify-center items-center text-primary">
 
 						{/* LinkedIn */}
 						<Link title="LinkedIn"
 							href={"https://www.linkedin.com/company/climateforge/?viewAsMember=true"} 
 							rel="noopener noreferrer" target="_blank">
-							<LinkedInIcon className="hover:text-[#242b36]"/>
+							<LinkedInIcon className="hover:text-secondary"/>
 						</Link>
 
 						{/* X */}
 						<Link title="X"
 							href="https://x.com/" 
 							rel="noopener noreferrer" target="_blank">
-							<XIcon className="hover:text-[#242b36]"/>
+							<XIcon className="hover:text-secondary"/>
 						</Link>
 
 						{/* Instagram */}
 						<Link title="Instagram"
 							href="https://www.instagram.com/" 
 							rel="noopener noreferrer" target="_blank">
-							<InstagramIcon className="hover:text-[#242b36]"/>
+							<InstagramIcon className="hover:text-secondary"/>
 						</Link>
 
 					</div>

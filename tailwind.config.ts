@@ -10,13 +10,16 @@ const config: Config = {
 		extend: {
 			colors: {
 				accent: "#5850EC",
-				primary: "#5850EC",
+				primary: "#21606A",
+				secondary: "#CEDCDC",
 				"white-50": "rgba(255, 255, 255, 0.5)",
 			},
 			textColor: {
-				dark: "#1F2A37",
-				"dark-secondary": "#4B5563",
+				dark: "#212529",
 				light: "#ffffff",
+				grey1: "#858585",
+				grey2: "#5C5C5C",
+				lightGrey: "#E0DFE2",
 			},
 			textShadow: {
 				DEFAULT: '0 2px 4px #000',
@@ -24,9 +27,11 @@ const config: Config = {
 				lg: '0 4px 10px #000',
 			},
 			backgroundColor: {
-				dark: "#1F2A37",
+				dark: "#001228",
 				"dark-secondary": "#4B5563",
-				light: "#FFFDF0",
+				light: "#EEF2F6",
+				purple: "#EDEEFC",
+				blue: "#E6F1FD",
 			},
 			backgroundImage: {
 				// "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
@@ -38,6 +43,8 @@ const config: Config = {
 					"radial-gradient(257.3% 141.42% at 0% 0%, #F9F3F1 0%, #F7EEDE 100%)",
 				"accent-gradient":
 					"linear-gradient(110.41deg, #4A89DB -2.4%, #39C77B 105.71%)",
+				"purple-gradient":
+					"linear-gradient(110.41deg, #744cebe6 -2.4%, #39C77B 105.71%)",
 				"white-gradient": 
 					"linear-gradient(103.51deg, #EEF2F6 41%, #FFFFFF 45%, #EEF2F6 51%, #FFFFFF 61%, #EEF2F6 74.5%)",
 				"gradient-repeating": 

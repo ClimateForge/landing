@@ -1,3 +1,4 @@
+import ButtonCustom from './button-custom';
 import GradientButton from './gradient-button';
 import GradientText from "./gradient-text";
 import { ReactNode } from "react";
@@ -23,12 +24,12 @@ export default function EmailButton({variant, link = false, children}: Props) {
             </GradientText>
         </button>
         : 
-        <GradientButton variant={variant} 
+        <ButtonCustom variant={variant} 
             onClick={(e) => {
                 window.location.href = "mailto:team@climateforge.ai";
                 e.preventDefault();
             }}>
             {children}
-        </GradientButton>
+        </ButtonCustom>
     );
 }
