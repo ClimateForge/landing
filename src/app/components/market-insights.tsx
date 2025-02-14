@@ -103,32 +103,34 @@ export default function MarketInsights() {
             color: "#D1E2C4"
         }
     ]
+
     const cardVariants: Variants = {
         initial: {
-          opacity: 0,
-          y: 50,
+            opacity: 0,
+            y: 50,
         },
         animate: {
-          opacity: 1,
-          y: 0,
-          transition: {
-            duration: 0.8,
-            ease: "easeOut",
-          },
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 0.8,
+                ease: "easeOut",
+            },
         },
         exit: {
-          opacity: 0,
-          y: -50,
-          transition: {
-            duration: 0.5,
-            ease: "easeIn",
-          },
+            opacity: 0,
+            y: -50,
+            transition: {
+                duration: 0.5,
+                ease: "easeIn",
+            },
         },
-      };
+    };
+
     return (
         <section
             className="relative flex flex-col justify-center items-center w-full
-            bg-[url(/job-openings/solar-panels.webp)] bg-cover bg-center h-screen"
+            bg-[url(/job-openings/solar-panels.webp)] bg-cover bg-center px-4"
             >
             <div className="bg-[#ECF5FF] opacity-[0.93] w-full h-full absolute z-10"></div>
             <h2 className="mt-16 mb-8 text-center z-20">Market Insight</h2>
@@ -164,7 +166,7 @@ export default function MarketInsights() {
             {/* Active Card */}
             <motion.div
                 key={currentIndex} // Ensures animation triggers on key change
-                className="flex flex-col md:flex-row mb-20 bg-[#D7DBF6] px-[108px] py-16 rounded-15 max-w-[1280px] gap-5 z-20"
+                className="flex flex-col md:flex-row mb-20 bg-[#D7DBF6] px-[30px] md:px-[108px] py-16 rounded-15 max-w-[1280px] gap-5 z-20"
                 style={{ backgroundColor: cardsInfo[currentIndex].color }}
                 variants={cardVariants}
                 initial="initial"
@@ -172,8 +174,8 @@ export default function MarketInsights() {
                 exit="exit"
             >
                 <div className="flex gap-5 items-center">
-                <div className="flex flex-col gap-12 max-w-[522px]">
-                    <h4 className="text-5xl tracking-tighter">
+                <div className="flex flex-col md:gap-8 lg:gap-12 max-w-[522px]">
+                    <h4 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl tracking-tighter">
                     {cardsInfo[currentIndex].title}
                     </h4>
                     <p>

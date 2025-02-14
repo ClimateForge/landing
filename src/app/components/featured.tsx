@@ -4,9 +4,9 @@ import ButtonCustom from './ui/button-custom'
 import Image from 'next/image'
 export default function Featured() {
     return (
-        <div className='max-w-[1280px]'>
-            <hr className="flex w-full border border-[#858585] mb-6 " />
-            <div className='flex justify-between gap-8 pb-10'>
+        <div className='max-w-[1280px] mt-8 mx-4'>
+            <hr className="flex w-full border border-[#858585] mb-6" />
+            <div className='flex flex-col md:flex-row justify-between gap-8 pb-10'>
                 <p className='text-lg font-medium'>Featured</p>
                 <div className='flex flex-col max-w-[931px] gap-y-6'>
                     <h4 className='text-[32px]'>Decarbonizing the Future: The Role of ClimateForge in Advancing Decarbonization Technologies</h4>
@@ -19,7 +19,7 @@ export default function Featured() {
                                 "noopener,noreferrer"
                             )
                         }
-                        className='max-w-[215px]' variant={"outline"}>
+                        className='max-w-[218px]' variant={"outline"}>
                         Go to the full article
                     </ButtonCustom>
                 </div>
@@ -27,8 +27,10 @@ export default function Featured() {
             <Image className='rounded-10'
                 src={"/featured/article-image.png"}
                 alt='Article Image'
-                width={1280}
-                height={363}
+                width={0}
+                height={0}
+                sizes='100vh'
+                style={{ width: '100%', height: 'auto' }}
             />
         </div>
     )

@@ -38,11 +38,11 @@ export default function Title({title, description, descriptionAnimated, gradient
 		<section className="flex flex-col 
 			justify-center items-center 
 			text-center relative h-full
-			max-w-[931px]"
+			max-w-[931px] px-4"
 		>
 		
 		{title ? 
-			<h1 className="mb-4">
+			<h1 className="mb-4 text-5xl md:text-6xl">
 				{title.length === 1 ? <GradientText variant='purple'> {title[0]} </GradientText> : title[0]}
 				{title[gradientIndex] ? <GradientText variant='purple'> {title[gradientIndex]} </GradientText> : null}
 				{title[2] ? title[2] : null}
@@ -50,7 +50,7 @@ export default function Title({title, description, descriptionAnimated, gradient
 		: null}
 		{
 			descriptionAnimated ? 
-			<div className="text-black mb-6 text-md font-semibold inline-flex flex-col sm:flex-row whitespace-pre-wrap">
+			<div className="text-black mb-6 text-md font-semibold inline-flex flex-col sm:flex-row whitespace-pre-wrap ">
 				<p>{descriptionAnimated[0]}</p>
 				
 				<Typewriter

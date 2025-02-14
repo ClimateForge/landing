@@ -1,10 +1,8 @@
 "use client";
 import { useRouter } from 'next/navigation';
-import Image from 'next/image';
+
 import { useState } from 'react';
-import GradientText from './ui/gradient-text';
-import GradientButton from './ui/gradient-button';
-import GradientBorderBox from './ui/gradient-border-box';
+
 import ButtonCustom from './ui/button-custom';
 import { motion } from 'framer-motion';
 interface PricingCardProps {
@@ -24,7 +22,7 @@ function PricingCard(props: PricingCardProps) {
     return (
         <div className="relative rounded-15 bg-[#EEF2F6] shadow-md py-8 px-[43px]
             transition-all hover:z-10 duration-500 hover:scale-105 hover:shadow-xl
-            w-[410px] h-[617px] flex flex-col justify-between">
+            max-w-[410px] w-full h-[617px] flex flex-col justify-between">
             <div>
                 <h4 className="text-primary pb-10">{tier}</h4>
                 {price ? (
@@ -70,7 +68,7 @@ export default function PricingTiers() {
     };
 
     return (
-        <section id="pricing" className="relative flex flex-col justify-center items-center w-full gap-y-4 mb-0 sm:mb-10">
+        <section id="pricing" className="relative flex flex-col justify-center items-center w-full gap-y-4 mb-0 sm:mb-10 px-4">
             <h2 className="font-bold leading-none z-10">Pricing</h2>
             <p className="text-lg font-medium pb-[40px] text-center">
                 Reach out to our sales team to try ClimateForge today.
@@ -90,9 +88,9 @@ export default function PricingTiers() {
                         />
                         )}
                         <button onClick={() => setIsYearly(index === 1)}
-                            className={`flex w-full h-[55px] text-lg justify-center  items-center rounded-full font-bold relative z-10 transition-colors ${
-                                isActive ? 'text-white' : 'text-primary'
-                            }`}
+                            className={`flex w-full h-[55px] text-lg justify-center  items-center rounded-full font-bold relative z-10  
+                                ${isActive ? 'text-white pointer-events-none' : 'text-primary hover:bg-[#ffffffbc] hover:bg-accent-gradient-opaque hover:overflow-clip hover:border hover:border-primary'}`
+                            }
                         >
                         {option}
                         </button>

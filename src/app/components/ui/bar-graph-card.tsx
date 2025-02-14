@@ -67,7 +67,7 @@ export default function BarGraphCard({barGraphData}: Props) {
             {/* Graph */}
             <div className='flex justify-center items-center relative pt-6 mb-8 '>
                 
-                <div className='w-[473px] z-10 h-[155px] '>
+                <div className='w-full max-w-[473px] z-10 h-[155px] '>
                     <motion.div  key={JSON.stringify(barData)}
                         initial="offscreen"
                         whileInView="onscreen"  
