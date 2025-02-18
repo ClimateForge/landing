@@ -123,8 +123,9 @@ export default function Faq() {
         <section id="faq" className="flex flex-col sm:flex-row justify-evenly items-center sm:items-start 
             w-full h-[502px] px-2 sm:px-8">
             <div className="text-center sm:text-left pb-8 px-2">
-                <h2>Frequently Asked</h2>
-                <h2><GradientText>Questions</GradientText></h2>
+                <h2 className="leading-tight">Frequently Asked</h2>
+                <h2 className="leading-tight"><GradientText>Questions</GradientText></h2>
+                <p className="mt-6 max-w-[430px] text-lg">Have questions? We've got answers. For everything else email us on team@climateforge.ai</p>
             </div>
             
             <div className="py-8 w-full max-w-[651px] h-full max-h-[350px] sm:max-h-[400px] 

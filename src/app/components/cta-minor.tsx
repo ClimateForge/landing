@@ -147,11 +147,11 @@ export default function CtaMinor() {
             <div className="flex flex-col md:flex-row w-full justify-center gap-4 lg:gap-8">
             {/* Image Container */}
             <GradientBorderBox borderRadius={16}
-                className="bg-[#f4fafd] rounded-15 max-w-[630px] h-[450px] lg:h-[559px]"
+                className="bg-[#f4fafd] rounded-15 h-[420px] lg:h-[559px]"
             >
                 <Image title="Houses Background Image"
-                    className=" w-[609px] rounded-[90px] mix-blend-overlay
-                    transform scale-[1.25] translate-x-16 -translate-y-20"
+                    className="w-full h-full rounded-[90px] mix-blend-overlay
+                    transform scale-[1.25] aspect-square object-cover"
                     src={"/cta-minor/houses.png"}
                     alt="Houses"
                     sizes="100vh"
@@ -163,27 +163,29 @@ export default function CtaMinor() {
                 <motion.div initial="offscreen"
                     whileInView="onscreen"
                     viewport={{ once: false, amount: 0.8 }} 
-                    className="absolute z-30 top-[100px] md:top-[150px] w-[500px]">
-                    <motion.div variants={middleVariants} className="absolute z-30"> 
-                    <Image title="House Image" className="w-auto h-auto"
-                        src={"/cta-minor/house.png"}
-                        alt="House"
+                    className="absolute flex justify-center items-center z-30  m-auto inset-0">
                         
-                        width={472}
-                        height={269}
-                        />
-                    </motion.div>
-                
-                    <motion.div variants={leftVariants} className="absolute z-30 -top-[50px] left-[60px] backdrop-blur-sm">
-                        <Image  title="Gradient Logo Border"
-                            src={"/cta-minor/polygon1.svg"}
-                            alt="Polygon SVG 1"
-                            width={136}
-                            height={141}
+                    <motion.div variants={middleVariants} className="absolute z-30"> 
+                        <Image title="House Image" className="w-auto h-auto"
+                            src={"/cta-minor/house.png"}
+                            alt="House"
+                            
+                            width={472}
+                            height={269}
                         />
                     </motion.div>
                     
-                    <motion.div variants={leftVariants} className="absolute z-30 -top-[20px] left-[80px] w-[95px]">
+                    <motion.div variants={leftVariants} className="absolute flex justify-center z-30 top-[20%] left-[10%] backdrop-blur-sm w-[100px] lg:w-[136px] ">
+                        <Image  title="Gradient Logo Border"
+                            src={"/cta-minor/polygon1.svg"}
+                            alt="Polygon SVG 1"
+                            width={0}
+                            height={0}
+                            sizes="100vw"
+                            style={{ width: '100%', height: 'auto' }}
+                            
+                        />
+                    <motion.div variants={leftVariants} className="absolute z-40 top-[20%] w-[70px] lg:w-[95px]">
                         <Image title="ClimateForge Logo"
                             src={"/logo.png"}
                             alt="ClimateForge Logo"
@@ -191,20 +193,24 @@ export default function CtaMinor() {
                             height={76}
                         />
                     </motion.div>
-                    <motion.div variants={rightVariants} className="absolute z-30 -top-[55px] right-[10%]">
+                    </motion.div>
+                    
+                    <motion.div variants={rightVariants} className="absolute top-[20%] right-[10%] w-[100px] lg:w-[180px] z-30 ">
                         <Image title="Person Polygon"
                             src={"/cta-minor/polygon2.svg"}
                             alt="Polygon SVG 2"
-                            width={180}
-                            height={164}
+                            width={0}
+                            height={0}
+                            sizes="100vw"
+                            style={{ width: '100%', height: 'auto' }}
                         /> 
                     </motion.div>
                 </motion.div>
                 
                 {/* Background circle decoration */}
-                <div className="absolute z-20 top-[0px] md:top-[45px] w-[800px] h-[427px] overflow-clip">
+                <div className="absolute flex justify-center items-center z-20 max-w-[600px] max-h-[417px] overflow-clip m-auto inset-0 ">
                     <Image title="Circle Background Decoration"
-                        className="absolute opacity-25 transform scale-110"
+                        className=" opacity-25 transform scale-150"
                         src="/cta-minor/decoration.png"
                         alt="CTA Background Decoration"
                         width={900}

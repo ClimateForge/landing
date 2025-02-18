@@ -36,7 +36,7 @@ export const metadata: Metadata = {
 export default function Home() {
 
 	return (
-		<main className="flex min-h-screen flex-col gap-20 items-center pt-24 ">
+		<main className="flex min-h-screen flex-col gap-20 items-center pt-14 sm:pt-24 ">
 			{/* Background Image */}
 			
 
@@ -51,15 +51,7 @@ export default function Home() {
                 newTab={true}
 			/>
 
-            <Image
-                className=""
-                src="/product image.png"
-                alt="Product Image"
-                title="Product image"
-                width={1280}
-                height={520}
-                priority
-            />
+            <Demo videoSrc="demo.mp4"/>
 			
             <ClientList/>
 

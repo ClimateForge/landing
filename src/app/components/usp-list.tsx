@@ -368,7 +368,7 @@ const uspData = [
 ];
 export default function UspList() {
     return (
-        <section className="flex flex-col max-w-[1280px] w-full">
+        <section className="flex flex-col max-w-[1280px] w-full px-4 md:px-8">
             <h2 className="text-center pb-[80px]">
                 The <GradientText>Unique</GradientText> Power Of ClimateForge
             </h2>

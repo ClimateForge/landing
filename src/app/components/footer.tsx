@@ -22,13 +22,13 @@ export default function Footer() {
 	const closeModal = () => setIsModalOpen(false);
 	return (
 		<footer className="text-dark-secondary py-20">
-			<div className="flex flex-col justify-center items-center  mx-4">
+			<div className="flex flex-col justify-center items-center mx-4">
 
 				{/* Top Row */}
-				<div className="flex w-full max-w-[1180px] justify-between">
+				<div className="flex flex-col sm:flex-row w-full max-w-[1180px] justify-between">
 					
 					{/* Logo */}
-					<div>
+					<div className="mb-4">
 						<Link title="Home" href="/" className="flex">
 						
 							<Image title="ClimateForge Logo"
@@ -46,8 +46,8 @@ export default function Footer() {
 					</div>
 
 					{/* Links */}
-					<div className="flex flex-wrap justify-center items-center gap-x-6 sm:gap-x-8 
-						font-medium text-sm gap-y-4 mx-6 text-gray-700">
+					<div className="flex flex-wrap sm:justify-center sm:items-center sm:mx-6 gap-x-6 sm:gap-x-8 mb-8 sm:mt-0
+						font-medium text-sm gap-y-4 text-gray-700">
 						<Link title="Features" 
 							href={"/about/#deploy"} className="hover:text-gray-500">
 							Features
@@ -79,7 +79,7 @@ export default function Footer() {
 					</div>
 
 					{/* Socials */}
-					<div className="flex flex-wrap gap-4 justify-center items-center text-primary">
+					<div className="flex flex-wrap gap-4 sm:justify-center sm:items-center text-primary">
 
 						{/* LinkedIn */}
 						<Link title="LinkedIn"

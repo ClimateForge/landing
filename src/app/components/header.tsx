@@ -1,5 +1,7 @@
 "use client";
+
 import { useState } from "react";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import ButtonCustom from "./ui/button-custom";
@@ -7,145 +9,96 @@ import ButtonCustom from "./ui/button-custom";
 const Header = () => {
     const [menuOpen, setMenuOpen] = useState(false);
 
+    const toggleMenu = () => setMenuOpen((prev) => !prev);
+    const closeMenu = () => setMenuOpen(false);
+
+    const menuLinks = [
+        { title: "Product", href: "/" },
+        { title: "Why Join", href: "/about" },
+        { title: "Pricing", href: "/#pricing" },
+        { title: "Company", href: "/careers" },
+    ];
+
     return (
-        <header className="flex items-center justify-center h-[102px] bg-[#F9F9FF]">
-            <nav
-                style={{
-                    background: "rgba(255, 255, 255, 0.8)",
-                    boxShadow: "1px 1px 8px rgba(0, 0, 0, 0.2)",
-                    backdropFilter: "blur(16px)",
-                }}
-                className="fixed z-50 flex w-[100%] items-center justify-between max-w-[1160px] h-[102px] md:h-[69px] rounded-none md:rounded-full pl-[32px] pr-[16px] mx-4"
-            >
+        <header className="flex items-center justify-center h-16 md:h-24 bg-[#F9F9FF]">
+            <nav className="fixed z-50 flex items-center justify-between w-full max-w-[1160px] h-16 md:h-[69px] px-4 md:px-4 bg-white md:bg-white/80 backdrop-blur-md rounded-none md:rounded-full">
                 {/* Logo */}
-                <Link
-                    title="Home"
-                    href="/"
-                    className="flex flex-row items-center"
-                >
+                <Link href="/" className="flex items-center">
                     <Image
-                        className="w-[32px] sm:w-[36px] md:w-[42px] lg:w-[48px] h-auto pointer-events-none sm:pointer-events-auto"
                         src="/logo.png"
                         alt="ClimateForge Logo"
-                        title="ClimateForge Logo"
-                        width={55}
-                        height={55}
+                        width={48}
+                        height={48}
                         priority
                     />
-                    <p className="pointer-events-none sm:pointer-events-auto text-lg sm:text-lg md:text-xl lg:text-2xl pl-1">
-                        ClimateForge
-                    </p>
+                    <p className="ml-2 text-lg md:text-xl lg:text-2xl">ClimateForge</p>
                 </Link>
-
-                {/* Hamburger Button */}
-                <button
-                    className="block md:hidden p-2"
-                    onClick={() => setMenuOpen((prev) => !prev)}
-                    aria-label="Toggle Menu"
-                >
-                    <svg
-                        className="w-6 h-6"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                    >
-                        <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M4 6h16M4 12h16m-7 6h7"
-                        />
-                    </svg>
-                </button>
 
                 {/* Desktop Menu */}
                 <div className="hidden md:flex md:gap-4 lg:gap-6">
-                    <Link title="About" href="/" className="">
-                        <p className="font-semibold text-sm lg:text-base text-nowrap">Product</p>
-                    </Link>
-                    <Link title="Careers" href="/about">
-                        <p className="font-semibold text-sm lg:text-base">Why Join</p>
-                    </Link>
-                    <Link title="About" href="/#pricing" className="">
-                        <p className="font-semibold text-sm lg:text-base text-nowrap">Pricing</p>
-                    </Link>
-                    <Link title="About" href="/careers" className="">
-                        <p className="font-semibold text-sm lg:text-base text-nowrap">Company</p>
-                    </Link>
+                    {menuLinks.map(({ title, href }) => (
+                        <Link key={title} href={href} className="font-semibold text-sm lg:text-base text-nowrap">
+                            {title}
+                        </Link>
+                    ))}
                 </div>
 
-                <div className="hidden md:flex md:gap-4 lg:gap-6">
+                {/* Buttons */}
+                <div className="hidden md:flex gap-4">
                     <ButtonCustom
                         variant="outline"
-                        onClick={() =>
-                            window.open(
-                                "https://climateforge.vercel.app/",
-                                "_blank",
-                                "noopener,noreferrer"
-                            )
-                        }
+                        onClick={() => window.open("https://climateforge.vercel.app/", "_blank")}
                     >
                         Sign In
                     </ButtonCustom>
                     <ButtonCustom
-                        onClick={() =>
-                            window.open(
-                                "https://calendly.com/giovanni-climateforge-qttf",
-                                "_blank",
-                                "noopener,noreferrer"
-                            )
-                        }
+                        onClick={() => window.open("https://calendly.com/giovanni-climateforge-qttf", "_blank")}
                     >
                         Book a Demo
                     </ButtonCustom>
                 </div>
 
-                {/* Mobile Menu */}
-                {menuOpen && (
-                    <div className="absolute top-[69px] left-0 w-full bg-white shadow-lg p-4 rounded-b-lg md:hidden">
-                        <div className="flex flex-col gap-4">
-                            <Link title="About" href="/about" onClick={() => setMenuOpen(false)}>
-                                <p className="font-semibold text-sm text-nowrap">Product</p>
-                            </Link>
-                            <Link title="Careers" href="/careers" onClick={() => setMenuOpen(false)}>
-                                <p className="font-semibold text-sm">Why Join</p>
-                            </Link>
-                            <Link title="About" href="/about" onClick={() => setMenuOpen(false)}>
-                                <p className="font-semibold text-sm text-nowrap">Pricing</p>
-                            </Link>
-                            <Link title="About" href="/about" onClick={() => setMenuOpen(false)}>
-                                <p className="font-semibold text-sm text-nowrap">Company</p>
-                            </Link>
-                            <ButtonCustom
-                                variant="outline"
-                                onClick={() => {
-                                    setMenuOpen(false);
-                                    window.open(
-                                        "https://climateforge.vercel.app/",
-                                        "_blank",
-                                        "noopener,noreferrer"
-                                    );
-                                }}
-                            >
-                                Sign In
-                            </ButtonCustom>
-                            <ButtonCustom
-                                onClick={() => {
-                                    setMenuOpen(false);
-                                    window.open(
-                                        "https://calendly.com/giovanni-climateforge-qttf",
-                                        "_blank",
-                                        "noopener,noreferrer"
-                                    );
-                                }}
-                            >
-                                Book a Demo
-                            </ButtonCustom>
-                        </div>
-                    </div>
-                )}
+                {/* Mobile Menu Button */}
+                <button className="block md:hidden p-2" onClick={toggleMenu} aria-label="Toggle Menu">
+                    <svg className="w-6 h-6" viewBox="0 0 24 24" stroke="currentColor" fill="none" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
             </nav>
+
+            {/* Mobile Menu */}
+            <motion.div
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: menuOpen ? "auto" : 0, opacity: menuOpen ? 1 : 0 }}
+                exit={{ height: 0, opacity: 0 }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+                className={`fixed top-16 left-0 w-full bg-white pb-8 z-50 md:hidden rounded-b-15 shadow-lg overflow-hidden ${menuOpen ? "block" : "hidden"}`}
+            >
+                <div className="flex flex-col justify-center items-center gap-6">
+                    {menuLinks.map(({ title, href }) => (
+                        <Link key={title} href={href} onClick={closeMenu} className="font-semibold text-sm">
+                            {title}
+                        </Link>
+                    ))}
+                    <ButtonCustom className="w-full max-w-[300px]"
+                        variant="outline"
+                        onClick={() => {
+                            closeMenu();
+                            window.open("https://climateforge.vercel.app/", "_blank");
+                        }}
+                    >
+                        Sign In
+                    </ButtonCustom>
+                    <ButtonCustom className="w-full max-w-[300px]"
+                        onClick={() => {
+                            closeMenu();
+                            window.open("https://calendly.com/giovanni-climateforge-qttf", "_blank");
+                        }}
+                    >
+                        Book a Demo
+                    </ButtonCustom>
+                </div>
+            </motion.div>
         </header>
     );
 };

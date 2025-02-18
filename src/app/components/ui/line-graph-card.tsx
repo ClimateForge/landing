@@ -121,7 +121,7 @@ export default function LineGraphCard({lineGraphData}: Props) {
             {/* Graph */}
             <div className='flex'>
                 
-                <div className='w-[473px] z-10 flex items-center mt-[27.5px] '>
+                <div className='w-full max-w-[473px] z-10 flex items-center mt-[27.5px] '>
                     {/* Y-Axis */}
                     <div className='relative flex flex-col justify-between items-end 
                         h-full mr-[4%] text-[14px] text-[#615E83]'>

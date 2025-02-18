@@ -16,7 +16,7 @@ export default function Deploy() {
     return (
         <section
         id="deploy"
-        className="flex flex-col justify-center items-center w-full max-w-[1280px]"
+        className="flex flex-col justify-center items-center w-full max-w-[1280px] px-4"
         >
         <h2>
             What We Help you <GradientText>Deploy</GradientText>
@@ -46,11 +46,7 @@ export default function Deploy() {
                     w-full group
                     h-[250px] sm:h-[300px] md:h-[350px] 
                     rounded-[20px] overflow-hidden"
-                    style={
-                    index === 0
-                        ? { maxWidth: "630px" }
-                        : { maxWidth: "380px" }
-                    }
+                    
                 >
                     <video
                     ref={videoRef}
@@ -67,26 +63,26 @@ export default function Deploy() {
                     <div
                     className="absolute inset-0 flex flex-col justify-center items-center 
                     bg-[#c3cdd6ba] backdrop-blur-[4px] 
-                    transition-all duration-600 rounded-[20px] 
+                    transition-all duration-500 rounded-[20px] 
                     group-hover:top-6 group-hover:left-6 group-hover:right-6 group-hover:bottom-auto 
-                    group-hover:rounded-[15px] group-hover:h-[70px] group-hover:w-[calc(100%-48px)]"
+                    group-hover:rounded-[15px] group-hover:h-[70px] "
                     onMouseOver={handleMouseOver}
                     onMouseOut={handleMouseOut}
                     >
                     <div
-                        className="flex justify-center items-center gap-4 transition-all duration-600 group-hover:gap-2"
+                        className="flex justify-center items-center gap-4 transition-all duration-500 group-hover:gap-2"
                     >
                         <Image
                         title="Deploy Icon"
-                        className="w-16 h-16 z-10 transition-all duration-300 group-hover:w-10 group-hover:h-10"
+                        className="w-12 h-12 z-10 transition-all duration-300 group-hover:w-9 group-hover:h-9"
                         src={`/deploy/${image.src}.svg`}
                         alt="deploy icon"
-                        width={64}
-                        height={64}
+                        width={48}
+                        height={48}
                         />
                         <span
                         className="text-primary text-center font-semibold tracking-wide 
-                            text-lg md:text-xl z-10 transition-all duration-600"
+                            text-lg md:text-xl z-10 group-hover:text-base transition-all duration-600"
                         >
                         {image.caption}
                         </span>

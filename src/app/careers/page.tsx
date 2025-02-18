@@ -48,7 +48,7 @@ export default function Careers() {
     ]
     
     return (
-        <main className="flex min-h-screen flex-col gap-20 items-center py-12 pt-24">
+        <main className="flex min-h-screen flex-col gap-20 items-center py-12 pt-14 sm:pt-24">
             
             {/* title card and CTA */}
 			<Title title={["Make an", "Impact in the World!"]} 

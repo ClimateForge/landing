@@ -51,7 +51,7 @@ export default function About() {
         },
     ]
     return (
-        <main className="flex min-h-screen flex-col gap-20 items-center py-12 pt-24">
+        <main className="flex min-h-screen flex-col gap-20 items-center py-12 pt-14 sm:pt-24">
 
 
 			{/* title card and CTA */}

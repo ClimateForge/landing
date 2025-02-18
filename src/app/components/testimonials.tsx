@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import AccentTitle from "./ui/accent-title";
 import GradientBorderBox from "./ui/gradient-border-box";
+import GradientText from "./ui/gradient-text";
 
 type Testimonial = {
     rating: 1 | 2 | 3 | 4 | 5;
@@ -41,35 +42,30 @@ export default function Testimonials() {
 
     
     return (
-        <section id="testimonials" className="w-full flex flex-col justify-center">
-
-            <AccentTitle title={['Why Our Clients', 'Are Satisfied?']}
-                variant='underline' 
-                accent={'/accents/accent2.svg'} 
-                accentIndex={1}
-                className="mt-24 mb-16 sm:mb-24 text-center"
-            />
+        <section id="testimonials" className="w-full flex flex-col justify-center items-center px-4 mb-12">
+            <h2 className="my-8 sm:my-16 text-center">Why Our <GradientText>Clients</GradientText> Are Satisfied?</h2>
             
-            <div className="flex flex-wrap justify-center gap-5 items-start min-h-[500px] mb-16 sm:mb-8 mx-4 ">
+            <div className="flex flex-wrap justify-center gap-x-5 ">
                 
                 {testimonials.map((testimonial, index) => (
 
                     <div key={index}
-                        className="flex-1 min-w-[250px] max-w-[380px] min-h-[250px] sm:min-h-[250px] 
-                        rounded-[20px] py-8 px-6  bg-[#EEF2F6]
-                        group transition-all hover:z-10 duration-500 hover:scale-105 hover:shadow-lg">
+                        className="flex flex-col flex-1 min-w-[250px] max-w-[413px] h-full min-h-[303px] mb-8
+                        rounded-[20px] py-8 px-6 justify-between bg-[#EEF2F6] gap-4
+                        group transition-all hover:z-10 duration-500 hover:scale-105 hover:shadow-md">
 
-                        {/* Rating */}
-                        <div className="flex gap-1">
-                            <Image src={"/testimonials/quotation.svg"} alt="quotation SVG" width={17} height={34}/>
-                            <Image src={"/testimonials/quotation.svg"} alt="quotation SVG" width={17} height={34}/>
+                        <div className="flex flex-col gap-6">
+                            {/* Quotation */}
+                            <div className="flex gap-1">
+                                <Image src={"/testimonials/quotation.svg"} alt="quotation SVG" width={17} height={34}/>
+                                <Image src={"/testimonials/quotation.svg"} alt="quotation SVG" width={17} height={34}/>
+                            </div>
+
+                            {/* Description */}
+                            <p className="text-base">{testimonial.description}</p>
                         </div>
-
-                        {/* Description */}
-                        <p>{testimonial.description}</p>
-
                         {/* Image, name, and location */}
-                        <div className="flex mt-6 items-center">
+                        <div className="flex items-center">
                             
                             <div className="w-16 h-16 min-w-16 rounded-full mr-4 overflow-hidden bg-[#F9F9FF]">
                                 <Image title="Testimonial Avatar"
@@ -94,6 +90,21 @@ export default function Testimonials() {
                     </div>
                 ))}
             </div>
+            <div className="flex gap-8 p-6">
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="10" height="10" rx="5" fill="#21606A"/>
+            </svg>
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="10" height="10" rx="5" fill="#B0B0B0"/>
+            </svg>
+
+            <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="10" height="10" rx="5" fill="#B0B0B0"/>
+            </svg>
+            </div>
+            
+
+
         </section>
     );
 }

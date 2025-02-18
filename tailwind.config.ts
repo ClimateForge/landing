@@ -43,6 +43,8 @@ const config: Config = {
 					"radial-gradient(257.3% 141.42% at 0% 0%, #F9F3F1 0%, #F7EEDE 100%)",
 				"accent-gradient":
 					"linear-gradient(110.41deg, #4A89DB -2.4%, #39C77B 105.71%)",
+				"accent-gradient-opaque":
+					"linear-gradient(110.41deg, rgba(74, 137, 219, .38) -2.4%, rgba(57, 199, 123, .38) 105.71%)",
 				"purple-gradient":
 					"linear-gradient(110.41deg, #744cebe6 -2.4%, #39C77B 105.71%)",
 				"white-gradient": 

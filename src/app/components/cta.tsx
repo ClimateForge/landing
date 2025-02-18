@@ -35,29 +35,12 @@ export default function Cta(props: CTAProps) {
 	const router = useRouter()
 	
 	return (
-		<section className="relative flex justify-center items-center w-full bg-gradient-radial">
+		<section className="relative flex flex-col sm:flex-row justify-center items-center w-full bg-gradient-radial gap-6 p-8">
 			
-			{/* CTA Gif Container */}
-			<div className="flex flex-0 justify-center items-center opacity-40 sm:opacity-100 absolute sm:relative 
-				h-auto max-w-[400px] shadow-xl mx-4 md:mx-6 lg:mx-10"
-				style={{borderRadius: gifRounded ? '50%' : '20px'}}>
-
-				<Image title="CTA GIF"
-					className="h-full w-full overflow-hidden object-cover aspect-square shadow-sm"
-					style={{borderRadius: gifRounded ? '50%' : '20px'}}
-					src={gifSrc}
-					alt="GIF"
-					sizes="100vh"
-					width={400}
-					height={400}
-					loading="lazy"
-				/>	
-				
-			</div>
 
 			{/* CTA Title/Description/Buttons Container */}
 			<div className="relative flex flex-1 flex-col justify-center items-center text-center sm:text-left sm:items-start 
-				gap-y-8 md:gap-y-10 max-w-[380px] sm:max-w-[543px]  min-h-[531px] h-full mx-4 md:mx-6 lg:mx-10">
+				gap-y-6 max-w-[380px] sm:max-w-[543px] sm:min-h-[531px] h-full mx-4 md:mx-6 lg:mx-10">
 				
 				{/* Title */}
 				<div className="leading-none">
@@ -104,9 +87,26 @@ export default function Cta(props: CTAProps) {
 					}
 					
 				</div>
+
+				
 				
 			</div>
-			
+			<div className="flex flex-0 justify-center items-center relative 
+				h-auto max-w-[400px] shadow-xl mx-4 md:mx-6 lg:mx-10"
+				style={{borderRadius: gifRounded ? '50%' : '20px'}}>
+
+				<Image title="CTA GIF"
+					className="h-full w-full overflow-hidden object-cover aspect-square shadow-sm"
+					style={{borderRadius: gifRounded ? '50%' : '20px'}}
+					src={gifSrc}
+					alt="GIF"
+					sizes="100vh"
+					width={400}
+					height={400}
+					loading="lazy"
+				/>	
+				
+			</div>
 		</section>
 	);
 }
