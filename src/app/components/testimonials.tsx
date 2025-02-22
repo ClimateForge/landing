@@ -1,7 +1,4 @@
 import Image from "next/image";
-
-import AccentTitle from "./ui/accent-title";
-import GradientBorderBox from "./ui/gradient-border-box";
 import GradientText from "./ui/gradient-text";
 
 type Testimonial = {
@@ -43,18 +40,18 @@ export default function Testimonials() {
     
     return (
         <section id="testimonials" className="w-full flex flex-col justify-center items-center px-4 mb-12">
-            <h2 className="my-8 sm:my-16 text-center">Why Our <GradientText>Clients</GradientText> Are Satisfied?</h2>
+            <h2 className="my-6 sm:my-8 md::my-16 text-center">Why Our <GradientText>Clients</GradientText> Are Satisfied?</h2>
             
             <div className="flex flex-wrap justify-center gap-x-5 ">
                 
                 {testimonials.map((testimonial, index) => (
 
                     <div key={index}
-                        className="flex flex-col flex-1 min-w-[250px] max-w-[413px] h-full min-h-[303px] mb-8
-                        rounded-[20px] py-8 px-6 justify-between bg-[#EEF2F6] gap-4
+                        className="flex flex-col flex-1 min-w-[250px] max-w-[413px] h-full min-h-[270px] md:min-h-[300px] mb-8
+                        rounded-[20px] py-8 px-6 justify-between bg-[#EEF2F6] gap-3 md:gap-4
                         group transition-all hover:z-10 duration-500 hover:scale-105 hover:shadow-md">
 
-                        <div className="flex flex-col gap-6">
+                        <div className="flex flex-col gap-4 md:gap-6">
                             {/* Quotation */}
                             <div className="flex gap-1">
                                 <Image src={"/testimonials/quotation.svg"} alt="quotation SVG" width={17} height={34}/>
@@ -62,7 +59,7 @@ export default function Testimonials() {
                             </div>
 
                             {/* Description */}
-                            <p className="text-base">{testimonial.description}</p>
+                            <p className="text-sm md:text-base">{testimonial.description}</p>
                         </div>
                         {/* Image, name, and location */}
                         <div className="flex items-center">
@@ -91,16 +88,23 @@ export default function Testimonials() {
                 ))}
             </div>
             <div className="flex gap-8 p-6">
-            <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="10" height="10" rx="5" fill="#21606A"/>
+            <button>
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="10" height="10" rx="5" fill="#21606A"/>
             </svg>
-            <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="10" height="10" rx="5" fill="#B0B0B0"/>
-            </svg>
+            </button>
+            
+            <button disabled className="cursor-not-allowed">
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="10" height="10" rx="5" fill="#B0B0B0"/>
+                </svg>
+            </button>
 
-            <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="10" height="10" rx="5" fill="#B0B0B0"/>
-            </svg>
+            <button disabled className="cursor-not-allowed">
+                <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="10" height="10" rx="5" fill="#B0B0B0"/>
+                </svg>
+            </button>
             </div>
             
 

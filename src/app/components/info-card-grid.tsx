@@ -1,5 +1,4 @@
 import Image from "next/image";
-import AccentTitle from "./ui/accent-title";
 import GradientText from "./ui/gradient-text";
 
 interface InfoCardsData {
@@ -48,9 +47,8 @@ export default function InfoCardGrid({title, description, infoCardsData, classNa
     
     return (
         infoCardsData ?
-            <section className={`relative flex flex-col items-center w-full gap-10 -z-10 pb-20 ${className} px-4`}>
-                {className ?  <div className="bg-[#ECF5FF] opacity-[0.93] w-full h-full absolute -z-10"></div> : null}
-                <h2 className="text-center pt-20">{title[0]} <GradientText>{title[1]}</GradientText></h2>
+            <section className={`relative flex flex-col items-center w-full gap-10 ${className} px-4`}>
+                <h2 className="text-center">{title[0]} <GradientText>{title[1]}</GradientText></h2>
                 <p className="text-[18px] text-center font-medium max-w-[588px]">{description}</p>
                 <div className="flex flex-wrap justify-center items-stretch
                     h-full overflow-y-auto w-full

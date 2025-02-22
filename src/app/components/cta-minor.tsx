@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import GradientButton from "./ui/gradient-button";
 import GradientBorderBox from './ui/gradient-border-box';
 import { motion, Variants } from "framer-motion";
 import GradientText from "./ui/gradient-text";
@@ -102,7 +101,7 @@ function InfoBox({svgSrc, title, text}: InfoBoxProps) {
         <div className="flex flex-col justify-evenly max-w-[305px] rounded-15 p-4 lg:p-8 
             border-solid border border-[#E0DFE2]">
             <Image className="w-6 h-6 lg:w-9 lg:h-9" src={svgSrc} alt="" width={36} height={36}/>
-            <h4 className="text-[#858585] text-xl lg:text-2xl">{title}</h4>
+            <h4 className="text-[#858585] text-base sm:text-lg md:text-xl lg:text-2xl overflow-ellipsis overflow-hidden">{title}</h4>
             <p className="text-sm lg:text-base">{text}</p>
         </div>
     )
@@ -118,17 +117,8 @@ export default function CtaMinor() {
                 <div className="flex relative flex-col justify-center items-center text-center 
                     px-4 sm:px-12 max-h-[488px] py-8 min-h-[500px] ">
                     
-                    <h2 className="mb-10 relative leading-snug">
-                        Empowering <GradientText>American Businesses</GradientText> to Sell More{' '}
-                        <span className="relative inline-block text-nowrap text-gray-800">Energy Upgrades
-                            <Image title="Energy Upgrades Accent"
-                                className="absolute z-10 top-[32px] sm:top-[36px] md:top-[48px] sm:left-0 w-[400px]"
-                                src={"/accents/accent2.svg"}
-                                alt="Title Accent SVG"
-                                width={400}
-                                height={0}
-                            />
-                        </span>
+                    <h2 className=" relative leading-snug">
+                        Empowering <GradientText>American Businesses</GradientText> to Sell More Energy Upgrades
                     </h2>
                     <p className="text-base sm:text-lg max-w-[666px] pb-10 font-medium">
                         Identify the optimal residential heating and cooling for efficiency, deploy Solar, HVAC, and energy storage systems and make real money faster.

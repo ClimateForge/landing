@@ -2,6 +2,7 @@
 import React from 'react'
 import ButtonCustom from './ui/button-custom'
 import Image from 'next/image'
+
 export default function Featured() {
     return (
         <div className='max-w-[1280px] mt-8 mx-4'>
