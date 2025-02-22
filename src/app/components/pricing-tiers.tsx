@@ -1,10 +1,8 @@
 "use client";
 import { useRouter } from 'next/navigation';
-
 import { useState } from 'react';
-
-import ButtonCustom from './ui/button-custom';
 import { motion } from 'framer-motion';
+import ButtonCustom from './ui/button-custom';
 interface PricingCardProps {
     tier: string;
     price?: number;

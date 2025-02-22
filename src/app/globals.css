@@ -13,27 +13,9 @@ body {
 	@apply bg-gradient-repeating text-[--foreground];
 }
 
-.gradient-border {
-	border-bottom: 5px solid transparent; /* Create space for gradient border */
-}
-
-.gradient-border::after {
-	content: '';
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	height: 1px; /* Height of the gradient border */
-	background: linear-gradient(110.41deg, #4A89DB -2.4%, #39C77B 105.71%); /* Gradient colors */
-	z-index: 1; /* Ensure it appears above the background but below content */
-}
-
-.star {
-	transition: background-color 0.4s ease-in-out, color 0s;
-}
-
-.group:hover .star {
-	transition: background-color 0.4s ease-in-out, color 0.4s linear;
+.backface-hidden {
+	
+	backface-visibility: "hidden";
 }
 
 img {
@@ -66,6 +48,21 @@ img {
 		-ms-overflow-style: none;  /* IE and Edge */
 		scrollbar-width: none;  /* Firefox */
 	}
+}
+
+.gradient-border {
+	
+	position: relative;
+}
+
+.gradient-border:before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	padding: 1px; /* border length  */
+	background: linear-gradient(110.41deg, #744cebe6 -2.4%, #39C77B 105.71%);
+	border-radius: inherit;
+	mask: conic-gradient(#000 0 0) content-box exclude,conic-gradient(#000 0 0);
 }
 
 @layer components {

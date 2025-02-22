@@ -1,8 +1,8 @@
 "use client";
 import Image from "next/image";
-import GradientBorderCard from "./ui/gradient-border-card";
 import { ReactNode } from "react";
 import { motion, useDragControls } from "framer-motion"
+
 type ClientCardProps = {
     imageSrc?: string
     imageWidth?: number
@@ -13,28 +13,33 @@ type ClientCardProps = {
 const ClientCard = ({imageSrc, imageWidth, imageHeight, children}: ClientCardProps) => {
     const controls = useDragControls()
     return (
-        <motion.div className="flex items-center" whileDrag={{ zIndex: 20, filter: "grayscale" }} drag dragSnapToOrigin dragControls={controls} dragElastic={0.2} 
-        dragConstraints={{
-            left: 0,
-            right: 0,
-            top: 0,
-            bottom: 0,
-        }}>
-        <div className="w-[224px] mx-14 group/card hover:scale-110 
-                transition-all duration-300 ease-in-out"
-            >
-            
-                <Image title="Client Logo"
-                    className="h-auto grayscale group-hover/card:grayscale-0
-                    transition-all duration-300 ease-in-out" draggable="false"
-                    src={imageSrc ? imageSrc : ''}
-                    alt="Client Logo"
-                    width={imageWidth}
-                    height={imageHeight} 
-                    sizes="100vh"
-                />
-            
-        </div></motion.div>
+        <motion.div className="flex items-center" 
+            whileDrag={{ zIndex: 20, filter: "grayscale" }} 
+            drag dragSnapToOrigin 
+            dragControls={controls} 
+            dragElastic={0.2} 
+            dragConstraints={{
+                left: 0,
+                right: 0,
+                top: 0,
+                bottom: 0,
+            }}>
+            <div className="w-[224px] mx-14 group/card hover:scale-110 
+                    transition-all duration-300 ease-in-out"
+                >
+                
+                    <Image title="Client Logo"
+                        className="h-auto grayscale group-hover/card:grayscale-0
+                        transition-all duration-300 ease-in-out" draggable="false"
+                        src={imageSrc ? imageSrc : ''}
+                        alt="Client Logo"
+                        width={imageWidth}
+                        height={imageHeight} 
+                        sizes="100vh"
+                    />
+                
+            </div>
+        </motion.div>
     )
 }
 

@@ -1,6 +1,5 @@
 "use client";
-import Image from 'next/image';
-import AccentTitle from "./ui/accent-title";
+
 import GradientText from './ui/gradient-text';
 import LinkedInSvg from './ui/icons/linkedin-icon';
 import GradientBorderCard from './ui/gradient-border-card';
@@ -14,15 +13,9 @@ export default function JobOpenings() {
                 w-full rounded-[90px] p-6 z-10 ">
                 
                 {/* Title */}
-                <AccentTitle
-                    title={["Job", "Openings"]}
-                    variant="underline"
-                    accent={"/accents/accent1.svg"}
-                    accentIndex={1}
-                    className="mt-12 mb-12 text-center"
-                />
+                <h2 className='mt-12 mb-12 text-center'>Job Openings</h2>
                 
-                <GradientBorderCard borderRadius={20} bgStyle='max-w-[1280px]' fgStyle='justify-center items-center flex flex-col '>
+                <GradientBorderCard borderRadius={20} bgStyle='max-w-[1280px]' fgStyle='justify-center items-center flex flex-col p-4'>
                 
                 <p className='max-w-[808px] text-center p-2 sm:p-6 font-bold text-base sm:text-xl md:text-2xl'>There are no job openings at this time, but connect with us on{' '}
                     <button className='inline-flex items-center 
