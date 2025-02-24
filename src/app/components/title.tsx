@@ -70,12 +70,6 @@ export default function Title({title, description, descriptionAnimated, gradient
 			</p>
 		}
 		<div className='flex gap-4'>
-			<ButtonCustom variant='outline' onClick={newTab ? 
-				() => window.open(route, '_blank', 'noopener,noreferrer') : 
-				() => router.push(route ? route : '/')}>
-				Watch a Demo
-			</ButtonCustom>
-
 			<ButtonCustom width={154} onClick={newTab ? 
 				() => window.open(route, '_blank', 'noopener,noreferrer') : 
 				() => router.push(route ? route : '/')}>

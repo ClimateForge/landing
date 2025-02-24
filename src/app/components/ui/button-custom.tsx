@@ -24,23 +24,7 @@ export default function ButtonCustom(props: ButtonProps) {
     const bg = bgColor ? bgColor : '#21606A';
     
     return (
-        variant === "outline" ?
-
-        <button onClick={onClick} type={type}
-            disabled={disabled} 
-            className={`${disabled ? 'cursor-not-allowed opacity-50' : null} 
-            ${className} relative group hover:bg-[#ffffffbc] hover:bg-accent-gradient-opaque hover:overflow-clip border border-solid border-primary transition-all`
-            }
-            style={{ 
-                height: buttonHeight, 
-                borderRadius: buttonRadius, 
-                
-            }}>
-            <span className="font-bold text-primary text-[16px] md:text-[18px] px-5 ">
-                {children}
-            </span>
-        </button>
-        :
+        
         <button onClick={onClick} disabled={disabled} type={type}
             className={`${disabled ? 'cursor-not-allowed opacity-50' : null} 
                 ${className} relative group bg-primary hover:bg-[#ffffffbc] border border-solid border-primary transition-all hover:overflow-clip hover:bg-accent-gradient-opaque`}
