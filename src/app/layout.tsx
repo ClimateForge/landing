@@ -41,7 +41,7 @@ export default function RootLayout({
 	return (
 		<html suppressHydrationWarning lang="en">
 			<body className={`${dmSans.className} text-body`}>
-				<ThemeProvider attribute="data-mode" defaultTheme="system">
+				<ThemeProvider attribute="class" enableSystem>
 					<Header />
 						<Template>{children}</Template>
 					<Footer />
