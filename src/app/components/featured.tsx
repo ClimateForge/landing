@@ -1,6 +1,8 @@
 'use client'
+
 import React, { useState } from 'react';
 import Image from 'next/image';
+import ButtonCustom from './ui/button-custom';
 
 const featuredArticles = [
     { 
@@ -72,6 +74,22 @@ export default function Featured() {
                         sizes='100vw'
                         style={{ width: '100%', height: 'auto' }}
                     />
+                </div>
+                
+                <div className="mt-6">
+                <ButtonCustom
+                        onClick={() =>
+                            window.open(
+                                activeArticle.link,
+                                "_blank",
+                                "noopener,noreferrer"
+                            )
+                        }
+                        className='max-w-[218px]'
+                        variant={"outline"}
+                    >
+                        Go to the full article
+                    </ButtonCustom>
                 </div>
             </div>
         </div>
