@@ -20,8 +20,8 @@ const Header = () => {
     ];
 
     return (
-        <header className="flex items-center justify-center h-16 md:h-24 bg-[#F9F9FF]">
-            <nav className="fixed z-50 flex items-center justify-between w-full max-w-[1160px] h-16 md:h-[69px] px-4 md:px-4 bg-white md:bg-white/80 backdrop-blur-md rounded-none md:rounded-full">
+        <header className="flex items-center justify-center h-16 md:h-24 bg-[#F9F9FF] dark:bg-[#24282b]">
+            <nav className="fixed z-50 flex items-center justify-between w-full max-w-[1240px] h-16 md:h-[69px] px-4 bg-white dark:bg-[#212529] md:dark:bg-[#212529ca] md:bg-white/80 backdrop-blur-md rounded-none md:rounded-full">
                 {/* Logo */}
                 <Link href="/" className="flex items-center">
                     <Image
@@ -72,14 +72,15 @@ const Header = () => {
                 animate={{ height: menuOpen ? "auto" : 0, opacity: menuOpen ? 1 : 0 }}
                 exit={{ height: 0, opacity: 0 }}
                 transition={{ duration: 0.3, ease: "easeInOut" }}
-                className={`fixed top-16 left-0 w-full bg-white pb-8 z-50 md:hidden rounded-b-15 shadow-lg overflow-hidden ${menuOpen ? "block" : "hidden"}`}
+                className={`fixed top-16 left-0 w-full bg-white dark:bg-[#212529] pb-6 z-50 md:hidden rounded-b-15 shadow-lg overflow-hidden ${menuOpen ? "block" : "hidden"}`}
             >
-                <div className="flex flex-col justify-center items-center gap-6">
+                <div className="flex flex-col justify-center items-center gap-6 p-4">
+                    <div className="flex justify-center max-w-[300px] w-full flex-wrap gap-4">
                     {menuLinks.map(({ title, href }) => (
                         <Link key={title} href={href} onClick={closeMenu} className="font-semibold text-sm">
                             {title}
                         </Link>
-                    ))}
+                    ))}</div>
                     <ButtonCustom className="w-full max-w-[300px]"
                         variant="outline"
                         onClick={() => {
