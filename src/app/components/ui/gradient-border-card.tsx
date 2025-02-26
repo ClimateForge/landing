@@ -14,7 +14,7 @@ type Props = {
 export default function GradientBorderCard({width, height, borderRadius, borderWidth, bgStyle, fgStyle, children}: Props) {
     
     return (
-        <div className={`${bgStyle} p-[${borderWidth ? borderWidth : 1}px] overflow-clip bg-accent-gradient`}
+        <div className={`${bgStyle} p-[${borderWidth ? borderWidth : 1}px] overflow-clip bg-purple-gradient`}
             style={{
                 borderRadius: `${borderRadius}px`,
                 width: width ? `${width}px` : '100%',

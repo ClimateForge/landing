@@ -16,7 +16,7 @@ export default function Deploy() {
     return (
         <section
         id="deploy"
-        className="flex flex-col justify-center items-center w-full max-w-[1280px] px-4"
+        className="flex flex-col justify-center items-center text-center w-full max-w-[1280px] px-4"
         >
         <h2>
             What We Help you <GradientText>Deploy</GradientText>
@@ -62,19 +62,19 @@ export default function Deploy() {
                     {/* Backdrop with Icon and Text */}
                     <div
                     className="absolute inset-0 flex flex-col justify-center items-center 
-                    bg-[#c3cdd6ba] backdrop-blur-[4px] 
-                    transition-all duration-500 rounded-[20px] 
+                    bg-[#c3cdd6ba] backdrop-blur-[4px] p-2
+                    transition-all duration-300 rounded-[20px] 
                     group-hover:top-6 group-hover:left-6 group-hover:right-6 group-hover:bottom-auto 
-                    group-hover:rounded-[15px] group-hover:h-[70px] "
+                    group-hover:rounded-[15px] group-hover:min-h-[70px] "
                     onMouseOver={handleMouseOver}
                     onMouseOut={handleMouseOut}
                     >
                     <div
-                        className="flex justify-center items-center gap-4 transition-all duration-500 group-hover:gap-2"
+                        className="flex flex-col sm:flex-row group-hover:flex-row justify-center items-center gap-4 transition-all duration-700 group-hover:gap-2"
                     >
                         <Image
                         title="Deploy Icon"
-                        className="w-12 h-12 z-10 transition-all duration-300 group-hover:w-9 group-hover:h-9"
+                        className="w-12 h-12 z-10 transition-all duration-700 group-hover:w-9 group-hover:h-9"
                         src={`/deploy/${image.src}.svg`}
                         alt="deploy icon"
                         width={48}
@@ -82,7 +82,7 @@ export default function Deploy() {
                         />
                         <span
                         className="text-primary text-center font-semibold tracking-wide 
-                            text-lg md:text-xl z-10 group-hover:text-base transition-all duration-600"
+                            text-lg md:text-xl z-10 group-hover:text-base transition-all duration-700"
                         >
                         {image.caption}
                         </span>

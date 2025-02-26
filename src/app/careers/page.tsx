@@ -48,7 +48,7 @@ export default function Careers() {
     ]
     
     return (
-        <main className="flex min-h-screen flex-col gap-20 items-center py-12 pt-14 sm:pt-24">
+        <main className="flex min-h-screen flex-col items-center py-12 pt-14 sm:pt-24">
             
             {/* title card and CTA */}
 			<Title title={["Make an", "Impact in the World!"]} 
@@ -57,14 +57,25 @@ export default function Careers() {
                 gradientIndex={1}
                 buttonText={"Learn More"}
                 route="about"/>
+            
+            <div className='relative w-full h-full mt-10 md:mt-20'>
+                {/* Background Image */}
+                <div className='absolute inset-0 bg-[url(/job-openings/solar-panels.webp)] bg-cover bg-center -z-10'></div>
+                
+                {/* Overlay */}
+                <div className='absolute inset-0 bg-[#ECF5FF] opacity-[0.93] -z-10'></div>
 
-            <InfoCardGrid 
-                title={["Create an Impact with ClimateForge!"]} 
-                description="At ClimateForge, we are dedicated to creating solutions for one of the most critical challenges of our time:  the climate crisis."
-                infoCardsData={infoCardsData}
-                className='bg-[url(/job-openings/solar-panels.webp)] bg-cover'/>
+                {/* Content */}
+                <InfoCardGrid 
+                    title={["Create an Impact with ClimateForge!"]} 
+                    description="At ClimateForge, we are dedicated to creating solutions for one of the most critical challenges of our time: the climate crisis."
+                    infoCardsData={infoCardsData} 
+                    className='relative py-10 md:py-20' // Use relative to ensure content is above overlays
+                />
+            </div>
+
             <JobOpenings />
-
+            
             <OurTeam/>
 
             <Cta title={["Apply To", "Get Started!"]} 

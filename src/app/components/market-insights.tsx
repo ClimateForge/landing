@@ -1,11 +1,9 @@
 "use client";
 
-import { useState, ReactNode } from "react";
+import { useState } from "react";
 import { motion, Variants } from "framer-motion";
-import AccentTitle from './ui/accent-title';
 import BarGraphCard from './ui/bar-graph-card';
 import LineGraphCard from './ui/line-graph-card';
-import Link from "next/link";
 
 export default function MarketInsights() {
 
@@ -136,9 +134,9 @@ export default function MarketInsights() {
             <h2 className="mt-16 mb-8 text-center z-20">Market Insight</h2>
 
             {/* Navigation Text Links */}
-            <div className="flex justify-center items-center space-x-8 mb-8 z-20">
+            <div className="flex justify-center items-center space-x-4 sm:space-x-8 mb-8 z-20">
                 {cardsInfo.map((cardInfo, index) => (
-                <div key={index} className="overflow-auto group">
+                <div key={index} className="group">
                     <button
                     onClick={() => setCurrentIndex(index)}
                     className={`text-small md:text-sm group-hover:text-primary ${

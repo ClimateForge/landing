@@ -51,12 +51,13 @@ const inter = Inter({ subsets: ['latin'] })
 function UspDecoration({title, caption, iconSrc, isFirst}: USPDecorationProps) {
     return (
     <>
+        {/** right decoration */}
         <motion.div variants={fromMiddle}
             whileHover={{
                 scale: 1.1,
                 transition: { duration: 0.8 },
             }}
-            className="absolute top-[10%] sm:top-[20%] -right-[10%]
+            className="absolute top-[10%] sm:top-[20%] -right-[3%] sm:-right-[10%]
             flex justify-between items-center 
             h-[55px] px-4 
             rounded-[10px] bg-white shadow-md">
@@ -76,13 +77,15 @@ function UspDecoration({title, caption, iconSrc, isFirst}: USPDecorationProps) {
             />
 
         </motion.div>
+
+        {/** first top left decoration */}
         {isFirst ? 
         <motion.div variants={fromMiddle} 
             whileHover={{
                 scale: 1.1,
                 transition: { duration: 0.6 },
             }}
-            className="absolute top-[5%] sm:top-[10%] -left-[10%] sm:-left-[15%] 
+            className="absolute top-[5%] sm:top-[10%] -left-[5%] sm:-left-[15%] 
             flex justify-evenly items-center cursor-default
             w-[206px] h-[55px] px-3
             rounded-[10px] bg-white shadow-md">
@@ -170,13 +173,13 @@ function UspImage({src, iconSrc, accentVariant, children}: USPImageProps) {
             initial="offscreen"
             whileInView="onscreen" 
             viewport={{ once: false, amount: 0.6 }}  
-            className="relative w-full max-w-[415px] h-auto mx-8 z-10"
+            className="relative w-full max-w-[415px] h-auto z-10 p-4"
         >
 
             {/* Circular image container */}
             <div 
                 className="relative flex justify-center items-center p-4 lg:p-6 min-w-[250px] 
-                rounded-b-full rounded-tr-full shadow-xl bg-white z-10 max-w-[415px] max-h-[415px] w-full h-auto"
+                rounded-b-full rounded-tr-full shadow-xl bg-white z-10 max-w-[415px] max-h-[415px] w-full h-auto "
                 style={{
                     borderRadius: accentVariant ? "50% 0% 50% 50%" : "0% 50% 50% 50%",
                     zIndex: 0
@@ -196,60 +199,49 @@ function UspImage({src, iconSrc, accentVariant, children}: USPImageProps) {
                         
                     </video>
                 </div>
-                
+
+                {/* Gradient dot with icon */}
+                <motion.div variants={fromRightLong}  
+                    className="absolute bottom-0 z-0 
+                        w-16 h-16 flex justify-center items-center
+                        bg-accent-gradient rounded-full
+                        shadow-[0px_4px_40px_rgba(0,198,198,0.45)]"
+                    style={{
+                        right: '-5%',
+                        
+                    }}>
+                        
+                        <Image title="Icon Decoration"
+                            src={iconSrc}
+                            alt="SVG Icon"
+                            width={36}
+                            height={0} 
+                        />
+                </motion.div>
             </div>
 
             {/* Unique decorations (Cards, etc.) passed as */ children}
-
-            {/* Gradient dot with icon */}
-            <motion.div variants={fromRightLong}  
-                className="absolute bottom-0 z-0 
-                    w-16 h-16 flex justify-center items-center
-                    bg-accent-gradient rounded-full
-                    shadow-[0px_4px_40px_rgba(0,198,198,0.45)]"
-                style={{
-                    right: '-7%',
-                    
-                }}>
-                    
-                    <Image title="Icon Decoration"
-                        src={iconSrc}
-                        alt="SVG Icon"
-                        width={36}
-                        height={0} 
-                    />
-            </motion.div>
 
             {/* Small neon green dot */}
             <motion.img variants={fromRight} 
                 title="Small Green Dot" alt="Small Green Dot SVG"
                 src={'/usp-list/dot-small.svg'} width={21} height={21} 
-                className="absolute -z-10 -top-5 right-20" 
-                style={{
-                    right: '12%',
-                    
-                }}
+                className="absolute -z-10 -top-4 right-[12%]"
+                style={accentVariant ? {left: '12%'} : {right: '12%'}}
             />
 
             {/* Large green dot */}
             <motion.img variants={fromLeft}
                 title="Large Green Dot" alt="Large Green Dot SVG"
                 src={'/usp-list/dot-large.svg'} width={65} height={66}
-                className="absolute z-10 -bottom-6" 
-                style={{
-                    
-                    left: '-5%'
-                }}
+                className="absolute z-10 -bottom-6 left-[0%]"
             />
 
             {/* Very small dots pattern */}
             <motion.img variants={fromRight}
                 title="Dots" alt="Dots SVG"
                 src={'/usp-list/dots.svg'} width={148} height={148} 
-                className="absolute -z-10 -bottom-[15px]" 
-                style={{
-                    right: '0%',
-                }}
+                className="absolute -z-10 -bottom-[15px] right-[3%]"
             />
         </motion.div>
     )
@@ -288,27 +280,19 @@ function UspBlock({title, heading, description, videoSrc, iconSrc, accentVariant
     };
 
     return (
-        <div className="relative flex flex-col sm:flex-row items-center justify-between rounded-15 px-[50px] py-[58px]"
+        <div className="relative flex flex-col text-center sm:text-left sm:flex-row items-center justify-center rounded-15 px-[25px] md:px-[50px] py-[58px]"
             style={{backgroundColor: color}}>
             
-            <div className="flex flex-col z-10 pr-[52px] pb-4 sm:pb-0"
+            <div className="flex flex-col z-10 pr-[52px] pb-4 sm:pb-0 gap-4 sm:gap-6 md:gap-8 lg:gap-12"
                 style={{paddingLeft: '24px'}}
             >
                 {/** TITLE */}
                 <h3>
-                    {title[0]}
-                    <span className="relative whitespace-nowrap">
-                    {title[1]}
-                        <Image title="USP Title Accent"
-                            className="absolute z-10 top-[85%] left-[0px] w-full"
-                            src={accentVariant ? "/accents/accent2.svg" : "/accents/accent1.svg"}
-                            alt="Title Accent SVG"
-                            width={381} height={18}/>
-                    </span>
+                    {title}
                 </h3>
 
                 {/** HEADING */}
-                <h4 className="my-5 sm:my-10">
+                <h4 className="">
                     {heading}
                 </h4>
 
@@ -338,7 +322,7 @@ function UspBlock({title, heading, description, videoSrc, iconSrc, accentVariant
 
 const uspData = [
     {
-        title: ["Conversion-", "Optimized"],
+        title: ["Conversion-Optimized"],
         heading: "Faster time to market for renewable energy products",
         description: ["Companies using ClimateForge's solutions experience a ", "55%", " faster time to deploy energy upgrades."],
         videoSrc: "/usp-list/conversion-optimized.mp4",
@@ -347,7 +331,7 @@ const uspData = [
         color: "#CFDDDC"
     },
     {
-        title: ["Real ", "Energy Modeling"],
+        title: ["Real Energy Modeling"],
         heading: "Increase in renewable energy adoption",
         description: ["ClimateForge's technology has led to a significant ", "32%", " increase in renewable energy adoption."],
         videoSrc: "/usp-list/real-energy-modeling.mp4",
@@ -357,7 +341,7 @@ const uspData = [
         color: "#C1CDE2"
     },
     {
-        title: ["Impact ", "Assessments"],
+        title: ["Impact Assessments"],
         heading: "Reduction In Carbon Emissions",
         description: ["Businesses using ClimateForge help to reduce carbon emissions by more than ", "30%", "."],
         videoSrc: "/usp-list/impact-assessments.mp4",
@@ -369,7 +353,7 @@ const uspData = [
 export default function UspList() {
     return (
         <section className="flex flex-col max-w-[1280px] w-full px-4 md:px-8">
-            <h2 className="text-center pb-[80px]">
+            <h2 className="text-center pb-6 sm:pb-10 md:pb-20">
                 The <GradientText>Unique</GradientText> Power Of ClimateForge
             </h2>
             <div className="relative flex flex-col justify-center items-center w-full min-h-screen">

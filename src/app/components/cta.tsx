@@ -1,9 +1,7 @@
 "use client";
 import { useRouter } from 'next/navigation'
 import Image from "next/image";
-
 import GradientText from "./ui/gradient-text";
-import GradientButton from "./ui/gradient-button";
 import EmailButton from './ui/email-button';
 import ButtonCustom from './ui/button-custom';
 

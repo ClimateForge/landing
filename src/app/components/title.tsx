@@ -1,10 +1,8 @@
 "use client";
+import { ReactNode } from 'react';
 import { useRouter } from 'next/navigation'
-
-import GradientButton from "./ui/gradient-button";
 import GradientText from './ui/gradient-text';
 import Typewriter from 'typewriter-effect';
-import { ReactNode } from 'react';
 import ButtonCustom from './ui/button-custom';
 interface BaseProps {
 	title?: string[];

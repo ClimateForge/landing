@@ -1,27 +1,18 @@
 "use client";
-import { useState } from "react";
+
 import Image from "next/image";
 import Link from "next/link";
-
-import GradientText from "./ui/gradient-text";
-import EarlyAccessSignup from "./early-access-signup";
-import Modal from "./ui/modal";
-
 import { urbanist } from "../fonts";
 import EmailButton from "./ui/email-button";
-import FacebookIcon from "./ui/icons/facebook-icon";
 import LinkedInIcon from "./ui/icons/linkedin-icon";
-import XIcon from "./ui/icons/x-icon";
 import InstagramIcon from "./ui/icons/instagram-icon";
-import YoutubeIcon from "./ui/icons/youtube-icon";
+import XIcon from "./ui/icons/x-icon";
+
 
 export default function Footer() {
-	const [isModalOpen, setIsModalOpen] = useState(false);
 
-	const openModal = () => setIsModalOpen(true);
-	const closeModal = () => setIsModalOpen(false);
 	return (
-		<footer className="text-dark-secondary py-20">
+		<footer className="text-dark-secondary py-10">
 			<div className="flex flex-col justify-center items-center mx-4">
 
 				{/* Top Row */}

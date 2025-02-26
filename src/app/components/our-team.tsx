@@ -1,12 +1,9 @@
 import Image from "next/image";
-
-import AccentTitle from "./ui/accent-title";
-import GradientBorderBox from "./ui/gradient-border-box";
+import GradientBorderCard from "./ui/gradient-border-card";
 import InstagramIcon from "./ui/icons/instagram-icon";
 import LinkedInIcon from "./ui/icons/linkedin-icon";
 import FacebookIcon from "./ui/icons/facebook-icon";
 import XIcon from "./ui/icons/x-icon";
-import GradientBorderCard from "./ui/gradient-border-card";
 
 export default function OurTeam() {
 
@@ -51,13 +48,13 @@ export default function OurTeam() {
 
 
     return (
-        <section className="flex flex-col justify-center items-center pb-20">
+        <section className="flex flex-col justify-center items-center pt-10 md:pt-20 pb-20 md:pb-40">
             <h2 className="pb-10">Our Expert Team</h2>
-            <div className="flex flex-wrap justify-center gap-y-16 gap-x-14">
+            <div className="flex flex-wrap justify-center gap-y-8 sm:gap-y-12 md:gap-y-16 gap-x-14">
                 {teamMembers.map((teamMember, index) => (
                     
-                    <div key={index} className="flex shadow-[0px_36px_56px_0px_#44A3CF2E] rounded-[65px]
-                        transition-all hover:z-10 duration-500 hover:scale-105 hover:shadow-[0px_32px_48px_0px_#44A3CF2E]">
+                    <div key={index} className="flex shadow-[12px_12px_16px_-9px_#44A3CF2E] rounded-[65px]
+                        transition-all hover:z-10 duration-500 hover:scale-105 hover:shadow-[12px_12px_16px_0px_#44A3CF2E]">
 
                         <GradientBorderCard borderRadius={15} borderWidth={1} 
                             >
@@ -75,7 +72,7 @@ export default function OurTeam() {
                             <p className="text-lg">{teamMember.title}</p>
 
                             {/* Socials */}
-                            <div className="absolute bottom-10 flex flex-wrap gap-4  items-center  text-primary min-h-6">
+                            <div className="absolute bottom-10 flex flex-wrap gap-4  items-center text-primary min-h-6">
                                 {/* Instagram */}
                                 {teamMember.socials.instagram ?
                                     <a title={teamMember.name + " @ Instagram"}
