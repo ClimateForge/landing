@@ -50,9 +50,9 @@ export default function UseCases() {
 
     return (
         <section className="flex flex-col justify-center items-center w-full bg-[#EEF2F6] py-20 px-4">
-            <h2 className="text-5xl font-bold">Use Cases</h2>
+            <h2 className="text-5xl font-bold">Shaping the Future of AI-Driven Energy Solutions</h2>
             <p className="text-lg text-[#5C5C5C] py-10 text-center">
-                Empowering American Businesses to Sell Energy Upgrades with AI-Driven Lead Gen
+            Empowering the Next Generation of American Businesses with AI-Driven Insights and Innovation
             </p>
             
             <div className="flex flex-col lg:flex-row justify-center w-full gap-5 py-10 items-center lg:items-stretch">
@@ -64,7 +64,7 @@ export default function UseCases() {
                     muted 
                     width={630}
                     height={592}
-                />
+                /> 
 
                 <div className="grid grid-cols-2 gap-3 sm:gap-5 z-20 max-h-[592px] cursor-pointer">
                     {useCases.map((useCase, index) => (

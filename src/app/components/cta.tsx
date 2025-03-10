@@ -89,21 +89,22 @@ export default function Cta(props: CTAProps) {
 				
 				
 			</div>
-			<div className="flex flex-0 justify-center items-center relative 
-				h-auto max-w-[400px] shadow-xl mx-4 md:mx-6 lg:mx-10"
-				style={{borderRadius: gifRounded ? '50%' : '20px'}}>
-
-				<Image title="CTA GIF"
-					className="h-full w-full overflow-hidden object-cover aspect-square shadow-sm"
-					style={{borderRadius: gifRounded ? '50%' : '20px'}}
-					src={gifSrc}
-					alt="GIF"
-					sizes="100vh"
-					width={400}
-					height={400}
-					loading="lazy"
-				/>	
-				
+			<div
+			className="relative flex justify-center items-center w-full max-w-[90%] 
+						sm:max-w-[400px] md:max-w-[420px] lg:max-w-[460px] xl:max-w-[500px] 
+						overflow-hidden rounded-lg border"
+			style={{ borderRadius: gifRounded ? '50%' : '20px' }}
+			>
+			<Image
+				title="CTA GIF"
+				className="w-full h-auto object-contain"
+				src={gifSrc}
+				alt="GIF"
+				sizes="(max-width: 768px) 90vw, (max-width: 1024px) 400px, (max-width: 1280px) 460px, 500px"
+				width={500}
+				height={500}
+				loading="lazy"
+			/>
 			</div>
 		</section>
 	);

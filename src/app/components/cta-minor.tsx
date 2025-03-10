@@ -71,23 +71,33 @@ const ctaVariants: Variants = {
 const infoBoxData = [
     {
         svgSrc: "/cta-minor/precision.svg",
-        title: "Precision",
-        text: "ClimateForge is a digital spot knocker with precise energy and owner information."
+        title: "Lead Qualification",
+        text: ""
     },
     {
         svgSrc: "/cta-minor/time-saving.svg",
-        title: "Time-Saving",
-        text: "With ClimateForge, you can spend less time soliciting buyers and executing contracts."
+        title: "Owner Data",
+        text: ""
     },
     {
         svgSrc: "/cta-minor/innovation.svg",
-        title: "Innovation",
-        text: "ClimateForge's AI technology help you easily track statuses and enhance team collaboration."
+        title: "Energy Upgrade Potential",
+        text: ""
     },
     {
         svgSrc: "/cta-minor/empowerment.svg",
-        title: "Empowerment",
-        text: "Utilities, energy service companies and homeowners can equip for efficiency, savings and grid impact."
+        title: "CRM Enrichment",
+        text: ""
+    },
+    {
+        svgSrc: "/cta-minor/building-assessment.svg",
+        title: "Building Assessment",
+        text: ""
+    },
+    {
+        svgSrc: "/cta-minor/energy-sales.svg",
+        title: "Energy Sales Automation",
+        text: ""
     },
 ]
 
@@ -98,10 +108,9 @@ type InfoBoxProps = {
 }
 function InfoBox({svgSrc, title, text}: InfoBoxProps) {
     return (
-        <div className="flex flex-col justify-evenly max-w-[305px] rounded-15 p-4 lg:p-8 
-            border-solid border border-[#E0DFE2]">
+        <div className="relative w-full h-full flex flex-col justify-center p-8 border border-[#E0DFE2] text-xs sm:text-sm md:text-base bg-white rounded-[15px] shadow-lg hover:border-primary">
             <Image className="w-6 h-6 lg:w-9 lg:h-9" src={svgSrc} alt="" width={36} height={36}/>
-            <h4 className="text-[#858585] text-base sm:text-lg md:text-xl lg:text-2xl overflow-ellipsis overflow-hidden">{title}</h4>
+            <h5 className="text-[#858585] text-base sm:text-lg lg:text-lg font-bold">{title}</h5>
             <p className="text-sm lg:text-base">{text}</p>
         </div>
     )
@@ -111,7 +120,7 @@ function InfoBox({svgSrc, title, text}: InfoBoxProps) {
 export default function CtaMinor() {
     
     return (
-        <section className="relative flex flex-col justify-center items-center w-full max-w-[1440px] p-4">
+        <section className="relative flex flex-col justify-center items-center w-full max-w-[1440px] p-4 ">
             
             {/** CTA container - gradient border, absolute position*/}
                 <div className="flex relative flex-col justify-center items-center text-center 
@@ -134,7 +143,7 @@ export default function CtaMinor() {
                     
                 </div>
             
-            <div className="flex flex-col md:flex-row w-full justify-center gap-4 lg:gap-8">
+            <div className="flex flex-col md:flex-row w-full justify-center gap-4 lg:gap-8 ">
             {/* Image Container */}
             <GradientBorderBox borderRadius={16}
                 className="bg-[#f4fafd] rounded-15 h-[420px] lg:h-[559px]"
@@ -217,5 +226,7 @@ export default function CtaMinor() {
             </div>
             </div>
         </section>
+        
+        
     );
 }
