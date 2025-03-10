@@ -42,9 +42,8 @@ export default function Home() {
 
 			{/* title card and CTA */}
 			<Title title={["Energy", "Efficiency", "in a wink!"]} 
-				description="Discover, Qualify and Deploy Energy Upgrades faster than ever before!" 
-                descriptionAnimated={["Discover, Qualify and Deploy ", "solar", "HVAC", "batteries", " faster than ever before!"]}
-
+				description="Discover and Deploy Energy Deals Faster Than Ever Before!" 
+                descriptionAnimated={["Discover and Deploy ", "Solar", "HVAC", "Batteries", " Deals Faster Than Ever Before!"]}
 				gradientIndex={1}
 				buttonText="Book a Demo"
                 route='https://calendly.com/giovanni-climateforge-qttf'
@@ -57,7 +56,7 @@ export default function Home() {
 
             <WhyChooseUs />
 
-            <UspList />
+            {/* <UspList /> */}
 
             <CtaMinor />
 

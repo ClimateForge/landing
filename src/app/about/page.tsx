@@ -1,7 +1,6 @@
 import TitleBackground from "../title-background";
 import Title from "../components/title";
 import MarketInsights from "../components/market-insights";
-import InfoCardGrid from "../components/info-card-grid";
 import Testimonials from '../components/testimonials';
 import UseCases from "../components/use-cases";
 import Deploy from "../components/deploy";
@@ -63,11 +62,6 @@ export default function About() {
             route="careers"/>
 
             <MarketInsights/>
-
-            <InfoCardGrid 
-                title={["Our Core", "Values"]} 
-                description="At ClimateForge, we are dedicated to creating solutions for one of the most critical challenges of our time:  the climate crisis."
-                infoCardsData={infoCardsData}/>
 
             <UseCases/>
 
