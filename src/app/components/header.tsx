@@ -14,9 +14,9 @@ const Header = () => {
 
     const menuLinks = [
         { title: "Product", href: "/" },
-        { title: "Why Join", href: "/about" },
+        { title: "About us", href: "/about" },
         { title: "Pricing", href: "/#pricing" },
-        { title: "Company", href: "/careers" },
+        { title: "Join", href: "/careers" },
     ];
 
     return (
