@@ -121,7 +121,7 @@ export default function CtaMinor() {
                     
                 </div>
             
-            <div className="flex flex-col md:flex-row w-full justify-center gap-4 lg:gap-8 pt-10 lg:pt-20">
+            <div className="flex flex-col md:flex-row w-full justify-center gap-4 lg:gap-8 pt-5 lg:pt-10">
             {/* Image Container */}
             <GradientBorderBox borderRadius={16}
                 className="bg-[#f4fafd] rounded-15 h-[420px] lg:h-[559px]"

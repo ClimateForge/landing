@@ -36,7 +36,7 @@ export default function ButtonCustom(props: ButtonProps) {
                 borderRadius: buttonRadius, 
                 
             }}>
-            <span className="font-bold text-primary dark:text-white text-[16px] md:text-[18px] px-5 ">
+            <span className="font-bold text-primary dark:text-white text-[16px] lg:text-[18px] px-5 ">
                 {children}
             </span>
         </button>
@@ -49,7 +49,7 @@ export default function ButtonCustom(props: ButtonProps) {
                     borderRadius: buttonRadius,
 
                 }}>
-                <span className="flex justify-center items-center font-bold text-white text-[16px] md:text-[18px] px-5 group-hover:text-primary dark:group-hover:text-white">
+                <span className="flex justify-center items-center font-bold text-white text-[16px] lg:text-[18px] px-5 group-hover:text-primary dark:group-hover:text-white">
                     {children}
                 </span>
                 

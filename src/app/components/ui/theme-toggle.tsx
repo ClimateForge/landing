@@ -18,6 +18,7 @@ export default function ThemeToggle() {
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
             className="p-2 rounded-md"
             aria-label="Toggle Theme"
+            title={theme === "dark" ? "lightmode" : "darkmode"}
         >
             {theme === "dark" ? (
                 // Sun Icon
@@ -27,7 +28,7 @@ export default function ThemeToggle() {
                     viewBox="0 0 24 24"
                     strokeWidth={2}
                     stroke="currentColor"
-                    className="w-6 h-6 text-yellow-400"
+                    className="w-5 h-5 hover:opacity-80"
                 >
                     <path
                         strokeLinecap="round"
@@ -43,7 +44,7 @@ export default function ThemeToggle() {
                     viewBox="0 0 24 24"
                     strokeWidth={2}
                     stroke="currentColor"
-                    className="w-6 h-6 text-gray-900 dark:text-gray-100"
+                    className="w-5 h-5 text-primary hover:opacity-80"
                 >
                     <path
                         strokeLinecap="round"

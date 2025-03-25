@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import ButtonCustom from "./ui/button-custom";
-import ThemeToggle from "./ui/theme-toggle";
 
 const Header = () => {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -57,7 +56,6 @@ const Header = () => {
                     >
                         Book a Demo
                     </ButtonCustom>
-                    <ThemeToggle/>
                 </div>
 
                 {/* Mobile Menu Button */}

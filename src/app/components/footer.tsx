@@ -7,7 +7,7 @@ import EmailButton from "./ui/email-button";
 import LinkedInIcon from "./ui/icons/linkedin-icon";
 import InstagramIcon from "./ui/icons/instagram-icon";
 import XIcon from "./ui/icons/x-icon";
-
+import ThemeToggle from "./ui/theme-toggle";
 
 export default function Footer() {
 
@@ -30,14 +30,14 @@ export default function Footer() {
 								height={49}
 								priority
 							/>
-							<p className="hidden md:block pointer-events-none sm:pointer-events-auto text-lg sm:text-xl md:text-2xl self-end">
+							<p className="block sm:hidden md:block pointer-events-none sm:pointer-events-auto text-xl sm:text-xl md:text-2xl self-end">
 								ClimateForge
 							</p>
 						</Link>
 					</div>
 
 					{/* Links */}
-					<div className="flex flex-wrap sm:justify-center sm:items-center sm:mx-6 gap-x-6 sm:gap-x-8 mb-8 sm:mt-0
+					<div className="flex flex-wrap sm:justify-center items-center sm:mx-6 gap-x-6 sm:gap-x-8 mb-8 sm:mt-0
 						font-medium text-sm gap-y-4 text-gray-700 dark:text-gray-300">
 						<Link title="Features" 
 							href={"/about/#deploy"} className="hover:text-gray-500">
@@ -67,6 +67,8 @@ export default function Footer() {
 						<EmailButton link>
 							Contact Us
 						</EmailButton>
+
+						<ThemeToggle/>
 					</div>
 
 					{/* Socials */}
