@@ -63,10 +63,7 @@ const Header = () => {
 					<ButtonCustom
 						variant="outline"
 						onClick={() =>
-							window.open(
-								"https://climateforge.vercel.app/",
-								"_blank"
-							)
+							window.open("https://climateforge.ai/find-leads")
 						}
 					>
 						Sign In
@@ -132,10 +129,7 @@ const Header = () => {
 						variant="outline"
 						onClick={() => {
 							closeMenu();
-							window.open(
-								"https://climateforge.vercel.app/",
-								"_blank"
-							);
+							window.open("https://climateforge.ai/find-leads");
 						}}
 					>
 						Sign In
