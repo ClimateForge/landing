@@ -64,7 +64,7 @@ export default function Home() {
 
 			<Cta
 				title={["Ready To", "Get Started?"]}
-				gifSrc="/cta/solar.webp"
+				gifSrc="/landing/cta/solar.webp"
 				description="Your peers are going to be proud of you for making more money and saving the planet!"
 				primaryButton={{
 					text: "Start For Free",
