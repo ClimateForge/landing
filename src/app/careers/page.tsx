@@ -71,7 +71,7 @@ export default function Careers() {
 
 			<div className="relative w-full h-full mt-10 md:mt-20">
 				{/* Background Image */}
-				<div className="absolute inset-0 bg-[url(/job-openings/solar-panels.webp)] bg-cover bg-center -z-10"></div>
+				<div className="absolute inset-0 bg-[url(/landing/job-openings/solar-panels.webp)] bg-cover bg-center -z-10"></div>
 
 				{/* Overlay */}
 				<div className="absolute inset-0 bg-[#ECF5FF] opacity-[0.93] -z-10"></div>
