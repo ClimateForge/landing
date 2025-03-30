@@ -11,12 +11,12 @@ const nextConfig = {
 			{
 				protocol: "https",
 				hostname: "climateforge-landing.vercel.app",
-				pathname: "/landing/**",
+				pathname: "/**",
 			},
 			{
 				protocol: "https",
-				hostname: "www.climateforge.ai",
-				pathname: "/landing/**",
+				hostname: "climateforge.ai",
+				pathname: "/**",
 			},
 		],
 	},
