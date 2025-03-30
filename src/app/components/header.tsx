@@ -33,7 +33,7 @@ const Header = () => {
 				{/* Logo */}
 				<Link href="/" className="flex items-center gap-2 ml-2">
 					<Image
-						src="/logo.png"
+						src="/landing/logo.png"
 						alt="ClimateForge Logo"
 						width={30}
 						height={30}

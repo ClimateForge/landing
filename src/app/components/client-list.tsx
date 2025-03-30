@@ -57,35 +57,35 @@ const ClientCards = () => {
 		<div className="inline-flex slide group-hover:pause">
 			{/* Sunpower */}
 			<ClientCard
-				imageSrc={"client-list/sunpower_logo.svg"}
+				imageSrc={"/landing/client-list/sunpower_logo.svg"}
 				imageWidth={200}
 				imageHeight={0}
 			/>
 
 			{/* Palmetto */}
 			<ClientCard
-				imageSrc={"/client-list/palmetto-logo.webp"}
+				imageSrc={"/landing/client-list/palmetto-logo.webp"}
 				imageWidth={200}
 				imageHeight={27}
 			/>
 
 			{/* LG Energy Solutions */}
 			<ClientCard
-				imageSrc={"/client-list/lg-logo.png"}
+				imageSrc={"/landing/client-list/lg-logo.png"}
 				imageWidth={200}
 				imageHeight={27}
 			/>
 
 			{/* Goodman */}
 			<ClientCard
-				imageSrc={"/client-list/goodman-logo.webp"}
+				imageSrc={"/landing/client-list/goodman-logo.webp"}
 				imageWidth={200}
 				imageHeight={27}
 			/>
 
 			{/* Sunrun */}
 			<ClientCard
-				imageSrc={"/client-list/sunrun-logo.webp"}
+				imageSrc={"/landing/client-list/sunrun-logo.webp"}
 				imageWidth={200}
 				imageHeight={27}
 			/>

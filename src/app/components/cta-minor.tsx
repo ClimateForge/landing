@@ -74,32 +74,32 @@ const ctaVariants: Variants = {
 
 const infoBoxData = [
 	{
-		svgSrc: "cta-minor/precision.svg",
+		svgSrc: "/landing/cta-minor/precision.svg",
 		title: "Lead Qualification",
 		text: "",
 	},
 	{
-		svgSrc: "cta-minor/time-saving.svg",
+		svgSrc: "/landing/cta-minor/time-saving.svg",
 		title: "Owner Data",
 		text: "",
 	},
 	{
-		svgSrc: "cta-minor/innovation.svg",
+		svgSrc: "/landing/cta-minor/innovation.svg",
 		title: "Energy Upgrade Potential",
 		text: "",
 	},
 	{
-		svgSrc: "cta-minor/empowerment.svg",
+		svgSrc: "/landing/cta-minor/empowerment.svg",
 		title: "CRM Enrichment",
 		text: "",
 	},
 	{
-		svgSrc: "cta-minor/building-assessment.svg",
+		svgSrc: "/landing/cta-minor/building-assessment.svg",
 		title: "Building Assessment",
 		text: "",
 	},
 	{
-		svgSrc: "cta-minor/energy-sales.svg",
+		svgSrc: "/landing/cta-minor/energy-sales.svg",
 		title: "Energy Sales Automation",
 		text: "",
 	},
@@ -179,7 +179,7 @@ export default function CtaMinor() {
 						title="Houses Background Image"
 						className="w-full h-full rounded-[90px] mix-blend-overlay
                     transform scale-[1.25] aspect-square object-cover"
-						src={"/cta-minor/houses.png"}
+						src={"/landing/cta-minor/houses.png"}
 						alt="Houses"
 						sizes="100vh"
 						width={500}
@@ -200,7 +200,7 @@ export default function CtaMinor() {
 							<Image
 								title="House Image"
 								className="w-auto h-auto"
-								src={"/cta-minor/house.png"}
+								src={"/landing/cta-minor/house.png"}
 								alt="House"
 								width={472}
 								height={269}
@@ -213,7 +213,7 @@ export default function CtaMinor() {
 						>
 							<Image
 								title="Gradient Logo Border"
-								src={"cta-minor/polygon1.svg"}
+								src={"/landing/cta-minor/polygon1.svg"}
 								alt="Polygon SVG 1"
 								width={0}
 								height={0}
@@ -226,7 +226,7 @@ export default function CtaMinor() {
 							>
 								<Image
 									title="ClimateForge Logo"
-									src={"/logo.png"}
+									src={"/landing/logo.png"}
 									alt="ClimateForge Logo"
 									width={84}
 									height={76}
@@ -240,7 +240,7 @@ export default function CtaMinor() {
 						>
 							<Image
 								title="Person Polygon"
-								src={"cta-minor/polygon2.svg"}
+								src={"/landing/cta-minor/polygon2.svg"}
 								alt="Polygon SVG 2"
 								width={0}
 								height={0}
@@ -255,7 +255,7 @@ export default function CtaMinor() {
 						<Image
 							title="Circle Background Decoration"
 							className=" opacity-25 transform scale-150"
-							src="/cta-minor/decoration.png"
+							src="/landing/cta-minor/decoration.png"
 							alt="CTA Background Decoration"
 							width={900}
 							height={516}
