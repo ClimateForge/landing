@@ -4,21 +4,21 @@ const nextConfig = {
 	assetPrefix: "/landing/",
 	trailingSlash: true,
 	images: {
-		path: "/landing/_next/image", // Ensure this matches your basePath
-		unoptimized: false, // REQUIRED (default)
-		domains: ["climateforge.ai", "climateforge-landing.vercel.app"],
 		remotePatterns: [
 			{
 				protocol: "https",
-				hostname: "climateforge-landing.vercel.app",
-				pathname: "/**",
+				hostname: "climateforge.ai", // Custom domain
+				pathname: "/landing/**", // Explicit basePath
+				port: "",
 			},
 			{
 				protocol: "https",
-				hostname: "climateforge.ai",
-				pathname: "/**",
+				hostname: "climateforge-landing.vercel.app", // Vercel domain
+				pathname: "/landing/**",
+				port: "",
 			},
 		],
+		path: "/landing/_next/image", // Force basePath in image URLs
 	},
 };
 
