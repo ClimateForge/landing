@@ -57,7 +57,7 @@ const ClientCards = () => {
 		<div className="inline-flex slide group-hover:pause">
 			{/* Sunpower */}
 			<ClientCard
-				imageSrc={"/client-list/sunpower_logo.svg"}
+				imageSrc={"client-list/sunpower_logo.svg"}
 				imageWidth={200}
 				imageHeight={0}
 			/>

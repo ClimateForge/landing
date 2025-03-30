@@ -10,13 +10,13 @@ export const metadata: Metadata = {
 		{
 			rel: "icon",
 			type: "image/x-icon",
-			url: "/favicons/favicon.ico",
+			url: "favicon/favicon.ico",
 		},
 		{
 			rel: "icon",
 			type: "image/png",
 			sizes: "32x32",
-			url: "/favicon/favicon-32x32.png",
+			url: "favicon/favicon-32x32.png",
 		},
 	],
 
