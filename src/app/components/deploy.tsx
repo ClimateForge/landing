@@ -75,7 +75,7 @@ export default function Deploy() {
 										<Image
 											title="Deploy Icon"
 											className="w-12 h-12 z-10 transition-all duration-700 group-hover:w-9 group-hover:h-9"
-											src={`/deploy/${image.src}.svg`}
+											src={`/landing/deploy/${image.src}.svg`}
 											alt="deploy icon"
 											width={48}
 											height={48}

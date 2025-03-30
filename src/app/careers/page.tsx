@@ -91,7 +91,7 @@ export default function Careers() {
 
 			<Cta
 				title={["Apply To", "Get Started!"]}
-				gifSrc="/cta/career2.webp"
+				gifSrc="/landing/cta/career2.webp"
 				gifRounded
 				description="Didn't find a position that matches your qualifications? Drop us a line!"
 				badges

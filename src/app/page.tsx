@@ -50,7 +50,7 @@ export default function Home() {
 				newTab={true}
 			/>
 
-			<Demo videoSrc="demo.mp4" />
+			<Demo videoSrc="/landing/demo.mp4" />
 
 			<ClientList />
 

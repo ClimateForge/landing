@@ -82,7 +82,7 @@ export default function About() {
 
 			<Cta
 				title={["Ready To", "Do Something", "That Matters?"]}
-				gifSrc="/cta/about.webp"
+				gifSrc="/landing/cta/about.webp"
 				gifRounded
 				description="At ClimateForge we're building the best tools to help American contractors and installers to decarbonize the country and expand globally!"
 				primaryButton={{ text: "Join Us", route: "/careers" }}

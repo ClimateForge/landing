@@ -10,7 +10,7 @@ const featuredArticles = [
 		title: "ClimateForge Unveils AI Platform for Renewable Energy Projects",
 		description:
 			"Check out our featured articles about ClimateForge and how our company is helping in an effort to decarbonize using advanced technologies.",
-		image: "/featured/article-image.png",
+		image: "/landing/featured/article-image.png",
 	},
 	{
 		name: "LA Tribune",
@@ -19,7 +19,7 @@ const featuredArticles = [
 		title: "Decarbonizing the Future: The Role of ClimateForge in Advancing Decarbonization Technologies",
 		description:
 			"LA Tribune explores how ClimateForge is paving the way for sustainable energy solutions with AI-driven technology.",
-		image: "/featured/article-image.png",
+		image: "/landing/featured/article-image.png",
 	},
 	{
 		name: "Amplify Weekly",
@@ -28,7 +28,7 @@ const featuredArticles = [
 		title: "Two IIT Graduates Transform Renewable Energy Through Innovative AI Platform",
 		description:
 			"Discover how AI is transforming the renewable energy sector with breakthrough innovations.",
-		image: "/featured/article-amplify.png",
+		image: "/landing/featured/article-amplify.png",
 	},
 ];
 
