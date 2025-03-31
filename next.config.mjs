@@ -2,7 +2,7 @@
 const nextConfig = {
 	basePath: "/landing",
 	assetPrefix: "/landing/",
-	trailingSlash: true,
+	trailingSlash: false,
 	images: {
 		remotePatterns: [
 			{
