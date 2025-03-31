@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
 	basePath: "/landing",
-	assetPrefix: "/landing/",
-	trailingSlash: true,
+	// assetPrefix: "/landing/",
+	trailingSlash: false,
 	images: {
 		remotePatterns: [
 			{
