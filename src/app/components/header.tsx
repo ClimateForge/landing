@@ -6,12 +6,14 @@ import Image from "next/image";
 import Link from "next/link";
 import ButtonCustom from "./ui/button-custom";
 import { cn } from "@/lib/utils";
+import { useRouter } from "next/navigation";
 
 const Header = () => {
 	const [menuOpen, setMenuOpen] = useState(false);
 
 	const toggleMenu = () => setMenuOpen((prev) => !prev);
 	const closeMenu = () => setMenuOpen(false);
+	const router = useRouter();
 
 	const menuLinks = [
 		{ title: "Product", href: "/" },
@@ -62,9 +64,7 @@ const Header = () => {
 				<div className="hidden md:flex gap-4">
 					<ButtonCustom
 						variant="outline"
-						onClick={() =>
-							window.open("https://climateforge.ai/find-leads")
-						}
+						onClick={() => router.push("/find-leads")}
 					>
 						Sign In
 					</ButtonCustom>
@@ -127,10 +127,7 @@ const Header = () => {
 					<ButtonCustom
 						className="w-full max-w-[300px]"
 						variant="outline"
-						onClick={() => {
-							closeMenu();
-							window.open("https://climateforge.ai/find-leads");
-						}}
+						onClick={() => router.push("/find-leads")}
 					>
 						Sign In
 					</ButtonCustom>
