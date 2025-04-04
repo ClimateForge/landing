@@ -22,6 +22,10 @@ const Header = () => {
 		{ title: "Join", href: "/careers" },
 	];
 
+	const signInButtonAction = () => {
+		window.location.href = "/find-leads";
+	};
+
 	return (
 		<header className="flex items-center justify-center h-16 md:h-24 bg-white">
 			<nav
@@ -64,7 +68,7 @@ const Header = () => {
 				<div className="hidden md:flex gap-4">
 					<ButtonCustom
 						variant="outline"
-						onClick={() => router.push("/find-leads")}
+						onClick={signInButtonAction}
 					>
 						Sign In
 					</ButtonCustom>
@@ -127,7 +131,7 @@ const Header = () => {
 					<ButtonCustom
 						className="w-full max-w-[300px]"
 						variant="outline"
-						onClick={() => router.push("/find-leads")}
+						onClick={signInButtonAction}
 					>
 						Sign In
 					</ButtonCustom>
