@@ -41,11 +41,11 @@ export default function WhyChooseUs() {
 			svg: "/landing/info-scroll/find-leads.svg",
 		},
 		{
-			caption: "CRM Assistance",
-			title: "AI CRM Assistance",
-			text: "CRM designed specifically for energy sales roles. ClimateForge's AI technology help you easily track statuses and enhance team collaboration.",
-			image: "/landing/info-scroll/crm-assistance-1.gif",
-			svg: "/landing/info-scroll/crm-assistance.svg",
+			caption: "System Design",
+			title: "Power Modern Living",
+			text: "Impress customers with comprehensive designs and spend less time soliciting buyers and executing contracts.",
+			image: "/landing/info-scroll/system-design-1.gif",
+			svg: "/landing/info-scroll/system-design.svg",
 		},
 		{
 			caption: "Product Feature",
@@ -55,11 +55,11 @@ export default function WhyChooseUs() {
 			svg: "/landing/info-scroll/product-feature.svg",
 		},
 		{
-			caption: "System Design",
-			title: "Power Modern Living",
-			text: "Impress customers with comprehensive designs and spend less time soliciting buyers and executing contracts.",
-			image: "/landing/info-scroll/system-design-1.gif",
-			svg: "/landing/info-scroll/system-design.svg",
+			caption: "CRM Assistance",
+			title: "AI CRM Assistance",
+			text: "CRM designed specifically for energy sales roles. ClimateForge's AI technology help you easily track statuses and enhance team collaboration.",
+			image: "/landing/info-scroll/crm-assistance-1.gif",
+			svg: "/landing/info-scroll/crm-assistance.svg",
 		},
 	];
 
@@ -89,57 +89,37 @@ export default function WhyChooseUs() {
 				</div>
 			</div>
 
-			{/* SCROLLING INFO AND IMAGE*/}
-			<div className="w-full max-w-[1200px]">
-				{" "}
-				{/* Added max-w to the container */}
+			<div className="w-full max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
 				{infoBlocks.map((block, index) => (
 					<motion.div
 						id={block.caption}
 						key={index}
-						className={`flex flex-col sm:flex-row items-center gap-8 mb-24 last:mb-0 scroll-mt-32`}
+						className="bg-white rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition-all p-6 text-left flex flex-col scroll-mt-32"
 						whileInView={{
-							transition: { duration: 0.2 },
+							opacity: 1,
+							y: 0,
+							transition: { duration: 0.3 },
 						}}
+						initial={{ opacity: 0, y: 40 }}
 						onViewportEnter={() => handleSection(index)}
 					>
-						{/* Text Content */}
-						<div className="flex-1 max-w-[490px] text-center sm:text-left">
-							{" "}
-							{/* Center text on small screens, left on larger */}
-							<div className="flex items-center gap-1 justify-center sm:justify-start">
-								{" "}
-								{/* Center icon/caption on small, left on larger */}
-								<Image
-									className="w-4 h-4"
-									priority
-									width={16}
-									height={16}
-									src={block.svg}
-									alt={block.caption}
-								/>
-								<p className="text-sm">{block.caption}</p>
-							</div>
-							<h3 className="text-[32px] py-6">{block.title}</h3>
-							<p>{block.text}</p>
-						</div>
+						{/* GIF/Image */}
+						<Image
+							src={block.image}
+							alt={block.title}
+							width={360}
+							height={240}
+							className="mb-6 rounded-md object-contain"
+							style={{ maxWidth: "100%", height: "auto" }}
+						/>
 
-						{/* Image */}
-						<div className="flex-1 flex justify-center">
-							{" "}
-							{/* Center the image */}
-							<Image
-								src={block.image}
-								alt={block.title}
-								className="object-cover rounded-15"
-								width={2000}
-								height={1600}
-								style={{
-									maxWidth: "100%", // Ensures it scales to the container
-									height: "auto", // Keeps aspect ratio
-								}}
-							/>
-						</div>
+						{/* Title */}
+						<h3 className="text-lg font-semibold text-gray-900 mb-2">
+							{block.title}
+						</h3>
+
+						{/* Description */}
+						<p className="text-sm text-gray-600">{block.text}</p>
 					</motion.div>
 				))}
 			</div>
